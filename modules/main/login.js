@@ -12,9 +12,15 @@
         $stateProvider
             .state('main', {
                 url: '/main',
-                templateUrl: 'modules/main/main.html',
+                templateUrl: 'modules/main/login.html',
                 controller: 'MainCtrl'
-            });
+            })
+            .state('vendorinfo', {
+                url: '/vendorinfo',
+                templateUrl: 'modules/main/vendorInfo.html',
+                controller: 'MainCtrl'
+            })
+            ;
     }
 
     function appHeader() {
