@@ -243,3 +243,14 @@
 .task-status-low {
     border-left: 10px solid #f8a421;
 }
+
+.task-detail .task-item {
+    border: none;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.task-detail .task-item .button.button-positive.button-clear {
+    font-size: 14px;
+}

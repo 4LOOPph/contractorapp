@@ -7,7 +7,7 @@
             <label class="new-label"><i class="icon ion-ios-timer-outline"></i> IN PROGRESS</label>
         </div>
         <div class="list list-inset padding-left padding-right">
-            <ion-item class="item item-icon-right" ng-repeat="chat in progressData" ng-class="{'task-status-normal': chat.priority=='normal','task-status-high': chat.priority =='high','task-status-low': chat.priority =='low'}">
+            <ion-item class="item item-icon-right" href="#/tab/tasks/{{chat.id}}" ng-repeat="chat in progressData" ng-class="{'task-status-normal': chat.priority=='normal','task-status-high': chat.priority =='high','task-status-low': chat.priority =='low'}">
                 <h2>{{chat.name}}</h2>
                 <p>{{chat.client}}</p>
                 <p>{{chat.date_created | date: 'dd MMMM yyyy'}}</p>
@@ -24,7 +24,7 @@
             <label class="new-label"><i class="icon ion-ios-minus-outline"></i> PENDING</label>
         </div>
         <div class="list list-inset">
-            <ion-item class="item item-icon-right" ng-repeat="chat in pendingData" ng-class="{'task-status-normal': chat.priority=='normal','task-status-high': chat.priority =='high','task-status-low': chat.priority =='low'}">
+            <ion-item class="item item-icon-right" href="#/tab/tasks/{{chat.id}}"  ng-repeat="chat in pendingData" ng-class="{'task-status-normal': chat.priority=='normal','task-status-high': chat.priority =='high','task-status-low': chat.priority =='low'}">
                 <h2>{{chat.name}}</h2>
                 <p>{{chat.client}}</p>
                 <p>{{chat.date_created | date: 'dd MMMM yyyy'}}</p>
@@ -41,7 +41,7 @@
             <label class="new-label"><i class="icon ion-ios-minus-outline"></i> COMPLETED</label>
         </div>
         <div class="list list-inset">
-            <ion-item class="item item-icon-right" ng-repeat="chat in completedData">
+            <ion-item class="item item-icon-right" href="#/tab/tasks/{{chat.id}}" ng-repeat="chat in completedData">
                 <h2>{{chat.name}}</h2>
                 <p>{{chat.client}}</p>
                 <p>{{chat.date_created | date: 'dd MMMM yyyy'}}</p>

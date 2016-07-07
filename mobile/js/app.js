@@ -95,11 +95,11 @@
               }
             }
           })
-          .state('tab.chat-detail', {
-            url: '/chats/:chatId',
+          .state('tab.task-detail', {
+            url: '/tasks/:chatId',
             views: {
-              'tab-chats': {
-                templateUrl: 'templates/chat-detail.html',
+              'tab-tasks': {
+                templateUrl: 'templates/task-detail.html',
                 controller: 'ChatDetailCtrl'
               }
             }
