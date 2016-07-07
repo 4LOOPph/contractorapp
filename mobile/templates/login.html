@@ -1,0 +1,43 @@
+<ion-view view-title="" name="login-view">
+    <ion-content class="padding">
+        <div class="list back fullbox">
+            <div class="item item-image back">
+                <img src="/img/log.png" style="width: 23%;">
+            </div>
+            <div class="item login-header back">
+                <div class="login-font">CONTRACTOR APP</div>
+                <div class="log-font">Always take the lead!</div>
+                <div class="l-font">Apply as one of our certified contractor</div>
+            </div>
+            <!-- <div class="item item-image back">
+                <img src="cover.jpg">
+            </div> -->
+            <a>
+                <div class="row vid">
+                    <div class="col">
+                        <div class="video-container">
+                            <iframe src="http://www.youtube.com/embed/shGhZzJ7o-g?rel=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="list logform">
+            <label class="item item-input bortop">
+                <span class="i-con ion-android-person"></span>
+                <input type="text" placeholder="Username" ng-model="data.username">
+            </label>
+            <label class="item item-input bordbot">
+                <span class="i-con ion-android-lock"></span>
+                <input type="password" placeholder="Password" ng-model="data.password">
+                <span class="item-n">
+      				Hide
+    				</span>
+            </label>
+        </div>
+        <div class="forg">Forgot Password?</div>
+        <a class="button logbutton" ui-sref="tab.dash">Login</a>
+        <div ui-sref="vendorInfo" class="loglink">Apply as contractor</div>
+        <p class="cop">© 2016 Engagis Pty Ltd</p>
+    </ion-content>
+</ion-view>

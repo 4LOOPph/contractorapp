@@ -3,7 +3,7 @@
 
     angular.module('contractor', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngAnimate', 'mgcrea.ngStrap', 'ui.router',
             'ui.footable', 'ui.select', 'restangular', 'toastr', 'chart.js', 'angular.morris-chart', 'ui.bootstrap', 'angularMoment',
-            'angularSpinner'
+            'angularSpinner','ng.deviceDetector'
         ])
         // .constant('API_URL', 'http://192.168.2.17:3000') //DEVELOPMENT
         .constant('API_URL', 'http://52.64.27.145:5001') //PRODUCTION
@@ -19,7 +19,7 @@
                 RestangularProvider.setBaseUrl(API_URL + '/1.0/');
             }
         ])
-        .run(['$rootScope', '$state', 'usSpinnerService', function($rootScope, $state, usSpinnerService) {
+        .run(['$rootScope', '$state', 'usSpinnerService','deviceDetector','$window', function($rootScope, $state, usSpinnerService,deviceDetector,$window) {
             $rootScope.$state = $state;
 
             $rootScope.$on('loading:progress', function() {
@@ -29,6 +29,14 @@
             $rootScope.$on('loading:finish', function() {
                 usSpinnerService.stop('spinner-1');
             });
+
+            var deviceDetector = deviceDetector;
+
+            if(deviceDetector.isMobile() && !deviceDetector.isTablet()){
+                $window.location.href= "/mobile/index.html";
+            }else if(deviceDetector.isMobile() && deviceDetector.isTablet()){
+                $window.location.href= "/mobile/index.html";
+            }
         }])
         .factory('_', ['$window', function($window) {
             return $window._;

@@ -1,0 +1,35 @@
+<ion-view view-title="Contact" name="vendor-info">
+    <ion-content class="padding">
+    <label class="new-label">PRIMARY CONTACT</label>
+        <div class="list list-inset">
+            <label class="item item-input">
+                <input type="text" placeholder="Primary Contact" ng-model="data.username">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Phone" ng-model="data.username">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Email" ng-model="data.username">
+            </label>
+        </div>
+        <label>SECONDARY CONTACT</label>
+        <div class="list list-inset">
+            <label class="item item-input">
+            <span class="icon ion-search placeholder-icon"></span>
+                <input type="text" placeholder="Primary Contact" ng-model="data.username">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Phone" ng-model="data.username">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Email" ng-model="data.username">
+            </label>
+        </div>
+        <button ui-sref="vendorInfo" class="button button-small button-assertive">
+            Cancel
+        </button>
+        <button ui-sref="vendorRate" class="button button-small button-assertive" style="float:right;">
+            Next
+        </button>
+    </ion-content>
+</ion-view>

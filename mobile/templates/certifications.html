@@ -1,0 +1,23 @@
+<ion-view view-title="Certifications" name="vendor-info">
+    <ion-content class="padding">
+    <label class="new-label">ATTACH CERTIFICATE</label>
+      <label class="item item-input" style="margin-top:10px;">
+                <input type="text" placeholder="Add file" ng-model="data.username">
+            </label> 
+       <button ui-sref="vendorInfo" class="button button-small button-assertive">
+            Scan Certificate
+        </button> 
+        <div class="row" style="margin-top: 10px;">
+            <div class="col col-50">
+                <button ui-sref="certification" class="button can-button">
+                    Cancel
+                </button>
+            </div>
+            <div class="col col-50">
+                <button ui-sref="certifications" class="button next-button">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -89,7 +89,7 @@ gulp.task('serve', function() {
         }
     });
 
-    gulp.watch(['index.html', 'scripts/**/*.*', 'styles/**/*.*', 'modules/**/*.*'])
+    gulp.watch(['index.html', 'scripts/**/*.*', 'styles/**/*.*', 'modules/**/*.*','mobile/**/*.*'])
         .on('change', browserSync.reload);
 });
 

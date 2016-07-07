@@ -1,0 +1,104 @@
+<!doctype html>
+<html class="no-js" ng-app="contractor">
+
+<head>
+    <meta charset="utf-8">
+    <title>Contractor App</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="img/POSlogo.png" type="image/x-icon" />
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- <base href="/"> -->
+    <!-- build:css css/main.min.css -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="bower_components/angular-toastr/dist/angular-toastr.min.css" rel="stylesheet">
+    <link href="bower_components/Ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="bower_components/ui-select/dist/select.min.css" rel="stylesheet">
+    <link href="bower_components/angular-motion/dist/angular-motion.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.css" rel="stylesheet" type="text/css">
+    <link href="bower_components/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet" type="text/css" >
+    <link href="styles/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <link href="styles/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+    <!-- endbuild -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body class="skin-blue" ng-class="{'bg-black':$state.includes('login') || $state.includes('forgot')}">
+    <!-- build:js js/main.min.js -->
+    <!-- Non Angular -->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/lodash/dist/lodash.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/footable/js/footable.js"></script>
+    <script type="text/javascript" src="bower_components/footable/js/footable.sort.js"></script>
+    <script type="text/javascript" src="bower_components/footable/js/footable.paginate.js"></script>
+    <script type="text/javascript" src="bower_components/raphael/raphael.min.js"></script>
+    <script type="text/javascript" src="bower_components/morris.js/morris.min.js"></script>
+    <script type="text/javascript" src="bower_components/spin.js/spin.js"></script>
+    <!-- Angular Libraries -->
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script type="text/javascript" src="bower_components/angular-touch/angular-touch.js"></script>
+    <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="bower_components/angular-footable/dist/angular-footable.js"></script>
+    <script type="text/javascript" src="bower_components/angular-strap/dist/angular-strap.js"></script>
+    <script type="text/javascript" src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
+    <script type="text/javascript" src="bower_components/ui-select/dist/select.js"></script>
+    <script type="text/javascript" src="bower_components/restangular/dist/restangular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <!-- Chart.JS -->
+    <script type="text/javascript" src="bower_components/Chart.js/Chart.js"></script>
+    <script type="text/javascript" src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-morris-chart/src/angular-morris-chart.min.js"></script>
+    <!-- Moment -->
+    <script type="text/javascript" src="bower_components/moment/moment.js"></script>
+    <script type="text/javascript" src="bower_components/angular-moment/angular-moment.min.js"></script>
+    <!-- Spinner -->
+    <script type="text/javascript" src="bower_components/angular-spinner/angular-spinner.js"></script>
+    <script type="text/javascript" src="bower_components/re-tree/re-tree.js"></script>
+    <script type="text/javascript" src="bower_components/ng-device-detector/ng-device-detector.js"></script>
+    <script src="scripts/adminlte.js"></script>
+    <!-- endbuild -->
+    <!-- build:js1 js/app.min.js -->
+    <!-- Angular Module -->
+    <script src="scripts/app.js"></script>
+    <script src="modules/main/login.js"></script>
+    <script src="modules/login/login.js"></script>
+    <!-- Angular Services -->
+    <script src="scripts/services/apifactory.js"></script>
+    <!-- Angular Directives -->
+    <script src="scripts/directives.js"></script>
+    <!-- endbuild -->
+    <!--
+        *
+        *
+        *
+        Angular View
+        *
+        *
+        *
+        -->
+    <div ui-view></div>
+    <!--
+        *
+        *
+        *
+        Angular View
+        *
+        *
+        *
+        -->
+</body>
+
+</html>
