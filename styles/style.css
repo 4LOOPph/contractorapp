@@ -29,7 +29,8 @@ body {
     font-weight: 600;
 }
 .forgot{
-	margin-top: 10px;
+	margin-top: 20px;
+    margin-bottom: 22px;
     text-align: center;
     color: #2980dc;
     font-weight: 600;
@@ -39,6 +40,7 @@ body {
     color: #fff;
     font-size: 16px;
     font-weight: 600;
+        margin-bottom: 25px;
 }
 .inpitcon{
 	display: block;
@@ -122,7 +124,8 @@ body {
 	border-radius: 5px;
 	/*Lets add the numbers for each link using CSS counters. flag is the name of the counter. to be defined using counter-reset in the parent element of the links*/
 	// counter-reset: flag;
-	    margin-bottom: 0px; 
+	    margin-bottom: 7px; 
+	        // margin-left: 20%;
 }
 
 .breadcrumb a {
@@ -181,7 +184,8 @@ body {
 	background: #666;
 	background: linear-gradient(135deg, #666, #333);
 	/*stylish arrow design using box shadow*/
-	    box-shadow: 2px -2px 0 2px rgba(253, 253, 253, 0.12), 3px -3px 0 2px rgba(255, 255, 255, 0.19);
+	        box-shadow: 2px -2px 0 2px rgb(253, 253, 253), 3px -3px 0 2px rgb(255, 255, 255);
+    border-radius: 0 5px 0 50px;
 	/*
 		5px - for rounded arrows and 
 		50px - to prevent hover glitches on the border created using shadows*/
@@ -211,7 +215,7 @@ body {
 
 
 .flat a, .flat a:after {
-	background: #eeeeee;;
+	background: #b9b9b9;
 	color: #fff;
 	transition: all 0.5s;
 	padding-right: 30px;
@@ -231,12 +235,219 @@ body {
     color: #fff;
 }
 .title-card{
-	text-align: center;
-    font-size: 19px;
+	    text-align: right;
+    // margin-right: 80px;
+    font-size: 21px;
     font-weight: 600;
     color: #2980dc;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
+    margin-top: 20px;
+    margin-bottom: -34px;
 }
+.quick{
+	    font-weight: 600;
+    margin-left: -21px;
+}
+.list[
+    padding: 15px;
+    line-height: 2.5;
+    margin-left: 35px;]
+.yel-button{
+	    padding: 0px;
+    background-color: #bcbf43;
+    width: 40px;
+    margin-left: -28px;
+}
+.pl{
+	    color: #fff;
+    font-size: 18px;
+}
+.currency{
+	    width: 25%;
+    margin-top: -58px;
+    margin-left: 81px;
+}
+.login-inputop{
+	margin-top: 20px;
+    padding-left: 44px;
+    height: 44px;
+    /* border-radius: 4px; */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.login-inputbot{
+	       margin-top: -28px;
+    padding-left: 44px;
+    height: 44px;
+    /* border-radius: 4px; */
+border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.card{
+	    background-color: #f3f3f3;
+    margin-top: 55px;
+        margin-bottom: 10px;
+    padding-left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.card2{
+	    background-color:#fff;
+    margin-top: 55px;
+        margin-left: -151px;
+    width: 167%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.attach{
+    position: absolute;
+    top: 50%;
+    right: 109px;
+    margin-top: -215px;
+    /* margin-left: -250px; */
+    width: 220px;
+    height: 33px;
+    border: 2px dashed #cac7c7;
+}
+.attach2{
+    position: absolute;
+    top: 50%;
+    right: 39px;
+    margin-top: -215px;
+    /* margin-left: -250px; */
+    width: 80px;
+    height: 33px;
+    border: 2px dashed #2980dc;
+    background-color: #2980dc;
+}
+.attachi{
+     position: absolute;
+    top: 50%;
+    right: 109px;
+    margin-top: -110px;
+    /* margin-left: -250px; */
+    width: 220px;
+    height: 33px;
+    border: 2px dashed #cac7c7;
+}
+.attachi2{
+    position: absolute;
+    top: 50%;
+    right: 39px;
+    margin-top: -110px;
+    /* margin-left: -250px; */
+    width: 80px;
+    height: 33px;
+    border: 2px dashed #2980dc;
+    background-color: #2980dc;
+}
+.ata{
+      width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 170px;
+    margin-top: -71px;
+    color: #3e3e3e;
+    font-size: 12px;
+    font-family: Arial;
+}
+.ata2{
+      width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 170px;
+    margin-top: -71px;
+    color: #fff;
+    font-size: 12px;
+    font-family: Arial;
+}
+.atat{
+      width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 170px;
+    margin-top: -71px;
+    color: #3e3e3e;
+    font-size: 12px;
+    font-family: Arial;
+}
+.atat2{
+      width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 170px;
+    margin-top: -71px;
+    color: #fff;
+    font-size: 12px;
+    font-family: Arial;
+}
+.in{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+}
+.in2{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+}
+.ini{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+}
+.ini2{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+}
+.bot{
+  margin: 0;
+  color: #fff;
+  background: #16a085;
+  border: none;
+  width: 508px;
+  height: 35px;
+  margin-top: -20px;
+  margin-left: -4px;
+  border-radius: 4px;
+  border-bottom: 4px solid #117A60;
+  transition: all .2s ease;
+  outline: none;
+}
+.bot:hover{
+  background: #149174;
+	color: #0C5645;
+}
+.bot:active{
+  border:0;
+}
+
+
+
 
 
 
