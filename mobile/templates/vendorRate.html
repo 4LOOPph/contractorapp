@@ -1,21 +1,51 @@
-<ion-view view-title="Rate" name="vendor-info">
+<ion-view view-title="Rate" name="vendor-info" ng-init="filter.direct = true;">
     <ion-content class="padding">
         <label class="new-label">RATE</label>
         <div class="row" style="margin-top:0px;">
             <div class="col col-25">
                 <label class="item item-input bortop bordbot time-lab">
-                <i class="icon ion-social-usd"></i>
-                    <input type="text" ng-model="data.username" style="min-width: 70px;">
+                    <i class="icon ion-social-usd"></i>
+                    <input type="number" ng-model="data.username" style="min-width: 70px;">
                 </label>
-            </div> 
-             <label class="item item-input bortop bordbot time-pick time-lab">
-            <div class="col col-50">             
-            <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">              
             </div>
-            -
-            <div class="col col-50">         
-            <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">           
+            <label class="item item-input bortop bordbot time-pick time-lab">
+                <div class="col col-50">
+                    <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">
+                </div>
+                -
+                <div class="col col-50">
+                    <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">
+                </div>
+            </label>
+            <div class="col col-25">
+                <label class="item item-input item-select bortop bordbot time-lab">
+                    <select>
+                        <option> Mon</option>
+                        <option> Tue</option>
+                        <option> Wed</option>
+                        <option> Thu</option>
+                        <option> Fri</option>
+                        <option> Sat</option>
+                        <option> Sun</option>
+                    </select>
+                </label>
             </div>
+        </div>
+        <div class="row">
+            <div class="col col-25">
+                <label class="item item-input bortop bordbot time-lab">
+                    <i class="icon ion-social-usd"></i>
+                    <input type="number" ng-model="data.username" style="min-width: 70px;">
+                </label>
+            </div>
+            <label class="item item-input bortop bordbot time-pick time-lab">
+                <div class="col col-50">
+                    <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">
+                </div>
+                -
+                <div class="col col-50">
+                    <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">
+                </div>
             </label>
             <div class="col col-25">
                 <label class="item item-input bortop bordbot time-lab"><i class="ion-android-arrow-dropdown" style="margin-left: -10px;"></i>
@@ -34,18 +64,48 @@
         <div class="row">
             <div class="col col-25">
                 <label class="item item-input bortop bordbot time-lab">
-                <i class="icon ion-social-usd"></i>
-                    <input type="text" ng-model="data.username" style="min-width: 70px;">
+                    <i class="icon ion-social-usd"></i>
+                    <input type="number" ng-model="data.username" style="min-width: 70px;">
                 </label>
-            </div> 
-             <label class="item item-input bortop bordbot time-pick time-lab">
-            <div class="col col-50">             
-            <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">              
             </div>
-            -
-            <div class="col col-50">         
-            <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">           
+            <label class="item item-input bortop bordbot time-pick time-lab">
+                <div class="col col-50">
+                    <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">
+                </div>
+                -
+                <div class="col col-50">
+                    <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">
+                </div>
+            </label>
+            <div class="col col-25">
+                <label class="item item-input item-select bortop bordbot time-lab"><i class="ion-android-arrow-dropdown" style="margin-left: -10px;"></i>
+                    <select>
+                        <option selected> Mon</option>
+                        <option> Tue</option>
+                        <option> Wed</option>
+                        <option> Thu</option>
+                        <option> Fri</option>
+                        <option> Sat</option>
+                        <option> Sun</option>
+                    </select>
+                </label>
             </div>
+        </div>
+        <div class="row">
+            <div class="col col-25">
+                <label class="item item-input bortop bordbot time-lab">
+                    <i class="icon ion-social-usd"></i>
+                    <input type="number" ng-model="data.username" style="min-width: 70px;">
+                </label>
+            </div>
+            <label class="item item-input bortop bordbot time-pick time-lab">
+                <div class="col col-50">
+                    <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">
+                </div>
+                -
+                <div class="col col-50">
+                    <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">
+                </div>
             </label>
             <div class="col col-25">
                 <label class="item item-input bortop bordbot time-lab"><i class="ion-android-arrow-dropdown" style="margin-left: -10px;"></i>
@@ -64,78 +124,18 @@
         <div class="row">
             <div class="col col-25">
                 <label class="item item-input bortop bordbot time-lab">
-                <i class="icon ion-social-usd"></i>
-                    <input type="text" ng-model="data.username" style="min-width: 70px;">
-                </label>
-            </div> 
-             <label class="item item-input bortop bordbot time-pick time-lab">
-            <div class="col col-50">             
-            <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">              
-            </div>
-            -
-            <div class="col col-50">         
-            <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">           
-            </div>
-            </label>
-            <div class="col col-25">
-                <label class="item item-input bortop bordbot time-lab"><i class="ion-android-arrow-dropdown" style="margin-left: -10px;"></i>
-                    <select>
-                        <option selected> Mon</option>
-                        <option> Tue</option>
-                        <option> Wed</option>
-                        <option> Thu</option>
-                        <option> Fri</option>
-                        <option> Sat</option>
-                        <option> Sun</option>
-                    </select>
+                    <i class="icon ion-social-usd"></i>
+                    <input type="number" ng-model="data.username" style="min-width: 70px;">
                 </label>
             </div>
-        </div>
-        <div class="row">
-            <div class="col col-25">
-                <label class="item item-input bortop bordbot time-lab">
-                <i class="icon ion-social-usd"></i>
-                    <input type="text" ng-model="data.username" style="min-width: 70px;">
-                </label>
-            </div> 
-             <label class="item item-input bortop bordbot time-pick time-lab">
-            <div class="col col-50">             
-            <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">              
-            </div>
-            -
-            <div class="col col-50">         
-            <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">           
-            </div>
-            </label>
-            <div class="col col-25">
-                <label class="item item-input bortop bordbot time-lab"><i class="ion-android-arrow-dropdown" style="margin-left: -10px;"></i>
-                    <select>
-                        <option selected> Mon</option>
-                        <option> Tue</option>
-                        <option> Wed</option>
-                        <option> Thu</option>
-                        <option> Fri</option>
-                        <option> Sat</option>
-                        <option> Sun</option>
-                    </select>
-                </label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-25">
-                <label class="item item-input bortop bordbot time-lab">
-                <i class="icon ion-social-usd"></i>
-                    <input type="text" ng-model="data.username" style="min-width: 70px;">
-                </label>
-            </div> 
-             <label class="item item-input bortop bordbot time-pick time-lab">
-            <div class="col col-50">             
-            <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">              
-            </div>
-            -
-            <div class="col col-50">         
-            <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">           
-            </div>
+            <label class="item item-input bortop bordbot time-pick time-lab">
+                <div class="col col-50">
+                    <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">
+                </div>
+                -
+                <div class="col col-50">
+                    <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">
+                </div>
             </label>
             <div class="col col-25">
                 <label class="item item-input bortop bordbot time-lab"><i class="ion-android-arrow-dropdown" style="margin-left: -10px;"></i>
@@ -157,12 +157,11 @@
             </button>
         </div>
         <div style="margin-top:50px;">
-            <label class="new-label">CURRENCY</label>
-            <div class="list" style="margin-top: 10px;">
+            <hr>
+            <label class="new-label"><i class="icon ion-social-usd"></i> CURRENCY</label>
+            <div class="list" class="padding-top">
                 <label class="item item-input item-select curr bortop bordbot">
-                    <div class="input-label">
-                    </div>
-                    <select class="sel">
+                    <select>
                         <option selected>Australian Dollar</option>
                         <option>Dollar</option>
                         <option>Doll</option>
@@ -170,69 +169,61 @@
                 </label>
             </div>
         </div>
-        <label class="new-label">PAYMENT METHOD</label>
+        <label class="new-label"><i class="icon ion-card"></i> PAYMENT METHOD</label>
         <div class="list">
-            <ion-checkbox ng-click="hideCard1()" class="item-new" ng-model="filter.red">Direct Deposit</ion-checkbox>
-            <ion-checkbox ng-click="hideCard()" class="item-new" ng-model="filter.yellow">Check</ion-checkbox>
+            <ion-checkbox ng-click="filter.direct = true; filter.check= false" class="item-new" ng-model="filter.direct">Direct Deposit</ion-checkbox>
+            <ion-checkbox ng-click="filter.direct = false; filter.check= true" class="item-new" ng-model="filter.check">Check</ion-checkbox>
         </div>
-
-
-
-
-        <div class="list card" id="startCard" ng-show="showstartCard">
-          <div class="">
-              <!--<img src="img/startpage.jpg">-->
-              <div class="account-det">All requests for payment to bank accounts must be signed by the vendor or accompanied by documentary evidence of bank account details from the vendor(e.g. Email, Fax, Invoice)</div>
-        <label class="new-label">BANK ACCOUNT</label>
-        <div class="list logform" style="margin-top:10px;">
-            <label class="item item-input bortop">
-                <input type="text" placeholder="Name of Bank" ng-model="data.username">
-            </label>
-            <label class="item item-input">
-                <input type="text" placeholder="Branch of Bank" ng-model="data.username">
-            </label>
-            <label class="item item-input">
-                <input type="text" placeholder="Account Name" ng-model="data.username">
-            </label>
-            <label class="item item-input">
-                <input type="text" placeholder="BSB" ng-model="data.username">
-            </label>
-            <label class="item item-input bordbot">
-                <input type="text" placeholder="Account Number" ng-model="data.username">
-            </label>
+        <div class="list form" ng-show="filter.direct == true">
+            <hr>
+            <p class="account-det">All requests for payment to bank accounts must be signed by the vendor or accompanied by documentary evidence of bank account details from the vendor(e.g. Email, Fax, Invoice)</p>
+            <h4 class="new-label padding-top">BANK ACCOUNT</h4>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="text" placeholder="Name of Bank" ng-model="data.username">
+                </label>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="text" placeholder="Branch of Bank" ng-model="data.username">
+                </label>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="text" placeholder="Account Name" ng-model="data.username">
+                </label>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="text" placeholder="BSB" ng-model="data.username">
+                </label>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input bordbot">
+                    <input type="text" placeholder="Account Number" ng-model="data.username">
+                </label>
+            </div>
         </div>
-          </div>
-      </div>
-      <div class="list card" id="secondCard" ng-show="showsecondCard">
-          <div class="item item-image item item-text-wrap">
-              <!--<img src="img/startpage.jpg">-->
-              <div class="account-det">Cheque will forwarded to the address provided.</div>
-          </div>
-      </div>      
-        <label class="new-label" style="color:#0271b6;">VIEW TERMS AND CONDITION</label>
-        <div class="row" style="margin-top: 20px;">
+        <div class="list" ng-show="filter.check == true">
+            <hr>
+            <p class="account-det">Cheque will forwarded to the address provided.</p>
+        </div>
+        <div class="list">
+            <ion-checkbox class="checkbox-square checkboxList">
+                <label class="new-label positive">VIEW TERMS AND CONDITION</label>
+            </ion-checkbox>
+        </div>
+        <div class="row padding-top">
             <div class="col col-50">
-                <button ui-sref="vendorInfo" class="button can-button">
+                <button ui-sref="vendorInfo" class="button button-block button-stable">
                     Cancel
                 </button>
             </div>
             <div class="col col-50">
-                <button ui-sref="qualification" class="button next-button">
+                <button ui-sref="qualification" class="button button-block button-positive">
                     Next
                 </button>
             </div>
         </div>
-       <!--  <div class="row" style="margin-top: -10px;">
-            <div class="col col-50">
-                <button ui-sref="vendorInfo" class="button can-button">
-                    Cancel
-                </button>
-            </div>
-            <div class="col col-50">
-                <button ui-sref="vendoraccount" class="button next-button">
-                    Next
-                </button>
-            </div>
-        </div> -->
     </ion-content>
 </ion-view>

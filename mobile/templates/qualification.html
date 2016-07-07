@@ -1,48 +1,71 @@
 <ion-view view-title="Qualifications" name="vendor-info">
     <ion-content class="padding">
-        <label class="new-label">QUALIFICATION CHECKLIST</label>
-        <div>
-            <div class="list">
-                <ion-checkbox class="item-new" ng-model="filter.red">Hardware Installations</ion-checkbox>
-                <ion-checkbox class="item-new" ng-model="filter.yellow">Site-D Installations</ion-checkbox>
-                <ion-checkbox class="item-new" ng-model="filter.pink">Preventive Maintenance</ion-checkbox>
-                <ion-checkbox class="item-new" ng-model="filter.pink">Digital Media and Digital Points of Purchase Rollouts</ion-checkbox>
-                <ion-checkbox class="item-new" ng-model="filter.pink">Basic Networking Experience</ion-checkbox>
-                <ion-checkbox class="item-new" ng-model="filter.pink">Testing and Servicing Equipment</ion-checkbox>
-                <ion-checkbox class="item-new" ng-model="filter.pink">Others</ion-checkbox>
-            </div>
-            <label class="new-label">RESUME</label>
-            <div class="list logform" style="margin-top:10px;">
-                <label class="item item-input bortop bordbot">
-                    <input type="text" placeholder="Attached Resume" ng-model="data.username">
+        <h4 class="new-label padding-top"><i class="icon ion-ios-list-outline"></i> QUALIFICATION CHECKLIST</h4>
+        <div class="list padding-right padding-left">
+            <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.one">
+                <small>Hardware Installations</small>
+            </ion-checkbox>
+            <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.two">
+                <small>Site-D Installations</small>
+            </ion-checkbox>
+            <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.three">
+                <small>Preventive Maintenance</small>
+            </ion-checkbox>
+            <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.four">
+                <small>Digital Media and Digital Points of Purchase Rollouts</small>
+            </ion-checkbox>
+            <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.five">
+                <small>Basic Networking Experience</small>
+            </ion-checkbox>
+            <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.size">
+                <small>Testing and Servicing Equipment</small>
+            </ion-checkbox>
+            <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.other">
+                <small>Others</small>
+            </ion-checkbox>
+            <div class="item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="text" placeholder="Add">
                 </label>
+                <button class="button button-small button-stable icon ion-plus"></button>
             </div>
-            <label class="new-label">CERTIFICATE</label>
-            <div class="list logform" style="margin-top:10px;">
-                <label class="item item-input bortop bordbot">
-                    <input type="text" placeholder="Attached Certificate" ng-model="data.username">
-                </label>
-            </div>
-            <label class="new-label">REFERENCE</label>
-            <div class="list logform" style="margin-top:10px;">
-                <label class="item item-input bortop">
+        </div>
+        <label class="new-label"><i class="icon ion-person"></i> LINKEDIN PROFILE</label>
+        <div class="list list-inset">
+            <label class="item item-input">
+                <input type="text" placeholder="LinkedIn URL or Username" ng-model="data.linkedin">
+            </label>
+        </div>
+        <label class="new-label"><i class="icon ion-document"></i> ATTACH RESUME</label>
+        <div class="list padding-top">
+            <label class="item item-input bortop bordbot my-drop-zone">
+                <p class="stable"><i class="icon ion-plus"></i> Add File</p>
+            </label>
+        </div>
+        <label class="new-label"><i class="icon ion-person"></i> REFERENCE</label>
+        <div class="form">
+            <div class="list list-inset">
+                <label class="item item-input">
                     <input type="text" placeholder="Name" ng-model="data.username">
                 </label>
+            </div>
+            <div class="list list-inset">
                 <label class="item item-input bordbot">
                     <input type="text" placeholder="Phone" ng-model="data.username">
                 </label>
             </div>
-            <div class="row" style="margin-top: -10px;">
-                <div class="col col-50">
-                    <button ui-sref="vendorRate" class="button can-button">
-                        Cancel
-                    </button>
-                </div>
-                <div class="col col-50">
-                    <button ui-sref="certification" class="button next-button">
-                        Next
-                    </button>
-                </div>
+        </div>
+        <div class="row padding-top">
+            <div class="col col-50">
+                <button ui-sref="vendorRate" class="button button-block button-stable">
+                    Cancel
+                </button>
             </div>
+            <div class="col col-50">
+                <button ui-sref="certification" class="button button-block button-positive">
+                    Next
+                </button>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

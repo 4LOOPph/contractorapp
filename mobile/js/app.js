@@ -86,11 +86,11 @@
               }
             }
           })
-          .state('tab.chats', {
-            url: '/chats',
+          .state('tab.tasks', {
+            url: '/tasks',
             views: {
-              'tab-chats': {
-                templateUrl: 'templates/tab-chats.html',
+              'tab-tasks': {
+                templateUrl: 'templates/tab-tasks.html',
                 controller: 'ChatsCtrl'
               }
             }

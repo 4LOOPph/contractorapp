@@ -1,50 +1,55 @@
 angular.module('starter.services', [])
 
 .factory('Chats', function() {
-  // Might use a resource here that returns a JSON array
+    // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'img/ben.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
-  }, {
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
-  }];
+    // Some fake testing data
+    var chats = [{
+        id: 0,
+        name: 'Ben Sparrow',
+        client: 'Telstra',
+        date_created: new Date(),
+        status: 'progress'
+    }, {
+        id: 1,
+        name: 'Max Lynx',
+        client: '7-Eleven',
+        date_created: new Date(),
+        status: 'progress'
+    }, {
+        id: 2,
+        name: 'Adam Bradleyson',
+        client: 'Telstra',
+        date_created: new Date(),
+        status: 'progress'
+    }, {
+        id: 3,
+        name: 'Perry Governor',
+        client: '7-Evelen',
+        date_created: new Date(),
+        status: 'progress'
+    }, {
+        id: 4,
+        name: 'Mike Harrington',
+        client: 'BUPA',
+        date_created: new Date(),
+        status: 'progress'
+    }];
 
-  return {
-    all: function() {
-      return chats;
-    },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+    return {
+        all: function() {
+            return chats;
+        },
+        remove: function(chat) {
+            chats.splice(chats.indexOf(chat), 1);
+        },
+        get: function(chatId) {
+            for (var i = 0; i < chats.length; i++) {
+                if (chats[i].id === parseInt(chatId)) {
+                    return chats[i];
+                }
+            }
+            return null;
         }
-      }
-      return null;
-    }
-  };
+    };
 });
