@@ -3,7 +3,7 @@
 
     angular.module('contractor')
         .config(config)
-        .directive('header', appHeader)
+        .directive('appHeader', appHeader)
         .controller('MainCtrl', MainCtrl);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -29,8 +29,7 @@
                 url: '/payment',
                 templateUrl: 'modules/main/payment.html',
                 controller: 'MainCtrl'
-            })
-            ;
+            });
     }
 
     function appHeader() {
@@ -48,21 +47,21 @@
     function MainCtrl($scope) {
         //TODO
         $scope.test = {};
-    $scope.data = {};
-    $scope.showstartCard = true;
-    $scope.showsecondCard = false;
-
-    $scope.hideCard = function() {
-        $scope.showstartCard = false;
-        $scope.showsecondCard = true;
-    };
-    $scope.hideCard1 = function() {
-        $scope.showsecondCard = false;
+        $scope.data = {};
         $scope.showstartCard = true;
-    };
-    $scope.hideC = function() {
         $scope.showsecondCard = false;
-    };
+
+        $scope.hideCard = function() {
+            $scope.showstartCard = false;
+            $scope.showsecondCard = true;
+        };
+        $scope.hideCard1 = function() {
+            $scope.showsecondCard = false;
+            $scope.showstartCard = true;
+        };
+        $scope.hideC = function() {
+            $scope.showsecondCard = false;
+        };
     }
 
 
