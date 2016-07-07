@@ -20,6 +20,16 @@
                 templateUrl: 'modules/main/vendorInfo.html',
                 controller: 'MainCtrl'
             })
+            .state('qualification', {
+                url: '/qualification',
+                templateUrl: 'modules/main/qualification.html',
+                controller: 'MainCtrl'
+            })
+            .state('payment', {
+                url: '/payment',
+                templateUrl: 'modules/main/payment.html',
+                controller: 'MainCtrl'
+            })
             ;
     }
 
@@ -38,6 +48,21 @@
     function MainCtrl($scope) {
         //TODO
         $scope.test = {};
+    $scope.data = {};
+    $scope.showstartCard = true;
+    $scope.showsecondCard = false;
+
+    $scope.hideCard = function() {
+        $scope.showstartCard = false;
+        $scope.showsecondCard = true;
+    };
+    $scope.hideCard1 = function() {
+        $scope.showsecondCard = false;
+        $scope.showstartCard = true;
+    };
+    $scope.hideC = function() {
+        $scope.showsecondCard = false;
+    };
     }
 
 
