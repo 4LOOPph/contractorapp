@@ -3,18 +3,27 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {
-    // With the new view caching in Ionic, Controllers are only called
-    // when they are recreated or on app start, instead of every page change.
-    // To listen for when this page is active (for example, to refresh data),
-    // listen for the $ionicView.enter event:
-    //
-    //$scope.$on('$ionicView.enter', function(e) {
-    //});
+    $scope.$on('$ionicView.enter', function(e) {
+        $scope.progressData = [];
+        $scope.pendingData = [];
+        $scope.completedData = [];
 
-    $scope.chats = Chats.all();
-    $scope.remove = function(chat) {
-        Chats.remove(chat);
-    };
+        $scope.chats = Chats.all();
+
+        _.each($scope.chats, function(row) {
+            if (row.status == 'progress') {
+                $scope.progressData.push(row);
+            } else if (row.status == 'pending') {
+                $scope.pendingData.push(row);
+            } else if (row.status == 'completed') {
+                $scope.completedData.push(row);
+            }
+        });
+
+        console.log('$scope.progressData: ', $scope.progressData);
+        console.log('$scope.pendingData: ', $scope.pendingData);
+        console.log('$scope.completedData: ', $scope.completedData);
+    });
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
@@ -41,7 +50,7 @@ angular.module('starter.controllers', [])
         $scope.showstartCard = true;
     };
 
-    
+
 
     var ipObj1 = {
         callback: function(val) {
@@ -60,7 +69,7 @@ angular.module('starter.controllers', [])
         setLabel: 'Set2'
     };
 
-    $scope.openTime = function(){
-      ionicTimePicker.openTimePicker(ipObj1);
+    $scope.openTime = function() {
+        ionicTimePicker.openTimePicker(ipObj1);
     };
 });

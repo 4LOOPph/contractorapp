@@ -1,15 +1,58 @@
 <ion-view view-title="Tasks">
-  <ion-content class="padding">
-    <ion-list class="list list-inset">
-      <ion-item class="item item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.client}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
-
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
-      </ion-item>
-    </ion-list>
-  </ion-content>
+    <ion-nav-buttons side="secondary">
+      <button class="button button-icon ion-ios-gear-outline"></button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <div class="list padding-top">
+            <label class="new-label"><i class="icon ion-ios-timer-outline"></i> IN PROGRESS</label>
+        </div>
+        <div class="list list-inset padding-left padding-right">
+            <ion-item class="item item-icon-right" ng-repeat="chat in progressData" ng-class="{'task-status-normal': chat.priority=='normal','task-status-high': chat.priority =='high','task-status-low': chat.priority =='low'}">
+                <h2>{{chat.name}}</h2>
+                <p>{{chat.client}}</p>
+                <p>{{chat.date_created | date: 'dd MMMM yyyy'}}</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+                <ion-option-button class="button-energized">
+                    Done
+                </ion-option-button>
+                <ion-option-button class="button-positive">
+                    Accept
+                </ion-option-button>
+            </ion-item>
+        </div>
+       <div class="list padding-top">
+            <label class="new-label"><i class="icon ion-ios-minus-outline"></i> PENDING</label>
+        </div>
+        <div class="list list-inset">
+            <ion-item class="item item-icon-right" ng-repeat="chat in pendingData" ng-class="{'task-status-normal': chat.priority=='normal','task-status-high': chat.priority =='high','task-status-low': chat.priority =='low'}">
+                <h2>{{chat.name}}</h2>
+                <p>{{chat.client}}</p>
+                <p>{{chat.date_created | date: 'dd MMMM yyyy'}}</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+                <ion-option-button class="button-energized">
+                    Done
+                </ion-option-button>
+                <ion-option-button class="button-positive">
+                    Accept
+                </ion-option-button>
+            </ion-item>
+        </div>
+         <div class="list padding-top">
+            <label class="new-label"><i class="icon ion-ios-minus-outline"></i> COMPLETED</label>
+        </div>
+        <div class="list list-inset">
+            <ion-item class="item item-icon-right" ng-repeat="chat in completedData">
+                <h2>{{chat.name}}</h2>
+                <p>{{chat.client}}</p>
+                <p>{{chat.date_created | date: 'dd MMMM yyyy'}}</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+                <ion-option-button class="button-energized">
+                    Done
+                </ion-option-button>
+                <ion-option-button class="button-positive">
+                    Accept
+                </ion-option-button>
+            </ion-item>
+        </div>
+    </ion-content>
 </ion-view>

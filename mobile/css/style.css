@@ -205,14 +205,13 @@
     height: 35px;
 }
 
-.checkboxList{
-  border-style:none!important;
+.checkboxList {
+    border-style: none!important;
 }
 
-.checkboxList input[type="checkbox"] { 
-  
-  border :1px solid red!important;
-  background:green;
+.checkboxList input[type="checkbox"] {
+    border: 1px solid red!important;
+    background: green;
 }
 
 .form .list-inset {
@@ -231,4 +230,16 @@
 
 .my-drop-zone {
     border: dotted 3px lightgray;
+}
+
+.task-status-high {
+    border-left: 10px solid #b50005;
+}
+
+.task-status-normal {
+    border-left: 10px solid #3c9902;
+}
+
+.task-status-low {
+    border-left: 10px solid #f8a421;
 }

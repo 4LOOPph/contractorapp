@@ -6,34 +6,60 @@ angular.module('starter.services', [])
     // Some fake testing data
     var chats = [{
         id: 0,
-        name: 'Ben Sparrow',
+        name: 'Digital Ticket Testing',
         client: 'Telstra',
         date_created: new Date(),
-        status: 'progress'
+        status: 'progress',
+        priority: 'normal'
     }, {
         id: 1,
-        name: 'Max Lynx',
+        name: 'Network Setup',
         client: '7-Eleven',
         date_created: new Date(),
-        status: 'progress'
+        status: 'progress',
+        priority: 'normal'
     }, {
         id: 2,
-        name: 'Adam Bradleyson',
+        name: 'Hardware Installation',
         client: 'Telstra',
         date_created: new Date(),
-        status: 'progress'
+        status: 'progress',
+        priority: 'low'
     }, {
         id: 3,
-        name: 'Perry Governor',
+        name: 'Hardware Installation',
         client: '7-Evelen',
         date_created: new Date(),
-        status: 'progress'
+        status: 'pending',
+        priority: 'high'
     }, {
         id: 4,
-        name: 'Mike Harrington',
+        name: 'Network Setup',
         client: 'BUPA',
         date_created: new Date(),
-        status: 'progress'
+        status: 'pending',
+        priority: 'normal'
+    },{
+        id: 5,
+        name: 'Hardware Installation',
+        client: 'NAB',
+        date_created: new Date(),
+        status: 'pending',
+        priority: 'low'
+    },{
+        id: 6,
+        name: 'Hardware Installation',
+        client: 'Forever New',
+        date_created: new Date(),
+        status: 'completed',
+        priority: 'low'
+    },{
+        id: 7,
+        name: 'Network Setup',
+        client: 'NAB',
+        date_created: new Date(),
+        status: 'completed',
+        priority: 'low'
     }];
 
     return {
