@@ -2,7 +2,11 @@
     'use strict';
 
     angular.module('starter')
-        .controller('AccountCtrl', function($scope, WeekDays, ionicTimePicker) {
+        .controller('AccountCtrl', AccountCtrl);
+
+        AccountCtrl.$inject = ['$scope','WeekDays','ionicTimePicker'];
+
+        function AccountCtrl($scope, WeekDays, ionicTimePicker) {
             $scope.rates = [];
 
             $scope.weekdays = WeekDays.all();
@@ -82,5 +86,5 @@
                     });
                 }
             };
-        });
+        }
 })();
