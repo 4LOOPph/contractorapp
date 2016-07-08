@@ -1,6 +1,32 @@
 body {
   padding-top: 50px;
 }
+.head{
+    margin-top: -50px;
+    background-color: #2980dc;
+    border-color: #2980dc;
+    border-color: #2980dc;
+    margin-right: 0;
+    margin-left: 0;
+}
+.p-name{
+      height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    color: #fff;
+    font-weight: 600;
+    // font-family: fantasy;
+}
+.loginn{
+  text-decoration: none;
+    padding-top: 32px;
+    padding-bottom: 15px;
+    position: relative;
+    display: block;
+    /* padding: 10px 15px; */
+    color: #ffffff;
+}
 .starter-template {
   padding: 40px 15px;
   text-align: center;
@@ -19,9 +45,14 @@ body {
     font-size: 22px;
 }
 .log-sub-font{
-	color: #debd05;
+	color: #e6c408;
     font-size: 19px;
     font-weight: 600;
+}
+.log-use{
+  color: #000;
+    font-weight: 500;
+    font-size: 18px;
 }
 .log-p{
 	color: #fff;
@@ -40,7 +71,7 @@ body {
     color: #fff;
     font-size: 16px;
     font-weight: 600;
-        margin-bottom: 25px;
+        margin-bottom: 10px;
 }
 .inpitcon{
 	display: block;
@@ -116,7 +147,7 @@ body {
 /*custom font*/
 
 
-.breadcrumb {
+.bread {
 	/*centering*/
 	display: inline-block;
 	// box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);
@@ -125,10 +156,11 @@ body {
 	/*Lets add the numbers for each link using CSS counters. flag is the name of the counter. to be defined using counter-reset in the parent element of the links*/
 	// counter-reset: flag;
 	    margin-bottom: 7px; 
+          border-radius: 0 !important;
 	        // margin-left: 20%;
 }
 
-.breadcrumb a {
+.bread a {
 	text-decoration: none;
 	outline: none;
 	display: block;
@@ -143,35 +175,35 @@ body {
 	position: relative;
 }
 /*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
-.breadcrumb a:first-child {
+.bread a:first-child {
 	// padding-left: 46px;
 	border-radius: 5px 0 0 5px; /*to match with the parent's radius*/
 }
-.breadcrumb a:first-child:before {
+.bread a:first-child:before {
 	// left: 14px;
 }
-.breadcrumb a:last-child {
+.bread a:last-child {
 	border-radius: 0 5px 5px 0; /*this was to prevent glitches on hover*/
 	padding-right: 20px;
 }
 
 /*hover/active styles*/
-.breadcrumb a.active, .breadcrumb a:hover{
+.bread a.active, .bread a:hover{
 	background: #333;
 	background: linear-gradient(#333, #000);
 }
-.breadcrumb a.active:after, .breadcrumb a:hover:after {
+.bread a.active:after, .bread a:hover:after {
 	background: #333;
 	background: linear-gradient(135deg, #333, #000);
 }
 
-/*adding the arrows for the breadcrumbs using rotated pseudo elements*/
-.breadcrumb a:after {
+/*adding the arrows for the breads using rotated pseudo elements*/
+.bread a:after {
 	content: '';
 	position: absolute;
 	top: 0; 
 	right: -18px; /*half of square's length*/
-	/*same dimension as the line-height of .breadcrumb a */
+	/*same dimension as the line-height of .bread a */
 	width: 36px; 
 	height: 36px;
 	/*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
@@ -192,11 +224,11 @@ body {
 	border-radius: 0 5px 0 50px;
 }
 /*we dont need an arrow after the last link*/
-.breadcrumb a:last-child:after {
+.bread a:last-child:after {
 	content: none;
 }
 /*we will use the :before element to show numbers*/
-.breadcrumb a:before {
+.bread a:before {
 	content: counter(flag);
 	// counter-increment: flag;
 	/*some styles now*/
@@ -214,20 +246,21 @@ body {
 }
 
 
-.flat a, .flat a:after {
+.flt a, .flt a:after {
 	background: #b9b9b9;
 	color: #fff;
 	transition: all 0.5s;
 	padding-right: 30px;
 }
-.flat a:before {
+.flt a:before {
 	background: white;
 	// box-shadow: 0 0 0 1px #ccc;
 }
-.flat a:hover, .flat a.active, 
-.flat a:hover:after, .flat a.active:after{
-	background: #2980dc;
+.flt a:hover, .flt a.active, 
+.flt a:hover:after, .flt a.active:after{
+	background: #34b759;
 	color: #fff;
+  font-weight: 600;
 }
 
 .crum{
@@ -236,7 +269,7 @@ body {
 }
 .title-card{
 	    text-align: right;
-    // margin-right: 80px;
+        margin-right: 32px;
     font-size: 21px;
     font-weight: 600;
     color: #2980dc;
@@ -271,7 +304,7 @@ body {
 	margin-top: 20px;
     padding-left: 44px;
     height: 44px;
-    /* border-radius: 4px; */
+     border-radius: 0px; 
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 }
@@ -279,7 +312,7 @@ body {
 	       margin-top: -28px;
     padding-left: 44px;
     height: 44px;
-    /* border-radius: 4px; */
+     border-radius: 0px; 
 border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
 }
@@ -315,17 +348,19 @@ border-bottom-right-radius: 4px;
     width: 220px;
     height: 33px;
     border: 2px dashed #cac7c7;
+        border-radius: 4px;
 }
 .attach2{
     position: absolute;
     top: 50%;
-    right: 39px;
+    right: 80px;
     margin-top: -215px;
     /* margin-left: -250px; */
     width: 80px;
     height: 33px;
     border: 2px dashed #2980dc;
     background-color: #2980dc;
+        border-radius: 4px;
 }
 .attachi{
      position: absolute;
@@ -336,17 +371,19 @@ border-bottom-right-radius: 4px;
     width: 220px;
     height: 33px;
     border: 2px dashed #cac7c7;
+    border-radius: 4px;
 }
 .attachi2{
     position: absolute;
     top: 50%;
-    right: 39px;
+    right: 80px;
     margin-top: -110px;
     /* margin-left: -250px; */
     width: 80px;
     height: 33px;
     border: 2px dashed #2980dc;
     background-color: #2980dc;
+    border-radius: 4px;
 }
 .ata{
       width: 100%;
@@ -445,7 +482,42 @@ border-bottom-right-radius: 4px;
 .bot:active{
   border:0;
 }
-
+.effect2
+{
+  position: relative;
+}
+.effect2:before, .effect2:after
+{
+     z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 32px;
+    margin-right: 10px;
+    margin-left: 10px;
+    left: 10px;
+    width: 50%;
+    top: 91%;
+    /* max-width: 300px; */
+    background: rgb(119, 119, 119);
+    -webkit-box-shadow: 0 15px 10px #777;
+    -moz-box-shadow: 0 15px 10px #777;
+    box-shadow: 0 15px 10px #777;
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+.effect2:after
+{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
 
 
 
