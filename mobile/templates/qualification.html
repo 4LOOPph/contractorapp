@@ -30,17 +30,28 @@
                 <button class="button button-small button-stable icon ion-plus"></button>
             </div>
         </div>
-        <label class="new-label"><i class="icon ion-person"></i> LINKEDIN PROFILE</label>
+        <!-- <label class="new-label"><i class="icon ion-person"></i> LINKEDIN PROFILE</label>
         <div class="list list-inset">
             <label class="item item-input">
                 <input type="text" placeholder="LinkedIn URL or Username" ng-model="data.linkedin">
             </label>
-        </div>
+        </div> -->
         <label class="new-label"><i class="icon ion-document"></i> ATTACH RESUME</label>
-        <div class="list padding-top">
+        <div class="list padding-top padding-right padding-left">
             <label class="item item-input bortop bordbot my-drop-zone">
                 <p class="stable"><i class="icon ion-plus"></i> Add File</p>
             </label>
+        </div>
+        <div class="list padding-top">
+            <label class="new-label"><i class="icon ion-document"></i> ATTACH CERTIFICATE</label>
+        </div>
+        <div class="list list-inset padding-right padding-left">
+            <label class="item item-input bortop bordbot my-drop-zone">
+                <p class="stable"><i class="icon ion-plus"></i> Attach File</p>
+            </label>
+            <button class="button button-block button-energized icon-left ion-camera">
+                Scan Certificate
+            </button>
         </div>
         <label class="new-label"><i class="icon ion-person"></i> REFERENCE</label>
         <div class="form">
@@ -62,8 +73,8 @@
                 </button>
             </div>
             <div class="col col-50">
-                <button ui-sref="certification" class="button button-block button-positive">
-                    Next
+                <button class="button button-block button-positive">
+                    Submit
                 </button>
             </div>
         </div>

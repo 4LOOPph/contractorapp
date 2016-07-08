@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('starter', [
-      'ionic', 'starter.controllers', 'starter.services', 'ion-floating-menu', 'ionic-timepicker', 'ng.deviceDetector'
+      'ionic','ion-floating-menu', 'ionic-timepicker', 'ng.deviceDetector'
     ])
     .run(['$ionicPlatform', '$window', 'deviceDetector', function($ionicPlatform, $window, deviceDetector) {
       $ionicPlatform.ready(function() {
@@ -40,12 +40,13 @@
 
 
         $ionicConfigProvider.backButton.text('').icon('ion-ios-arrow-left');
+        $ionicConfigProvider.tabs.position('bottom');
 
         $stateProvider
           .state('login', {
             url: '/login',
             templateUrl: 'templates/login.html',
-            // controller: 'loginCtrl'
+            controller: 'LoginCtrl'
           })
           .state('vendorInfo', {
             url: '/vendorInfo',
@@ -58,7 +59,7 @@
           .state('vendorRate', {
             url: '/vendorrate',
             templateUrl: 'templates/vendorRate.html',
-            controller: 'HomeCtrl'
+            controller: 'AccountCtrl'
           })
           .state('qualification', {
             url: '/qualification',

@@ -1,158 +1,54 @@
 <ion-view view-title="Rate" name="vendor-info" ng-init="filter.direct = true;">
     <ion-content class="padding">
-        <label class="new-label">RATE</label>
-        <div class="row" style="margin-top:0px;">
+        <label class="new-label"><i class="icon ion-ios-clock-outline"></i> RATE</label>
+        <div class="row">
             <div class="col col-25">
                 <label class="item item-input bortop bordbot time-lab">
                     <i class="icon ion-social-usd"></i>
-                    <input type="number" ng-model="data.username" style="min-width: 70px;">
+                    <input type="number" ng-model="rate.amount">
                 </label>
             </div>
             <label class="item item-input bortop bordbot time-pick time-lab">
                 <div class="col col-50">
-                    <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">
+                    <input class="time-pick" type="text" placeholder="Start" name="" ng-model="rate.start" ng-click="openTime()">
                 </div>
                 -
                 <div class="col col-50">
-                    <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">
+                    <input class="time-pick" type="text" placeholder="End" name="" ng-model="rate.end" ng-click="openTime1()">
                 </div>
             </label>
             <div class="col col-25">
                 <label class="item item-input item-select bortop bordbot time-lab">
-                    <select>
-                        <option> Mon</option>
-                        <option> Tue</option>
-                        <option> Wed</option>
-                        <option> Thu</option>
-                        <option> Fri</option>
-                        <option> Sat</option>
-                        <option> Sun</option>
+                    <select ng-options ="item.label as item.label for item in weekdays track by item.id" ng-model="rate.weekday">
                     </select>
                 </label>
             </div>
         </div>
-        <div class="row">
+        <div class="row" ng-repeat="rate in rates">
             <div class="col col-25">
                 <label class="item item-input bortop bordbot time-lab">
                     <i class="icon ion-social-usd"></i>
-                    <input type="number" ng-model="data.username" style="min-width: 70px;">
+                    <input type="number" ng-model="rate.amount">
                 </label>
             </div>
             <label class="item item-input bortop bordbot time-pick time-lab">
                 <div class="col col-50">
-                    <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">
+                    <input class="time-pick" type="text" placeholder="Start" name="" ng-model="rate.start" ng-click="openTime()">
                 </div>
                 -
                 <div class="col col-50">
-                    <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">
+                    <input class="time-pick" type="text" placeholder="End" name="" ng-model="rate.end" ng-click="openTime()">
                 </div>
             </label>
             <div class="col col-25">
-                <label class="item item-input bortop bordbot time-lab"><i class="ion-android-arrow-dropdown" style="margin-left: -10px;"></i>
-                    <select>
-                        <option selected> Mon</option>
-                        <option> Tue</option>
-                        <option> Wed</option>
-                        <option> Thu</option>
-                        <option> Fri</option>
-                        <option> Sat</option>
-                        <option> Sun</option>
-                    </select>
-                </label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-25">
-                <label class="item item-input bortop bordbot time-lab">
-                    <i class="icon ion-social-usd"></i>
-                    <input type="number" ng-model="data.username" style="min-width: 70px;">
-                </label>
-            </div>
-            <label class="item item-input bortop bordbot time-pick time-lab">
-                <div class="col col-50">
-                    <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">
-                </div>
-                -
-                <div class="col col-50">
-                    <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">
-                </div>
-            </label>
-            <div class="col col-25">
-                <label class="item item-input item-select bortop bordbot time-lab"><i class="ion-android-arrow-dropdown" style="margin-left: -10px;"></i>
-                    <select>
-                        <option selected> Mon</option>
-                        <option> Tue</option>
-                        <option> Wed</option>
-                        <option> Thu</option>
-                        <option> Fri</option>
-                        <option> Sat</option>
-                        <option> Sun</option>
-                    </select>
-                </label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-25">
-                <label class="item item-input bortop bordbot time-lab">
-                    <i class="icon ion-social-usd"></i>
-                    <input type="number" ng-model="data.username" style="min-width: 70px;">
-                </label>
-            </div>
-            <label class="item item-input bortop bordbot time-pick time-lab">
-                <div class="col col-50">
-                    <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">
-                </div>
-                -
-                <div class="col col-50">
-                    <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">
-                </div>
-            </label>
-            <div class="col col-25">
-                <label class="item item-input bortop bordbot time-lab"><i class="ion-android-arrow-dropdown" style="margin-left: -10px;"></i>
-                    <select>
-                        <option selected> Mon</option>
-                        <option> Tue</option>
-                        <option> Wed</option>
-                        <option> Thu</option>
-                        <option> Fri</option>
-                        <option> Sat</option>
-                        <option> Sun</option>
-                    </select>
-                </label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-25">
-                <label class="item item-input bortop bordbot time-lab">
-                    <i class="icon ion-social-usd"></i>
-                    <input type="number" ng-model="data.username" style="min-width: 70px;">
-                </label>
-            </div>
-            <label class="item item-input bortop bordbot time-pick time-lab">
-                <div class="col col-50">
-                    <input class="time-pick" type="text" placeholder="Start" name="" ng-model="data.timepicker1" ng-click="openTime()">
-                </div>
-                -
-                <div class="col col-50">
-                    <input class="time-pick" type="text" placeholder="End" name="" ng-model="data.timepicker1" ng-click="openTime()">
-                </div>
-            </label>
-            <div class="col col-25">
-                <label class="item item-input bortop bordbot time-lab"><i class="ion-android-arrow-dropdown" style="margin-left: -10px;"></i>
-                    <select>
-                        <option selected> Mon</option>
-                        <option> Tue</option>
-                        <option> Wed</option>
-                        <option> Thu</option>
-                        <option> Fri</option>
-                        <option> Sat</option>
-                        <option> Sun</option>
+                <label class="item item-input item-select bortop bordbot time-lab">
+                    <select ng-options ="item.label as item.label for item in weekdays track by item.id" ng-model="rate.weekday">
                     </select>
                 </label>
             </div>
         </div>
         <div>
-            <button ng-click="" class="button add-button">
+            <button ng-click="addRate(rate)" class="button add-button">
                 <span class="ion-plus"> New Rate</span>
             </button>
         </div>
