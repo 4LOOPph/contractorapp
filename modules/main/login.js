@@ -29,6 +29,11 @@
                 url: '/payment',
                 templateUrl: 'modules/main/payment.html',
                 controller: 'MainCtrl'
+            })
+            .state('terms', {
+                url: '/terms',
+                templateUrl: 'modules/main/termscondition.html',
+                controller: 'MainCtrl'
             });
     }
 
@@ -62,6 +67,19 @@
         $scope.hideC = function() {
             $scope.showsecondCard = false;
         };
+
+    // var termsModal;
+    // $scope.showtermsModal = function() {
+    //     $scope.newprogram = angular.copy();
+    //     termsModal = $modal({
+    //         animation: 'am-fade-and-slide-top',
+    //         scope: $scope,
+    //         templateUrl: 'termscondition.html',
+
+    //     });
+
+    //     termsModal.$promise.then(termsModal.show);
+    // };
     }
 
 

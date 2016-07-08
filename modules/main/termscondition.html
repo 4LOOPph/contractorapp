@@ -1,0 +1,62 @@
+<div class="modal" tabindex="-1" role="dialog">
+    <form name="eventdetails">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="$hide();">&times;</button>
+                    <h4 class="modal-title"><b>Add Programs To This Contact</b></h4>
+                </div>
+                <div class="modal-body">
+                    <form name="Add Programs">
+                        <!-- <div class="row">
+                        <div class="form-group col-md-12">
+                            <div>
+                                <label for="manuallyEnteredRaw">Manually Enter E-Mail</label><br>
+                                <em>Separated by commas</em>
+                            </div>
+
+                            <textarea id="manuallyEnteredRaw" name="manuallyEnteredRaw" ng-model="manuallyEnteredRaw" class="form-control" rows="3" > </textarea>
+
+                        </div>
+                        </div> -->
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <div>
+                                    <label for="fromProgramsRaw">Select from Programs List *</label>
+                                </div>
+                                   <!-- <ui-select multiple ng-model="fromProgramsRaw.selected" theme="bootstrap" ng-disabled="disabled" >
+                                        <ui-select-match placeholder="Select Program...">{{$item.programName}}, {{$item.description}}</ui-select-match>
+                                        <ui-select-choices repeat="{
+                                            _id: program._id,
+                                            programType : program.programType,
+                                            description : program.description,
+                                            } as program in programs | propsFilter: {programName: $select.search}" value="{{$select.programName}}" refresh-delay="1000">
+                                        <div ng-bind-html="program.programName + ' ' + program.description  | highlight: $select.search"></div>
+                                    </ui-select-choices>
+                                </ui-select> -->
+
+                                <!-- <ui-select multiple ng-model="fromProgramsRaw.selected" theme="bootstrap" ng-disabled="disabled">
+                                    <ui-select-match placeholder="Select program...">{{$item.firstName}} {{$item.surName}} &lt;{{$item.emailAddress}}&gt;</ui-select-match>
+                                    <ui-select-choices repeat="{_id: person._id, emailAddress: person.emailAddress} as person in contacts | propsFilter: {firstName: $select.search, surName: $select.search}" refresh="loadContacts($select.search)" refresh-delay="1000">
+                                        <div ng-bind-html="person.firstName + ' ' + person.surName | highlight: $select.search"></div>
+                                        <small>
+                                    email: {{person.emailAddress}}
+                                </small>
+                                    </ui-select-choices>
+                                </ui-select> -->
+
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-link" ng-click="$hide();">Cancel</a>
+                    <!-- <button class="btn btn-link" type="button" ng-click="editAttendees(manuallyEnteredRaw, fromContactsRaw)">Update</button> -->
+                    <!-- <button class="btn btn-primary" type="submit" ng-click="bulkSendingToDates(manuallyEnteredRaw, fromContactsRaw, true)">Send To All Dates</button> -->
+                    <button class="btn btn-primary" type="submit" ng-click="updateContactProgram()">Update Program</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -3,17 +3,14 @@
     <div class="">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-8">
-                    <!-- Widget: user widget style 1 -->
+                <div class="col-md-8 effect2" style="margin-left: 17%;margin-right: 17%;">
                     <div class="box box-widget widget-user-2">
-                        <!-- Add the bg color to the header using any of the bg-* classes -->
                         <div class="widget-user-header ">
+                            <div style="padding:20px;">
                             <div class="title-card">Payment Information</div>
                             <div class="widget-user-image">
-                                <!-- <img class="img-circle" src="images/avatar.png" alt="User Avatar"> -->
                             </div>
-                            <!-- /.widget-user-image -->
-                            <div class="breadcrumb flat">
+                            <div class="bread flt">
                                 <a href="" class="active">Vendor Information</a>
                                 <a href="" class="active">Qualification</a>
                                 <a href="" class="active">Payment</a>
@@ -54,7 +51,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Start-End" style="margin-left: 55px;width: 191px;margin-top: -34px;">
+                                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Based Rate" style="margin-left: 55px;width: 191px;margin-top: -34px;">
                                                 </div>
                                             </div>
                                         </div>
@@ -81,7 +78,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Start-End" style="margin-left: 55px;width: 191px;margin-top: -34px;">
+                                                    <input type="text" class="form-control" id="inputEmail3" placeholder="After Hours" style="margin-left: 55px;width: 191px;margin-top: -34px;">
                                                 </div>
                                             </div>
                                         </div>
@@ -108,31 +105,29 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Start-End" style="margin-left: 55px;width: 191px;margin-top: -34px;">
+                                                    <input type="text" class="form-control" id="inputEmail3" placeholder="After Hours" style="margin-left: 55px;width: 191px;margin-top: -34px;">
                                                 </div>
                                             </div>
-                                            <a ui-sref="main" class="btn btn-raised btn-warning pull-right" style="margin-right: 5px;margin-top: 15px;height: 30px;">
-                                                <i class="fa  fa-plus"></i> New Rate</a>
+                                            <a ui-sref="main" class="btn btn-raised btn-warning pull-right" style="margin-right: -24px;margin-top: 15px;height: 30px;border: 1px dashed #cac7c7;">
+                                                <div style="margin-top: -2px;"><i class="fa fa-plus"></i> New Rate</div>
+                                            </a>
                                         </div>
                                         <div class="form-group">
                                             <div class="quick" style="margin-top:10px;margin-left: 70px;">Payment Method</div>
                                         </div>
-                                        <div class="col-md-9" style="padding: 15px;margin-left: 150px;margin-top: -20px;
-}">
+                                        <div class="col-md-9" style="padding: 15px;margin-left: 140px;margin-top: -20px;">
                                             <div class="form-group">
                                                 <div class="radio">
                                                     <label>
                                                         <input ng-click="hideCard1()" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Direct Deposit
                                                     </label>
-                                                    <!-- </div>
-                                                <div class="radio"> -->
                                                     <label style="margin-left: 50px;">
                                                         <input ng-click="hideCard()" type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Cheque
                                                     </label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="list card" id="startCard" ng-show="showstartCard" style="width: 60%;margin-left: 150px;">
+                                        <div class="list card" id="startCard" ng-show="showstartCard" style="width: 60%;margin-left: 140px;">
                                             <div class="card">
                                                 <!--<img src="img/startpage.jpg">-->
                                                 <div class="account-det">All requests for payment to bank accounts must be signed by the vendor or accompanied by documentary evidence of bank account details from the vendor(e.g. Email, Fax, Invoice)</div>
@@ -153,50 +148,50 @@
                                                     <div class="col-sm-12" style="margin-top: 15px;">
                                                         <input type="text" class="form-control" id="inputEmail3" placeholder="Account Number" style="width: 104%;">
                                                     </div>
-                                                    <div style="margin-left: 15px;"><input type="checkbox" style="margin-top: 40px;"> Terms and Conditions</div>
+                                                    <div style="margin-left: 15px;">
+                                                        <input type="checkbox" style="margin-top: 40px;"> <a data-toggle="modal" data-target="#myModal">Terms and Conditions</a></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="list card" id="secondCard" ng-show="showsecondCard" style="width: 60%;margin-left: 150px;">
-                                           <div class="card">
-                                                <!--<img src="img/startpage.jpg">-->
+                                        <div class="list card" id="secondCard" ng-show="showsecondCard" style="width: 60%;margin-left: 140px;">
+                                            <div class="card">
                                                 <div class="account-det">Cheque will forwarded to the address provided.</div>
-                                                <div ><input type="checkbox" style="margin-top: 40px;"> Terms and Conditions</div>
                                             </div>
                                         </div>
-                                        <!--  <p>
-                                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                                Button with data-target
-                                            </button>
-                                        </p> -->
-                                        <!--  <div class="collapse" id="collapseExample" style="width: 70%;margin-left: 150px;">
-                                            <div class="card card-block">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top:100px;background-color: rgba(122, 122, 122, 0);">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        <h4 class="modal-title" id="myModalLabel">Terms and Conditions</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Welcome to our website. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern [business name]'s relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website. The term '[business name]' or 'us' or 'we' refers to the owner of the website whose registered office is [address]. Our company registration number is [company registration number and place of registration]. The term 'you' refers to the user or viewer of our website.
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <!--  <button type="button" class="btn btn-primary">Accept</button> -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="collapse" id="collapseExample1" style="width: 70%;margin-left: 150px;">
-                                            <div class="card card-block">
-                                                Anim pariatur
-                                            </div>
-                                        </div> -->
                                 </form>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="box-footer" style="width: 108%;margin-left: -34px;">
+                                    <div class="box-footer">
                                         <a ui-sref="main" class="btn btn-raised btn-default">Cancel</a>
-
                                         <a ui-sref="" class="btn btn-raised btn-info pull-right">Submit</a>
                                         <a ui-sref="qualification" class="btn btn-raised btn-info pull-right" style="margin-right: 20px;">Back</a>
                                     </div>
                                 </div>
                             </div>
-                            <!--  <button type="submit" class="btn btn-block btn-flat button-login" style="color:#fff;text-transform: inherit;">Apply as Contractor</button> -->
                         </div>
                     </div>
-                    <!--  <div class="social-auth-links text-center">
-                <p class="copy" style="margin-top: 50px;">© 2016 Engagis Pty Ltd</p>
-            </div> -->
                 </div>
             </div>
         </div>
     </div>
+</div>
