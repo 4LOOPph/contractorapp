@@ -10,7 +10,11 @@
         <div class="list list-inset">
             <label class="item item-input item-icon-left">
                 <span class="i-con ion-ios-person-outline"></span>
-                <input type="text" ng-model="data.fullname" placeholder="Full Name">
+                <input type="text" ng-model="data.lname" placeholder="Last Name">
+            </label>
+            <label class="item item-input item-icon-left">
+                <span class="i-con"></span>
+                <input type="text" ng-model="data.fname" placeholder="First Name">
             </label>
         </div>
         <div class="list list-inset">
@@ -24,7 +28,7 @@
             </label>
             <label class="item item-input">
                 <span class="i-con "></span>
-                <input type="number" placeholder="Post Code" ng-model="data.postcode">
+                <input type="text" placeholder="Post Code" ng-model="data.postcode" mask="9999">
             </label>
             <label class="item item-input">
                 <span class="i-con "></span>
@@ -41,20 +45,19 @@
                 <input type="text" ng-model="data.abn" placeholder="ABN">
             </label>
         </div>
-        
-         <div class="list padding-top">
-            <label class="new-label">PRIMARY CONTACT</label>
+        <div class="list padding-top">
+            <label class="new-label">CONTACT INFORMATION</label>
         </div>
-        <div class="list list-inset">
+        <!-- <div class="list list-inset">
             <label class="item item-input item-icon-left">
                 <span class="i-con ion-ios-person-outline"></span>
                 <input type="number" placeholder="Primary Contact" ng-model="data.primarycontact">
             </label>
-        </div>
-        <div class="list list-inset">
+        </div> -->
+        <div class="list list-inset" style="margin-top: -10px;">
             <label class="item item-input item-icon-left">
                 <span class="i-con ion-ios-telephone-outline"></span>
-                <input type="number" placeholder="Phone" ng-model="data.phone">
+                <input type="text" placeholder="Phone number" ng-model="data.phone" mask="(999) 999-9999" clean="true">
             </label>
         </div>
         <div class="list list-inset">
@@ -64,18 +67,22 @@
             </label>
         </div>
         <div class="list padding-top">
-            <label class="new-label">SECONDARY CONTACT</label>
+            <label class="new-label">SECONDARY CONTACT INFORMATION</label>
         </div>
-        <div class="list list-inset">
+        <div class="list list-inset" style="margin-top: -10px;">
             <label class="item item-input item-icon-left">
                 <span class="i-con ion-ios-person-outline"></span>
-                <input type="number" placeholder="Secondary Contact" ng-model="data.secondarycontact">
+                <input type="number" placeholder="Last Name" ng-model="data.secondarycontact">
+            </label>
+            <label class="item item-input item-icon-left">
+                <span class="i-con"></span>
+                <input type="number" placeholder="First Name" ng-model="data.secondarycontact">
             </label>
         </div>
         <div class="list list-inset">
             <label class="item item-input item-icon-left">
                 <span class="i-con ion-ios-telephone-outline"></span>
-                <input type="number" placeholder="Phone" ng-model="data.phone2">
+                <input type="text" placeholder="Phone number" ng-model="data.phone2" mask="(999) 999-9999" clean="true">
             </label>
         </div>
         <div class="list list-inset">
@@ -84,14 +91,84 @@
                 <input type="email" placeholder="Email" ng-model="data.email2">
             </label>
         </div>
+        <div class="list padding-top">
+            <label class="new-label">AVAILABILITY</label>
+        </div>
+        <div class="list">
+            <label class="item item-input item-select curr bortop bordbot" style="width: 32%;margin-top:-10px;">
+                <select>
+                    <option selected>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
+                </select>
+            </label>
+            <label class="item item-input item-icon-left tstart">
+                <!--  <span class="i-con ion-ios-email-outline"></span> -->
+                <input type="text" placeholder="Start" ng-click="openTime()" ng-model="item.start" style="padding-right: 5px;padding-left: 10px;margin-left: -16px;">
+            </label>
+           <!--  <div style="margin-left: 212px;margin-top: -28px;">TO</div> -->
+            <label class="item item-input item-icon-left tend">
+                <input type="text" placeholder="End" ng-click="openTime2()" ng-model="item.end" style="padding-right: 5px;padding-left: 10px;margin-left: -16px;">
+                <span class="i-con ion-clock"></span>
+            </label>
+        </div>
+
+
+        <div class="list" ng-repeat="item in inputs">
+            <label class="item item-input item-select curr bortop bordbot" style="width: 32%;margin-top:-25px;">
+                <select ng-model="item.date2">
+                    <option selected>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
+                </select>
+            </label>
+            <label class="item item-input item-icon-left tstart">
+                <!--  <span class="i-con ion-ios-email-outline"></span> -->
+                <input type="text" placeholder="Start" ng-click="openTime3()" ng-model="item.start" style="padding-right: 5px;padding-left: 10px;margin-left: -16px;">
+            </label>
+            <!-- <div style="margin-left: 212px;margin-top: -28px;">TO</div> -->
+            <label class="item item-input item-icon-left tend">
+                <input type="text" placeholder="End" ng-click="openTime4()" ng-model="item.end" style="padding-right: 5px;padding-left: 10px;margin-left: -16px;">
+                <span class="i-con ion-clock"></span>
+            </label>
+        </div>
+        <button class="button add-button" ng-click="addSched(rates)"><span class="ion-plus"> New Schedule</span></button>
+
+        <!-- <div class="form-group" ng-repeat="item in inputs">
+            <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: 600;"></label>
+            <div class="input-group col-sm-2" style="padding-left: 15px;">
+                <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                <input type="" class="form-control" style="width: 120px;" ng-model="item.rate">
+            </div>
+            <div style="margin-left: 100px; ">
+                <div class="col-sm-3" style="margin-left: 209px;">
+                    <select class="form-control" style="width: 264px;margin-top: -34px;" ng-options="item.id as item.value for item in baseRate" ng-model="item.baserate">
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <textarea class="form-control texta" rows="1" placeholder="Notes" ng-model="item.notes"></textarea>
+                </div>
+            </div>
+        </div>
+        <a href="" class="btn btn-warning pull-right btn-nr" ng-click="addSched(rates)">
+            <div style="margin-top: -2px;"><i class="fa fa-plus"></i> New Rate</div>
+        </a> -->
         <div class="row" class="paddding-top">
             <div class="col col-50">
-                <button ui-sref="login" class="button button-block button-stable">
+                <button ng-click="showCancel()" class="button button-block button-stable">
                     Cancel
                 </button>
             </div>
             <div class="col col-50">
-                <button ui-sref="vendorRate" class="button button-block button-positive">
+                <button ui-sref="qualification" class="button button-block button-positive">
                     Next
                 </button>
             </div>

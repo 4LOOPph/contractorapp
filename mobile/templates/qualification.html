@@ -20,34 +20,40 @@
             <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.size">
                 <small>Testing and Servicing Equipment</small>
             </ion-checkbox>
-            <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.other">
-                <small>Others</small>
-            </ion-checkbox>
-            <div class="item-input-inset">
-                <label class="item-input-wrapper">
-                    <input type="text" placeholder="Add">
-                </label>
-                <button class="button button-small button-stable icon ion-plus"></button>
+            <div ng-repeat="group in groups">
+                <div class="item-stable" ng-click="toggleGroup(group)">
+                    <ion-checkbox class="checkbox-square checkboxList">
+                        <small>Others</small>
+                    </ion-checkbox>
+                </div>
+                <div class="aitem " ng-repeat="other in othersList" style="position: relative;">
+                    {{other.task}}
+                    <button class="button-small icon ion-close-round boo" ng-click="removeOther($index)"></button>
+                </div>
+                <ion-item class="item-accordion" ng-show="isGroupShown(group)" style="padding: 0px;">
+                    <div class="item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input type="text" placeholder="Add other Qualification" ng-model="others.task">
+                        </label>
+                        <button ng-click="addOthers(others)" class="button button-small button-stab icon ion-plus" style="border-radius: 0px;"></button>
+                    </div>
+                </ion-item>
             </div>
         </div>
-        <!-- <label class="new-label"><i class="icon ion-person"></i> LINKEDIN PROFILE</label>
-        <div class="list list-inset">
-            <label class="item item-input">
-                <input type="text" placeholder="LinkedIn URL or Username" ng-model="data.linkedin">
-            </label>
-        </div> -->
         <label class="new-label"><i class="icon ion-document"></i> ATTACH RESUME</label>
         <div class="list padding-top padding-right padding-left">
             <label class="item item-input bortop bordbot my-drop-zone">
-                <p class="stable"><i class="icon ion-plus"></i> Add File</p>
+                <p class="stable"></p>
+                <input type="file" name="">
             </label>
         </div>
         <div class="list padding-top">
             <label class="new-label"><i class="icon ion-document"></i> ATTACH CERTIFICATE</label>
         </div>
-        <div class="list list-inset padding-right padding-left">
+        <div class="list list-inset padding-right padding-left" style="margin-top: 0;margin-bottom: 15px;">
             <label class="item item-input bortop bordbot my-drop-zone">
-                <p class="stable"><i class="icon ion-plus"></i> Attach File</p>
+                <p class="stable"></p>
+                <input type="file" name="">
             </label>
             <button class="button button-block button-energized icon-left ion-camera">
                 Scan Certificate
@@ -57,24 +63,29 @@
         <div class="form">
             <div class="list list-inset">
                 <label class="item item-input">
-                    <input type="text" placeholder="Name" ng-model="data.username">
+                    <input type="text" placeholder="LastName, FirstName, MiddleName" ng-model="data.username">
                 </label>
             </div>
             <div class="list list-inset">
                 <label class="item item-input bordbot">
-                    <input type="text" placeholder="Phone" ng-model="data.username">
+                    <input type="text" placeholder="Phone number" ng-model="data.phone">
+                </label>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input bordbot">
+                    <input type="text" placeholder="Email" ng-model="data.email">
                 </label>
             </div>
         </div>
         <div class="row padding-top">
             <div class="col col-50">
-                <button ui-sref="vendorRate" class="button button-block button-stable">
+                <button ng-click="showCancel()" class="button button-block button-stable">
                     Cancel
                 </button>
             </div>
             <div class="col col-50">
-                <button class="button button-block button-positive">
-                    Submit
+                <button ui-sref="vendorRate" class="button button-block button-positive">
+                    Next
                 </button>
             </div>
         </div>

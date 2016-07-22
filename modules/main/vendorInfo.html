@@ -4,140 +4,182 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-8 effect2">
-                    <div class="box box-widget widget-user-2">
+                    <div class="box box-widget widget-user-2 bg-crd" style="box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.52);">
                         <div class="widget-user-header ">
-                        <div style="padding:20px;">
-                            <div class="title-card">Vendor Information</div>
-                            <div class="widget-user-image">
-                            </div>
-                            <div class="bread flt">
-                                <a href="" class="active">Vendor Information</a>
-                                <a href="">Payment</a>
-                                <a href="">Qualification</a>
-                                <a href=""></a>
-                            </div>
-                            <div class="box-footer">
-                                <form class="form-horizontal col-md-9">
-                                    <div class="box-body" style="margin-left: -50px;">
-                                        <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">Full Name</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="inputEmail3" placeholder="LastName, FirstName, MiddleName">
+                            <div style="padding:20px;">
+                                <div class="title-card">Vendor Information</div>
+                                <div class="widget-user-image">
+                                </div>
+                                <div class="bread flt">
+                                    <a class="active" style="padding-right: 8px;letter-spacing: -0.06em;">Vendor Information</a>
+                                    <a style="width: 30%;">Payment</a>
+                                    <a style="padding-right: 8px;letter-spacing: -0.06em;">Account Information</a>
+                                    <a style="width:5%;"></a>
+                                </div>
+                                <div class="box-footer bg-crd">
+                                    <form class="form-horizontal col-md-9">
+                                        <div class="box-body" style="margin-left: -50px;">
+                                            <div class="form-group">
+                                                <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: 600;">Name</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="LName" placeholder="Last Name">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="FName" placeholder="First Name">
+                                                </div>
                                             </div>
+                                            <div class="form-group">
+                                                <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: 600;">Address</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="inputEmail3" clean="true" ng-model="Address" placeholder="Address">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: 600;"></label>
+                                                <div class="col-sm-4">
+                                                    <select class="form-control">
+                                                        <option>City1</option>
+                                                        <option>City2</option>
+                                                        <option>City3</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="inputEmail3" name="postcode" mask="9999" clean="true" ng-model="postcode" placeholder="Post Code">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputPassword3" class="col-sm-2 control-label"></label>
+                                                <div class="col-sm-4">
+                                                    <select class="form-control">
+                                                        <option>State1</option>
+                                                        <option>State2</option>
+                                                        <option>State3</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <select class="form-control">
+                                                        <option>Country1</option>
+                                                        <option>Country2</option>
+                                                        <option>Country3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-2 control-label" style="font-weight: 600;">ABN</label>
+                                                <div class="col-sm-4">
+                                                    <input type="" class="form-control" id="inputEmail3" name="ABN" mask="99 999 999 999" clean="true" ng-model="ABN" placeholder="e.g 53 004 085 616">
+                                                </div>
+                                            </div>
+                                    </form>
+                                    <form class="col-md-5 picf">
+                                        <div class="">
+                                            <div class="box1-body box-profile">
+                                                <img class="profile-user-img img-responsive img-circle" ng-show="myForm.file.$valid" ngf-thumbnail="picFile" src="images/no-avatar.jpg" err-src="http://placehold.it/160x160" alt="User profile picture">
+                                                <ul class="list-group list-group-unbordered">
+                                                </ul>
+                                            </div>
+                                            <button class="btn btn-primary btn-up" type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" style="">Upload</button>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label">Address</label>
-                                            <div class="col-sm-4">
-                                                <select class="form-control">
-                                                    <option>City1</option>
-                                                    <option>City2</option>
-                                                    <option>City3</option>
-                                                </select>
+                                    </form>
+                                    <div class="quick" style="margin-left: 16px;margin-top: 30px;">Contact Information</div>
+                                    <form class="">
+                                        <div class="">
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-2 control-label" style="font-weight: 600;"></label>
+                                                <div class="col-sm-8">
+                                                    <input type="" class="form-control" id="inputEmail3" name="phone" mask="(999) 999-9999" clean="true" ng-model="phone" placeholder="Phone number" style="margin-top: 12px;">
+                                                </div>
                                             </div>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputEmail3" placeholder="Post Code">
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="col-sm-2 control-label"></label>
-                                            <div class="col-sm-4">
-                                                <select class="form-control">
-                                                    <option>State1</option>
-                                                    <option>State2</option>
-                                                    <option>State3</option>
-                                                </select>
+                                            <div class="quick seclab" style="">Secondary Contact Information</div>
+                                            <form class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label for="inputPassword3" class="col-sm-2 control-label"></label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" class="form-control" id="LName" placeholder="Last Name">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" class="form-control" id="FName" placeholder="First Name">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control" name="phone" mask="(999) 999-9999" clean="true" ng-model="phone2" placeholder="Phone number">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                    </form>
+                                    <form>
+                                        <div class="form-group" style="margin-top: 55px;">
+                                            <label for="inputPassword3" class="col-sm-2 control-label avil" style="">Availability</label>
+                                            <div>
+                                                <div class="col-sm-3" style="">
+                                                    <select class="form-control" style="width: 120px;margin-left: -10px;" ng-options="item.id as item.value for item in baseRate" ng-model="item.baserate1">
+                                                    </select>
+                                                </div>
+                                                <div class="input-group col-sm-6">
+                                                    <div class="dpick">
+                                                        <kk-timepicker settings="settings" ng-model="time"></kk-timepicker>
+                                                        <div style="margin-top: -26px;margin-left: 123px;">TO</div>
+                                                        <kk-timepicker settings="settings" ng-model="item.time1" class="endp2"></kk-timepicker>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-sm-4">
-                                                <select class="form-control">
-                                                    <option>Country1</option>
-                                                    <option>Country2</option>
-                                                    <option>Country3</option>
-                                                </select>
+                                            <div style="margin-top:15px;" ng-repeat="item in inputs">
+                                                <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: 600;"></label>
+                                                <div class="col-sm-3" style="">
+                                                    <select class="form-control" style="width: 120px;" ng-options="item.id as item.value for item in baseRate" ng-model="item.baserate2">
+                                                    </select>
+                                                </div>
+                                                <div class="input-group col-sm-6">
+                                                    <div class="dpick2">
+                                                        <kk-timepicker settings="settings" ng-model="item.time"></kk-timepicker>
+                                                        <div style="margin-top: -26px;margin-left: 123px;">TO</div>
+                                                        <kk-timepicker settings="settings" ng-model="item.time2" class="endp2"></kk-timepicker>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-2 control-label">ABN</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="inputEmail3" placeholder="e.g 53 004 085 616">
+                                            <div style="margin-top:15px;" ng-repeat="rate in ratesList" disabled="true">
+                                                <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: 600;"></label>
+                                                <div class="col-sm-3" style="">
+                                                    <select class="form-control" style="width: 120px;" ng-options="item.id as item.value for item in baseRate" ng-model="rates.baserate2">
+                                                    </select>
+                                                </div>
+                                                <div class="input-group col-sm-6">
+                                                    <div class="dpick2">
+                                                        <kk-timepicker settings="settings" ng-model="time3"></kk-timepicker>
+                                                        <div style="margin-top: -26px;margin-left: 123px;">TO</div>
+                                                        <kk-timepicker settings="settings" ng-model="time3" class="endp2"></kk-timepicker>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                </form>
-                                <form class="col-md-5" style="float: right;margin-right: -200px;margin-top: -200px;">
-                                    <div class="">
-                                        <div class="box-body box-profile">
-                                            <img class="profile-user-img img-responsive img-circle" src="images/no-avatar.jpg" alt="User profile picture">
-                                            <ul class="list-group list-group-unbordered">
-                                            </ul>
-                                            <a href="" class="btn btn-primary btn-block" style="width: 120px;height: 30px;margin-left: 22%;">
-                                                <div style="margin-top: -3px;">Upload Photo</div>
+                                            <a href="" class="btn btn-warning pull-right btn-nr sked" ng-click="addSched(rates)" style="">
+                                                <div style="margin-top: -2px;"><i class="fa fa-plus"></i> New Schedule</div>
                                             </a>
+                                    </form>
+                                    <div class="col-md-12">
+                                        <div class="box-footer bg-crd" style="width: 136%;margin-left: 15px;margin-top: 10px;margin-bottom: -30px;margin-top: 0px;">
+                                            <a ng-click="clickToCancel()" class="btn btn-raised btn-default" style="margin-left:-10px;">Cancel</a>
+                                            <div ui-sref="qualification" class="btn btn-info pull-right" style="margin-right: -10px;">Next</div>
                                         </div>
                                     </div>
-                                </form>
-                                <form class="form-horizontal">
-                                    <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-2 control-label">Primary Contact</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="inputEmail3" placeholder="LastName, FirstName, MiddleName" style="margin-top: 12px;">
-                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="inputEmail3" placeholder="Phone">
-                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <a class="btn btn-raised btn-warning pull-right" ng-click="hideCard()" style="margin-right: 111px;height: 30px;margin-bottom: 20px;border: 1px dashed #cac7c7;">
-                                        <div style="margin-top: -2px;"><i class="fa  fa-plus"></i> Secondary Contact</div></a>
-                                </form>
-                                <div class="" id="secondCard" ng-show="showsecondCard" style="width: 60%;margin-left: 150px;">
-                                    <div class="card2">
-                                        <form class="form-horizontal">
-                                            <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-2 control-label">Secondary Contact</label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" placeholder="LastName, FirstName, MiddleName" style="margin-top: 12px;">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" i placeholder="Phone">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" placeholder="Email">
-                                                </div>
-                                            </div>
-                                            <a class="btn btn-raised btn-default pull-right" ng-click="hideC()" style="margin-right: 111px;height: 30px;">
-                                         <div style="margin-top: -2px;">Hide</div></a>
-                                        </form>
                                     </div>
                                 </div>
-                                </div>
-                            
-
-
-
-                                <div class="col-md-12">
-                                    <div class="box-footer">
-                                        <a ui-sref="main" class="btn btn-raised btn-default">Cancel</a>
-                                        <a ui-sref="qualification" class="btn btn-raised btn-info pull-right">Next</a>
-                                        <!-- <a ui-sref="main" class="btn btn-raised btn-info pull-right" style="margin-right: 20px;">Back</a> -->
-                                    </div>
-                                </div></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>

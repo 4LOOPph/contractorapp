@@ -1,35 +1,3 @@
-<!-- <div class="login-box">
-    <div class="login-box-body">
-        <div class="login-logo log-head">
-            <img class="logoo" src="images/Untitled-1.png">
-            <h2 class="log-head-font">CONTRACTOR APP</h2>
-            <div class="log-sub-font">Always take the lead!</div>
-            <p class="log-p">Apply as one of our certified contractor</p>
-            <iframe width="98%" height="180px" src="//www.youtube.com/embed/atI4JKFQYoU" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <form ng-submit="login()">
-            <div class="form-group has-feedback">
-                <span class="glyphicon glyphicon-user form-control-feedback font" style="color:#2980dc;"></span>
-                <input type="text" class="form-control" placeholder="Username" ng-model="user.username" />
-            </div>
-            <div class="form-group has-feedback" style="margin-top: 10px;">
-                <span class="glyphicon glyphicon-lock form-control-feedback font" style="color:#2980dc;"></span>
-                <input type="password" class="form-control" placeholder="Password" ng-model="user.password" />
-            </div>
-            <p class="forgot">Forgot Password?</p>
-            <div class="row">
-                <div class="col-xs-12">
-                    <button type="submit" class="btn btn-block btn-flat button-login" style="color:#fff;text-transform: inherit;">Login</button>
-                </div>
-            </div>
-        </form>
-        <div class="apply">Apply as Contractor</div>
-        <div class="social-auth-links text-center">
-            <p class="copy">© 2016 Engagis Pty Ltd</p>
-        </div>
-    </div>
-</div>
- -->
 <div class="" style="margin-top: -50px;">
     <div class="">
         <div class="login-logo top-h">
@@ -42,68 +10,37 @@
             <div class="col-md-7">
                 <iframe width="97%" height="400px" src="//www.youtube.com/embed/atI4JKFQYoU" frameborder="0" allowfullscreen></iframe>
             </div>
-            <!--  <div class="col-md-5">
-         <div class="box box-widget widget-user-2">
-         <div class="widget-user-header bg-yellow">
-            <div class="widget-user-image">
-                <img class="img-circle" src="">
-            </div>
-            <h3 class="widget-user-username">User</h3>
-            <h5 class="widget-user-desc"></h5>
-         </div>
-        <form ng-submit="login()">
-            <div class="form-group has-feedback">
-                <span class="glyphicon glyphicon-user form-control-feedback font" style="color:#2980dc;"></span>
-                <input type="text" class="form-control" placeholder="Username" ng-model="user.username" />
-            </div>
-            <div class="form-group has-feedback" style="margin-top: 10px;">
-                <span class="glyphicon glyphicon-lock form-control-feedback font" style="color:#2980dc;"></span>
-                <input type="password" class="form-control" placeholder="Password" ng-model="user.password" />
-            </div>
-            <p class="forgot">Forgot Password?</p>
             <div class="row">
-                <div class="col-xs-12">
-                    <button type="submit" class="btn btn-block btn-flat button-login" style="color:#fff;text-transform: inherit;">Login</button>
-                </div>
-            </div>
-        </form>
-        </div>
-        </div> -->
-            <div class="row">
-                <div class="col-md-5">
-                    <!-- Widget: user widget style 1 -->
+                <div class="col-md-5" style="margin-left: -13px;">
                     <div class="box box-widget widget-user-2">
-                        <!-- Add the bg color to the header using any of the bg-* classes -->
                         <div class="widget-user-header bg-yellow">
                             <div class="widget-user-image">
                                 <img class="img-circle" src="images/no-avatar.jpg" alt="User Avatar">
                             </div>
-                            <!-- /.widget-user-image -->
                             <h3 class="widget-user-username log-use">User Login</h3>
                         </div>
-                        <div class="box-footer">
+                        <div class="box-footer bg-crd">
                             <form ng-submit="login()" style="padding-left: 10px;padding-right: 10px;">
                                 <div class="form-group has-feedback">
-                                    <!-- <span class="glyphicon glyphicon-user form-control-feedback font" style="color:#2980dc;"></span> -->
                                     <i class="form-control-feedback font material-icons" style="margin-top: 10px;margin-left: 7px;">perm_identity</i>
                                     <input type="text" class="form-control login-inputop" placeholder="Username" ng-model="user.username" />
                                 </div>
                                 <div class="form-group has-feedback" style="margin-top: 27px;">
-                                    <!--  <span class="glyphicon glyphicon-lock form-control-feedback font" style="color:#2980dc;"></span> -->
                                     <i class="form-control-feedback font material-icons" style="margin-top: 10px;margin-left: 7px;">lock_outline</i>
                                     <input type="password" class="form-control login-inputbot" placeholder="Password" ng-model="user.password" />
                                 </div>
                                 <p class="forgot">Forgot Password?</p>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <a type="submit" class="btn btn-raised btn-info button-login" style="color:#fff;text-transform: inherit;margin-left: 25%; width:50%;">Login</a>
+                                        <a ui-sref="dashtabs" type="submit" class="btn btn-raised btn-info button-login" style="color:#fff;text-transform: inherit;margin-left: 25%; width:50%;">Login</a>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <!-- <button ui-sref="vendorinfo" type="submit" class="btn btn-block btn-flat button-login" style="color:#fff;text-transform: inherit;">Apply as Contractor</button> -->
-                    <a ui-sref="vendorinfo" class="btn btn-raised btn-info button-login" style="text-transform: inherit;width: 100%;margin-top: 3px;height: 48px;"><div style="margin-top: 4px;">Apply as Contractor</div></a>
+                    <a ui-sref="vendorinfo" class="btn btn-raised btn-info button-login" style="text-transform: inherit;width: 100%;margin-top: 3px;height: 48px;">
+                        <div style="margin-top: 6px;">Apply as Contractor</div>
+                    </a>
                 </div>
             </div>
             <div class="social-auth-links text-center">

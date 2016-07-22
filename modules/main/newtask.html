@@ -1,0 +1,430 @@
+<div class="input-group input-group-sm dashsearch">
+    <input type="text" class="form-control" placeholder="Search Task" style="background-color: #f3f3f3;">
+    <span class="input-group-btn" style="background-color: #f3f3f3;">
+    <button type="button" class="btn dashsearch-but" ><span class="fa fa-search"></span></button>
+    </span>
+</div>
+<div class="box box-widget" style="box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.52);">
+    <div class="">
+        <div>
+            <div class="box-footer bg-crd" style="border-top: 0px solid #d0d0d0;height: 620px;">
+                <form class=" col-md-6">
+                    <div class="box-body" style="margin-right: 5px;">
+                        <div class="col-md-12 col-sm-6 col-xs-12 taskboxgreen" ng-click="hideCard()">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-aqua taskbox-side " style="background-color: green !important;"></span>
+                                <div class="taskbox-content">
+                                    <span class="info-box-number">Digital Ticket Testing</span>
+                                    <span class="info-box-text">Telstra</span>
+                                    <span class="info-box-text">27 June 2016</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-6 col-xs-12 taskboxred" ng-click="hideCard1()">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-aqua taskbox-side" style="background-color: red!important;"></span>
+                                <div class="taskbox-content">
+                                    <span class="info-box-number">Network Setup</span>
+                                    <span class="info-box-text">7-Eleven</span>
+                                    <span class="info-box-text">7 July 2016</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-6 col-xs-12 taskboxyellow" ng-click="hideCard3()">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-aqua taskbox-side" style="background-color: yellow !important;"></span>
+                                <div class="taskbox-content">
+                                    <span class="info-box-number">Hardware Installation</span>
+                                    <span class="info-box-text">Telstra</span>
+                                    <span class="info-box-text">17 July 2016</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- startcard -->
+                <form class="col-md-6 bordcard">
+                    <div class="" style="margin-top: -15px;margin-left: 10px;">
+                        <!-- card1 -->
+                        <div id="startCard" ng-show="showstartCard">
+                            <div class="box-header">
+                                <label class="net">Network Setup
+                                    <p class="net-sub">Deadline: July 7 2016 <i class="fa fa-calendar"></i></p>
+                                </label>
+                                <div class="high-prio">
+                                    High Priority
+                                    <br>
+                                    <div class="prog-text">
+                                        In progress
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeintext">Time in - Time out : 8:30am/Fri. - 8:00pm/Fri.</div>
+                            <div class="box-body boxing" style="border-color:#d21f03">
+                                <div class="box-header boxcard-head">
+                                    <div style="">
+                                        <label>Time Tracking:
+                                        </label>
+                                        <label style="float:right;">5 : 40 : 12 PM
+                                        </label>
+                                        <div class="butholder">
+                                            <button id="box-button" class="box-button" style="margin-right: -3px;">Out</button>
+                                            <button id="box-button" class="box-button">In</button>
+                                        </div>
+                                        <div class="timetrak">Status: Checked OUT since 5:37PM/ June 25, 2016
+                                        </div>
+                                        <div class="icontop"><i class="" ng-click="isCol = !isCol" ng-class="{'icon fa fa-caret-down': !isCol, 'fa  fa-caret-up':  isCol}" style="color: white;"></i></div>
+                                        <div uib-collapse="!isCol" class="">
+                                            <p class="colpapz">This task is good for 10 hours unless unexpected.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-insidetop">
+                                    <div style="padding-bottom: 40px;">
+                                        <!-- <div class="boxtitle">Network Setup</div> -->
+                                        <div class="lab-line"></div>
+                                        <div class="w"><i class="fa fa-file-text-o"></i> Details</div>
+                                        <div style="padding: 10px;padding-left: 15px;">
+                                            <p>-Install shroud specially made for bulkhead munch bar</p>
+                                            <p>-Remove and replace tablet for POS display</p>
+                                            <br>
+                                            <div class=" " style="width: 150px; ">
+                                                <div class="w ">Location
+                                                    <div style="float: right; ">:</div>
+                                                </div>
+                                            </div>
+                                            <div class="dataa ">Sydney CBD</div>
+                                            <br>
+                                            <div class=" " style="width: 150px; ">
+                                                <div class="w ">Client
+                                                    <div style="float: right; ">:</div>
+                                                </div>
+                                            </div>
+                                            <div class="dataa ">Telstra</div>
+                                            <br>
+                                            <div class=" " style="width: 150px; ">
+                                                <div class="w ">Status
+                                                    <div style="float: right; ">:</div>
+                                                </div>
+                                            </div>
+                                            <div class="dataa ">In progress</div>
+                                            <br>
+                                            <div class=" " style="width: 150px; ">
+                                                <div class="w ">Priority
+                                                    <div style="float: right; ">:</div>
+                                                </div>
+                                            </div>
+                                            <div class="dataa " style="color:red; ">High</div>
+                                        </div>
+                                        <div class="sm-psdtext ">For more info, view PSD.
+                                            <a href=" " class="btn btn-warning pull-right btn-psd ">
+                                                <div style="margin-top: -2px; ">
+                                                    </i>View PSD</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-inside" style="margin-top: -30px;">
+                                    <div style="padding-bottom: 5px;">
+                                        <div class="lab-line"></div>
+                                        <div class="w"><i class="fa fa-clock-o"></i> Deadline</div>
+                                        <div style="padding: 10px; padding-left: 15px;">
+                                            <p style="color:green;">27, June 2016 / 11:00 AM</p>
+                                            <p>Estimated Hours of Work: 10 hours</p>
+                                            <div class="drop"><i class="" ng-click="isCollapsed = !isCollapsed" ng-class="{'icon fa fa-angle-down': !isCollapsed, 'fa fa-angle-up':  isCollapsed}" style="color: #2980dc;"></i></div>
+                                            <div uib-collapse="!isCollapsed" class="">
+                                                <p class="colapz">This task is good for 10 hours unless unexpected circumstances happen.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-inside">
+                                    <div class="box-bot">
+                                        <div class="lab-line"></div>
+                                        <div class="w"><i class="fa fa-user"></i> Reporter</div>
+                                        <div style="padding: 10px; padding-left: 15px;">
+                                            <div class=" " style="width: 150px; ">
+                                                <div class="w ">Name
+                                                    <div style="float: right; ">:</div>
+                                                </div>
+                                            </div>
+                                            <div class="dataa ">Nadine Loosethread</div>
+                                            <br>
+                                            <div class=" " style="width: 150px; ">
+                                                <div class="w ">Phone
+                                                    <div style="float: right; ">:</div>
+                                                </div>
+                                            </div>
+                                            <div class="dataa ">+61 678 321 012</div>
+                                            <br>
+                                            <div class=" " style="width: 150px; ">
+                                                <div class="w ">Email
+                                                    <div style="float: right; ">:</div>
+                                                </div>
+                                            </div>
+                                            <div class="dataa ">nadine@engagis.com</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a data-toggle="modal" data-target="#myModalpopup2" class="btn btn-raised btn-info pull-right" style="margin-right: 10px;width: 110px;">Create Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- secondcard -->
+                    <div id="secondCard" ng-show="showsecondCard" style="margin-left: 10px;">
+                        <div class="box-header">
+                            <label class="net">Digital Ticket Testing
+                                <p class="net-sub">Deadline: June 27 2016 <i class="fa fa-calendar"></i></p>
+                            </label>
+                            <div class="high-prio" style="color: #3dab0f;">
+                                Medium Priority
+                                <br>
+                                <div class="prog-text">
+                                    In progress
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeintext">Time in - Time out : 8:30am/Fri. - 8:00pm/Fri.</div>
+                        <div class="box-body boxing" style="border-color:#3dab0f;">
+                            <div class="box-header boxcard-head">
+                                <div style="">
+                                    <label>Time Tracking:
+                                    </label>
+                                    <label style="float:right;">5 : 40 : 12 PM
+                                    </label>
+                                    <div class="butholder">
+                                        <button id="box-button" class="box-button" style="margin-right: -3px;">Out</button>
+                                        <button id="box-button" class="box-button">In</button>
+                                    </div>
+                                    <div class="timetrak">Status: Checked OUT since 5:37PM/ June 25, 2016
+                                    </div>
+                                    <div class="icontop"><i class="" ng-click="isCol = !isCol" ng-class="{'icon fa fa-caret-down': !isCol, 'fa  fa-caret-up':  isCol}" style="color: white;"></i></div>
+                                    <div uib-collapse="!isCol" class="">
+                                        <p class="colpapz">This task is good for 10 hours unless unexpected.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-insidetop">
+                                <div style="padding-bottom: 40px;">
+                                    <!-- <div class="boxtitle">Network Setup</div> -->
+                                    <div class="lab-line"></div>
+                                    <div class="w"><i class="fa fa-file-text-o"></i> Details</div>
+                                    <div style="padding: 10px;padding-left: 15px; ">
+                                        <p>-Install shroud specially made for bulkhead munch bar</p>
+                                        <p>-Remove and replace tablet for POS display</p>
+                                        <br>
+                                        <div class=" " style="width: 150px; ">
+                                            <div class="w ">Location
+                                                <div style="float: right; ">:</div>
+                                            </div>
+                                        </div>
+                                        <div class="dataa ">Sydney CBD</div>
+                                        <br>
+                                        <div class=" " style="width: 150px; ">
+                                            <div class="w ">Client
+                                                <div style="float: right; ">:</div>
+                                            </div>
+                                        </div>
+                                        <div class="dataa ">Telstra</div>
+                                        <br>
+                                        <div class=" " style="width: 150px; ">
+                                            <div class="w ">Status
+                                                <div style="float: right; ">:</div>
+                                            </div>
+                                        </div>
+                                        <div class="dataa ">In progress</div>
+                                        <br>
+                                        <div class=" " style="width: 150px; ">
+                                            <div class="w ">Priority
+                                                <div style="float: right; ">:</div>
+                                            </div>
+                                        </div>
+                                        <div class="dataa " style="color:red; ">High</div>
+                                    </div>
+                                    <div class="sm-psdtext ">For more info, view PSD.
+                                        <a href=" " class="btn btn-warning pull-right btn-psd ">
+                                            <div style="margin-top: -2px; ">
+                                                </i>View PSD</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-inside" style="margin-top: -30px;">
+                                <div style="padding-bottom: 5px;">
+                                    <div class="lab-line"></div>
+                                    <div class="w"><i class="fa fa-clock-o"></i> Deadline</div>
+                                    <div style="padding: 10px;padding-left: 15px; ">
+                                        <p style="color:green;">27, June 2016 / 11:00 AM</p>
+                                        <p>Estimated Hours of Work: 10 hours</p>
+                                        <div class="drop"><i class="" ng-click="isCollapsed = !isCollapsed" ng-class="{'icon fa fa-angle-down': !isCollapsed, 'fa fa-angle-up':  isCollapsed}" style="color: #2980dc;"></i></div>
+                                        <div uib-collapse="!isCollapsed" class="">
+                                            <p class="colapz">This task is good for 10 hours unless unexpected circumstances happen.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-inside">
+                                <div class="box-bot">
+                                    <div class="lab-line"></div>
+                                    <div class="w"><i class="fa fa-user"></i> Reporter</div>
+                                    <div style="padding: 10px;padding-left: 15px; ">
+                                        <div class=" " style="width: 150px; ">
+                                            <div class="w ">Name
+                                                <div style="float: right; ">:</div>
+                                            </div>
+                                        </div>
+                                        <div class="dataa ">Nadine Loosethread</div>
+                                        <br>
+                                        <div class=" " style="width: 150px; ">
+                                            <div class="w ">Phone
+                                                <div style="float: right; ">:</div>
+                                            </div>
+                                        </div>
+                                        <div class="dataa ">+61 678 321 012</div>
+                                        <br>
+                                        <div class=" " style="width: 150px; ">
+                                            <div class="w ">Email
+                                                <div style="float: right; ">:</div>
+                                            </div>
+                                        </div>
+                                        <div class="dataa ">nadine@engagis.com</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a data-toggle="modal" data-target="#myModalpopup2" class="btn btn-raised btn-info pull-right" style="margin-right: 10px;width: 110px;">Create Quote</a>
+                        </div>
+                    </div>
+                    <!-- thirdcard -->
+                    <div id="thirdCard" ng-show="showthirdCard" style="margin-left: 10px;">
+                        <div class="box-header">
+                            <label class="net">Hardware Installation
+                                <p class="net-sub">Deadline: July 17 2016 <i class="fa fa-calendar"></i></p>
+                            </label>
+                            <div class="high-prio" style="color: #ecd10d;">
+                                Low Priority
+                                <br>
+                                <div class="prog-text">
+                                    In progress
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeintext">Time in - Time out : 8:30am/Fri. - 8:00pm/Fri.</div>
+                        <div class="box-body boxing" style="border-color:#ecd10d">
+                            <div class="box-header boxcard-head">
+                                <div style="">
+                                    <label>Time Tracking:
+                                    </label>
+                                    <label style="float:right;">5 : 40 : 12 PM
+                                    </label>
+                                    <div class="butholder">
+                                        <button id="box-button" class="box-button" style="margin-right: -3px;">Out</button>
+                                        <button id="box-button" class="box-button">In</button>
+                                    </div>
+                                    <div class="timetrak">Status: Checked OUT since 5:37PM/ June 25, 2016
+                                    </div>
+                                    <div class="icontop"><i class="" ng-click="isCol = !isCol" ng-class="{'icon fa fa-caret-down': !isCol, 'fa  fa-caret-up':  isCol}" style="color: white;"></i></div>
+                                    <div uib-collapse="!isCol" class="">
+                                        <p class="colpapz">This task is good for 10 hours unless unexpected.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-insidetop">
+                                <div style="padding-bottom: 40px;">
+                                    <!-- <div class="boxtitle">Network Setup</div> -->
+                                    <div class="lab-line"></div>
+                                    <div class="w"><i class="fa fa-file-text-o"></i> Details</div>
+                                    <div style="padding: 10px;padding-left: 15px; ">
+                                        <p>-Install shroud specially made for bulkhead munch bar</p>
+                                        <p>-Remove and replace tablet for POS display</p>
+                                        <br>
+                                        <div class=" " style="width: 150px; ">
+                                            <div class="w ">Location
+                                                <div style="float: right; ">:</div>
+                                            </div>
+                                        </div>
+                                        <div class="dataa ">Sydney CBD</div>
+                                        <br>
+                                        <div class=" " style="width: 150px; ">
+                                            <div class="w ">Client
+                                                <div style="float: right; ">:</div>
+                                            </div>
+                                        </div>
+                                        <div class="dataa ">Telstra</div>
+                                        <br>
+                                        <div class=" " style="width: 150px; ">
+                                            <div class="w ">Status
+                                                <div style="float: right; ">:</div>
+                                            </div>
+                                        </div>
+                                        <div class="dataa ">In progress</div>
+                                        <br>
+                                        <div class=" " style="width: 150px; ">
+                                            <div class="w ">Priority
+                                                <div style="float: right; ">:</div>
+                                            </div>
+                                        </div>
+                                        <div class="dataa " style="color:red; ">High</div>
+                                    </div>
+                                    <div class="sm-psdtext ">For more info, view PSD.
+                                        <a href=" " class="btn btn-warning pull-right btn-psd ">
+                                            <div style="margin-top: -2px; ">
+                                                </i>View PSD</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-inside" style="margin-top: -30px;">
+                                <div style="padding-bottom: 5px;">
+                                    <div class="lab-line"></div>
+                                    <div class="w"><i class="fa fa-clock-o"></i> Deadline</div>
+                                    <div style="padding: 10px;padding-left: 15px; ">
+                                        <p style="color:green;">27, June 2016 / 11:00 AM</p>
+                                        <p>Estimated Hours of Work: 10 hours</p>
+                                        <div class="drop"><i class="" ng-click="isCollapsed = !isCollapsed" ng-class="{'icon fa fa-angle-down': !isCollapsed, 'fa fa-angle-up':  isCollapsed}" style="color: #2980dc;"></i></div>
+                                        <div uib-collapse="!isCollapsed" class="">
+                                            <p class="colapz">This task is good for 10 hours unless unexpected circumstances happen.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-inside">
+                                <div class="box-bot">
+                                    <div class="lab-line"></div>
+                                    <div class="w"><i class="fa fa-user"></i> Reporter</div>
+                                    <div style="padding: 10px;padding-left: 15px; ">
+                                        <div class=" " style="width: 150px; ">
+                                            <div class="w ">Name
+                                                <div style="float: right; ">:</div>
+                                            </div>
+                                        </div>
+                                        <div class="dataa ">Nadine Loosethread</div>
+                                        <br>
+                                        <div class=" " style="width: 150px; ">
+                                            <div class="w ">Phone
+                                                <div style="float: right; ">:</div>
+                                            </div>
+                                        </div>
+                                        <div class="dataa ">+61 678 321 012</div>
+                                        <br>
+                                        <div class=" " style="width: 150px; ">
+                                            <div class="w ">Email
+                                                <div style="float: right; ">:</div>
+                                            </div>
+                                        </div>
+                                        <div class="dataa ">nadine@engagis.com</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a data-toggle="modal" data-target="#myModalpopup2" class="btn btn-raised btn-info pull-right" style="margin-right: 10px;width: 110px;">Create Quote</a>
+                        </div>
+                    </div>
+            </div>
+            <!-- thirdcard -->
+        </div>
+        <!-- endcard -->
+    </div>
+    </form>
+</div>
+</div>
+</div>
+</div>

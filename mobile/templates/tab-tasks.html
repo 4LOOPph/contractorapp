@@ -1,58 +1,99 @@
-<ion-view view-title="Tasks">
+<ion-view view-title="Task" style="background-color: #efefef;">
     <ion-nav-buttons side="secondary">
-      <button class="button button-icon ion-ios-gear-outline"></button>
+        <button class="button button-icon ion-ios-gear-outline"></button>
     </ion-nav-buttons>
-    <ion-content class="padding">
-        <div class="list padding-top">
-            <label class="new-label"><i class="icon ion-ios-timer-outline"></i> IN PROGRESS</label>
+    <ion-content style="top: 55px;background-color: #efefef;">
+        <label class="new-label" style="margin-top:20px;"><i class="icon ion-ios-pie-outline"></i> IN PROGRESS</label>
+        <div class="card newcard">
+            <!-- card start -->
+            <div class=" taskcardgreen" ng-click="filter.direct = true; filter.check= false; filter.check1= false">
+                <div class="card-sidepad"></div>
+                <div class="cardin">
+                    <div class="card-lbl">Digital Ticket Testing</div>
+                    <p class="card-lblp">Telstra</p>
+                    <p class="card-lblp" style="margin-top: -5px;">27 June 2016</p>
+                    <button class="btn-flat btn-done">DONE</button>
+                </div>
+            </div>
+            <div class=" taskcardyellow" ng-click="filter.direct = false; filter.check= false; filter.check1= true">
+                <div class="card-sidepad" style="background-color: #ece505;"></div>
+                <div class="cardin">
+                    <div class="card-lbl">Hardware Installation</div>
+                    <p class="card-lblp">Telstra</p>
+                    <p class="card-lblp" style="margin-top: -5px;">17 July 2016</p>
+                    <button class="btn-flat btn-done">DONE</button>
+                </div>
+            </div>
+            <!-- endcard -->
         </div>
-        <div class="list list-inset padding-left padding-right">
-            <ion-item class="item item-icon-right" href="#/tab/tasks/{{chat.id}}" ng-repeat="chat in progressData" ng-class="{'task-status-normal': chat.priority=='normal','task-status-high': chat.priority =='high','task-status-low': chat.priority =='low'}">
-                <h2>{{chat.name}}</h2>
-                <p>{{chat.client}}</p>
-                <p>{{chat.date_created | date: 'dd MMMM yyyy'}}</p>
-                <i class="icon ion-chevron-right icon-accessory"></i>
-                <ion-option-button class="button-energized">
-                    Done
-                </ion-option-button>
-                <ion-option-button class="button-positive">
-                    Accept
-                </ion-option-button>
-            </ion-item>
+        <label class="new-label" style="margin-top:20px;"><i class="icon ion-ios-plus-outline"></i> PENDING</label>
+        <div class="card newcard">
+            <!-- card start -->
+            <div class=" taskcardred" ng-click="filter.direct = false; filter.check= true; filter.check1= false">
+                <div class="card-sidepad" style="background-color: #c10606;"></div>
+                <div class="cardin">
+                    <div class="card-lbl">Network Setup</div>
+                    <p class="card-lblp">7-Eleven</p>
+                    <p class="card-lblp" style="margin-top: -5px;">7 July 2016</p>
+                    <button class="btn-flat btn-done">START</button>
+                </div>
+            </div>
+            <div class=" taskcardgreen" ng-click="filter.direct = true; filter.check= false; filter.check1= false">
+                <div class="card-sidepad"></div>
+                <div class="cardin">
+                    <div class="card-lbl">Digital Ticket Testing</div>
+                    <p class="card-lblp">Telstra</p>
+                    <p class="card-lblp" style="margin-top: -5px;">27 June 2016</p>
+                    <button class="btn-flat btn-done">START</button>
+                </div>
+            </div>
+            <!-- endcard -->
         </div>
-       <div class="list padding-top">
-            <label class="new-label"><i class="icon ion-ios-minus-outline"></i> PENDING</label>
+        <label class="new-label" style="margin-top:20px;"><i class="icon ion-android-more-horizontal"></i> NEW TASK</label>
+        <div class="card newcard">
+            <!-- card start -->
+            <div class=" taskcardred" ng-click="filter.direct = false; filter.check= true; filter.check1= false">
+                <div class="card-sidepad" style="background-color: #c10606;"></div>
+                <div class="cardin">
+                    <div class="card-lbl">Network Setup</div>
+                    <p class="card-lblp">7-Eleven</p>
+                    <p class="card-lblp" style="margin-top: -5px;">7 July 2016</p>
+                    <button class="btn-flat btn-done">ACCEPT</button>
+                </div>
+            </div>
+            <div class=" taskcardyellow" ng-click="filter.direct = false; filter.check= false; filter.check1= true">
+                <div class="card-sidepad" style="background-color: #ece505;"></div>
+                <div class="cardin">
+                    <div class="card-lbl">Hardware Installation</div>
+                    <p class="card-lblp">Telstra</p>
+                    <p class="card-lblp" style="margin-top: -5px;">17 July 2016</p>
+                    <button class="btn-flat btn-done">ACCEPT</button>
+                </div>
+            </div>
+            <!-- endcard -->
         </div>
-        <div class="list list-inset">
-            <ion-item class="item item-icon-right" href="#/tab/tasks/{{chat.id}}"  ng-repeat="chat in pendingData" ng-class="{'task-status-normal': chat.priority=='normal','task-status-high': chat.priority =='high','task-status-low': chat.priority =='low'}">
-                <h2>{{chat.name}}</h2>
-                <p>{{chat.client}}</p>
-                <p>{{chat.date_created | date: 'dd MMMM yyyy'}}</p>
-                <i class="icon ion-chevron-right icon-accessory"></i>
-                <ion-option-button class="button-energized">
-                    Done
-                </ion-option-button>
-                <ion-option-button class="button-positive">
-                    Accept
-                </ion-option-button>
-            </ion-item>
-        </div>
-         <div class="list padding-top">
-            <label class="new-label"><i class="icon ion-ios-minus-outline"></i> COMPLETED</label>
-        </div>
-        <div class="list list-inset">
-            <ion-item class="item item-icon-right" href="#/tab/tasks/{{chat.id}}" ng-repeat="chat in completedData">
-                <h2>{{chat.name}}</h2>
-                <p>{{chat.client}}</p>
-                <p>{{chat.date_created | date: 'dd MMMM yyyy'}}</p>
-                <i class="icon ion-chevron-right icon-accessory"></i>
-                <ion-option-button class="button-energized">
-                    Done
-                </ion-option-button>
-                <ion-option-button class="button-positive">
-                    Accept
-                </ion-option-button>
-            </ion-item>
+        <label class="new-label" style="margin-top:20px;"><i class="icon ion-ios-checkmark-outline"></i> COMPLETED</label>
+        <div class="card newcard">
+            <!-- card start -->
+            <div class=" taskcardwhite" ng-click="filter.direct = false; filter.check= true; filter.check1= false">
+                <div class="card-sidepad" style="background-color: transparent;"></div>
+                <div class="cardin">
+                    <div class="card-lbl">Network Setup</div>
+                    <p class="card-lblp">7-Eleven</p>
+                    <p class="card-lblp" style="margin-top: -5px;">7 July 2016</p>
+                    <button class="btn-flat btn-done">DETAILS</button>
+                </div>
+            </div>
+            <div class=" taskcardwhite" ng-click="filter.direct = false; filter.check= false; filter.check1= true">
+                <div class="card-sidepad" style="background-color: transparent;"></div>
+                <div class="cardin">
+                    <div class="card-lbl">Hardware Installation</div>
+                    <p class="card-lblp">Telstra</p>
+                    <p class="card-lblp" style="margin-top: -5px;">17 July 2016</p>
+                    <button class="btn-flat btn-done">DETAILS</button>
+                </div>
+            </div>
+            <!-- endcard -->
         </div>
     </ion-content>
 </ion-view>

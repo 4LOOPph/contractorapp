@@ -1,49 +1,60 @@
-<ion-view view-title="Rate" name="vendor-info" ng-init="filter.direct = true;">
+<ion-view view-title="Account Information" name="vendor-info" ng-init="filter.direct = true;">
     <ion-content class="padding">
         <label class="new-label"><i class="icon ion-ios-clock-outline"></i> RATE</label>
         <div class="row">
-            <div class="col col-25">
+            <div class="col col-30">
+                <label class="item item-input bortop bordbot time-lab">
+                    <i class="icon ion-social-usd"></i>
+                    <input type="number" ng-model="rate.amount" style="padding-right: 0;">
+                </label>
+            </div>
+            <div class="col col-30">
+                <label class="item item-input item-select bortop bordbot time-lab">
+                    <select ng-options="item.label as item.label for item in weekdays track by item.id" ng-model="rate.weekday" style="top: 3px;">
+                    </select>
+                </label>
+            </div>
+            <div class="col col-30">
+                <label class="item item-input bortop bordbot time-lab">
+                    <textarea type="text" column="1" style="margin-top: 17px;" placeholder="Note"></textarea>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-30">
                 <label class="item item-input bortop bordbot time-lab">
                     <i class="icon ion-social-usd"></i>
                     <input type="number" ng-model="rate.amount">
                 </label>
             </div>
-            <label class="item item-input bortop bordbot time-pick time-lab">
-                <div class="col col-50">
-                    <input class="time-pick" type="text" placeholder="Start" name="" ng-model="rate.start" ng-click="openTime()">
-                </div>
-                <hr>
-                <div class="col col-50">
-                    <input class="time-pick" type="text" placeholder="End" name="" ng-model="rate.end" ng-click="openTime()">
-                </div>
-            </label>
-            <div class="col col-25">
+            <div class="col col-30">
                 <label class="item item-input item-select bortop bordbot time-lab">
-                    <select ng-options ="item.label as item.label for item in weekdays track by item.id" ng-model="rate.weekday">
+                    <select ng-options="item.label as item.label for item in weekdays track by item.id" ng-model="rate.weekday" style="top: 3px;">
                     </select>
+                </label>
+            </div>
+            <div class="col col-30">
+                <label class="item item-input bortop bordbot time-lab">
+                    <textarea type="text" column="1" style="margin-top: 17px;" placeholder="Note"></textarea>
                 </label>
             </div>
         </div>
         <div class="row" ng-repeat="rate in rates">
-            <div class="col col-25">
+            <div class="col col-30">
                 <label class="item item-input bortop bordbot time-lab">
                     <i class="icon ion-social-usd"></i>
                     <input type="number" ng-model="rate.amount">
                 </label>
             </div>
-            <label class="item item-input bortop bordbot time-pick time-lab">
-                <div class="col col-50">
-                    <input class="time-pick" type="text" placeholder="Start" name="" ng-model="rate.start" ng-click="openTime()">
-                </div>
-                -
-                <div class="col col-50">
-                    <input class="time-pick" type="text" placeholder="End" name="" ng-model="rate.end" ng-click="openTime()">
-                </div>
-            </label>
-            <div class="col col-25">
+            <div class="col col-30">
                 <label class="item item-input item-select bortop bordbot time-lab">
-                    <select ng-options ="item.label as item.label for item in weekdays track by item.id" ng-model="rate.weekday">
+                    <select ng-options="item.label as item.label for item in weekdays track by item.id" ng-model="rate.weekday" style="top: 3px;">
                     </select>
+                </label>
+            </div>
+            <div class="col col-30">
+                <label class="item item-input bortop bordbot time-lab">
+                    <textarea type="text" column="1" style="margin-top: 17px;" placeholder="Note" ng-model="rate.note"></textarea>
                 </label>
             </div>
         </div>
@@ -105,18 +116,19 @@
             <p class="account-det">Cheque will forwarded to the address provided.</p>
         </div>
         <div class="list">
-            <ion-checkbox class="checkbox-square checkboxList">
-                <label class="new-label positive">VIEW TERMS AND CONDITION</label>
-            </ion-checkbox>
+            <ion-checkbox class="checkbox-square checkboxList" style="    width: 5px;
+    padding-left: 40px;">
+                
+            </ion-checkbox><div class="new-label positive" ng-click="clickToterm()" style="margin-top: -25px;margin-left: 65px;" >VIEW TERMS AND CONDITION</div>
         </div>
         <div class="row padding-top">
             <div class="col col-50">
-                <button ui-sref="vendorInfo" class="button button-block button-stable">
+                <button ng-click="showCancel()" class="button button-block button-stable">
                     Cancel
                 </button>
             </div>
             <div class="col col-50">
-                <button ui-sref="qualification" class="button button-block button-positive">
+                <button ng-click="showConfirm()" class="button button-block button-positive">
                     Next
                 </button>
             </div>
