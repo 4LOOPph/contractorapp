@@ -1,4 +1,4 @@
-<ion-view view-title="Qualifications" name="vendor-info">
+<ion-view view-title="Qualifications" name="vendor-info" style="margin-top: 35px;">
     <ion-content class="padding">
         <h4 class="new-label padding-top"><i class="icon ion-ios-list-outline"></i> QUALIFICATION CHECKLIST</h4>
         <div class="list padding-right padding-left">
@@ -59,23 +59,30 @@
                 Scan Certificate
             </button>
         </div>
-        <label class="new-label"><i class="icon ion-person"></i> REFERENCE</label>
+        <label class="new-label">REFERENCE</label>
         <div class="form">
             <div class="list list-inset">
-                <label class="item item-input">
-                    <input type="text" placeholder="LastName, FirstName, MiddleName" ng-model="data.username">
+                <label class="item item-input item-icon-left">
+                    <span class="i-con ion-ios-person-outline"></span>
+                    <input type="text" ng-model="data.lname" placeholder="Last Name">
+                </label>
+                <label class="item item-input item-icon-left">
+                    <span class="i-con"></span>
+                    <input type="text" ng-model="data.fname" placeholder="First Name">
                 </label>
             </div>
             <div class="list list-inset">
-                <label class="item item-input bordbot">
-                    <input type="text" placeholder="Phone number" ng-model="data.phone">
-                </label>
-            </div>
-            <div class="list list-inset">
-                <label class="item item-input bordbot">
-                    <input type="text" placeholder="Email" ng-model="data.email">
-                </label>
-            </div>
+            <label class="item item-input item-icon-left">
+                <span class="i-con ion-ios-telephone-outline"></span>
+                <input type="text" placeholder="Contact Number" ng-model="data.phone" mask="(999) 999-9999" clean="true">
+            </label>
+        </div>
+        <div class="list list-inset">
+            <label class="item item-input bordbot item-icon-left">
+                <span class="i-con ion-ios-email-outline"></span>
+                <input type="email" placeholder="Email Address" ng-model="data.email">
+            </label>
+        </div>
         </div>
         <div class="row padding-top">
             <div class="col col-50">
@@ -88,6 +95,6 @@
                     Next
                 </button>
             </div>
-        </div>
+        </div><br>
     </ion-content>
 </ion-view>

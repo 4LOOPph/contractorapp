@@ -1,77 +1,60 @@
-<ion-view view-title="Account Information" name="vendor-info" ng-init="filter.direct = true;">
-    <ion-content class="padding">
+<ion-view view-title="Payment" name="vendor-info" ng-init="filter.direct = true;" style="margin-top: 45px;">
+    <ion-content class="padding has-tabs-bottom">
         <label class="new-label"><i class="icon ion-ios-clock-outline"></i> RATE</label>
-        <div class="row">
-            <div class="col col-30">
+        <div class="list">
+            <ion-checkbox ng-click="rate.standard = true; rate.other= false; disabled = true" class="item-new" ng-model="rate.standard">
+                <p>Standard Rate
+                    <div style="font-style: italic;font-size: 11px;">(please specify your rate)</div>
+                </p>
+            </ion-checkbox>
+            <div class="list list-inset" style="margin-left: 210px;margin-right: 3%;margin-top: -58px;margin-bottom: 10px;">
                 <label class="item item-input bortop bordbot time-lab">
                     <i class="icon ion-social-usd"></i>
-                    <input type="number" ng-model="rate.amount" style="padding-right: 0;">
+                    <input type="number" ng-model="rate.stanDard" ng-show="rate.standard == true" ng-disabled="rate.other" placeholder="00.00" style="padding-right: 0;height: 44px;">
                 </label>
             </div>
-            <div class="col col-30">
-                <label class="item item-input item-select bortop bordbot time-lab">
-                    <select ng-options="item.label as item.label for item in weekdays track by item.id" ng-model="rate.weekday" style="top: 3px;">
-                    </select>
-                </label>
-            </div>
-            <div class="col col-30">
-                <label class="item item-input bortop bordbot time-lab">
-                    <textarea type="text" column="1" style="margin-top: 17px;" placeholder="Note"></textarea>
-                </label>
+            <ion-checkbox ng-click="rate.standard = false; rate.other= true;" class="item-new" ng-model="rate.other">
+                <p>Other Rate <small style="font-style: italic;font-size: 11px;">(tick to specify other rate)</small></p>
+            </ion-checkbox>
+        </div>
+        <div class="list form" ng-show="rate.other == true" style="margin-top: -30px;">
+            <div class="row">
+                <div class="col col-50">Weekdays
+                    <div style="color: blue;font-size:13px;font-style: italic;">Base Hours:</div>
+                    <label class="item item-input bortop bordbot time-lab">
+                        <i class="icon ion-social-usd"></i>
+                        <input type="number" ng-model="rate.psrrate" placeholder="00.00" style="padding-right: 0;">
+                    </label>
+                    <br>
+                    <div style="color: red;font-size:13px;font-style: italic;">After Hours:</div>
+                    <label class="item item-input bortop bordbot time-lab">
+                        <i class="icon ion-social-usd"></i>
+                        <input type="number" ng-model="rate.psrrate"  placeholder="00.00" style="padding-right: 0;">
+                    </label>
+                </div>
+                <div class="col col-50">Weekends
+                    <div style="color: blue;font-size:13px;font-style: italic;">Base Hours:</div>
+                    <label class="item item-input bortop bordbot time-lab">
+                        <i class="icon ion-social-usd"></i>
+                        <input type="number" ng-model="rate.psrrate"  placeholder="00.00" style="padding-right: 0;">
+                    </label>
+                    <br>
+                    <div style="color: red;font-size:13px;font-style: italic;">After Hours:</div>
+                    <label class="item item-input bortop bordbot time-lab">
+                        <i class="icon ion-social-usd"></i>
+                        <input type="number" ng-model="rate.psrrate" placeholder="00.00" style="padding-right: 0;">
+                    </label>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col col-30">
-                <label class="item item-input bortop bordbot time-lab">
-                    <i class="icon ion-social-usd"></i>
-                    <input type="number" ng-model="rate.amount">
-                </label>
-            </div>
-            <div class="col col-30">
-                <label class="item item-input item-select bortop bordbot time-lab">
-                    <select ng-options="item.label as item.label for item in weekdays track by item.id" ng-model="rate.weekday" style="top: 3px;">
-                    </select>
-                </label>
-            </div>
-            <div class="col col-30">
-                <label class="item item-input bortop bordbot time-lab">
-                    <textarea type="text" column="1" style="margin-top: 17px;" placeholder="Note"></textarea>
-                </label>
-            </div>
-        </div>
-        <div class="row" ng-repeat="rate in rates">
-            <div class="col col-30">
-                <label class="item item-input bortop bordbot time-lab">
-                    <i class="icon ion-social-usd"></i>
-                    <input type="number" ng-model="rate.amount">
-                </label>
-            </div>
-            <div class="col col-30">
-                <label class="item item-input item-select bortop bordbot time-lab">
-                    <select ng-options="item.label as item.label for item in weekdays track by item.id" ng-model="rate.weekday" style="top: 3px;">
-                    </select>
-                </label>
-            </div>
-            <div class="col col-30">
-                <label class="item item-input bortop bordbot time-lab">
-                    <textarea type="text" column="1" style="margin-top: 17px;" placeholder="Note" ng-model="rate.note"></textarea>
-                </label>
-            </div>
-        </div>
-        <div>
-            <button ng-click="addRate(rate)" class="button add-button">
-                <span class="ion-plus"> New Rate</span>
-            </button>
-        </div>
-        <div style="margin-top:50px;">
+        <div style="margin-top:30px;">
             <hr>
             <label class="new-label"><i class="icon ion-social-usd"></i> CURRENCY</label>
-            <div class="list" class="padding-top">
+            <div class="list" class="padding-top" style="margin-top: 10px;">
                 <label class="item item-input item-select curr bortop bordbot">
-                    <select>
-                        <option selected>Australian Dollar</option>
-                        <option>Dollar</option>
-                        <option>Doll</option>
+                    <select style="padding: 10px;">
+                        <option selected>Australia Dollar</option>
+                        <option>NZ Dollar</option>
                     </select>
                 </label>
             </div>
@@ -118,8 +101,8 @@
         <div class="list">
             <ion-checkbox class="checkbox-square checkboxList" style="    width: 5px;
     padding-left: 40px;">
-                
-            </ion-checkbox><div class="new-label positive" ng-click="clickToterm()" style="margin-top: -25px;margin-left: 65px;" >VIEW TERMS AND CONDITION</div>
+            </ion-checkbox>
+            <div class="new-label positive" ng-click="openModal()" style="margin-top: -25px;margin-left: 65px;">VIEW TERMS AND CONDITION</div>
         </div>
         <div class="row padding-top">
             <div class="col col-50">
@@ -132,6 +115,6 @@
                     Next
                 </button>
             </div>
-        </div>
+        </div><br><br>
     </ion-content>
 </ion-view>
