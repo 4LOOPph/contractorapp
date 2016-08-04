@@ -1,99 +1,124 @@
-<ion-view view-title="Task" style="background-color: #efefef;">
+<ion-view view-title="Task" style="background-color: #efefef;"> 
     <ion-nav-buttons side="secondary">
-        <button class="button button-icon ion-ios-gear-outline"></button>
+        <button class="button button-icon ion-ios-gear-outline" ng-click="showPopover($event)"></button>
     </ion-nav-buttons>
-    <ion-content style="top: 55px;background-color: #efefef;">
-        <label class="new-label" style="margin-top:20px;"><i class="icon ion-ios-pie-outline"></i> IN PROGRESS</label>
-        <div class="card newcard">
+    <ion-content style="background-color: #efefef;margin-top:60px;">
+        <label class="new-label " style="margin-top:20px;">IN PROGRESS <small style="font-style:italic;"> <a> (Tap task to view details <img src="img/tap.svg" style="width: 5%;
+    margin-bottom: -5px;">)</a></small></label>
+        <a ng-click="$parent.opentaskinprogressModal()" style="float: right;margin-right: 10px;">VIEW ALL</a>
+        <div class="card newcard animated fadeInLeft anim4">
             <!-- card start -->
-            <div class=" taskcardgreen" ng-click="filter.direct = true; filter.check= false; filter.check1= false">
-                <div class="card-sidepad"></div>
-                <div class="cardin">
-                    <div class="card-lbl">Digital Ticket Testing</div>
-                    <p class="card-lblp">Telstra</p>
-                    <p class="card-lblp" style="margin-top: -5px;">27 June 2016</p>
-                    <button class="btn-flat btn-done">DONE</button>
+            <div>
+                <div class=" taskcardgreen" ng-click="gotoprog($event)">
+                    <div class="card-sidepad"></div>
+                    <div class="cardin">
+                        <div class="card-lbl">Digital Ticket Testing</div>
+                        <p class="card-lblp">Telstra</p>
+                        <p class="card-lblp" style="margin-top: -5px;">27 June 2016</p>
+                    </div>
                 </div>
+                <button class="btn-flat btn-done animated fadeInBounce" ng-click="showCheck2()" style="margin-right: 15px;">DONE</button>
             </div>
-            <div class=" taskcardyellow" ng-click="filter.direct = false; filter.check= false; filter.check1= true">
-                <div class="card-sidepad" style="background-color: #ece505;"></div>
-                <div class="cardin">
-                    <div class="card-lbl">Hardware Installation</div>
-                    <p class="card-lblp">Telstra</p>
-                    <p class="card-lblp" style="margin-top: -5px;">17 July 2016</p>
-                    <button class="btn-flat btn-done">DONE</button>
+            <div>
+                <div class=" taskcardyellow" ng-click="gotoprog($event)">
+                    <div class="card-sidepad" style="background-color: #ece505;"></div>
+                    <div class="cardin">
+                        <div class="card-lbl">Hardware Installation</div>
+                        <p class="card-lblp">Telstra</p>
+                        <p class="card-lblp" style="margin-top: -5px;">17 July 2016</p>
+                    </div>
                 </div>
+                <button class="btn-flat btn-done animated fadeInBounce" ng-click="showCheck3()" style="margin-right: 15px;">DONE</button>
             </div>
             <!-- endcard -->
         </div>
-        <label class="new-label" style="margin-top:20px;"><i class="icon ion-ios-plus-outline"></i> PENDING</label>
-        <div class="card newcard">
-            <!-- card start -->
-            <div class=" taskcardred" ng-click="filter.direct = false; filter.check= true; filter.check1= false">
-                <div class="card-sidepad" style="background-color: #c10606;"></div>
-                <div class="cardin">
-                    <div class="card-lbl">Network Setup</div>
-                    <p class="card-lblp">7-Eleven</p>
-                    <p class="card-lblp" style="margin-top: -5px;">7 July 2016</p>
-                    <button class="btn-flat btn-done">START</button>
+        <div style="margin-top: 25px;">
+            <label class="new-label" style="margin-top:20px;">PENDING <small style="font-style:italic;"> <a> (Tap task to view details <img src="img/tap.svg" style="width: 5%;
+    margin-bottom: -5px;">)</a></small></label>
+            <a ng-click="openpendingModal()" style="float: right;margin-right: 10px;">VIEW ALL</a>
+            <div class="card newcard animated fadeInLeft anim5">
+                <!-- card start -->
+                <div>
+                    <div class=" taskcardred" ng-click="pendingDetails($event)">
+                        <div class="card-sidepad" style="background-color: #c10606;"></div>
+                        <div class="cardin">
+                            <div class="card-lbl">Network Setup</div>
+                            <p class="card-lblp">7-Eleven</p>
+                            <p class="card-lblp" style="margin-top: -5px;">7 July 2016</p>
+                        </div>
+                    </div>
+                    <button class="btn-flat btn-done animated fadeInBounce" ng-click="clickCurrentin()" style="margin-right: 15px;">START</button>
                 </div>
-            </div>
-            <div class=" taskcardgreen" ng-click="filter.direct = true; filter.check= false; filter.check1= false">
-                <div class="card-sidepad"></div>
-                <div class="cardin">
-                    <div class="card-lbl">Digital Ticket Testing</div>
-                    <p class="card-lblp">Telstra</p>
-                    <p class="card-lblp" style="margin-top: -5px;">27 June 2016</p>
-                    <button class="btn-flat btn-done">START</button>
+                <div>
+                    <div class=" taskcardgreen" ng-click="pendingDetails($event)">
+                        <div class="card-sidepad"></div>
+                        <div class="cardin">
+                            <div class="card-lbl">Digital Ticket Testing</div>
+                            <p class="card-lblp">Telstra</p>
+                            <p class="card-lblp" style="margin-top: -5px;">27 June 2016</p>
+                        </div>
+                    </div>
+                    <button class="btn-flat btn-done animated fadeInBounce" ng-click="clickCurrentin()" style="margin-right: 15px;">START</button>
                 </div>
+                <!-- endcard -->
             </div>
-            <!-- endcard -->
         </div>
-        <label class="new-label" style="margin-top:20px;"><i class="icon ion-android-more-horizontal"></i> NEW TASK</label>
-        <div class="card newcard">
-            <!-- card start -->
-            <div class=" taskcardred" ng-click="filter.direct = false; filter.check= true; filter.check1= false">
-                <div class="card-sidepad" style="background-color: #c10606;"></div>
-                <div class="cardin">
-                    <div class="card-lbl">Network Setup</div>
-                    <p class="card-lblp">7-Eleven</p>
-                    <p class="card-lblp" style="margin-top: -5px;">7 July 2016</p>
-                    <button class="btn-flat btn-done">ACCEPT</button>
+        <div style="margin-top: 25px;">
+            <label class="new-label" style="margin-top:20px;">NEW TASK <small style="font-style:italic;"> <a> (Tap task to view details <img src="img/tap.svg" style="width: 5%;
+    margin-bottom: -5px;">)</a></small></label>
+            <a ng-click="opennewtaskModal()" style="float: right;margin-right: 10px;">VIEW ALL</a>
+            <div class="card newcard animated fadeInLeft anim 6">
+                <!-- card start -->
+                <div class=" taskcardred" ng-click="newTask($event)">
+                    <div class="card-sidepad" style="background-color: #c10606;"></div>
+                    <div class="cardin">
+                        <div class="card-lbl">Network Setup</div>
+                        <p class="card-lblp">7-Eleven</p>
+                        <p class="card-lblp" style="margin-top: -5px;">7 July 2016</p>
+                        <!--  <button class="btn-flat btn-done animated fadeInBounce" ng-click="newTask($event)">DETAILS</button> -->
+                    </div>
                 </div>
-            </div>
-            <div class=" taskcardyellow" ng-click="filter.direct = false; filter.check= false; filter.check1= true">
-                <div class="card-sidepad" style="background-color: #ece505;"></div>
-                <div class="cardin">
-                    <div class="card-lbl">Hardware Installation</div>
-                    <p class="card-lblp">Telstra</p>
-                    <p class="card-lblp" style="margin-top: -5px;">17 July 2016</p>
-                    <button class="btn-flat btn-done">ACCEPT</button>
+                <div class=" taskcardyellow" ng-click="newTask($event)">
+                    <div class="card-sidepad" style="background-color: #ece505;"></div>
+                    <div class="cardin">
+                        <div class="card-lbl">Hardware Installation</div>
+                        <p class="card-lblp">Telstra</p>
+                        <p class="card-lblp" style="margin-top: -5px;">17 July 2016</p>
+                        <!-- <button class="btn-flat btn-done animated fadeInBounce" ng-click="newTask($event)">DETAILS</button> -->
+                    </div>
                 </div>
+                <!-- endcard -->
             </div>
-            <!-- endcard -->
         </div>
-        <label class="new-label" style="margin-top:20px;"><i class="icon ion-ios-checkmark-outline"></i> COMPLETED</label>
-        <div class="card newcard">
-            <!-- card start -->
-            <div class=" taskcardwhite" ng-click="filter.direct = false; filter.check= true; filter.check1= false">
-                <div class="card-sidepad" style="background-color: transparent;"></div>
-                <div class="cardin">
-                    <div class="card-lbl">Network Setup</div>
-                    <p class="card-lblp">7-Eleven</p>
-                    <p class="card-lblp" style="margin-top: -5px;">7 July 2016</p>
-                    <button class="btn-flat btn-done">DETAILS</button>
+        <div style="margin-top: 25px;">
+            <label class="new-label" style="margin-top:20px;">COMPLETED <small style="font-style:italic;"> <a> (Tap task to view details <img src="img/tap.svg" style="width: 5%;
+    margin-bottom: -5px;">)</a></small></label>
+            <a ng-click="opencompletedModal()" style="float: right;margin-right: 10px;">VIEW ALL</a>
+            <div class="card newcard animated fadeInLeft anim7">
+                <!-- card start -->
+                <div class=" taskcardwhite" ng-click="comptask($event)">
+                    <div class="card-sidepad" style="background-color: transparent;"></div>
+                    <div class="cardin">
+                        <div class="card-lbl">Network Setup</div>
+                        <p class="card-lblp">7-Eleven</p>
+                        <p class="card-lblp" style="margin-top: -5px;">7 July 2016</p>
+                        <!-- <button class="btn-flat btn-done animated fadeInBounce">DETAILS</button> -->
+                    </div>
                 </div>
-            </div>
-            <div class=" taskcardwhite" ng-click="filter.direct = false; filter.check= false; filter.check1= true">
-                <div class="card-sidepad" style="background-color: transparent;"></div>
-                <div class="cardin">
-                    <div class="card-lbl">Hardware Installation</div>
-                    <p class="card-lblp">Telstra</p>
-                    <p class="card-lblp" style="margin-top: -5px;">17 July 2016</p>
-                    <button class="btn-flat btn-done">DETAILS</button>
+                <div class=" taskcardwhite" ng-click="comptask($event)">
+                    <div class="card-sidepad" style="background-color: transparent;"></div>
+                    <div class="cardin">
+                        <div class="card-lbl">Hardware Installation</div>
+                        <p class="card-lblp">Telstra</p>
+                        <p class="card-lblp" style="margin-top: -5px;">17 July 2016</p>
+                        <!-- <button class="btn-flat btn-done animated fadeInBounce">DETAILS</button> -->
+                    </div>
                 </div>
+                <!-- endcard -->
             </div>
-            <!-- endcard -->
         </div>
+        <br>
+        <br>
+        <br>
     </ion-content>
 </ion-view>

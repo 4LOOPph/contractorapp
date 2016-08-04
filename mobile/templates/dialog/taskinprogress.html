@@ -1,0 +1,48 @@
+<ion-modal-view style="margin-top:45px;">
+    <ion-header-bar class="bar bar-header bar-stable">
+        <h1 class="title">List of Task in progress</h1>
+        <button class="button button-clear button-primary" ng-click="closetaskinprogressModal()">Close</button>
+    </ion-header-bar>
+    <ion-content class="padding" style="margin-left:0px;margin-bottom:10px;margin-top:50px;">
+        <div style="text-align:center;"><small style="font-style:italic;"> <a> (Tap task to view details <img src="img/tap.svg" style="width: 5%;
+    margin-bottom: -5px;">)</a></small></div>
+        <div ng-repeat="group in groups">
+            <div class="card newcard animated fadeInLeft" ng-class="{active: isGroupShown(group)}" style="background-color: #efefef;">
+                <div class=" taskcardred" ng-click="gotoprog($event)" ng-class="{'animated bounceOutRight': model == true}">
+                    <div class="card-sidepad" style="background-color: red;"></div>
+                    <div class="cardin">
+                        <div class="card-lbl">Hardware Installation</div>
+                        <p class="card-lblp">Telstra</p>
+                        <p class="card-lblp" style="margin-top: -5px;">17 July 2016</p>
+                    </div>
+                </div>
+                <button ng-if="user.usertype == 'con'" class="btn-flat btn-done animated fadeInBounce" ng-click="showCheck()" style="margin-right: 15px;">DONE</button>
+            </div>
+            <div ng-repeat="group in groups">
+                <div class="card newcard animated fadeInLeft" ng-click="duha = !duha" style="background-color: #efefef">
+                    <div class=" taskcardgreen" ng-click="gotoprog($event)" ng-class="{'animated bounceOutRight': model == true}">
+                        <div class="card-sidepad"></div>
+                        <div class="cardin">
+                            <div class="card-lbl">Digital Ticket Testing</div>
+                            <p class="card-lblp">Telstra</p>
+                            <p class="card-lblp" style="margin-top: -5px;">27 June 2016</p>
+                        </div>
+                    </div>
+                    <button ng-if="user.usertype == 'con'" class="btn-flat btn-done animated fadeInBounce" ng-click="showCheck2()" style="margin-right: 15px;">DONE</button>
+                </div>
+            </div>
+            <div>
+                <div class="card newcard animated fadeInLeft" ng-click="tulo = !tulo" style="background-color: #efefef">
+                    <div class=" taskcardyellow" ng-click="gotoprog($event)" ng-class="{'animated bounceOutRight': model == true}">
+                        <div class="card-sidepad" style="background-color: #ece505;"></div>
+                        <div class="cardin">
+                            <div class="card-lbl">Hardware Installation</div>
+                            <p class="card-lblp">Telstra</p>
+                            <p class="card-lblp" style="margin-top: -5px;">17 July 2016</p>
+                        </div>
+                    </div>
+                    <button ng-if="user.usertype == 'con'" class="btn-flat btn-done animated fadeInBounce" ng-click="showCheck3()" style="margin-right: 15px;">DONE</button>
+                </div>
+            </div>
+    </ion-content>
+</ion-modal-view>

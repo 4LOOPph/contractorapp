@@ -1,6 +1,6 @@
-<header class="main-header" style="margin-top: -50px;">
+<header class="main-header" style="margin-top: 0px;">
     <div style="margin-bottom: -55px;background-color: #2980dc;">
-        <img class="logod" src="images/Untitled-1.png" style="margin-left: 10px;">
+        <img class="logod" src="images/logo.png" style="margin-left: 10px;">
         <a class="p-name">CONTRACTOR APP</a>
         <a class="navbar-brand"></a>
     </div>
@@ -42,7 +42,7 @@
             <li><a ui-sref="admintask"><span>Tasks</span></a></li>
             <li><a href=""><span>Reports</span></a></li>
             <li><div class="qlinks">Quick Links</div></li>
-            <div class="quickl"><a  data-toggle="modal" data-target="#myModal">Create Task</a></div>
+            <div class="quickl"><div ng-click="openMod('lg')" style="margin-left: -12px;">Create Task</div></div>
             <div class="quickl" style="margin-top:2px;"><a href="#">Create Report</a></div>
         </ul>
     </div>
@@ -69,6 +69,7 @@
         </div>
     </div>
 </div>
+
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
