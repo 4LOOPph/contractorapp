@@ -1,0 +1,44 @@
+<ion-modal-view style="margin-top:45px;">
+    <ion-header-bar class="bar bar-header bar-stable">
+        <h1 class="title" ng-if="user.usertype=='con'">List of Pending Task</h1>
+        <h1 class="title" ng-if="user.usertype=='proc'">For Approval Task List</h1>
+        <button class="button button-clear button-primary" ng-click="closependingModal()">Close</button>
+    </ion-header-bar>
+    <ion-content class="padding" style="margin-left:0px;margin-bottom:10px;margin-top:50px;">
+        <div style="text-align:center;"><small style="font-style:italic;"> <a> (Tap task to view details <img src="img/tap.svg" style="width: 5%;
+    margin-bottom: -5px;">)</a></small></div>
+        <div class="card newcard animated fadeInLeft anim4" ng-click="pendingDetails($event)">
+            <div class=" taskcardyellow">
+                <div class="card-sidepad" style="background-color: #ece505;"></div>
+                <div class="cardin">
+                    <div class="card-lbl">Hardware Installation</div>
+                    <p class="card-lblp">Telstra</p>
+                    <p class="card-lblp" style="margin-top: -5px;">17 July 2016</p>
+                    <!--  <button class="btn-flat btn-done animated fadeInBounce" ng-click="clickToCheckout()" ng-if="user.usertype=='con'">DONE</button> -->
+                </div>
+            </div>
+        </div>
+        <div class="card newcard animated fadeInLeft anim4" ng-click="pendingDetails($event)">
+            <div class=" taskcardgreen">
+                <div class="card-sidepad"></div>
+                <div class="cardin">
+                    <div class="card-lbl">Digital Ticket Testing</div>
+                    <p class="card-lblp">Telstra</p>
+                    <p class="card-lblp" style="margin-top: -5px;">27 June 2016</p>
+                    <!--  <button class="btn-flat btn-done animated fadeInBounce" ng-click="clickToCheckout()" ng-if="user.usertype=='con'">DONE</button> -->
+                </div>
+            </div>
+        </div>
+        <div class="card newcard animated fadeInLeft anim4" ng-click="pendingDetails($event)">
+            <div class=" taskcardyellow">
+                <div class="card-sidepad" style="background-color: #ece505;"></div>
+                <div class="cardin">
+                    <div class="card-lbl">Hardware Installation</div>
+                    <p class="card-lblp">Telstra</p>
+                    <p class="card-lblp" style="margin-top: -5px;">17 July 2016</p>
+                    <!--   <button class="btn-flat btn-done animated fadeInBounce" ng-click="clickToCheckout()" ng-if="user.usertype=='con'">DONE</button> -->
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

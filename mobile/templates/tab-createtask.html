@@ -1,13 +1,14 @@
 <ion-view view-title="Create Task" class="vendor-info" style="margin-top: 35px;">
     <ion-nav-buttons side="secondary">
-        <button class="button button-icon ion-ios-gear-outline" ng-click="showPopoveradmin($event)"></button>
+        <button class="button button-icon ion-ios-gear-outline" ng-click="showPopover($event)"></button>
     </ion-nav-buttons>
-    <ion-content class="padding form">
+    <ion-content class="padding form animated fadeInLeft">
         <div class="list padding-top">
             <label class="new-label">TASK NAME</label>
         </div>
-        <div class="list list-inset" style="margin-top: -10px;">
-            <label class="item item-input">
+        <div class="list list-inset" style="margin-top: -15px;">
+            <label class="item item-input item-icon-left">
+                <span class="i-con ion-ios-compose-outline"></span>
                 <input type="text" placeholder="Task Name">
             </label>
         </div>
@@ -15,9 +16,10 @@
             <label class="new-label">TASK TYPE</small>
             </label>
         </div>
-        <div class="list list-inset" style="margin-top: -10px;">
-            <label class="item item-input item-select" style="height: 48px;">
-                <select style="padding-left: 15px;">
+        <div class="list list-inset" style="margin-top: -15px;">
+            <label class="item item-input item-icon-left " style="height: 48px;">
+                <span class="i-con ion-ios-list-outline"></span>
+                <select style="margin-left: -3px;">
                     <option selected>Installation</option>
                     <option>Setup</option>
                     <option>Testing</option>
@@ -28,54 +30,57 @@
             <label class="new-label">DISCRIPTION</small>
             </label>
         </div>
-        <div class="list list-inset" style="margin-top: -10px;">
+        <div class="list list-inset" style="margin-top: -15px;">
             <textarea class="reptxtarea" placeholder="If unknown, otherwise write 'unknown'" rows="4">
             </textarea>
         </div>
         <div class="list padding-top">
             <label class="new-label">STORE NAME</label>
         </div>
-        <div class="list list-inset" style="margin-top: -10px;">
-            <label class="item item-input ">
+        <div class="list list-inset" style="margin-top: -15px;">
+            <label class="item item-input item-icon-left">
+                <span class="i-con ion-ios-home-outline"></span>
                 <input type="text" placeholder="Store Name" clean="true">
             </label>
         </div>
         <div class="list padding-top">
-            <label class="new-label"><span class=" ion-ios-location-outline"></span> LOCATION</label>
+            <label class="new-label">
+                LOCATION</label>
         </div>
-        <div class="list list-inset" style="margin-top: -10px;">
-            <label class="item item-input ">
+        <div class="list list-inset" style="margin-top: -15px;">
+            <label class="item item-input item-icon-left">
+                <span class="i-con ion-ios-location-outline"></span>
                 <input type="text" placeholder="Location">
             </label>
         </div>
         <div class="list padding-top">
-            <label class="new-label"><span class=" ion-clock"></span> DEADLINE</label>
+            <label class="new-label">DEADLINE</label>
         </div>
-        <div class="list list-inset" style="margin-top: -10px;">
+        <div class="list list-inset" style="margin-top: -15px;">
             <label class="item item-input item-icon-left">
-                <input type="text" placeholder="Specify Date" ng-click="openDatePicker(ipObj1)">
-                <span class="i-con ion-ios-calendar-outline">
+                <span class="i-con ion-ios-calendar-outline"></span>
+                <input type="text" placeholder="Specify Date" ng-click="openDatePicker(ipObj1)" ng-model="newDate">
             </label>
-           
         </div>
         <div class="row">
             <div class="col col-50">
-            <label class="item item-input item-icon-left" style="border-radius:6px;">
-                <input type="text" placeholder="Start Time" ng-click="openTime()">
-                <span class="i-con ion-clock">
+                <label class="item item-input item-icon-left" style="border-radius:6px;">
+                    <input type="text" placeholder="Start Time" ng-click="openTime()" ng-model="start">
+                    <span class="i-con ion-clock">
             </label>
             </div>
         <div class="col col-50">
         <label class="item item-input item-icon-left" style="border-radius:6px;">
-                <input type="text" placeholder="End Time" ng-click="openTime()">
+
+                <input type="text" placeholder="End Time" ng-click="openTime2()" ng-model="end">
                 <span class="i-con ion-clock"></span>
-            </label>
-        </div>
+                </label>
+            </div>
         </div>
         <div class="list padding-top">
-            <label class="new-label"><span class=" ion-ios-time-outline"></span> ESTIMATE DAY/TIME OF TASK COMPLETION</label>
+            <label class="new-label">ESTIMATE DAY/TIME OF TASK COMPLETION</label>
         </div>
-        <div class="row" style="margin-top:-10px;">
+        <div class="row" style="margin-top:-20px;">
             <div class="col col-50">
                 <label class="item item-input " style="border-radius:6px;">
                     <input type="text" placeholder="# of days">
@@ -91,9 +96,10 @@
             <label class="new-label">PRIORITY</small>
             </label>
         </div>
-        <div class="list list-inset" style="margin-top: -10px;">
-            <label class="item item-input item-select" style="height: 48px;">
-                <select style="padding-left: 15px;">
+        <div class="list list-inset" style="margin-top: -15px;">
+            <label class="item item-input item-icon-left" style="height: 48px;">
+                <span class="i-con ion-ios-information-outline"></span>
+                <select style="padding-left: -3px;">
                     <option selected>Low</option>
                     <option>Moderate</option>
                     <option>High</option>
@@ -103,32 +109,37 @@
         <div class="list padding-top">
             <label class="new-label">CASE NUMBER <small style="font-style:italic;">(If applicable)</small></label>
         </div>
-        <div class="list list-inset" style="margin-top: -10px;">
-            <label class="item item-input">
+        <div class="list list-inset" style="margin-top: -15px;">
+            <label class="item item-input item-icon-left">
+                <span class="i-con ion-ios-copy-outline"></span>
                 <input type="text" placeholder="i.e 0162548" mask="9999999">
             </label>
         </div>
         <div class="list padding-top">
             <label class="new-label">REQUESTED BY</label>
         </div>
-        <div class="list list-inset" style="margin-top: -10px;">
-            <label class="item item-input">
+        <div class="list list-inset" style="margin-top: -15px;">
+            <label class="item item-input item-icon-left">
+                <span class="i-con ion-ios-people-outline"></span>
                 <input type="text" placeholder="Name of requestor">
             </label>
         </div>
         <div class="list padding-top">
             <label class="new-label">SITE/STORE CONTACT</label>
         </div>
-        <div class="list list-inset" style="margin-top: -10px;">
-            <label class="item item-input">
+        <div class="list list-inset" style="margin-top: -15px;">
+            <label class="item item-input item-icon-left">
+                <span class="i-con ion-ios-person-outline"></span>
                 <input type="text" placeholder="Last Name">
             </label>
-            <label class="item item-input">
+            <label class="item item-input item-icon-left">
+                <span class="i-con "></span>
                 <input type="text" placeholder="First Name">
             </label>
         </div>
         <div class="list list-inset">
-            <label class="item item-input">
+            <label class="item item-input item-icon-left">
+                <span class="i-con ion-ios-telephone-outline"></span>
                 <input type="text" placeholder="Contact Number">
             </label>
         </div>
@@ -137,7 +148,7 @@
         </div>
         <br>
         <hr>
-        <h4 class="new-label padding-top"><i class="icon ion-ios-person-outline"></i> ASSIGN TO CONTRACTOR/S</h4>
+        <h4 class="new-label padding-top">ASSIGN TO CONTRACTOR/S</h4>
         <div class="list padding-right padding-left">
             <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.one">
                 <small>REID, JAMES</small>
@@ -155,7 +166,9 @@
                 <small>SMITH, JAMES</small>
             </ion-checkbox>
         </div>
-        <a style="float:right;margin-right:10px;" ng-click="openModal()"><small>CLICK HERE TO VIEW FULL LIST</small></a><br><hr>
+        <a style="float:right;margin-right:10px;margin-top: -15px;" ng-click="openModal()"><small>CLICK HERE TO VIEW FULL LIST</small></a>
+        <br>
+        <hr>
         <div class="row">
             <div class="col col-50">
                 <button ng-click="showCancel()" class="button button-block button-stable">
@@ -163,12 +176,14 @@
                 </button>
             </div>
             <div class="col col-50">
-                <button  class="button button-block button-positive">
+                <button class="button button-block button-positive">
                     Send
                 </button>
             </div>
         </div>
         <br>
-        <br><br><br>
+        <br>
+        <br>
+        <br>
     </ion-content>
 </ion-view>

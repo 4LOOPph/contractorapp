@@ -1,0 +1,196 @@
+<ion-modal-view style="margin-top:45px;">
+    <ion-header-bar class="bar bar-header bar-stable">
+        <h1 class="title">List of Task in progress</h1>
+        <button class="button button-clear button-primary" ng-click="closeModal()">Close</button>
+    </ion-header-bar>
+    <ion-content class="padding" style="margin-left:0px;margin-bottom:10px;margin-top:50px;">
+    <div style="text-align:center;"><small style="font-style:italic;"> <a> (Tap task <img src="img/tap.svg" style="width: 5%;
+    margin-bottom: -5px;">)</a></small></div>
+        <div ng-repeat="group in groups" >
+            <div class="card newcard animated fadeInLeft" ng-click="isa = !isa"  ng-class="{active: isGroupShown(group)}" style="background-color: #efefef;">
+                <div class="taskcardred">
+                    <div class="card-sidepad" style="background-color: red;"></div>
+                    <div class="cardin">
+                        <div class="card-lbl">Network Setup</div>
+                        <p class="card-lblp">7-Eleven</p>
+                        <p class="card-lblp" style="margin-top: -5px;">7 July 2016</p>
+                        <button class="btn-flat btn-done animated fadeInBounce" ng-click="showCheck()" ng-if="user.usertype=='con'">DONE</button>
+                    </div>
+                </div>
+            </div>
+            <ion-item class="item-accordion animated fadeInRight anim6"  ng-show="isa" style="padding: 0px;">
+                <div class="">
+                    <div>
+                        <div class="card" style="margin-top: 10px;background-color: #efefef;">
+                            <div class="carding" style="border-color:red;border-style: solid;border-width: 1px;">
+                                <label class="cardlabel">NETWORK SETUP</label>
+                                <p style="color: rgb(115, 115, 115);">Eat Network cabling</p>
+                                <div>
+                                    <div class="cl1">Location
+                                        <div class="cl2">:</div>
+                                        <div class="cl3">Sydney CBD</div>
+                                    </div>
+                                    <div class="cl1">Deadline
+                                        <div class="cl2">:</div>
+                                        <div class="cl3">7 July 2016</div>
+                                    </div>
+                                    <div class="cl1">Client
+                                        <div class="cl2">:</div>
+                                        <div class="cl3">7-Eleven</div>
+                                    </div>
+                                    <div class="cl1">Status
+                                        <div class="cl2">:</div>
+                                        <div class="cl3" style="color:#0f6ab5;">In progress</div>
+                                    </div>
+                                    <div class="cl1">Priority
+                                        <div class="cl2">:</div>
+                                        <div class="cl3" style="color:red;">High</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-item>
+        </div>
+        <div ng-repeat="group in groups">
+            <div class="card newcard animated fadeInLeft" ng-click="duha = !duha" style="background-color: #efefef">
+                <div class="taskcardgreen" ng-click="showModerate()">
+                    <div class="card-sidepad"></div>
+                    <div class="cardin">
+                        <div class="card-lbl">Digital Ticket Testing</div>
+                        <p class="card-lblp">Telstra</p>
+                        <p class="card-lblp" style="margin-top: -5px;">27 June 2016</p>
+                        <button class="btn-flat btn-done animated fadeInBounce" ng-click="showCheck2()" ng-if="user.usertype=='con'">DONE</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <ion-item class="item-accordion animated fadeInRight anim6" ng-show="duha" style="padding: 0px;">
+                    <div class="card" style="margin-top: 10px;background-color: #efefef;">
+                        <div class="carding" style="border-color:green;border-style: solid;border-width: 1px;">
+                            <label class="cardlabel">DIGITAL TICKET TESTING</label>
+                            <p style="color: rgb(115, 115, 115);">Install Network cabling</p>
+                            <div>
+                                <div class="cl1">Location
+                                    <div class="cl2">:</div>
+                                    <div class="cl3">Sydney CBD</div>
+                                </div>
+                                <div class="cl1">Deadline
+                                    <div class="cl2">:</div>
+                                    <div class="cl3">27 June 2016</div>
+                                </div>
+                                <div class="cl1">Client
+                                    <div class="cl2">:</div>
+                                    <div class="cl3">Telstra</div>
+                                </div>
+                                <div class="cl1">Status
+                                    <div class="cl2">:</div>
+                                    <div class="cl3" style="color:#0f6ab5;">In progress</div>
+                                </div>
+                                <div class="cl1">Priority
+                                    <div class="cl2">:</div>
+                                    <div class="cl3" style="color:green;">Moderate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-item>
+            </div>
+        </div>
+        <div>
+        <div class="card newcard animated fadeInLeft" ng-click="tulo = !tulo" style="background-color: #efefef">
+            <div class=" taskcardyellow" ng-click="showLow()">
+                <div class="card-sidepad" style="background-color: yellow;"></div>
+                <div class="cardin">
+                    <div class="card-lbl">Hardware Installation</div>
+                    <p class="card-lblp">Telstra</p>
+                    <p class="card-lblp" style="margin-top: -5px;">17 July 2016</p>
+                    <button class="btn-flat btn-done animated fadeInBounce" ng-click="showCheck3()" ng-if="user.usertype=='con'">DONE</button>
+                </div>
+            </div>
+        </div>
+        <ion-item class="item-accordion animated fadeInRight anim6"  ng-show="tulo" style="padding: 0px;">
+                <div class="">
+                    <div>
+                        <div class="card" style="margin-top: 10px;background-color: #efefef;">
+                            <div class="carding" style="border-color:yellow;border-style: solid;border-width: 1px;">
+                                <label class="cardlabel">NETWORK SETUP</label>
+                                <p style="color: rgb(115, 115, 115);">Eat Network cabling</p>
+                                <div>
+                                    <div class="cl1">Location
+                                        <div class="cl2">:</div>
+                                        <div class="cl3">Sydney CBD</div>
+                                    </div>
+                                    <div class="cl1">Deadline
+                                        <div class="cl2">:</div>
+                                        <div class="cl3">7 July 2016</div>
+                                    </div>
+                                    <div class="cl1">Client
+                                        <div class="cl2">:</div>
+                                        <div class="cl3">7-Eleven</div>
+                                    </div>
+                                    <div class="cl1">Status
+                                        <div class="cl2">:</div>
+                                        <div class="cl3" style="color:#0f6ab5;">In progress</div>
+                                    </div>
+                                    <div class="cl1">Priority
+                                        <div class="cl2">:</div>
+                                        <div class="cl3" style="color:red;">low</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-item>
+            </div>
+            <div>
+        <div class="card newcard animated fadeInLeft" ng-click="opat = !opat" style="background-color: #efefef">
+            <div class="taskcardred" ng-class="{active:filter.check == true}" ng-click="showHigh()">
+                <div class="card-sidepad" style="background-color: red;"></div>
+                <div class="cardin">
+                    <div class="card-lbl">Network Setup</div>
+                    <p class="card-lblp">7-Eleven</p>
+                    <p class="card-lblp" style="margin-top: -5px;">7 July 2016</p>
+                    <button class="btn-flat btn-done animated fadeInBounce" ng-click="showCheck()" ng-if="user.usertype=='con'">DONE</button>
+                </div>
+            </div>
+        </div>
+<ion-item class="item-accordion animated fadeInRight anim6" ng-show="opat" style="padding: 0px;    margin-bottom: 50px;">
+    <div class="">
+        <div>
+            <div class="card" style="margin-top: 10px;background-color: #efefef;">
+                <div class="carding" style="border-color:red;border-style: solid;border-width: 1px;">
+                    <label class="cardlabel">NETWORK SETUP</label>
+                    <p style="color: rgb(115, 115, 115);">Eat Network cabling</p>
+                    <div>
+                        <div class="cl1">Location
+                            <div class="cl2">:</div>
+                            <div class="cl3">Sydney CBD</div>
+                        </div>
+                        <div class="cl1">Deadline
+                            <div class="cl2">:</div>
+                            <div class="cl3">7 July 2016</div>
+                        </div>
+                        <div class="cl1">Client
+                            <div class="cl2">:</div>
+                            <div class="cl3">7-Eleven</div>
+                        </div>
+                        <div class="cl1">Status
+                            <div class="cl2">:</div>
+                            <div class="cl3" style="color:#0f6ab5;">In progress</div>
+                        </div>
+                        <div class="cl1">Priority
+                            <div class="cl2">:</div>
+                            <div class="cl3" style="color:red;">High</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-item>
+</div>
+    </ion-content><br><br>
+</ion-modal-view>

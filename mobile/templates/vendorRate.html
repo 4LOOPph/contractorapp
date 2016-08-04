@@ -1,6 +1,6 @@
 <ion-view view-title="Payment" name="vendor-info" ng-init="filter.direct = true;" style="margin-top: 45px;">
     <ion-content class="padding has-tabs-bottom">
-        <label class="new-label"><i class="icon ion-ios-clock-outline"></i> RATE</label>
+        <label class="new-label"> RATE</label>
         <div class="list">
             <ion-checkbox ng-click="rate.standard = true; rate.other= false; disabled = true" class="item-new" ng-model="rate.standard">
                 <p>Standard Rate
@@ -17,39 +17,52 @@
                 <p>Other Rate <small style="font-style: italic;font-size: 11px;">(tick to specify other rate)</small></p>
             </ion-checkbox>
         </div>
-        <div class="list form" ng-show="rate.other == true" style="margin-top: -30px;">
-            <div class="row">
-                <div class="col col-50">Weekdays
-                    <div style="color: blue;font-size:13px;font-style: italic;">Base Hours:</div>
-                    <label class="item item-input bortop bordbot time-lab">
-                        <i class="icon ion-social-usd"></i>
-                        <input type="number" ng-model="rate.psrrate" placeholder="00.00" style="padding-right: 0;">
-                    </label>
-                    <br>
-                    <div style="color: red;font-size:13px;font-style: italic;">After Hours:</div>
-                    <label class="item item-input bortop bordbot time-lab">
-                        <i class="icon ion-social-usd"></i>
-                        <input type="number" ng-model="rate.psrrate"  placeholder="00.00" style="padding-right: 0;">
-                    </label>
+        <div class="list form" ng-show="rate.other == true" style="margin-top: -30px;padding:10px;">
+            <div>
+                <label class="new-label">WEEKDAYS</label>
+                <div class="row">
+                    <div class="col col-50">
+                        <div style="color: blue;font-size:13px;font-style: italic;margin-top: 12px;margin-left: 40px;">Base Hours Rate:</div>
+                    </div>
+                    <div class="col col-50">
+                        <label class="item item-input bortop bordbot time-lab" style="margin-right: -10px;">
+                            <i class="icon ion-social-usd"></i>
+                            <input type="number" ng-model="rate.psrrate" placeholder="00.00" style="padding-right: 0;">
+                        </label>
+                    </div>
                 </div>
-                <div class="col col-50">Weekends
-                    <div style="color: blue;font-size:13px;font-style: italic;">Base Hours:</div>
-                    <label class="item item-input bortop bordbot time-lab">
-                        <i class="icon ion-social-usd"></i>
-                        <input type="number" ng-model="rate.psrrate"  placeholder="00.00" style="padding-right: 0;">
-                    </label>
-                    <br>
-                    <div style="color: red;font-size:13px;font-style: italic;">After Hours:</div>
-                    <label class="item item-input bortop bordbot time-lab">
-                        <i class="icon ion-social-usd"></i>
-                        <input type="number" ng-model="rate.psrrate" placeholder="00.00" style="padding-right: 0;">
-                    </label>
+                <div class="row">
+                    <div class="col col-50">
+                        <div style="color: red;font-size:13px;font-style: italic;margin-top: 12px;margin-left: 40px;">After Hours Rate:</div>
+                    </div>
+                    <div class="col col-50">
+                        <label class="item item-input bortop bordbot time-lab" style="margin-right: -10px;">
+                            <i class="icon ion-social-usd"></i>
+                            <input type="number" ng-model="rate.psrrate" placeholder="00.00" style="padding-right: 0;">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label class="new-label">WEEKENDS</label>
+                <div class="row">
+                    <div class="col col-50">
+                        <div style="color: blue;font-size:13px;font-style: italic;margin-top: 12px;margin-left: 40px;">Weekend Rate:</div>
+                    </div>
+                    <div class="col col-50">
+                        <label class="item item-input bortop bordbot time-lab" style="margin-right: -10px;">
+                            <i class="icon ion-social-usd"></i>
+                            <input type="number" ng-model="rate.psrrate" placeholder="00.00" style="padding-right: 0;">
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
         <div style="margin-top:30px;">
-            <hr>
-            <label class="new-label"><i class="icon ion-social-usd"></i> CURRENCY</label>
+            <div style="padding-left:10px;padding-right:10px;">
+                <hr>
+            </div>
+            <label class="new-label">CURRENCY</label>
             <div class="list" class="padding-top" style="margin-top: 10px;">
                 <label class="item item-input item-select curr bortop bordbot">
                     <select style="padding: 10px;">
@@ -59,13 +72,15 @@
                 </label>
             </div>
         </div>
-        <label class="new-label"><i class="icon ion-card"></i> PAYMENT METHOD</label>
+        <label class="new-label">PAYMENT METHOD</label>
         <div class="list">
             <ion-checkbox ng-click="filter.direct = true; filter.check= false" class="item-new" ng-model="filter.direct">Direct Deposit</ion-checkbox>
             <ion-checkbox ng-click="filter.direct = false; filter.check= true" class="item-new" ng-model="filter.check">Check</ion-checkbox>
         </div>
         <div class="list form" ng-show="filter.direct == true">
-            <hr>
+            <div style="padding-left:10px;padding-right:10px;">
+                <hr>
+            </div>
             <p class="account-det">All requests for payment to bank accounts must be signed by the vendor or accompanied by documentary evidence of bank account details from the vendor(e.g. Email, Fax, Invoice)</p>
             <h4 class="new-label padding-top">BANK ACCOUNT</h4>
             <div class="list list-inset">
@@ -111,10 +126,12 @@
                 </button>
             </div>
             <div class="col col-50">
-                <button ng-click="showConfirm()" class="button button-block button-positive">
+                <button ui-sref="qualification" class="button button-block button-positive">
                     Next
                 </button>
             </div>
-        </div><br><br>
+        </div>
+        <br>
+        <br>
     </ion-content>
-</ion-view>
+</ion-view>ng-click="showConfirm()"
