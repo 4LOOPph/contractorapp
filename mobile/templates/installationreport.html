@@ -48,7 +48,7 @@
             <hr>
             <div><small><a>INSTALLATION CHECKLIST</a></small></div>
             <div class="row">
-                <div class="col col-50"><small>1. Media Player</small></div>
+                <div class="col col-33"><small>1. Media Player</small></div>
                 <div class="col">
                     <div class="checkbox1">
                         <input type="checkbox" class="new-item" name="" ng-click="filter.yes1 = true; filter.no1= false; filter.na1=false" ng-model="filter.yes1"><small style="margin-left: 20px;">Yes</small></div>
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col col-50"><small>2. Software Installation</small></div>
+                <div class="col col-33"><small>2. Software Installation</small></div>
                 <div class="col">
                     <div class="checkbox1">
                         <input type="checkbox" class="new-item" name="" ng-click="filter.yes2 = true; filter.no2= false; filter.na2=false" ng-model="filter.yes2"><small style="margin-left: 20px;">Yes</small></div>
@@ -78,10 +78,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col col-50">
+                <div class="col col-33">
                     <small>3. Screen, set to "always ON" 
                     <label class="item item-input" style="height: 30px;border-radius:4px;">
-                        <input type="number" ng-model="data.fname" placeholder="spicify how many">
+                        <input type="number" ng-model="data.fname" placeholder="specify how many">
                     </label>
                     </small>
                 </div>
@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col col-50"><small>4. Ensure location of computer is accessible to staff to restart</small></div>
+                <div class="col col-33"><small>4. Ensure location of computer is accessible to staff to restart</small></div>
                 <div class="col">
                     <div class="checkbox1">
                         <input type="checkbox" class="new-item" name="" ng-click="filter.yes4 = true; filter.no4= false; filter.na4=false" ng-model="filter.yes4"><small style="margin-left: 20px;">Yes</small></div>
@@ -114,7 +114,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col col-50"><small>5. Test: unplug power to PC & reconnect - it should restart automatically.</small></div>
+                <div class="col col-33"><small>5. Test: unplug power to PC & reconnect - it should restart automatically.</small></div>
                 <div class="col">
                     <div class="checkbox1">
                         <input type="checkbox" class="new-item" name="" ng-click="filter.yes5 = true; filter.no5= false; filter.na5=false" ng-model="filter.yes5"><small style="margin-left: 20px;">Yes</small></div>
@@ -129,7 +129,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col col-50"><small>6. Test: unplug power to screen & reconnect - it should restart automatically.</small></div>
+                <div class="col col-33"><small>6. Test: unplug power to screen & reconnect - it should restart automatically.</small></div>
                 <div class="col">
                     <div class="checkbox1">
                         <input type="checkbox" class="new-item" name="" ng-click="filter.yes6 = true; filter.no6= false; filter.na6=false" ng-model="filter.yes6"><small style="margin-left: 20px;">Yes</small></div>
@@ -144,7 +144,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col col-50"><small>7. Test: there is internet connectivity & live properties are downloading.</small></div>
+                <div class="col col-33"><small>7. Test: there is internet connectivity & live properties are downloading.</small></div>
                 <div class="col">
                     <div class="checkbox1">
                         <input type="checkbox" class="new-item" name="" ng-click="filter.yes7 = true; filter.no7= false; filter.na7=false" ng-model="filter.yes7"><small style="margin-left: 20px;">Yes</small></div>
@@ -159,7 +159,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col col-50"><small>8. Test: touch screen sensitivity through calibration.</small></div>
+                <div class="col col-33"><small>8. Test: touch screen sensitivity through calibration.</small></div>
                 <div class="col">
                     <div class="checkbox1">
                         <input type="checkbox" class="new-item" name="" ng-click="filter.yes8 = true; filter.no8= false; filter.na8=false" ng-model="filter.yes8"><small style="margin-left: 20px;">Yes</small></div>
@@ -174,7 +174,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col col-50"><small>9. Test: simple navigation through app making all section of touch foil is working.</small></div>
+                <div class="col col-33"><small>9. Test: simple navigation through app making all section of touch foil is working.</small></div>
                 <div class="col">
                     <div class="checkbox1">
                         <input type="checkbox" class="new-item" name="" ng-click="filter.yes9 = true; filter.no9= false; filter.na9=false" ng-model="filter.yes9"><small style="margin-left: 20px;">Yes</small></div>
@@ -311,10 +311,10 @@
                     Get Signature
                 </button>
                 <hr>
-                <button class="button button-block button-positive">
-                    Submit Report
-                </button>
         </div>
-        <br>
+        <button class="button button-block button-positive" ng-click="complete()">
+            Submit Report
+        </button>
+        <br><br>
     </ion-content>
 </ion-view>

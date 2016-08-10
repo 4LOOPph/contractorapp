@@ -10,7 +10,7 @@
                 <li class="dropdown user user-menu">
                     <a class="dropdown-toggle" data-toggle="dropdown" style="margin-top: 24px;" ng-click="drop = !drop" ng-class="{'icon fa fa-caret-down': !drop, 'fa  fa-caret-up': drop}">
                         <img src="images/no-avatar.jpg" class="user-image" alt="User Image">
-                        <i class="" style="color: white;"></i>
+                        <i class=""  style="color: white;"></i>
                     </a>
                     <ul id="!drop" class="dropdown-menu" style="box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.52);margin-top: 1px;">
                         <li class="user-header" style="background-color: #2980dc;">
@@ -41,12 +41,8 @@
             </li>
             <li><a ui-sref="admintask"><span>Tasks</span></a></li>
             <li><a href=""><span>Reports</span></a></li>
-            <li>
-                <div class="qlinks">Quick Links</div>
-            </li>
-            <div class="quickl">
-                <div ng-click="openMod('lg')" style="margin-left: -12px;">Create Task</div>
-            </div>
+            <li><div class="qlinks">Quick Links</div></li>
+            <div class="quickl"><div ng-click="openMod('lg')" style="margin-left: -12px;">Create Task</div></div>
             <div class="quickl" style="margin-top:2px;"><a href="#">Create Report</a></div>
         </ul>
     </div>
@@ -56,13 +52,13 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-8 eff">
-                    <section class="content">
+                    <section class="content" >
                         <div class="" bs-tabs>
                             <div data-title=" Recent Tasks" bs-pane>
                                 <div ng-include="'modules/admin/adminrecenttask.html'"></div>
                             </div>
                             <div data-title=" Recent Reports" bs-pane>
-                                <div ng-include="'modules/admin/adminrecentreport.html'"></div>
+                                <div ng-include="'modules/admin/adminrecentreport.html'" ></div>
                             </div>
                         </div>
                     </section>
@@ -73,19 +69,20 @@
         </div>
     </div>
 </div>
+
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Create Task</h4>
-            </div>
-            <div class="modal-body">
-                <div class="quick">Select from existing task</div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create Task</h4>
         </div>
+        <div class="modal-body">
+          <div class="quick">Select from existing task</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
