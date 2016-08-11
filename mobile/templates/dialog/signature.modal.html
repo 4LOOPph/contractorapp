@@ -1,0 +1,15 @@
+<ion-modal-view style="margin-top:45px;">
+    <ion-header-bar class="bar bar-header bar-stable">
+        <h1 class="title">Signature Drawpad</h1>
+        <a class="button button-icon icon ion-ios-close-empty button-primary" ng-click="closeSignatureModal()"></a>
+    </ion-header-bar>
+    <ion-content class="has-header padding" scroll='false'>
+        <canvas id='signatureCanvas' width='300' height='180' style='border: 1px solid black;'></canvas>
+        <div class='button-bar'>
+            <a class='button button-stable' ng-click='clearCanvas()'>Clear</a>
+            <a class='button button-positive' ng-click='saveCanvas()'>Apply</a>
+        </div>
+        <br>
+        <img ng-src='{{signature}}'/>
+    </ion-content>
+</ion-modal-view>

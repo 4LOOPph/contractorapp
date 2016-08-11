@@ -1,5 +1,5 @@
-<ion-view view-title="Vendor Information" class="vendor-info margin-top-35">
-    <ion-content class="padding has-tabs-bottom">
+<ion-view view-title="Vendor Information" class="vendor-info">
+    <ion-content class="padding-left padding-right">
         <div id="content">
             <div id="profile-info">
                 <!--  <img id="profile-image" ng-model="myPicture" class="animated fadeInBounce" src="img/no-avatar.jpg" style="margin-top: 150px;"> -->
@@ -112,6 +112,10 @@
                         <input type="email" placeholder="Email Address" ng-model="data.email2">
                     </label>
                 </div>
+
+
+
+
                 <div class="list padding-top">
                     <label class="new-label" style="margin-left: 0px;">AREA OF COVERAGE
                         <small style="font-style: italic;font-size: 11px;">(Please Specify your area of coverage)</small>
@@ -123,6 +127,9 @@
                         <input type="text" ng-model="item.area" placeholder="City i.e Sydney CBD">
                     </label>
                 </div>
+
+
+                
                 <div class="list list-inset">
                     <label class="item item-input item-icon-left">
                         <span class="i-con ion-ios-location-outline"></span>
@@ -132,6 +139,12 @@
                 <a class="button add-button margin-top-15" ng-click="addArea(area.coverage)" ng-disabled="!area.coverage">
                     <span class="ion-plus"> Add New Area</span>
                 </a>
+
+
+
+
+
+
                 <div class="list padding-top margin-top-50">
                     <label class="new-label margin-left-0">AVAILABILITY</label>
                 </div>
@@ -141,10 +154,10 @@
                         </select>
                     </label>
                     <label class="item item-input item-icon-left tstart">
-                        <input type="text" placeholder="Start" ng-click="openTime3(item)" ng-model="item.start" class="padding-right-5 padding-left-10" style="margin-left: -16px;">
+                        <input type="text" placeholder="Start" ng-readonly="true" ng-click="openTime3(item)" ng-model="item.start" class="padding-right-5 padding-left-10" style="margin-left: -16px;">
                     </label>
                     <label class="item item-input item-icon-left tend">
-                        <input type="text" placeholder="End" ng-click="openTime4(item)" ng-model="item.end" class="padding-right-5 padding-left-10" style="margin-left: -16px;">
+                        <input type="text" placeholder="End" ng-readonly="true" ng-click="openTime4(item)" ng-model="item.end" class="padding-right-5 padding-left-10" style="margin-left: -16px;">
                         <span class="i-con ion-clock"></span>
                     </label>
                 </div>
@@ -154,10 +167,10 @@
                         </select>
                     </label>
                     <label class="item item-input item-icon-left tstart">
-                        <input type="text" placeholder="Start" ng-click="openTime()" ng-model="avail.start" class="padding-right-5 padding-left-10" style="margin-left: -16px;font-size: 13px;">
+                        <input type="text" placeholder="Start" ng-readonly="true" ng-click="openTime()" ng-model="avail.start" class="padding-right-5 padding-left-10" style="margin-left: -16px;font-size: 13px;">
                     </label>
                     <label class="item item-input item-icon-left tend">
-                        <input type="text" placeholder="End" ng-click="openTime2()" ng-model="avail.end" class="padding-right-5 padding-left-10" style="margin-left: -16px;font-size: 13px;">
+                        <input type="text" placeholder="End" ng-readonly="true" ng-click="openTime2()" ng-model="avail.end" class="padding-right-5 padding-left-10" style="margin-left: -16px;font-size: 13px;">
                         <span class="i-con ion-clock"></span>
                     </label>
                 </div>

@@ -1,16 +1,17 @@
 <header class="main-header" style="margin-top: 0px;">
     <div style="margin-bottom: -55px;background-color: #2980dc;">
-        <img class="logod" src="images/logo.png" style="margin-left: 10px;">
+        <a href="#menu-toggle" id="menu-toggle">Toggle</a>
+        <img class="logod" src="images/eca-logo2.png" style="margin-left: 10px;">
         <a class="p-name">CONTRACTOR APP</a>
         <a class="navbar-brand"></a>
     </div>
-    <nav class="navbar navbar-static-top" role="navigation" style="background-color: #2980dc;">
+<!--     <nav class="navbar navbar-static-top" role="navigation" style="background-color: transparent;">
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a class="dropdown-toggle" data-toggle="dropdown" style="margin-top: 24px;" ng-click="drop = !drop" ng-class="{'icon fa fa-caret-down': !drop, 'fa  fa-caret-up': drop}">
                         <img src="images/no-avatar.jpg" class="user-image" alt="User Image">
-                        <i class=""  style="color: white;"></i>
+                        <i class="" style="color: white;"></i>
                     </a>
                     <ul id="!drop" class="dropdown-menu" style="box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.52);margin-top: 1px;">
                         <li class="user-header" style="background-color: #2980dc;">
@@ -32,57 +33,165 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav> -->
 </header>
-<div class="main-sidebar">
-    <div class="sidebar">
-        <ul class="sidebar-menu">
-            <li class="active"><a href=""><span>Dashboard</span></a>
-            </li>
-            <li><a ui-sref="admintask"><span>Tasks</span></a></li>
-            <li><a href=""><span>Reports</span></a></li>
-            <li><div class="qlinks">Quick Links</div></li>
-            <div class="quickl"><div ng-click="openMod('lg')" style="margin-left: -12px;">Create Task</div></div>
-            <div class="quickl" style="margin-top:2px;"><a href="#">Create Report</a></div>
-        </ul>
+<div id="wrapper">
+    <div class="main-sidebar">
+        <div class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="active"><a href=""><span>Dashboard</span></a>
+                </li>
+                <li><a ui-sref="admintask"><span>Tasks</span></a></li>
+                <li><a href=""><span>Reports</span></a></li>
+                <li>
+                    <div class="qlinks">Quick Links</div>
+                </li>
+                <div class="quickl">
+                    <div ng-click="openMod('lg')" style="margin-left: -12px;">Create Task</div>
+                </div>
+                <div class="quickl" style="margin-top:2px;"><a href="#">Create Report</a></div>
+            </ul>
+        </div>
     </div>
-</div>
-<div class="" style="margin-top: 0px;">
-    <div class="">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-8 eff">
-                    <section class="content" >
-                        <div class="" bs-tabs>
-                            <div data-title=" Recent Tasks" bs-pane>
-                                <div ng-include="'modules/admin/adminrecenttask.html'"></div>
+    <div class="" style="margin-top: 0px;">
+        <div class="">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-8 eff">
+                        <section class="content">
+                            <div class="" bs-tabs>
+                                <div data-title=" Recent Tasks" bs-pane>
+                                    <div ng-include="'modules/admin/adminrecenttask.html'"></div>
+                                </div>
+                                <div data-title=" Recent Reports" bs-pane>
+                                    <div ng-include="'modules/admin/adminrecentreport.html'"></div>
+                                </div>
                             </div>
-                            <div data-title=" Recent Reports" bs-pane>
-                                <div ng-include="'modules/admin/adminrecentreport.html'" ></div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- sulod sa tab -->
-                    <!-- end -->
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Create Task</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="quick">Select from existing task</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- <section class="content-header">
+    <h1>
+        Sidebar Collapsed
+        <small>Layout with collapsed sidebar on load</small>
+      </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Layout</a></li>
+        <li class="active">Collapsed Sidebar</li>
+    </ol>
+</section> -->
+<!-- 
+<header class="main-header">
+    <nav class="navbar navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#menu-toggle" id="menu-toggle" class="navbar-brand"><b>Admin</b>LTE</a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+         
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="navbar-search-input" placeholder="Search">
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu">
+                        <a class="dropdown-toggle" data-toggle="dropdown" style="margin-top: 24px;" ng-click="drop = !drop" ng-class="{'icon fa fa-caret-down': !drop, 'fa  fa-caret-up': drop}">
+                            <img src="images/no-avatar.jpg" class="user-image" alt="User Image">
+                            <i class="" style="color: white;"></i>
+                        </a>
+                        <ul id="!drop" class="dropdown-menu" style="box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.52);margin-top: 1px;">
+                            <li class="user-header" style="background-color: #2980dc;">
+                                <img src="images/no-avatar.jpg" class="img-circle" alt="User Image">
+                                <p>
+                                    Vendor Vendor
+                                    <small>Member since July. 2016</small>
+                                </p>
+                            </li>
+                            <li class="user-footer" style="background-color: #f3f3f3;padding: 10px;">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="control-sidebar-bg"></div>
+<div id="wrapper">
 
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Create Task</h4>
-        </div>
-        <div class="modal-body">
-          <div class="quick">Select from existing task</div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                        Start Bootstrap
+                    </a>
+            </li>
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">Shortcuts</a>
+            </li>
+            <li>
+                <a href="#">Overview</a>
+            </li>
+            <li>
+                <a href="#">Events</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
     </div>
-  </div>
+</div>
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+ -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>

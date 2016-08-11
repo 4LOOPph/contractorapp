@@ -1,0 +1,36 @@
+<ion-modal-view class="margin-top-44">
+    <ion-header-bar class="bar bar-header bar-stable">
+        <h1 ng-if="user.usertype=='con'" class="title">List of Recent Sent Report</h1>
+        <h1 ng-if="user.usertype=='proc'" class="title">List of New Reports</h1>
+        <button class="button button-icon icon ion-ios-close-empty button-primary" ng-click="closerecentreportModal()"></button>
+    </ion-header-bar>
+    <ion-content>
+        <ion-refresher on-refresh="doReportingRefresh()" spinner="spiral"></ion-refresher>
+        <ion-list show-delete="false" show-reorder="false" can-swipe="true">
+            <ion-item style="height: 90px;" ng-repeat="list in $parent.reportsData" class="animated fadeInLeft" ng-click="showReportDetails(list)">
+                <div class="cardrightside">
+                    <div class="ion-ios-arrow-left" style="margin-top: 33px;color: #c3c3c3;"></div>
+                </div>
+                <div class="card-sidepad" style="background-color: white;"></div>
+                <div class="cardin">
+                    <div style="margin-top: 10px;">
+                        <div class="card-lbl">Task:</div>
+                        <p class="card-lblp">Priority:</p>
+                        <p class="card-lblp" style="margin-top: -5px;">Date:</p>
+                    </div>
+                    <div style="margin-left: 65px;margin-top: 5px;">
+                        <div class="card-lbl">{{list.Title}}</div>
+                        <p class="card-lblp">{{list.Status}}</p>
+                        <p class="card-lblp" style="margin-top: -5px;">{{list.datecompleted}}</p>
+                    </div>
+                </div>
+                <ion-option-button class="button button-dark" ng-click="downloadReportDetails(list)" style="padding: 15px;line-height: 1.5;padding-bottom: 35px;">
+                    <small><div><i  class="icon ion-android-download"></i></div><div>Download</div></small>
+                </ion-option-button>
+                <ion-option-button class="button button-balanced" ng-click="showReportDetails(list)" style="padding: 22px;line-height: 1.5;">
+                    <small><div><i  class="icon ion-ios-information"></i></div><div>View</div> <div>Details</div></small>
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

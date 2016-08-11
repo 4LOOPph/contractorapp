@@ -1,4 +1,4 @@
-<ion-view view-title="Payment" name="vendor-info" ng-init="filter.direct = true;" style="margin-top: 45px;">
+<ion-view view-title="Payment" name="vendor-info" ng-init="filter.direct = true;">
     <ion-content class="padding has-tabs-bottom">
         <label class="new-label"> RATE</label>
         <div class="list">
@@ -84,7 +84,7 @@
             <h4 class="new-label padding-top">BANK ACCOUNT</h4>
             <div class="list list-inset">
                 <label class="item item-input">
-                    <input ion-autocomplete type="text" readonly="readonly" class="ion-autocomplete" autocomplete="off" max-selected-items="1" placeholder="Name of Bank" items-method-value-key="items" item-value-key="id" item-view-value-key="name" ng-model="data.bankname" items-method="callbackCityMethod(query)" items-clicked-method="itemsCityClicked(callback)" />
+                    <input ion-autocomplete type="text" readonly="readonly" class="ion-autocomplete" autocomplete="off" max-selected-items="1" placeholder="Name of Bank" items-method-value-key="items" item-value-key="id" item-view-value-key="name" ng-model="data.bankname" items-method="callbackMethod(query)" items-clicked-method="itemsClicked(callback)" />
                 </label>
             </div>
             <div class="list list-inset">
@@ -126,7 +126,7 @@
                 </label>
                 <label class="item item-input item-select" style="height: 48px;">
                     <span class="i-con"></span>
-                    <input ion-autocomplete type="text" readonly="readonly" class="ion-autocomplete" autocomplete="off" max-selected-items="1" placeholder="Cities..." items-method-value-key="items" item-value-key="id" item-view-value-key="name" ng-model="data.check_city" items-method="callbackMethod(query)" items-clicked-method="itemsClicked(callback)" />
+                    <input ion-autocomplete type="text" readonly="readonly" class="ion-autocomplete" autocomplete="off" max-selected-items="1" placeholder="Cities..." items-method-value-key="items" item-value-key="id" item-view-value-key="name" ng-model="data.check_city" items-method="callbackCityMethod(query)" items-clicked-method="itemsCityClicked(callback)" />
                 </label>
                 <label class="item item-input item-icon-left">
                     <span class="i-con ion-ios-home-outline"></span>

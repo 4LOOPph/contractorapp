@@ -1,22 +1,22 @@
 <div class="" style="margin-top: -40px;">
     <div class="">
         <div class="login-logo top-h">
-            <img class="logoo" src="images/logo.png" width="50">
+            <img class="logoo" src="images/eca-logo2.png" width="50">
             <h2 class="log-head-font">CONTRACTOR APP</h2>
             <div class="log-sub-font">Always take the lead!</div>
             <p class="log-p">Apply as one of our certified contractor</p>
         </div>
         <div class="col-md-12">
-        <div class="vid">
-            <div class="col-md-7">
-                <iframe width="97%" height="400px" src="//www.youtube.com/embed/atI4JKFQYoU" frameborder="0" allowfullscreen></iframe>
-            </div>
+            <div class="vid">
+                <div class="col-md-7">
+                    <iframe width="97%" height="400px" src="//www.youtube.com/embed/atI4JKFQYoU" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-5" style=" 
-    box-shadow: 0px 0px 5px rgba(99, 99, 99, 0.55);
+   
     height: 50%;">
-    <div class="dv" style="height: 20px;"></div>
+                    <div class="dv" style="height: 20px;"></div>
                     <div class="box box-widget widget-user-2" style="margin-top:-25px;">
                         <div class="widget-user-header bg-yellow">
                             <div class="widget-user-image">
@@ -25,19 +25,21 @@
                             <h3 class="widget-user-username log-use">User Login</h3>
                         </div>
                         <div class="box-footer">
-                            <form ng-submit="login()" style="padding-left: 10px;padding-right: 10px;">
-                                <div class="form-group has-feedback">
-                                    <i class="form-control-feedback font material-icons" style="margin-top: 10px;margin-left: 7px;">perm_identity</i>
-                                    <input type="text" class="form-control login-inputop" placeholder="Username" ng-model="user.username" />
-                                </div>
-                                <div class="form-group has-feedback" style="margin-top: 28px;">
-                                    <i class="form-control-feedback font material-icons" style="margin-top: 10px;margin-left: 7px;">lock_outline</i>
-                                    <input type="password" class="form-control login-inputbot" placeholder="Password" ng-model="user.password" />
+                            <form ng-submit="login()" style="padding-left: 0px;padding-right: 0px;">
+                                <div>
+                                    <div class="form-group has-feedback">
+                                        <i class="form-control-feedback font material-icons" style="margin-top: 10px;margin-left: 7px;">perm_identity</i>
+                                        <input type="text" class=" form-control login-inputop " placeholder="Username" ng-model="user.username" style="    border-top-right-radius: 8px;border-top-left-radius: 8px;" />
+                                    </div>
+                                    <div class="form-group has-feedback logborbot" style="margin-top: 28px;">
+                                        <i class="form-control-feedback font material-icons" style="margin-top: 10px;margin-left: 7px;">lock_outline</i>
+                                        <input type="password" class="form-control login-inputbot " placeholder="Password" ng-model="user.password" style="    border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;" />
+                                    </div>
                                 </div>
                                 <p class="forgot">Forgot Password?</p>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <a ui-sref="dashtabs" type="submit" class="btn btn-raised btn-info button-login" style="     text-transform: inherit;
+                                        <div class="logdako"><a ui-sref="admindash" type="submit" class="btn btn-raised btn-info button-login" style="     text-transform: inherit;
     width: 86%;
     margin-top: 3px;
     height: 48px;
@@ -45,13 +47,18 @@
     margin: 0px 7% auto;
     box-shadow: 0px 2px 6px rgb(99, 99, 99);
     border-radius: 1px;
-    border-color: #9a9a9a;padding-top: 10px;">Login</a>
+    border-color: #9a9a9a;padding-top: 10px;">Login</a></div>
+                                        <div class="loggamay">Login</div>
                                     </div>
+                                </div>
+                                <div class="smallapply">
+                                    <div ui-sref="vendorinfo" style="margin-top: 6px;">Apply as Contractor</div>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <a ui-sref="vendorinfo" class="btn btn-raised btn-info button-login" style="text-transform: inherit;
+                    <div class="largeapply">
+                        <a ui-sref="vendorinfo" class="btn btn-raised btn-info button-login" style="text-transform: inherit;
     width: 90%;
     margin-top: 3px;
     height: 48px;
@@ -61,8 +68,9 @@
     border-radius: 1px;
     border-color: #9a9a9a;
     margin-bottom:18px;">
-                        <div style="margin-top: 6px;">Apply as Contractor</div>
-                    </a>
+                            <div style="">Apply as Contractor</div>
+                        </a>
+                    </div>
                     <!-- <div class="social-auth-links text-center">
                         <p class="copy" style="margin-top: 35px;">© 2016 Engagis Pty Ltd</p>
                     </div> -->

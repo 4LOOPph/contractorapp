@@ -1,279 +1,223 @@
-<app-header></app-header>
-<div class="" style="margin-top: 20px;">
+<header class="vid">
+    <img class="logoo" src="images/eca-logo2 copy.png" width="50" style="margin-top: -12px;width: 50px;"> CONTRACTOR APP
+</header>
+<header class="xvid">
+    <button ui-sref="main" type="button" class="fa fa-chevron-left smbuttontop" style="float:left;"></button> Payment
+</header>
+<div class="" style="margin-top: 5px;">
     <div class="">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-8 effect2">
-                    <div class="box box-widget widget-user-2 bg-crd" style="box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.52);">
-                        <div class="widget-user-header ">
-                            <div style="padding:20px;">
-                                <div class="title-card" style="margin-right: 65px;">Account Information</div>
-                                <div class="widget-user-image">
-                                </div>
+                <div class="col-md-12">
+                    <div class="box-widget widget-user-2">
+                        <div class="vid" style="padding-left:30px;">
+                            <form class="form-horizontal col-md-12" style="margin-top:95px; margin-left: -65px;">
                                 <div class="bread flt">
-                                    <a class="active" style="padding-right: 8px;letter-spacing: -0.06em;">Vendor Information</a>
-                                    <a class="active" style="width: 30%;">Qualification</a>
-                                    <a class="active" style="padding-right: 8px;letter-spacing: -0.06em;">Account Information</a>
+                                    <a class="active" style="padding-right: 60px;">Vendor Information</a>
+                                    <a class="active" style="width: 30%;">Payment</a>
+                                    <a style="padding-right: 60px;">Qualification</a>
                                     <a style="width:5%;"></a>
                                 </div>
-                                <div class="box-footer bg-crd">
-                                    <form class="form-horizontal col-md-12" style="margin-left: -35px;">
-                                        <div class="box-body" style="margin-left: -50px;">
+                            </form>
+                        </div>
+                        <form class="form-horizontal col-md-7 ">
+                            <div class="box-body ">
+                                <div class="form-group ">
+                                    <label for="exampleInputEmail1 ">RATE</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" ng-init="filter.enable = true" name="optionsRadios" id="optionsRadios" value="option3" ng-click="filter.direct = true; filter.check= false; disabled = false " ng-model="enable">Standard Rate
+                                            <br><small style="font-style:italic; ">(Please specify your rate)</small>
+                                        </label>
+                                        <div class="input-group col-sm-9 standardrate">
+                                            <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                                            <input class="form-control" style="" clean="true" valid-number ng-disabled="disabled">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="radio">
+                                        <label style="">
+                                            <input type="radio" name="optionsRadios" id="optionsRadios" value="option4" ng-click="filter.direct = false; filter.check= true" ng-model="disabled" checked> Other Rate <small style="font-style:italic; ">(Tick to specify other rate)</small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal col-md-7 ">
+                            <div class="box-body cardborder" ng-show="filter.check == true" style="padding-right: 25px;">
+                                <div class="" id="startCard">
+                                    <div class="col-md-12">
+                                        <label>WEEKDAYS</label>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="otherlab">Base Hours Rate:</label>
+                                            <div class="input-group col-sm-9 standardrate">
+                                                <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                                                <input type="" class="form-control" style="" clean="true" ng-model="rates.weekdaysbasehours" valid-number>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="otherlab" style="color:red;">After Hours Rate:</label>
+                                            <div class="input-group col-sm-9 standardrate">
+                                                <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                                                <input type="" class="form-control" style="" clean="true" ng-model="rates.weekdaysafterhours" valid-number>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>WEEKEND</label>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="otherlab">Weekend Rate:</label>
+                                            <div class="input-group col-sm-9 standardrate">
+                                                <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                                                <input type="" class="form-control" style="" clean="true" ng-model="rates.weekendsbasehours" valid-number>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal col-md-7 ">
+                            <div class="box-body ">
+                                <div class="form-group ">
+                                    <label for="exampleInputEmail1 ">CURRENCY</label>
+                                    <select class="form-control">
+                                        <option>Australian Dollar (AUD)</option>
+                                        <option>US Dollar (USD)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal col-md-7 ">
+                            <div class="box-body">
+                                <div class="form-group ">
+                                    <label for="exampleInputEmail1 ">PAYMENT METHOD</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input ng-click="hideCard1()" type="radio" name="optionsRadios1" id="optionsRadios3" value="option1" checked> Direct Deposit
+                                        </label>
+                                        <label style="margin-left: 50px;">
+                                            <input ng-click="hideCard()" type="radio" name="optionsRadios1" id="optionsRadios4" value="option2"> Cheque
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal col-md-7 ">
+                            <div class="box-body cardborder">
+                                <div class="" id="startCard" ng-show="showstartCard">
+                                    <div class="">
+                                        <!--<img src="img/startpage.jpg">-->
+                                        <div class="account-det">All requests for payment to bank accounts must be signed by the vendor or accompanied by documentary evidence of bank account details from the vendor(e.g. Email, Fax, Invoice)</div>
+                                        <label class="new-label" style="margin-top: 10px;">BANK ACCOUNT</label>
+                                        <div class="list logform" style="margin-top:10px;">
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="inputEmail3" placeholder="Bank">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" id="inputEmail3" placeholder="Branch">
+                                            </div>
+                                            <div class="col-sm-6" style="margin-top: 15px;">
+                                                <input type="text" class="form-control" id="inputEmail3" placeholder="Account Name">
+                                            </div>
+                                            <div class="col-sm-6" style="margin-top: 15px;">
+                                                <input type="text" class="form-control" id="inputEmail3" placeholder="BSD">
+                                            </div>
+                                            <div class="col-sm-12" style="margin-top: 15px;">
+                                                <input type="text" class="form-control" id="inputEmail3" placeholder="Account Number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="" id="secondCard" ng-show="showsecondCard">
+                                    <div class="">
+                                        <div class="">Cheque will be send to the address you have provided on your basic information.</div>
+                                    </div>
+                                    <br>
+                                    <label class="control control--checkbox"> <a>Tick here to specify your prefered billing address.</a>
+                                        <input type="checkbox" ng-click="isCollapsed = !isCollapsed" style="margin-top: 0px;margin-bottom: 15px;" />
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <div uib-collapse="!isCollapsed">
+                                        <p>cheque will be forwarded to the new address you provided.</p>
+                                        <div style="padding-left:15px;padding-right:15px;">
                                             <div class="form-group">
-                                                <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: 600;">Currency</label>
-                                                <div class="col-sm-5">
-                                                    <select class="form-control" style="width: 434px;">
-                                                        <option>Australian Dollar (AUD)</option>
-                                                        <option>US Dollar (USD)</option>
+                                                <div class="col-sm-6">
+                                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                    <select class="form-control">
+                                                        <option>City1</option>
+                                                        <option>City2</option>
+                                                        <option>City3</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Post Code">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-6">
+                                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                    <select class="form-control">
+                                                        <option>State1</option>
+                                                        <option>State2</option>
+                                                        <option>State3</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                    <select class="form-control">
+                                                        <option>Country1</option>
+                                                        <option>Country2</option>
+                                                        <option>Country3</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <!-- <div class="form-group">
-                                                <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: 600;">Rate</label>
-                                                <div class="input-group col-sm-2" style="padding-left: 15px;">
-                                                    <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                    <input type="" class="form-control" style="width: 120px;" clean="true" ng-model="rates.rate" valid-number>
-                                                </div>
-                                                <div style="margin-left: 100px; ">
-                                                    <div class="col-sm-3" style="margin-left: 209px;">
-                                                        <select class="form-control" style="width: 264px;margin-top: -34px;" ng-options="item.id as item.value for item in baseRate" ng-model="rates.baserate">
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <textarea class="form-control texta" rows="1" placeholder="Notes" ng-model="rates.notes"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                            <!-- <div class="form-group" ng-repeat="item in inputs">
-                                                <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: 600;"></label>
-                                                <div class="input-group col-sm-2" style="padding-left: 15px;">
-                                                    <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                    <input type="" class="form-control" style="width: 120px;" ng-model="item.rate">
-                                                </div>
-                                                <div style="margin-left: 100px; ">
-                                                    <div class="col-sm-3" style="margin-left: 209px;">
-                                                        <select class="form-control" style="width: 264px;margin-top: -34px;" ng-options="item.id as item.value for item in baseRate" ng-model="item.baserate">
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <textarea class="form-control texta" rows="1" placeholder="Notes" ng-model="item.notes"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                            <!-- <a href="" class="btn btn-warning pull-right btn-nr" ng-click="addSched(rates)">
-                                                <div style="margin-top: -2px;"><i class="fa fa-plus"></i> New Rate</div>
-                                            </a> -->
-                                            <!-- rate -->
-                                            <div class="form-group">
-                                                <div class="quick" style="margin-top:5px;margin-left: 70px;">Rate</div>
-                                            </div>
-                                            <div class="col-md-9" style="padding: 15px;margin-left: 140px;margin-top: -57px;">
-                                                <div class="form-group">
-                                                    <div class="radio">
-                                                        <label>
-                                                            <input type="radio" name="optionsRadios" id="optionsRadios" value="option3" ng-click="filter.direct = true; filter.check= false; disabled = false " ng-model="enable"> Provide Standard Rate :
-                                                            <div class="input-group col-sm-2 standardrate" >
-                                                                <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                                <input class="form-control" style="" clean="true" valid-number ng-disabled="disabled">
-                                                            </div>
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio">
-                                                        <label style="">
-                                                            <input type="radio" name="optionsRadios" id="optionsRadios" value="option4" ng-click="filter.direct = false; filter.check= true" ng-model="disabled" checked> Specify Rates :
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list card cardbord" id="startCard" ng-show="filter.check == true" style="height: 230px;">
-                                                <div class="card">
-                                                    <div class="spcrates">Specify rates during Weekdays and Weekends.</div>
-                                                    <div class="col-md-12">
-                                                        <label class="new-label weekdayform">Weekdays</label>
-                                                        <div class="form-group">
-                                                            <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: 600;width: 19%;">Base Hours:</label>
-                                                            <div class="input-group col-sm-3 ">
-                                                                <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                                <input type="" class="form-control" style="" clean="true" ng-model="rates.weekdaysbasehours" valid-number>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: 600;width: 19%;">After Hours:</label>
-                                                            <div class="input-group col-sm-3 ">
-                                                                <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                                <input type="" class="form-control" style="" clean="true" ng-model="rates.weekdaysafterhours" valid-number>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12 weekends">
-                                                        <label class="new-label weekdayform">Weekends</label>
-                                                        <div class="form-group">
-                                                            <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: 600;width: 19%;">Base Hours:</label>
-                                                            <div class="input-group col-sm-3 ">
-                                                                <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                                <input type="" class="form-control" style="" clean="true" ng-model="rates.weekendsbasehours" valid-number>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: 600;width: 19%;">After Hours:</label>
-                                                            <div class="input-group col-sm-3 ">
-                                                                <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                                <input type="" class="form-control" style="" clean="true" ng-model="rates.weekendsafterhours" valid-number>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- paymentmethod -->
-                                            <div class="form-group">
-                                                <div class="quick" style="margin-top:55px;margin-left: 70px;">Payment Method</div>
-                                            </div>
-                                            <div class="col-md-9" style="padding: 15px;margin-left: 140px;margin-top: -20px;">
-                                                <div class="form-group">
-                                                    <div class="radio">
-                                                        <label>
-                                                            <input ng-click="hideCard1()" type="radio" name="optionsRadios1" id="optionsRadios3" value="option1" checked> Direct Deposit
-                                                        </label>
-                                                        <label style="margin-left: 50px;">
-                                                            <input ng-click="hideCard()" type="radio" name="optionsRadios1" id="optionsRadios4" value="option2"> Cheque
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list card cardbord" id="startCard" ng-show="showstartCard" style="height: 270px;">
-                                                <div class="card">
-                                                    <!--<img src="img/startpage.jpg">-->
-                                                    <div class="account-det">All requests for payment to bank accounts must be signed by the vendor or accompanied by documentary evidence of bank account details from the vendor(e.g. Email, Fax, Invoice)</div>
-                                                    <label class="new-label" style="margin-top: 10px;">BANK ACCOUNT</label>
-                                                    <div class="list logform" style="margin-top:10px;margin-left: -15px;">
-                                                        <div class="col-sm-6">
-                                                            <input type="text" class="form-control" id="inputEmail3" placeholder="Bank" style="width: 108%;">
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <input type="text" class="form-control" id="inputEmail3" placeholder="Branch" style="width: 108%;margin-left: -0px;">
-                                                        </div>
-                                                        <div class="col-sm-6" style="margin-top: 15px;">
-                                                            <input type="text" class="form-control" id="inputEmail3" placeholder="Account Name" style="width: 108%;">
-                                                        </div>
-                                                        <div class="col-sm-6" style="margin-top: 15px;">
-                                                            <input type="text" class="form-control" id="inputEmail3" placeholder="BSD" style="width: 108%;margin-left: -0px;">
-                                                        </div>
-                                                        <div class="col-sm-12" style="margin-top: 15px;">
-                                                            <input type="text" class="form-control" id="inputEmail3" placeholder="Account Number" style="width: 104%;">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list card cardbord" id="secondCard" ng-show="showsecondCard" style="margin-left: 140px;">
-                                                <div class="card">
-                                                    <div class="account-det">Cheque will be forwarded to the address you provided.</div>
-                                                </div>
-                                                <div style="margin-left: 10px;">
-                                                    <!--  <input ng-click="showCard3()" type="checkbox" style="margin-top: 20px;">Add Address -->
-                                                    <input ng-click="isCollapsed = !isCollapsed" type="checkbox" style="margin-top: 0px;margin-bottom: 15px;">Add Address
-                                                </div>
-                                                <div uib-collapse="!isCollapsed">
-                                                    <div style="margin-top: 0px;margin-left: 10px;">
-                                                        <p>cheque will be forwarded to the new address you provided.</p>
-                                                        <div class="form-group">
-                                                            <div class="col-sm-6">
-                                                                <select class="form-control">
-                                                                    <option>City1</option>
-                                                                    <option>City2</option>
-                                                                    <option>City3</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="inputEmail3" placeholder="Post Code">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="col-sm-6">
-                                                                <select class="form-control">
-                                                                    <option>State1</option>
-                                                                    <option>State2</option>
-                                                                    <option>State3</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <select class="form-control">
-                                                                    <option>Country1</option>
-                                                                    <option>Country2</option>
-                                                                    <option>Country3</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="" id="thirdCard" ng-show="showthirdCard" style="width: 60%;margin-left: 150px;">
-                                                    <div class="card2" style="margin-top: -0px;">
-                                                        <form class="form-horizontal">
-                                                            <div class="form-group">
-                                                                <label for="inputEmail3" class="col-sm-2 control-label" style="font-weight: 600;"></label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" placeholder="LastName, FirstName, MiddleName" style="margin-top: 12px;">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" i placeholder="Phone">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" placeholder="Email">
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top:100px;background-color: rgba(122, 122, 122, 0);">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content modstyle">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                            <h4 class="modal-title" id="myModalLabel">Terms and Conditions</h4>
-                                                        </div>
-                                                        <div class="modal-body" style="padding-left: 30px;padding-right: 30px;">
-                                                            <p>• The vendor is responsible for the accuracy of the above details
-                                                                <br>
-                                                                <br>• The Vendor warrants that the bank account details provided are true and correct
-                                                                <br>
-                                                                <br>• Engagis has the right to accept the authority of the Authorised Representative as conclusive evidence of that person's authority to execute this agreement on behalf of the Trade Vendor.
-                                                                <br>
-                                                                <br>• The Authorised Representative warrants in his/her own right that
-                                                                <br> a.) he/she has the authority to bond the Vendor to the conditions of this payment
-                                                                <br> b.) the banking details provided are accurate
-                                                                <br> c.) by signing this form, that the Trade Vendor is aware of its responsibilities under this agreement.</p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                    </form>
-                                    <div class="termcon">
-                                        <div class="termbg">
-                                            <a data-toggle="modal" data-target="#myModal">
-                                                <input type="checkbox" style="margin-top: 20px;margin-left: 20px;"> Terms and Conditions</a>
                                         </div>
                                     </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="box-footer bg-crd" style="width: 106%;margin-left: -25px;">
-                                            <a ng-click="clickToCancel()" class="btn btn-raised btn-default" style="margin-left:-10px;">Cancel</a>
-                                            <a ng-click="clickToOpen()" class="btn btn-raised btn-info pull-right" style="margin-right: -10px;">Submit</a>
-                                            <a ui-sref="qualification" class="btn btn-raised btn-info pull-right" style="margin-right: 20px;">Back</a>
+                                    <div class="" id="thirdCard" ng-show="showthirdCard" style="width: 60%;">
+                                        <div class="card2" style="margin-top: -0px;">
+                                            <form class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label for="inputEmail3" class="col-sm-2 control-label" style="font-weight: 600;"></label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" placeholder="LastName, FirstName, MiddleName" style="margin-top: 12px;">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" i placeholder="Phone">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal col-md-7 ">
+                            <div class="box-body ">
+                                <div class="form-group ">
+                                    <label for="exampleInputEmail1 "></label>
+                                    <input type="checkbox" style="margin-top: 20px;">
+                                    <a data-toggle="modal" data-target="#myModal">
+                                        View Terms and Conditions</a>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="col-md-12">
+                            <div class="box-footer bg-crd">
+                                <a ng-click="clickToCancel()" class="btn btn-raised btn-default" style="margin-left:-10px;">Cancel</a>
+                                <a ui-sref="qualification" class="btn btn-raised btn-info pull-right" style="margin-right: -10px;">Next</a>
+                                <a ui-sref="vendorinfo" class="btn btn-raised btn-info pull-right" style="margin-right: 20px;">Back</a>
                             </div>
                         </div>
                     </div>
@@ -281,3 +225,43 @@
             </div>
         </div>
     </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top:100px;background-color: rgba(122, 122, 122, 0);">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modstyle">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Terms and Conditions</h4>
+            </div>
+            <div class="modal-body" style="padding-left: 30px;padding-right: 30px;">
+                <p>• The vendor is responsible for the accuracy of the above details
+                    <br>
+                    <br>• The Vendor warrants that the bank account details provided are true and correct
+                    <br>
+                    <br>• Engagis has the right to accept the authority of the Authorised Representative as conclusive evidence of that person's authority to execute this agreement on behalf of the Trade Vendor.
+                    <br>
+                    <br>• The Authorised Representative warrants in his/her own right that
+                    <br> a.) he/she has the authority to bond the Vendor to the conditions of this payment
+                    <br> b.) the banking details provided are accurate
+                    <br> c.) by signing this form, that the Trade Vendor is aware of its responsibilities under this agreement.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-raised btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="main-footer">
+    <strong>© 2016 Engagis Pty Ltd </strong>
+</footer>
+<script type="text/javascript ">
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 1) {
+        $('header').addClass("sticky ");
+    } else {
+        $('header').removeClass("sticky ");
+    }
+});
+</script>

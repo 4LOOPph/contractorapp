@@ -1,11 +1,8 @@
 <ion-view view-title="User Profile" name="vendor-info">
-    <ion-nav-buttons side="primary">
+    <ion-nav-buttons side="left">
         <button class="button button-icon ion-ios-arrow-left" ng-click="myGoBack()"></button>
     </ion-nav-buttons>
-    <!-- <ion-nav-buttons side="secondary">
-        <button class="button button-icon ion-android-more-vertical" ng-class="{'ion-android-more-vertical': !drop, 'ion-android-more-horizontal': drop}" ng-click="showPopoveredit($event); drop = !drop"></button>
-    </ion-nav-buttons> -->
-    <ion-content class="padding">
+    <ion-content class="padding-right padding-left">
         <div id="content">
             <div id="profile-info">
                 <img id="profile-image" class="animated fadeInBounce" src="img/no-avatar.jpg">
@@ -213,25 +210,8 @@
                             </label>
                         </div>
                     </div>
-                    <!-- <a style="float:right;">EDIT</a> -->
                 </div>
-                <!--  <button class="button add-button" ng-click="addArea(rates)" style="margin-top:40px;">view PSD</button>
-            <button class="button button-block button-positive" style="margin-top:30px;">
-                Start
-            </button> -->
             </div>
         </div>
-        <!-- <div class="row" style="margin-top:20px;">
-            <div class="col col-50">
-                <button ng-click="clickDecline()" class="button button-block button-stable">
-                    Cancel
-                </button>
-            </div>
-            <div class="col col-50">
-                <button class="button button-block button-positive">
-                    Save Changes
-                </button>
-            </div>
-        </div> -->
     </ion-content>
 </ion-view>

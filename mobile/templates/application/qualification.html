@@ -1,4 +1,4 @@
-<ion-view view-title="Qualifications" name="vendor-info" style="margin-top: 35px;">
+<ion-view view-title="Qualifications" name="vendor-info">
     <ion-content class="padding">
         <h4 class="new-label padding-top">QUALIFICATION CHECKLIST</h4>
         <div class="list padding-right padding-left">
@@ -43,7 +43,7 @@
         <label class="new-label">ATTACH RESUME</label>
         <div class="list padding-top padding-right padding-left">
             <label class="item item-input bordbot my-drop-zone">
-                <input type="file" ng-model="data.resume" placeholder="Attach Resume" style="margin-left: -105px;">
+                <input type="file" ng-model="data.resume" placeholder="Attach Resume" style="margin-left: -15px;">
             </label>
         </div>
         <div class="list padding-top">
@@ -52,7 +52,7 @@
         <div class="list list-inset padding-right padding-left" style="margin-top: -10px;">
             <label class="item item-input bortop bordbot my-drop-zone">
                 <p class="stable"></p>
-                <input type="file" ng-model="data.certificates" onchange="angular.element(this).scope().uploadFiles(this)" style="margin-left:-112px;" multiple>
+                <input type="file" ng-model="data.certificates" onchange="angular.element(this).scope().uploadFiles(this)" style="margin-left:-15px;" multiple>
             </label>
             <div style="padding: 10px;">
                 <div ng-repeat="name in filenames">
