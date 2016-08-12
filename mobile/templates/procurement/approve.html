@@ -1,4 +1,4 @@
-<ion-view view-title="QOW Details">
+<ion-view view-title="QOW Details" name="vendor-info" hide-back-button="true">
     <ion-nav-buttons side="left">
         <button class="button button-icon ion-ios-arrow-left" ng-click="myGoBack()"></button>
     </ion-nav-buttons>
@@ -7,7 +7,7 @@
             <div class="newlabel" style="font-style:italic;">Lorem Impatsu </div>
         </div>
         <div style="padding:10px;">
-            <small><a>+639 999 9999</a><a style="float:right;" ng-click="gotToProf($event)">View Profile</a></small>
+            <small><a>+639 999 9999</a><a style="float:right;" ng-click="gotToProfile(user)">View Profile</a></small>
             <br>
             <small>Copmany</small>
             <hr>
@@ -39,68 +39,22 @@
         <div class="row">
             <div class="col col-50">
                 <small>Parking Fee</small>
-            </div>
-            <div class="col col-33">
-                <small>: $ 00.00</small>
-            </div>
-            <div class="col col-10">
-                <a ng-class="{'ion-arrow-down-b': !drop, 'ion-arrow-up-b': drop}" ng-click="isa = !isa; drop = !drop"></a>
-            </div>
-        </div>
-        <div  ng-show="isa" style="    
-    background-color: #dcdcdc;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 15px;
-    margin-top: -10px;
-    padding: 10px;"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small></div>
-        <div class="row" style="margin-top:-20px;">
-            <div class="col col-50">
+                <br>
                 <small>Travel Fee</small>
-            </div>
-            <div class="col col-33">
-                <small>: $ 00.00</small>
-            </div>
-            <div class="col col-10">
-                <a ng-class="{'ion-arrow-down-b': !drop2, 'ion-arrow-up-b': drop2}" ng-click="doha = !doha; drop2 = !drop2"></a>
-            </div>
-        </div>
-        <div ng-show="doha" style="
-    background-color: #dcdcdc;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 15px;
-    margin-top: -10px;
-    padding: 10px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-        <div class="row" style="margin-top:-20px;">
-            <div class="col col-50">
+                <br>
                 <small>Total</small>
             </div>
-            <div class="col col-33">
+            <div class="col col-50">
+                <small>: $ 00.00</small>
+                <br>
+                <small>: $ 00.00</small>
+                <br>
                 <small>: $ 00.00</small>
             </div>
         </div>
         <div class="new-label">Materials</div>
         <div class="lineside"></div>
         <div class="row">
-            <div class="col col-50">
-                <small>2 Material A</small>
-            </div>
-            <div class="col col-33">
-                <small>: $ 00.00</small>
-            </div>
-            <div class="col col-10">
-                <a ng-class="{'ion-arrow-down-b': !drop3, 'ion-arrow-up-b': drop3}" ng-click="tulo = !tulo; drop3 = !drop3"></a>
-            </div>
-        </div>
-        <div ng-show="tulo" style="
-    background-color: #dcdcdc;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 15px;
-    margin-top: -10px;
-    padding: 10px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-        <div class="row" style="margin-top:-20px;">
             <div class="col col-50">
                 <small>2 Material A</small>
                 <br>
@@ -130,11 +84,11 @@
                     Back
                 </button>
             </div> -->
-            <div class="col col-100">
+            <!-- <div class="col col-100">
                 <button ui-sref="" class="button button-block button-positive">
                     Approve
                 </button>
-            </div>
+            </div> -->
         </div>
         <br>
         <br>

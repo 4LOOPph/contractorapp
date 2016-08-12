@@ -1,4 +1,7 @@
 <ion-view view-title="Vendor Information" class="vendor-info">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon ion-ios-arrow-left" ng-click="myGoBack()"></button>
+    </ion-nav-buttons>
     <ion-content class="padding-left padding-right">
         <div id="content">
             <div id="profile-info">
@@ -191,7 +194,7 @@
                 </div>
             </div>
             <p class="cop" style="margin-bottom: 70px;">Already have an account?
-                <a ng-click="sign($even)" class="p-log">Login</a>
+                <a ng-click="goBackLogin()" class="p-log">Login</a>
             </p>
         </form>
     </ion-content>

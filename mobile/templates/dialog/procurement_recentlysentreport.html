@@ -7,7 +7,7 @@
     <ion-content>
         <ion-refresher on-refresh="doReportingRefresh()" spinner="spiral"></ion-refresher>
         <ion-list show-delete="false" show-reorder="false" can-swipe="true">
-            <ion-item style="height: 90px;" ng-repeat="list in $parent.reportsData" class="animated fadeInLeft" ng-click="showReportDetails(list)">
+            <ion-item style="height: 90px;" ng-repeat="list in $parent.reportsData" class="animated fadeInLeft">
                 <div class="cardrightside">
                     <div class="ion-ios-arrow-left" style="margin-top: 33px;color: #c3c3c3;"></div>
                 </div>
@@ -27,7 +27,7 @@
                 <ion-option-button class="button button-dark" ng-click="downloadReportDetails(list)" style="padding: 15px;line-height: 1.5;padding-bottom: 35px;">
                     <small><div><i  class="icon ion-android-download"></i></div><div>Download</div></small>
                 </ion-option-button>
-                <ion-option-button class="button button-balanced" ng-click="showReportDetails(list)" style="padding: 22px;line-height: 1.5;">
+                <ion-option-button class="button button-balanced" ng-click="showReportDetails2(list)" style="padding: 22px;line-height: 1.5;">
                     <small><div><i  class="icon ion-ios-information"></i></div><div>View</div> <div>Details</div></small>
                 </ion-option-button>
             </ion-item>

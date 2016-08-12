@@ -38,7 +38,7 @@
                 MY REPORTS
                 <a ng-click="$parent.openmyreportModal()" style="float: right;font-size: 13px;">VIEW ALL</a>
             </div>
-            <ion-item style="height: 90px;" ng-repeat="list in reportsData" class="animated fadeInLeft" ng-click="reportdone(list)">
+            <ion-item style="height: 90px;" ng-repeat="list in $parent.reportsData" class="animated fadeInLeft" ng-click="reportdone(list)">
                 <div class="cardrightside">
                     <div class="ion-arrow-left-c" style="margin-top: 33px;color: #c3c3c3;"></div>
                 </div>

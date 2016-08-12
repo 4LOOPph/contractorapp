@@ -2,11 +2,11 @@
     <img class="logoo" src="images/eca-logo2 copy.png" width="50" style="margin-top: -12px;width: 50px;"> CONTRACTOR APP
 </header>
 <header class="xvid">
-    <button ui-sref="main" type="button" class="fa fa-chevron-left smbuttontop" style="float:left;"></button> Vendor Inforamtion
+    <button ui-sref="main" type="button" class="fa fa-chevron-left smbuttontop"></button> Vendor Inforamtion
 </header>
 <div class="" style="margin-top: 5px;">
     <div class="">
-        <div class="col-md-12">
+        <div class="col-md-12" style="background: #fff;">
             <div class="row">
                 <div class="col-md-12">
                     <div class=" box-widget widget-user-2">
@@ -20,140 +20,143 @@
                                 </div>
                             </form>
                         </div>
-                        <form class="vid form-horizontal col-md-3 marginpic" style="float:right;">
-                            <div class="box-body">
-                                <div class="box1-body box-profile ">
+                        <div class="largebox">
+                            <form class="vid form-horizontal col-md-3 marginpic" style="float:right;">
+                                <div class="box-body">
+                                    <div class="box1-body box-profile ">
+                                        <img class="profile-user-img img-responsive img-circle " ng-show="myForm.file.$valid " ngf-thumbnail="picFile " alt="User profile picture ">
+                                        <ul class="list-group list-group-unbordered ">
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary btn-up " type="file " ngf-select ng-model="picFile " name="file " accept="image/* " ngf-max-size="2MB " style="float: right;padding-bottom: 13px; ">Upload</button>
+                                </div>
+                            </form>
+                            <div class="xvid smallprof">
+                                <div class="box1-body">
                                     <img class="profile-user-img img-responsive img-circle " ng-show="myForm.file.$valid " ngf-thumbnail="picFile " alt="User profile picture ">
                                     <ul class="list-group list-group-unbordered ">
                                     </ul>
                                 </div>
-                                <button class="btn btn-primary btn-up " type="file " ngf-select ng-model="picFile " name="file " accept="image/* " ngf-max-size="2MB " style="float: right;padding-bottom: 13px; ">Upload</button>
+                                <i class="fa fa-camera buttonsmupload" type="file " ngf-select ng-model="picFile " name="file " accept="image/* " ngf-max-size="2MB "></i>
                             </div>
-                        </form>
-                        <!--  <div class="col-md-12 smallapply" style="margin-top:30px;">
-                            <ol class="breadcrumb">
-                                <li class="active"> Vendor Information</li>
-                                <li>Payment</li>
-                                <li>Qualification</li>
-                            </ol>
-                        </div> -->
-                        <form class="form-horizontal col-md-7 ">
-                            <div class="box-body ">
-                                <div class="form-group ">
-                                    <label for="exampleInputEmail1 ">NAME</label>
+                            <form class="form-horizontal col-md-7 ">
+                                <div class="box-body ">
                                     <div class="form-group ">
-                                        <div class="col-sm-6 ">
-                                            <input type="text " class="form-control " id="LName " placeholder="Last Name ">
-                                        </div>
-                                        <div class="col-sm-6 ">
-                                            <input type="text " class="form-control " id="FName " placeholder="First Name ">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group ">
-                                    <label for="exampleInputEmail1 ">COMPANY NAME <small style="font-style:italic; ">(Specify if applicable)</small></label>
-                                    <input type="text " class="form-control " placeholder="Company Name ">
-                                </div>
-                                <div class="form-group ">
-                                    <label for="exampleInputEmail1 ">ADDRESS</label>
-                                    <div class="form-group ">
-                                        <div class="col-sm-6 ">
-                                            <input type="text " class="form-control " placeholder="Country ">
-                                        </div>
-                                        <div class="col-sm-6 ">
-                                            <input type="text " class="form-control " placeholder="State ">
+                                        <label for="exampleInputEmail1 ">NAME</label>
+                                        <div class="form-group ">
+                                            <div class="col-sm-6 ">
+                                                <input type="text " class="form-control " id="LName " placeholder="Last Name ">
+                                            </div>
+                                            <div class="col-sm-6 ">
+                                                <input type="text " class="form-control " id="FName " placeholder="First Name ">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <div class="col-sm-6 ">
-                                            <input type="text " class="form-control " placeholder="Cities ">
-                                        </div>
-                                        <div class="col-sm-6 ">
-                                            <input type="text " class="form-control " placeholder="Post Code ">
-                                        </div>
+                                        <label for="exampleInputEmail1 ">COMPANY NAME <small style="font-style:italic; ">(Specify if applicable)</small></label>
+                                        <input type="text " class="form-control " placeholder="Company Name ">
                                     </div>
-                                    <input type="text " class="form-control " placeholder="Specific Address ">
-                                    <br>
-                                    <input type="number " class="form-control " placeholder="e.g 53 004 085 616 " name="ABN ">
-                                    <br>
-                                    <input type="number " class="form-control " placeholder="Contact Number ">
-                                    <br>
-                                    <input type="email " class="form-control " placeholder="Email Address ">
-                                </div>
-                            </div>
-                        </form>
-                        <form class="form-horizontal col-md-7 ">
-                            <div class="box-body ">
-                                <div class="form-group ">
-                                    <label for="exampleInputEmail1 ">SECONDARY CONTACT PERSON</label>
                                     <div class="form-group ">
-                                        <div class="col-sm-6 ">
-                                            <input type="text " class="form-control " id="LName " placeholder="Last Name ">
+                                        <label for="exampleInputEmail1 ">ADDRESS</label>
+                                        <div class="form-group ">
+                                            <div class="col-sm-6 ">
+                                                <input type="text " class="form-control " placeholder="Country ">
+                                            </div>
+                                            <div class="col-sm-6 ">
+                                                <input type="text " class="form-control " placeholder="State ">
+                                            </div>
                                         </div>
-                                        <div class="col-sm-6 ">
-                                            <input type="text " class="form-control " id="FName " placeholder="First Name ">
+                                        <div class="form-group ">
+                                            <div class="col-sm-6 ">
+                                                <input type="text " class="form-control " placeholder="Cities ">
+                                            </div>
+                                            <div class="col-sm-6 ">
+                                                <input type="text " class="form-control " placeholder="Post Code ">
+                                            </div>
                                         </div>
+                                        <input type="text " class="form-control " placeholder="Specific Address ">
+                                        <br>
+                                        <input type="number " class="form-control " placeholder="e.g 53 004 085 616 " name="ABN ">
+                                        <br>
+                                        <input type="number " class="form-control " placeholder="Contact Number ">
+                                        <br>
+                                        <input type="email " class="form-control " placeholder="Email Address ">
                                     </div>
-                                    <input type="number " class="form-control " placeholder="Contact Number ">
-                                    <br>
-                                    <input type="email " class="form-control " placeholder="Email Address ">
                                 </div>
-                            </div>
-                        </form>
-                        <form class="form-horizontal col-md-7 ">
-                            <div class="box-body ">
-                                <div class="form-group ">
-                                    <label for="exampleInputEmail1 ">AREA OF COVERAGE <small style="font-style:italic; ">(Please Specify your area of coverage)</small></label>
-                                    <input type="email " class="form-control " placeholder="City i.e Sydney CBD " ng-model="item.area" ng-repeat="item in data.coverageArr">
-                                    <input type="email " class="form-control " placeholder="City i.e Sydney CBD " ng-model="area.coverage" style="margin-top:20px;">
-                                </div>
-                            </div>
-                            <a class="btn btn-warning pull-right btn-nr sked " ng-click="addArea(area.coverage)"w style="margin-top: -10px;margin-bottom: 0px;">
-                                <div><i class="fa fa-plus "></i> Add New Area</div>
-                            </a>
-                        </form>
-                        <form class="form-horizontal col-md-7 ">
-                            <div class="box-body ">
-                                <div class="form-group ">
-                                    <label>AVAILABILITY</label>
+                            </form>
+                            <form class="form-horizontal col-md-7 ">
+                                <div class="box-body ">
                                     <div class="form-group ">
-                                        <div class="col-sm-4 ">
-                                            <select class="form-control " ng-options="item.id as item.value for item in baseRate " ng-model="item.baserate2 ">
-                                            </select>
+                                        <label for="exampleInputEmail1 ">SECONDARY CONTACT PERSON</label>
+                                        <div class="form-group ">
+                                            <div class="col-sm-6 ">
+                                                <input type="text " class="form-control " id="LName " placeholder="Last Name ">
+                                            </div>
+                                            <div class="col-sm-6 ">
+                                                <input type="text " class="form-control " id="FName " placeholder="First Name ">
+                                            </div>
                                         </div>
-                                        <div class="col-sm-4 ">
-                                            <kk-timepicker settings="settings " ng-model="time "></kk-timepicker>
-                                        </div>
-                                        <div class="col-sm-4 ">
-                                            <kk-timepicker settings="settings " ng-model="item.time1 "></kk-timepicker>
-                                        </div>
+                                        <input type="number " class="form-control " placeholder="Contact Number ">
+                                        <br>
+                                        <input type="email " class="form-control " placeholder="Email Address ">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="box-body " ng-repeat="item in inputs " style="margin-top: -30px;">
-                                <div class="form-group ">
+                            </form>
+                            <form class="form-horizontal col-md-7 ">
+                                <div class="box-body ">
                                     <div class="form-group ">
-                                        <div class="col-sm-4 ">
-                                            <select class="form-control " ng-options="item.id as item.value for item in baseRate " ng-model="item.baserate2 ">
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-4 ">
-                                            <kk-timepicker settings="settings " ng-model="time "></kk-timepicker>
-                                        </div>
-                                        <div class="col-sm-4 ">
-                                            <kk-timepicker settings="settings " ng-model="item.time1 "></kk-timepicker>
+                                        <label for="exampleInputEmail1 ">AREA OF COVERAGE <small style="font-style:italic; ">(Please Specify your area of coverage)</small></label>
+                                        <input type="email " class="form-control " placeholder="City i.e Sydney CBD " ng-model="firstrate">
+                                        <input type="email " class="form-control " placeholder="City i.e Sydney CBD " ng-model="rate" ng-repeat="item in input " style="margin-top:20px;">
+                                    </div>
+                                </div>
+                                <a class="btn btn-warning pull-right btn-nr sked " ng-click="addLocation(input) " style="margin-top: -10px;margin-bottom: 0px;">
+                                    <div><i class="fa fa-plus "></i> Add Area</div>
+                                </a>
+                            </form>
+                            <form class="form-horizontal col-md-7 ">
+                                <div class="box-body ">
+                                    <div class="form-group ">
+                                        <label class="marg">AVAILABILITY</label>
+                                        <div class="form-group ">
+                                            <div class="col-sm-4 ">
+                                                <select class="form-control " ng-options="item.id as item.value for item in baseRate " ng-model="item.baserate2 ">
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-4 ">
+                                                <kk-timepicker settings="settings " ng-model="time "></kk-timepicker>
+                                            </div>
+                                            <div class="col-sm-4 ">
+                                                <kk-timepicker settings="settings " ng-model="item.time1 "></kk-timepicker>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <a class="btn btn-warning pull-right btn-nr sked " ng-click="addSched(rates) " style=" ">
-                                <div><i class="fa fa-plus "></i> New Schedule</div>
-                            </a>
-                        </form>
-                        <div class="col-md-12 ">
-                            <div class="box-footer bg-crd ">
-                                <a ng-click="clickToCancel() " class="btn btn-raised btn-default " style="margin-left:-10px; ">Cancel</a>
-                                <div ui-sref="payment " class="btn btn-info pull-right " style="margin-right: -10px; ">Next</div>
+                                <div class="box-body " ng-repeat="item in inputs " style="margin-top: -30px;">
+                                    <div class="form-group ">
+                                        <div class="form-group ">
+                                            <div class="col-sm-4 ">
+                                                <select class="form-control " ng-options="item.id as item.value for item in baseRate " ng-model="item.baserate2 ">
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-4 ">
+                                                <kk-timepicker settings="settings " ng-model="time "></kk-timepicker>
+                                            </div>
+                                            <div class="col-sm-4 ">
+                                                <kk-timepicker settings="settings " ng-model="item.time1 "></kk-timepicker>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-warning pull-right btn-nr sked " ng-click="addSched(rates) " style=" ">
+                                    <div><i class="fa fa-plus "></i> Add Schedule</div>
+                                </a>
+                            </form>
+                            <div class="col-md-12 marg">
+                                <div class="box-footer bg-crd ">
+                                    <a ng-click="clickToCancel() " class="btn btn-raised btn-default " style="margin-left:-10px; ">Cancel</a>
+                                    <div ui-sref="payment " class="btn btn-info pull-right " style="margin-right: -10px; ">Next</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -162,15 +165,3 @@
         </div>
     </div>
 </div>
-<footer class="main-footer">
-    <strong>© 2016 Engagis Pty Ltd </strong>
-</footer>
-<script type="text/javascript ">
-$(window).scroll(function() {
-    if ($(this).scrollTop() > 1) {
-        $('header').addClass("sticky ");
-    } else {
-        $('header').removeClass("sticky ");
-    }
-});
-</script>

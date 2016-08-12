@@ -2,11 +2,11 @@
     <img class="logoo" src="images/eca-logo2 copy.png" width="50" style="margin-top: -12px;width: 50px;"> CONTRACTOR APP
 </header>
 <header class="xvid">
-    <button ui-sref="main" type="button" class="fa fa-chevron-left smbuttontop" style="float:left;"></button> Payment
+    <button ui-sref="vendorinfo" type="button" class="fa fa-chevron-left smbuttontop" style="float:left;"></button> Payment
 </header>
 <div class="" style="margin-top: 5px;">
     <div class="">
-        <div class="col-md-12">
+        <div class="col-md-12" style="background: #fff;">
             <div class="row">
                 <div class="col-md-12">
                     <div class="box-widget widget-user-2">
@@ -20,204 +20,210 @@
                                 </div>
                             </form>
                         </div>
-                        <form class="form-horizontal col-md-7 ">
-                            <div class="box-body ">
-                                <div class="form-group ">
-                                    <label for="exampleInputEmail1 ">RATE</label>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" ng-init="filter.enable = true" name="optionsRadios" id="optionsRadios" value="option3" ng-click="filter.direct = true; filter.check= false; disabled = false " ng-model="enable">Standard Rate
+                        <div class="largebox">
+                            <form class="form-horizontal col-md-7 ">
+                                <div class="box-body ">
+                                    <div class="form-group ">
+                                        <label for="exampleInputEmail1 ">RATE</label>
+                                        <label class="control control--radio">Standard Rate
                                             <br><small style="font-style:italic; ">(Please specify your rate)</small>
+                                            <input type="radio" name="radio" id="optionsRadios" checked="checked" ng-click="filter.direct = true; filter.check= false; disabled = false " ng-model="enable" />
+                                            <div class="control__indicator"></div>
                                         </label>
-                                        <div class="input-group col-sm-9 standardrate">
+                                        <div class="input-group col-sm-9 standardrate" style="margin-top:-70px;">
                                             <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                            <input class="form-control" style="" clean="true" valid-number ng-disabled="disabled">
+                                            <input type="number" class="form-control" style="" clean="true" valid-number ng-disabled="filter.check == true">
                                         </div>
-                                    </div>
-                                    <br>
-                                    <div class="radio">
-                                        <label style="">
-                                            <input type="radio" name="optionsRadios" id="optionsRadios" value="option4" ng-click="filter.direct = false; filter.check= true" ng-model="disabled" checked> Other Rate <small style="font-style:italic; ">(Tick to specify other rate)</small>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <form class="form-horizontal col-md-7 ">
-                            <div class="box-body cardborder" ng-show="filter.check == true" style="padding-right: 25px;">
-                                <div class="" id="startCard">
-                                    <div class="col-md-12">
-                                        <label>WEEKDAYS</label>
                                         <br>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="otherlab">Base Hours Rate:</label>
-                                            <div class="input-group col-sm-9 standardrate">
-                                                <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                <input type="" class="form-control" style="" clean="true" ng-model="rates.weekdaysbasehours" valid-number>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="otherlab" style="color:red;">After Hours Rate:</label>
-                                            <div class="input-group col-sm-9 standardrate">
-                                                <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                <input type="" class="form-control" style="" clean="true" ng-model="rates.weekdaysafterhours" valid-number>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label>WEEKEND</label>
-                                        <br>
-                                        <div class="form-group">
-                                            <label for="inputPassword3" class="otherlab">Weekend Rate:</label>
-                                            <div class="input-group col-sm-9 standardrate">
-                                                <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                                <input type="" class="form-control" style="" clean="true" ng-model="rates.weekendsbasehours" valid-number>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <form class="form-horizontal col-md-7 ">
-                            <div class="box-body ">
-                                <div class="form-group ">
-                                    <label for="exampleInputEmail1 ">CURRENCY</label>
-                                    <select class="form-control">
-                                        <option>Australian Dollar (AUD)</option>
-                                        <option>US Dollar (USD)</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </form>
-                        <form class="form-horizontal col-md-7 ">
-                            <div class="box-body">
-                                <div class="form-group ">
-                                    <label for="exampleInputEmail1 ">PAYMENT METHOD</label>
-                                    <div class="radio">
-                                        <label>
-                                            <input ng-click="hideCard1()" type="radio" name="optionsRadios1" id="optionsRadios3" value="option1" checked> Direct Deposit
-                                        </label>
-                                        <label style="margin-left: 50px;">
-                                            <input ng-click="hideCard()" type="radio" name="optionsRadios1" id="optionsRadios4" value="option2"> Cheque
+                                        <label class="control control--radio">Other Rate <small style="font-style:italic; ">(Tick to specify other rate)</small>
+                                            <input type="radio" name="radio" id="optionsRadios" ng-click="filter.direct = false; filter.check= true" />
+                                            <div class="control__indicator"></div>
                                         </label>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
-                        <form class="form-horizontal col-md-7 ">
-                            <div class="box-body cardborder">
-                                <div class="" id="startCard" ng-show="showstartCard">
-                                    <div class="">
-                                        <!--<img src="img/startpage.jpg">-->
-                                        <div class="account-det">All requests for payment to bank accounts must be signed by the vendor or accompanied by documentary evidence of bank account details from the vendor(e.g. Email, Fax, Invoice)</div>
-                                        <label class="new-label" style="margin-top: 10px;">BANK ACCOUNT</label>
-                                        <div class="list logform" style="margin-top:10px;">
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control" id="inputEmail3" placeholder="Bank">
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control" id="inputEmail3" placeholder="Branch">
-                                            </div>
-                                            <div class="col-sm-6" style="margin-top: 15px;">
-                                                <input type="text" class="form-control" id="inputEmail3" placeholder="Account Name">
-                                            </div>
-                                            <div class="col-sm-6" style="margin-top: 15px;">
-                                                <input type="text" class="form-control" id="inputEmail3" placeholder="BSD">
-                                            </div>
-                                            <div class="col-sm-12" style="margin-top: 15px;">
-                                                <input type="text" class="form-control" id="inputEmail3" placeholder="Account Number">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="" id="secondCard" ng-show="showsecondCard">
-                                    <div class="">
-                                        <div class="">Cheque will be send to the address you have provided on your basic information.</div>
-                                    </div>
-                                    <br>
-                                    <label class="control control--checkbox"> <a>Tick here to specify your prefered billing address.</a>
-                                        <input type="checkbox" ng-click="isCollapsed = !isCollapsed" style="margin-top: 0px;margin-bottom: 15px;" />
-                                        <div class="control__indicator"></div>
-                                    </label>
-                                    <div uib-collapse="!isCollapsed">
-                                        <p>cheque will be forwarded to the new address you provided.</p>
-                                        <div style="padding-left:15px;padding-right:15px;">
+                            </form>
+                            <form class="form-horizontal col-md-7" style="margin-top: -30px;">
+                                <div class="box-body cardborder" ng-show="filter.check == true" style="padding-right: 25px;">
+                                    <div class="" id="startCard">
+                                        <div class="col-md-12">
+                                            <label>WEEKDAYS</label>
+                                            <br>
                                             <div class="form-group">
-                                                <div class="col-sm-6">
-                                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                                    <select class="form-control">
-                                                        <option>City1</option>
-                                                        <option>City2</option>
-                                                        <option>City3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Post Code">
+                                                <label for="inputPassword3" class="otherlab">Base Hours Rate:</label>
+                                                <div class="input-group col-sm-9 standardrate">
+                                                    <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                                                    <input type="number" class="form-control" style="" clean="true" ng-model="rates.weekdaysbasehours" valid-number>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <div class="col-sm-6">
-                                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                                    <select class="form-control">
-                                                        <option>State1</option>
-                                                        <option>State2</option>
-                                                        <option>State3</option>
-                                                    </select>
+                                                <label for="inputPassword3" class="otherlab" style="color:red;">After Hours Rate:</label>
+                                                <div class="input-group col-sm-9 standardrate">
+                                                    <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                                                    <input type="number" class="form-control" style="" clean="true" ng-model="rates.weekdaysafterhours" valid-number>
                                                 </div>
-                                                <div class="col-sm-6">
-                                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                                    <select class="form-control">
-                                                        <option>Country1</option>
-                                                        <option>Country2</option>
-                                                        <option>Country3</option>
-                                                    </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label>WEEKEND</label>
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="inputPassword3" class="otherlab">Weekend Rate:</label>
+                                                <div class="input-group col-sm-9 standardrate">
+                                                    <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                                                    <input type="number" class="form-control" style="" clean="true" ng-model="rates.weekendsbasehours" valid-number>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="" id="thirdCard" ng-show="showthirdCard" style="width: 60%;">
-                                        <div class="card2" style="margin-top: -0px;">
-                                            <form class="form-horizontal">
+                                </div>
+                            </form>
+                            <br>
+                            <form class="form-horizontal col-md-7 ">
+                                <div class="box-body ">
+                                    <div class="form-group ">
+                                        <br>
+                                        <label for="exampleInputEmail1 ">CURRENCY</label>
+                                        <select class="form-control">
+                                            <option>Australian Dollar (AUD)</option>
+                                            <option>US Dollar (USD)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="form-horizontal col-md-7 ">
+                                <div class="box-body">
+                                    <div class="form-group ">
+                                        <label for="exampleInputEmail1 ">PAYMENT METHOD</label>
+                                        <label class="control control--radio">Direct Deposit
+                                            <input type="radio" name="radio" id="optionsRadios2" checked="checked" ng-click="hideCard1(); isCollapsed = !isCollapsed; cheque.specify = unchecked" ng-model="enable" />
+                                            <div class="control__indicator"></div>
+                                        </label>
+                                        <label class="control control--radio" style="margin-left: 200px;margin-top: -44px;">Cheque
+                                            <input type="radio" name="radio" id="optionsRadios2" checked="checked" ng-click="hideCard()" />
+                                            <div class="control__indicator"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="form-horizontal col-md-7 ">
+                                <div class="box-body cardborder">
+                                    <div class="" id="startCard" ng-show="showstartCard">
+                                        <div class="">
+                                            <div style="padding:5px;">
+                                                <div class="account-det">All requests for payment to bank accounts must be signed by the vendor or accompanied by documentary evidence of bank account details from the vendor(e.g. Email, Fax, Invoice)</div>
+                                                <label class="new-label" style="margin-top: 10px;">BANK ACCOUNT</label>
+                                            </div>
+                                            <div class="list logform" style="margin-top:10px;">
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Bank">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Branch">
+                                                </div>
+                                                <div class="col-sm-6" style="margin-top: 15px;">
+                                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Account Name">
+                                                </div>
+                                                <div class="col-sm-6" style="margin-top: 15px;">
+                                                    <input type="text" class="form-control" id="inputEmail3" placeholder="BSD">
+                                                </div>
+                                                <div class="col-sm-12" style="margin-top: 15px;">
+                                                    <input type="number" class="form-control" id="inputEmail3" placeholder="Account Number">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="" id="secondCard" ng-show="showsecondCard">
+                                        <div style="padding:5px;">
+                                            <div class="">
+                                                <div class="">Cheque will be send to the address you have provided on your basic information.</div>
+                                            </div>
+                                            <br>
+                                            <label class="control control--checkbox"> <a>Tick here to specify your prefered billing address.</a>
+                                                <input type="checkbox" ng-click="isCollapsed = !isCollapsed" ng-model="cheque.specify" style="margin-top: 0px;margin-bottom: 15px;" />
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                        </div>
+                                        <div uib-collapse="!isCollapsed">
+                                            <p>cheque will be forwarded to the new address you provided.</p>
+                                            <div style="padding-left:15px;padding-right:15px;">
                                                 <div class="form-group">
-                                                    <label for="inputEmail3" class="col-sm-2 control-label" style="font-weight: 600;"></label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" placeholder="LastName, FirstName, MiddleName" style="margin-top: 12px;">
+                                                    <div class="col-sm-6">
+                                                        <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                        <select class="form-control">
+                                                            <option>City1</option>
+                                                            <option>City2</option>
+                                                            <option>City3</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Post Code">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" i placeholder="Phone">
+                                                    <div class="col-sm-6">
+                                                        <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                        <select class="form-control">
+                                                            <option>State1</option>
+                                                            <option>State2</option>
+                                                            <option>State3</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                        <select class="form-control">
+                                                            <option>Country1</option>
+                                                            <option>Country2</option>
+                                                            <option>Country3</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="" id="thirdCard" ng-show="showthirdCard" style="width: 60%;">
+                                            <div class="card2" style="margin-top: -0px;">
+                                                <form class="form-horizontal">
+                                                    <div class="form-group">
+                                                        <label for="inputEmail3" class="col-sm-2 control-label" style="font-weight: 600;"></label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" placeholder="LastName, FirstName, MiddleName" style="margin-top: 12px;">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </form>
+                                                    <div class="form-group">
+                                                        <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" i placeholder="Phone">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" placeholder="Email">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
-                        <form class="form-horizontal col-md-7 ">
-                            <div class="box-body ">
-                                <div class="form-group ">
-                                    <label for="exampleInputEmail1 "></label>
-                                    <input type="checkbox" style="margin-top: 20px;">
-                                    <a data-toggle="modal" data-target="#myModal">
+                            </form>
+                            <form class="form-horizontal col-md-7 ">
+                                <div class="box-body ">
+                                    <div class="form-group " style="margin-top: 20px;">
+                                        <label class="control control--checkbox"><a data-toggle="modal" data-target="#myModal">
                                         View Terms and Conditions</a>
+                                            <input type="checkbox" />
+                                            <div class="control__indicator"></div>
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                        <div class="col-md-12">
-                            <div class="box-footer bg-crd">
-                                <a ng-click="clickToCancel()" class="btn btn-raised btn-default" style="margin-left:-10px;">Cancel</a>
-                                <a ui-sref="qualification" class="btn btn-raised btn-info pull-right" style="margin-right: -10px;">Next</a>
-                                <a ui-sref="vendorinfo" class="btn btn-raised btn-info pull-right" style="margin-right: 20px;">Back</a>
+                            </form>
+                            <div class="col-md-12">
+                                <div class="box-footer bg-crd">
+                                    <a ng-click="clickToCancel()" class="btn btn-raised btn-default" style="margin-left:-10px;">Cancel</a>
+                                    <a ui-sref="qualification" class="btn btn-raised btn-info pull-right" style="margin-right: -10px;">Next</a>
+                                    <a ui-sref="vendorinfo" class="btn btn-raised btn-info pull-right vid" style="margin-right: 20px;">Back</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -248,20 +254,8 @@
                     <br> c.) by signing this form, that the Trade Vendor is aware of its responsibilities under this agreement.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-raised btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-raised btn-default" data-dismiss="modal" style="padding-bottom:13px">Close</button>
             </div>
         </div>
     </div>
 </div>
-<footer class="main-footer">
-    <strong>© 2016 Engagis Pty Ltd </strong>
-</footer>
-<script type="text/javascript ">
-$(window).scroll(function() {
-    if ($(this).scrollTop() > 1) {
-        $('header').addClass("sticky ");
-    } else {
-        $('header').removeClass("sticky ");
-    }
-});
-</script>
