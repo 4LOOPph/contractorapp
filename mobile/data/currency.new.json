@@ -1,0 +1,21 @@
+[{
+    "symbol": "AU$",
+    "name": "Australian Dollar",
+    "symbol_native": "$",
+    "decimal_digits": 2,
+    "rounding": 0,
+    "code": "AUD",
+    "delimiter": ",",
+    "separator": ".",
+    "name_plural": "Australian dollars"
+}, {
+    "symbol": "NZ$",
+    "name": "New Zealand Dollar",
+    "symbol_native": "$",
+    "decimal_digits": 2,
+    "rounding": 0,
+    "code": "NZD",
+    "delimiter": ",",
+    "separator": ".",
+    "name_plural": "New Zealand dollars"
+}]

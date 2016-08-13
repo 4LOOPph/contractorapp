@@ -5,7 +5,7 @@
     <ion-content class="padding has-tabs-bottom">
         <label class="new-label"> RATE</label>
         <div class="list">
-            <ion-checkbox ng-init="data.standard = true;" ng-click="data.standard = true; data.other= false; disabled = true;" class="item-new" ng-model="data.standard">
+            <ion-checkbox ng-init="data.standard = true;" ng-click="data.standard = true; data.other= false;" class="item-new" ng-model="data.standard">
                 <p>Standard Rate
                     <div style="font-style: italic;font-size: 11px;">(please specify your rate)</div>
                 </p>
@@ -13,7 +13,7 @@
             <div class="list list-inset" style="margin-left: 210px;margin-right: 3%;margin-top: -58px;margin-bottom: 10px;">
                 <label class="item item-input bortop bordbot time-lab">
                     <i class="icon ion-social-usd"></i>
-                    <input type="number" ng-model="data.ratestandard" ng-show="rate.standard == true" ng-disabled="rate.other" placeholder="00.00" style="padding-right: 0;height: 44px;">
+                    <input type="number" ng-model="data.ratestandard" ng-show="data.standard == true" placeholder="00.00" valid-number style="padding-right: 0;height: 44px;">
                 </label>
             </div>
             <ion-checkbox ng-click="data.standard = false; data.other= true;" class="item-new" ng-model="data.other">
@@ -30,7 +30,7 @@
                     <div class="col col-50">
                         <label class="item item-input bortop bordbot time-lab" style="margin-right: -10px;">
                             <i class="icon ion-social-usd"></i>
-                            <input type="number" ng-model="data.other_base_hours" placeholder="00.00" style="padding-right: 0;">
+                            <input type="number" ng-model="data.other_base_hours" placeholder="00.00" style="padding-right: 0;" valid-number>
                         </label>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="col col-50">
                         <label class="item item-input bortop bordbot time-lab" style="margin-right: -10px;">
                             <i class="icon ion-social-usd"></i>
-                            <input type="number" ng-model="data.other_after_hours" placeholder="00.00" style="padding-right: 0;">
+                            <input type="number" ng-model="data.other_after_hours" placeholder="00.00" style="padding-right: 0;" valid-number>
                         </label>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     <div class="col col-50">
                         <label class="item item-input bortop bordbot time-lab" style="margin-right: -10px;">
                             <i class="icon ion-social-usd"></i>
-                            <input type="number" ng-model="data.other_weekends" placeholder="00.00" style="padding-right: 0;">
+                            <input type="number" ng-model="data.other_weekends" placeholder="00.00" style="padding-right: 0;" valid-number>
                         </label>
                     </div>
                 </div>
