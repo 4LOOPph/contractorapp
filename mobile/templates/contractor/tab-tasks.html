@@ -8,7 +8,7 @@
             <div class="item item-divider" style="font-size: 13px;" ng-hide="progress.length === 0">
                 IN PROGRESS
             </div>
-            <ion-item ng-repeat="list in $parent.progressData" class="animated fadeInLeft" ng-click="deTails(list)">
+            <ion-item ng-repeat="list in $parent.progressData" class="animated fadeInLeft" ng-click="deTails('progress',list)">
                 <div class="cardrightside">
                     <div class="ion-arrow-left-c" style="margin-top: 40px;color: #c3c3c3;"></div>
                 </div>
@@ -40,7 +40,7 @@
                 <ion-option-button class="button button-positive" ng-click="completeTask(list)" style="padding: 15px;line-height: 1.5;">
                     <small><div><i class="icon ion-android-done-all"></i></div><div>Complete</div> <div>Task</div></small>
                 </ion-option-button>
-                <ion-option-button class="button button-balanced" ng-click="deTails(list)" style="padding: 22px;line-height: 1.5;">
+                <ion-option-button class="button button-balanced" ng-click="deTails('progress',list)" style="padding: 22px;line-height: 1.5;">
                     <small><div><i  class="icon ion-ios-information"></i></div><div>View</div> <div>Details</div></small>
                 </ion-option-button>
             </ion-item>
@@ -49,7 +49,7 @@
                 PENDING
                 <a ng-click="showAllPendingTask()" style="float: right;font-size: 13px;">VIEW ALL</a>
             </div>
-            <ion-item style="height: 90px;" ng-repeat="list in $parent.pendingData | limitTo:3" class="animated fadeInLeft" ng-click="deTails(list)">
+            <ion-item style="height: 90px;" ng-repeat="list in $parent.pendingData | limitTo:3" class="animated fadeInLeft" ng-click="deTails('pending',list)">
                 <div class="cardrightside">
                     <div class="ion-arrow-left-c" style="margin-top: 33px;color: #c3c3c3;"></div>
                 </div>
@@ -68,7 +68,7 @@
                 <ion-option-button class="button button-calm" ng-click="startTask(list)" style="padding: 28px;line-height: 1.5;padding-top: 10px;">
                     <small><div><i class="icon ion-ios-stopwatch"></i></div><div>Start</div></small>
                 </ion-option-button>
-                <ion-option-button class="button button-balanced" ng-click="deTails(list)" style="padding: 22px;line-height: 1.5;">
+                <ion-option-button class="button button-balanced" ng-click="deTails('pending',list)" style="padding: 22px;line-height: 1.5;">
                     <small><div><i  class="icon ion-ios-information"></i></div><div>View</div> <div>Details</div></small>
                 </ion-option-button>
             </ion-item>
@@ -77,7 +77,7 @@
                 NEW TASK
                 <a ng-click="showAllNewTask()" style="float: right;font-size: 13px;">VIEW ALL</a>
             </div>
-            <ion-item style="height: 90px;" ng-repeat="list in $parent.newTaskData | limitTo:3" class="animated fadeInLeft" ng-click="deTails(list)">
+            <ion-item style="height: 90px;" ng-repeat="list in $parent.newTaskData | limitTo:3" class="animated fadeInLeft" ng-click="deTails('new',list)">
                 <div class="cardrightside">
                     <div class="ion-arrow-left-c" style="margin-top: 33px;color: #c3c3c3;"></div>
                 </div>
@@ -99,7 +99,7 @@
                 <ion-option-button class="button button-stable" ng-click="clickDecline(list)" style="padding: 22px;line-height: 1.5;">
                     <small><div><i  class="icon ion-close-circled"></i></div><div>Decline</div> <div>Task</div></small>
                 </ion-option-button>
-                <ion-option-button class="button button-balanced" ng-click="deTails(list)" style="padding: 22px;line-height: 1.5;">
+                <ion-option-button class="button button-balanced" ng-click="deTails('new',list)" style="padding: 22px;line-height: 1.5;">
                     <small><div><i  class="icon ion-ios-information"></i></div><div>View</div> <div>Details</div></small>
                 </ion-option-button>
             </ion-item>
@@ -108,7 +108,7 @@
                 COMPLETED
                 <a ng-click="$parent.opencompleted_ContactorModal()" style="float: right;font-size: 13px;">VIEW ALL</a>
             </div>
-            <ion-item style="height: 90px;" ng-repeat="list in $parent.completedData" class="animated fadeInLeft" ng-click="deTails(list)">
+            <ion-item style="height: 90px;" ng-repeat="list in $parent.completedData" class="animated fadeInLeft" ng-click="deTails('completed',list)">
                 <div class="cardrightside">
                     <div class="ion-arrow-left-c" style="margin-top: 33px;color: #c3c3c3;"></div>
                 </div>
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-                <ion-option-button class="button button-balanced" ng-click="deTails(list)" style="padding: 22px;line-height: 1.5;">
+                <ion-option-button class="button button-balanced" ng-click="deTails('completed',list)" style="padding: 22px;line-height: 1.5;">
                     <small><div><i  class="icon ion-ios-information"></i></div><div>View</div> <div>Details</div></small>
                 </ion-option-button>
             </ion-item>

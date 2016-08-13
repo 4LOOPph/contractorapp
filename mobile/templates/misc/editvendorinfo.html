@@ -1,0 +1,68 @@
+<ion-view view-title="Edit Profile" name="vendor-info" style="margin-top: 35px;">
+    <ion-content class="padding">
+        <br>
+        <div class="list form" style="padding: 0px;">
+            <div class="list padding-top">
+                <label class="new-label">VENDOR NAME</label>
+            </div>
+            <div class="list list-inset" style="margin-top:-15px;">
+                <label class="item item-input item-icon-left">
+                    <span class="i-con ion-ios-person-outline"></span>
+                    <input type="text" ng-model="data.lname" placeholder="Last Name">
+                </label>
+                <label class="item item-input item-icon-left">
+                    <span class="i-con"></span>
+                    <input type="text" ng-model="data.fname" placeholder="First Name">
+                </label>
+            </div>
+            <!--  <label class="new-label" style="margin-left: 0px;"><i class="icon ion-ios-location-outline"></i> AREA OF COVERAGE</label> -->
+            <div class="list padding-top">
+                <label class="new-label">AREA OF COVERAGE</label>
+            </div>
+            <div class="list list-inset" style="margin-top: -15px;">
+                <label class="item item-input item-icon-left">
+                    <span class="i-con ion-ios-briefcase-outline"></span>
+                    <input type="text" ng-model="data.Cname" placeholder="Company Name">
+                </label>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input item-icon-left">
+                    <span class="i-con ion-ios-home-outline"></span>
+                    <input type="text" placeholder="Specific Address" ng-model="data.address">
+                </label>
+            </div>
+            <div class="list padding-top">
+                <label class="new-label">CONTACT</label>
+            </div>
+            <div class="list list-inset" style="margin-top: -15px;">
+                <label class="item item-input item-icon-left">
+                    <span class="i-con ion-ios-telephone-outline"></span>
+                    <input type="text" placeholder="Contact Number" ng-model="data.phone2" mask="(999) 999-9999" clean="true">
+                </label>
+            </div>
+            <div class="list padding-top">
+                <label class="new-label">EMAIL ADDRESS</label>
+            </div>
+            <div class="list list-inset" style="margin-top: -15px;">
+                <label class="item item-input item-icon-left">
+                    <span class="i-con ion-ios-email-outline"></span>
+                    <input type="email" placeholder="Email Address" ng-model="data.email2">
+                </label>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div class="row" style="margin-top:20px;">
+            <div class="col col-50">
+                <button ng-click="clickDecline()" class="button button-block button-stable">
+                    Cancel
+                </button>
+            </div>
+            <div class="col col-50">
+                <button class="button button-block button-positive">
+                    Save Changes
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
