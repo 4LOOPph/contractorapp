@@ -1,9 +1,9 @@
-<header class="vid">
+<div class="head vid">
     <img class="logoo" src="images/eca-logo2 copy.png" width="50" style="margin-top: -12px;width: 50px;"> CONTRACTOR APP
-</header>
-<header class="xvid">
+</div>
+<div class="head xvid">
     <button ui-sref="main" type="button" class="fa fa-chevron-left smbuttontop" style="float:left;"></button> Application
-</header>
+</div>
 <div class="" style="margin-top: 5px;">
     <div class="">
         <div class="col-md-12">
@@ -11,11 +11,11 @@
                 <div class="col-md-12">
                     <div class="box-widget widget-user-2">
                         <div class="vid" style="padding-left:30px;">
-                            <form class="form-horizontal col-md-12" style="margin-top:95px; margin-left: -65px;">
+                            <form class="form-horizontal col-md-12" style="margin-top:75px; margin-left: -65px;">
                                 <div class="bread flt">
-                                    <a class="active" style="padding-right: 60px;">Vendor Information</a>
-                                    <a class="active" style="width: 30%;">Payment</a>
-                                    <a class="active" style="padding-right: 60px;">Qualification</a>
+                                    <a style="padding-right: 60px;">Vendor Information</a>
+                                    <a style="width: 30%;">Payment</a>
+                                    <a style="padding-right: 60px;">Qualification</a>
                                     <a style="width:5%;"></a>
                                 </div>
                             </form>
@@ -33,7 +33,12 @@
                             </form>
                             <div class="col-md-12">
                                 <div class="box-footer bg-crd">
-                                    <a ui-sref="main" class="btn btn-raised btn-info pull-right" style="margin-right: -10px;">Back to login</a>
+                                    <div align="right" style="margin-top:20px;margin-bottom:0px;">
+                                        <div class="contener" ui-sref="login" style="width:15%;margin-top: -10px;margin-bottom: 0px;">
+                                            <div class="txt_button"> Back to login</div>
+                                            <div class="circle">&nbsp;</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -43,12 +48,3 @@
         </div>
     </div>
 </div>
-<script type="text/javascript ">
-$(window).scroll(function() {
-    if ($(this).scrollTop() > 1) {
-        $('header').addClass("sticky ");
-    } else {
-        $('header').removeClass("sticky ");
-    }
-});
-</script>

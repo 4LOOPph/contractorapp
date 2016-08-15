@@ -4,7 +4,8 @@
           </h4>
     <ol class="breadcrumb">
         <li><a href="#"> Dashboard</a></li>
-        <li> Tasks</li>
+        <li ui-sref="main.admintask"> Tasks</li>
+        <li> Task In Progress</li>
     </ol>
 </div>
 <section class="content">
@@ -45,67 +46,7 @@
             <div class="box box-info boxcolorrrr">
                 <div class="box-header with-border">
                     <i class="fa fa-tasks"></i>
-                    <h3 class="box-title">New Task 
-                    <small ui-sref="main.newtasklist"><a>(View All)</a>
-                    </small></h3>
-                </div>
-                <div class="box-body">
-                    <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;">
-                        <div class="info-box" ui-sref="main.forapprovaltask">
-                            <span class="info-box-icon bg-red"></span>
-                            <div class="infobox-content col-md-12">
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small> Unassigned</small>
-                                </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
-                                <div style="padding-top: 5px;margin-left:-15px;">
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> High Priority</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-close " style="color:red;"></i> Unassigned</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-box" ui-sref="main.forapprovaltask">
-                            <span class="info-box-icon bg-green"></span>
-                            <div class="infobox-content col-md-12">
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small> Unassigned</small>
-                                </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
-                                <div style="padding-top: 5px;margin-left:-15px;">
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> Medium Priority</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-close " style="color:red;"></i> Unassigned</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="box box-info boxcolorrrr">
-                <div class="box-header with-border">
-                    <i class="fa fa-tasks"></i>
-                    <h3 class="box-title">Task In Progress<small ui-sref="main.taskinprogresslist"><a> (View All)</a></small></h3>
+                    <h3 class="box-title">Task In Progress</h3>
                 </div>
                 <div class="box-body">
                     <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;">
@@ -155,37 +96,25 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="box box-info boxcolorrrr">
-                <div class="box-header with-border">
-                    <i class="fa fa-tasks"></i>
-                    <h3 class="box-title">Pending Task<small ui-sref="main.pendingtasklist"><a> (View All)</a></small></h3>
-                </div>
-                <div class="box-body">
-                    <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;">
                         <div class="info-box">
-                            <span class="info-box-icon bg-red"></span>
+                            <span class="info-box-icon bg-green"></span>
                             <div class="infobox-content col-md-12">
                                 <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
                                     <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
                                     <br>
-                                    <small>Smith, Robert</small>
+                                    <small>Reid, Anthony</small>
                                 </div>
                                 <span class="info-box-number">AV-Installation</span>
                                 <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
                                 <div style="padding-top: 5px;margin-left:-15px;">
                                     <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> High Priority</small>
+                                        <small><i class="fa fa-warning"></i> Medium Priority</small>
                                     </div>
                                     <div class="col-md-2">
                                         <small><i class="fa fa-calendar"></i> 27 June 2016</small>
                                     </div>
                                     <div class="col-md-2">
-                                        <small><i class="fa " style="color:green;"></i> Not Started</small>
+                                        <small><i class="fa fa-check" style="color:green;"></i> In Progress</small>
                                     </div>
                                 </div>
                             </div>
@@ -208,59 +137,14 @@
                                         <small><i class="fa fa-calendar"></i> 27 June 2016</small>
                                     </div>
                                     <div class="col-md-2">
-                                        <small><i class="fa " style="color:green;"></i> Not Started</small>
+                                        <small><i class="fa fa-check" style="color:green;"></i> In Progress</small>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="box box-info boxcolorrrr">
-                <div class="box-header with-border">
-                    <i class="fa fa-tasks"></i>
-                    <h3 class="box-title">Completed Task<small ui-sref="main.completedtasklist"><a> (View All)</a></small></h3>
-                </div>
-                <div class="box-body">
-                    <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;">
-                        <div class="info-box" ui-sref="main.completedtask">
-                            <span class="info-box-icon bg-red"></span>
-                            <div class="infobox-content col-md-12">
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/download (1).png" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small>Close Task</small>
-                                </div>
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small>Smith, Robert</small>
-                                </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
-                                <div style="padding-top: 5px;margin-left:-15px;">
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> High Priority</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-check" style="color:green;"></i> Completed</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-box" ui-sref="main.completedtask">
+                        <div class="info-box">
                             <span class="info-box-icon bg-green"></span>
                             <div class="infobox-content col-md-12">
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/download (1).png" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small>Close Task</small>
-                                </div>
                                 <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
                                     <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
                                     <br>
@@ -276,7 +160,7 @@
                                         <small><i class="fa fa-calendar"></i> 27 June 2016</small>
                                     </div>
                                     <div class="col-md-2">
-                                        <small><i class="fa fa-check" style="color:green;"></i> Completed</small>
+                                        <small><i class="fa fa-check" style="color:green;"></i> In Progress</small>
                                     </div>
                                 </div>
                             </div>
@@ -285,7 +169,7 @@
                 </div>
             </div>
         </div>
-        <!--   <div class="box-body">
+        <div class="box-body">
             <div class="form-group">
                 <div for="inputEmail3" class="col-sm-2 control-label" style="padding-top: 25px;">Items per page:</div>
                 <div class="col-sm-1">
@@ -297,7 +181,7 @@
                 </div>
             </div>
         </div>
-        <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul> -->
+        <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
     </div>
     <!-- /.row (main row) -->
 </section>

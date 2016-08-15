@@ -2,18 +2,17 @@
     <ion-nav-buttons side="left">
         <button class="button button-icon ion-ios-arrow-left" ng-click="myGoBack()"></button>
     </ion-nav-buttons>
-    <ion-content style="top: 55px;background-color: #efefef;">
+    <ion-content style="background-color: #efefef;">
         <div class="linetopstyle"></div>
         <div style="font-style:italic;text-align:center;margin-bottom: 20px;">Tap quote to view full details</div>
         <div class="linetopstyle2"></div>
         <div class="card newcard animated fadeInLeft anim4">
-            <div class=" row quotecard">
+            <div class=" row quotecard" ng-repeat="list in task.quotes">
                 <div class="col col-33 quotecardside animated fadeInLeft">
-                    <div class="quotecardsidename">Lorem
-                        <br>Impatsu</div>
-                    <a>+639 999 9999</a>
+                    <div class="quotecardsidename">{{list.contractor.fname}}<br>{{list.contractor.lname}}</div>
+                    <a style="font-size: 11px;">{{list.contractor.phone}}</a>
                     <br>
-                    <small>Company</small>
+                    <small style="font-size: 9px;">{{list.contractor.companyname}}</small>
                     <br>
                     <div ng-click="gotToProf($event)" style="margin-top: 10px;"><a>View Profile</a></div>
                 </div>
@@ -30,138 +29,20 @@
                             <br>
                         </div>
                         <div class="col col-33">
-                            <small>6 Hours</small>
+                            <small>{{list.numhours}} Hrs</small>
                             <br>
-                            <small>$ 00.00</small>
+                            <small>$ {{list.totalrate}}</small>
                             <br>
-                            <small>$ 00.00</small>
+                            <small>$ {{list.totalothers}}</small>
                             <br>
-                            <small style="color:#094e09;font-weight: 600;">$ 00.00</small>
-                            <br>
-                        </div>
-                    </div>
-                    <button class="quotesideright animated fadeInBounce" ng-click="showConfirm()">Approve</button>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="card newcard animated fadeInLeft anim4">
-            <div class=" row quotecard">
-                <div class="col col-33 quotecardside animated fadeInLeft">
-                    <div class="quotecardsidename">Lorem
-                        <br>Impatsu</div>
-                    <a>+639 999 9999</a>
-                    <br>
-                    <small>Company</small>
-                    <br>
-                    <div style="margin-top: 10px;"><a>View Profile</a></div>
-                </div>
-                <div class="col col-67 quoterightcol" style="padding-top: 0;">
-                    <div class="row" style="text-align: right;padding-top: 0;" ui-sref="quotedetails">
-                        <div class="col col-67">
-                            <small>Completion(hours):</small>
-                            <br>
-                            <small>Total Rate:</small>
-                            <br>
-                            <small>Others:</small>
-                            <br>
-                            <small style="color:#094e09;font-weight: 600;">QOW Total:</small>
-                            <br>
-                        </div>
-                        <div class="col col-33">
-                            <small>6 Hours</small>
-                            <br>
-                            <small>$ 00.00</small>
-                            <br>
-                            <small>$ 00.00</small>
-                            <br>
-                            <small style="color:#094e09;font-weight: 600;">$ 00.00</small>
+                            <small style="color:#094e09;font-weight: 600;">$ {{list.totalqoute}}</small>
                             <br>
                         </div>
                     </div>
-                    <button class="quotesideright animated fadeInBounce" ng-click="showConfirm()">Approve</button>
+                    <button class="quotesideright animated fadeInBounce" ng-click="showConfirm(list)" ng-hide="list.approved">Approve</button>
+                    <button class="quotesideright animated fadeInBounce" ng-click="viewApproval(list)" ng-hide="!list.approved">View</button>
                 </div>
             </div>
         </div>
-        <br>
-        <div class="card newcard animated fadeInLeft anim4">
-            <div class=" row quotecard">
-                <div class="col col-33 quotecardside animated fadeInLeft">
-                    <div class="quotecardsidename">Lorem
-                        <br>Impatsu</div>
-                    <a>+639 999 9999</a>
-                    <br>
-                    <small>Company</small>
-                    <br>
-                    <div style="margin-top: 10px;"><a>View Profile</a></div>
-                </div>
-                <div class="col col-67 quoterightcol" style="padding-top: 0;">
-                    <div class="row" style="text-align: right;padding-top: 0;" ui-sref="quotedetails">
-                        <div class="col col-67">
-                            <small>Completion(hours):</small>
-                            <br>
-                            <small>Total Rate:</small>
-                            <br>
-                            <small>Others:</small>
-                            <br>
-                            <small style="color:#094e09;font-weight: 600;">QOW Total:</small>
-                            <br>
-                        </div>
-                        <div class="col col-33">
-                            <small>6 Hours</small>
-                            <br>
-                            <small>$ 00.00</small>
-                            <br>
-                            <small>$ 00.00</small>
-                            <br>
-                            <small style="color:#094e09;font-weight: 600;">$ 00.00</small>
-                            <br>
-                        </div>
-                    </div>
-                    <button class="quotesideright animated fadeInBounce" ng-click="showConfirm()">Approve</button>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="card newcard animated fadeInLeft anim4">
-            <div class=" row quotecard">
-                <div class="col col-33 quotecardside animated fadeInLeft">
-                    <div class="quotecardsidename">Lorem
-                        <br>Impatsu</div>
-                    <a>+639 999 9999</a>
-                    <br>
-                    <small>Company</small>
-                    <br>
-                    <div style="margin-top: 10px;"><a>View Profile</a></div>
-                </div>
-                <div class="col col-67 quoterightcol" style="padding-top: 0;">
-                    <div class="row" style="text-align: right;padding-top: 0;" ui-sref="quotedetails">
-                        <div class="col col-67">
-                            <small>Completion(hours):</small>
-                            <br>
-                            <small>Total Rate:</small>
-                            <br>
-                            <small>Others:</small>
-                            <br>
-                            <small style="color:#094e09;font-weight: 600;">QOW Total:</small>
-                            <br>
-                        </div>
-                        <div class="col col-33">
-                            <small>6 Hours</small>
-                            <br>
-                            <small>$ 00.00</small>
-                            <br>
-                            <small>$ 00.00</small>
-                            <br>
-                            <small style="color:#094e09;font-weight: 600;">$ 00.00</small>
-                            <br>
-                        </div>
-                    </div>
-                    <button class="quotesideright animated fadeInBounce" ng-click="showConfirm()">Approve</button>
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
     </ion-content>
 </ion-view>

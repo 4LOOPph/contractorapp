@@ -1,4 +1,4 @@
-<ion-view view-title="QOW Details">
+<ion-view view-title="QOW Details" hide-back-button="true">
     <ion-nav-buttons side="left">
         <button class="button button-icon ion-ios-arrow-left" ng-click="myGoBack()"></button>
     </ion-nav-buttons>
@@ -47,7 +47,7 @@
                 <a ng-class="{'ion-arrow-down-b': !drop, 'ion-arrow-up-b': drop}" ng-click="isa = !isa; drop = !drop"></a>
             </div>
         </div>
-        <div  ng-show="isa" style="    
+        <div ng-show="isa" style="    
     background-color: #dcdcdc;
     margin-left: 10px;
     margin-right: 10px;

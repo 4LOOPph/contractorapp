@@ -21,9 +21,9 @@
 </head>
 
 <body class="skin-blue">
-    <script src="js/main.min.js"></script>
-    <script src="js/app.min.js"></script>
-    <!--
+<script src="js/main.min.js"></script>
+<script src="js/app.min.js"></script>
+<!--
         *
         *
         *
@@ -32,8 +32,17 @@
         *
         *
         -->
-    <div ui-view></div>
-    <!--
+<div ui-view></div>
+<script type="text/javascript ">
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 1) {
+        $('div.head').addClass("sticky ");
+    } else {
+        $('div.head').removeClass("sticky ");
+    }
+});
+</script>
+<!--
         *
         *
         *

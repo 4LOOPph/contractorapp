@@ -1,18 +1,395 @@
-<div class="wrapper">
-    <header class="main-header">
-    </header>
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar" ng-include="'./modules/templates/sidebar.html'">
-    </aside>
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" ui-view>
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            <b>Version</b> 2.0
-        </div>
-        <strong>Copyright &copy; 2016<a href="http://engagis.com"> Engagis Pty Ltd </a>.</strong> All rights reserved.
-    </footer>
+<div class="content-header">
+    <h4>
+         System Dashboard
+          </h4>
+    <ol class="breadcrumb">
+        <li><a href="#"> Dashboard</a></li>
+        <li></li>
+    </ol>
 </div>
-<!-- ./wrapper -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-info boxcolorrrr">
+                <div class="box-header with-border">
+                    <i class="fa fa-tasks"></i>
+                    <h3 class="box-title">Recent Tasks</h3>
+                </div>
+                <div class="box-body">
+                    <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;">
+                        <div class="info-box" ui-sref="main.taskdetails">
+                            <span class="info-box-icon bg-red"></span>
+                            <div class="infobox-content col-md-12">
+                                <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
+                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
+                                    <br>
+                                    <small> Smith, James</small>
+                                </div>
+                                <span class="info-box-number">AV-Installation</span>
+                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
+                                <div style="padding-top: 5px;margin-left:-15px;">
+                                    <div class="col-md-3">
+                                        <small><i class="fa fa-warning"></i> High Priority</small>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <small><i class="fa fa-check" style="color:green;"></i> In Progress</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-box" ui-sref="main.taskdetails">
+                            <span class="info-box-icon bg-green"></span>
+                            <div class="infobox-content col-md-12">
+                                <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
+                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
+                                    <br>
+                                    <small> Smith, James</small>
+                                </div>
+                                <span class="info-box-number">AV-Installation</span>
+                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
+                                <div style="padding-top: 5px;margin-left:-15px;">
+                                    <div class="col-md-3">
+                                        <small><i class="fa fa-warning"></i> Medium Priority</small>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <small><i class="fa fa-check" style="color:green;"></i> In Progress</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-box" ui-sref="main.taskdetails">
+                            <span class="info-box-icon bg-yel"></span>
+                            <div class="infobox-content col-md-12">
+                                <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
+                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
+                                    <br>
+                                    <small> Unassigned</small>
+                                </div>
+                                <span class="info-box-number">AV-Installation</span>
+                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
+                                <div style="padding-top: 5px;margin-left:-15px;">
+                                    <div class="col-md-3">
+                                        <small><i class="fa fa-warning"></i> Low Priority</small>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <small><i class="fa fa-close " style="color:red;"></i> Unassigned</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-box" ui-sref="main.taskdetails">
+                            <span class="info-box-icon bg-yel"></span>
+                            <div class="infobox-content col-md-12">
+                                <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
+                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
+                                    <br>
+                                    <small> Smith, James</small>
+                                </div>
+                                <span class="info-box-number">AV-Installation</span>
+                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
+                                <div style="padding-top: 5px;margin-left:-15px;">
+                                    <div class="col-md-3">
+                                        <small><i class="fa fa-warning"></i> Low Priority</small>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <small><i class="fa fa-check" style="color:green;"></i> In Progress</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div uib-collapse="!isCollapsed">
+                            <div class="info-box" ui-sref="main.taskdetails">
+                                <span class="info-box-icon bg-green"></span>
+                                <div class="infobox-content col-md-12">
+                                    <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
+                                        <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
+                                        <br>
+                                        <small> Smith, James</small>
+                                    </div>
+                                    <span class="info-box-number">AV-Installation</span>
+                                    <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
+                                    <div style="padding-top: 5px;margin-left:-15px;">
+                                        <div class="col-md-3">
+                                            <small><i class="fa fa-warning"></i> Medium Priority</small>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <small><i class="fa fa-calendar"></i> 27 June 2016</small>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <small><i class="fa fa-check" style="color:green;"></i> In Progress</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-box" ui-sref="main.taskdetails">
+                                <span class="info-box-icon bg-yel"></span>
+                                <div class="infobox-content col-md-12">
+                                    <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
+                                        <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
+                                        <br>
+                                        <small> Unassigned</small>
+                                    </div>
+                                    <span class="info-box-number">AV-Installation</span>
+                                    <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
+                                    <div style="padding-top: 5px;margin-left:-15px;">
+                                        <div class="col-md-3">
+                                            <small><i class="fa fa-warning"></i> Low Priority</small>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <small><i class="fa fa-calendar"></i> 27 June 2016</small>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <small><i class="fa fa-close " style="color:red;"></i> Unassigned</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-box" ui-sref="main.taskdetails">
+                                <span class="info-box-icon bg-yel"></span>
+                                <div class="infobox-content col-md-12">
+                                    <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
+                                        <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
+                                        <br>
+                                        <small> Smith, James</small>
+                                    </div>
+                                    <span class="info-box-number">AV-Installation</span>
+                                    <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
+                                    <div style="padding-top: 5px;margin-left:-15px;">
+                                        <div class="col-md-3">
+                                            <small><i class="fa fa-warning"></i> Low Priority</small>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <small><i class="fa fa-calendar"></i> 27 June 2016</small>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <small><i class="fa fa-check" style="color:green;"></i> In Progress</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div align="center">
+                        <div class="contener" ng-click="isCollapsed = !isCollapsed; toggle = !toggle" style="width:100%;">
+                            <div class="txt_button">Show {{toggleText}}</div>
+                            <div class="circle">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-info boxcolorrrr">
+                <div class="box-header with-border">
+                    <i class="fa fa-clipboard"></i>
+                    <h3 class="box-title">Recent Reports</h3>
+                </div>
+                <div class="box-body">
+                    <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;">
+                        <div class="info-box" ui-sref="main.supportreport">
+                            <span class="info-box-icon bg-white"></span>
+                            <div class="infobox-content col-md-12">
+                                <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
+                                    <img src="images/u158.png" class="img-circle" style="width:40px;">
+                                    <br>
+                                    <small> Download</small>
+                                </div>
+                                <div style="margin-left:-15px;">
+                                    <div class="col-md-3">
+                                        <span class="info-box-number">Sender</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">Task</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">Submitted</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <span class="info-box-number">Smith, Ben</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">AV-Installation</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">27 June, 2016</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <small style="color:#a06904;"> NEW</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-box" ui-sref="main.sitesurveyreport">
+                            <span class="info-box-icon bg-white"></span>
+                            <div class="infobox-content col-md-12">
+                                <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
+                                    <img src="images/u158.png" class="img-circle" style="width:40px;">
+                                    <br>
+                                    <small> Download</small>
+                                </div>
+                                <div style="margin-left:-15px;">
+                                    <div class="col-md-3">
+                                        <span class="info-box-number">Sender</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">Task</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">Submitted</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <span class="info-box-number">Smith, Ben</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">AV-Installation</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">27 June, 2016</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <small style="color:#a06904;"> NEW</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-box" ui-sref="main.supportreport">
+                            <span class="info-box-icon bg-white"></span>
+                            <div class="infobox-content col-md-12">
+                                <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
+                                    <img src="images/u158.png" class="img-circle" style="width:40px;">
+                                    <br>
+                                    <small> Download</small>
+                                </div>
+                                <div style="margin-left:-15px;">
+                                    <div class="col-md-3">
+                                        <span class="info-box-number">Sender</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">Task</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">Submitted</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <span class="info-box-number">Smith, Ben</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">AV-Installation</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">27 June, 2016</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <small style="color:#a06904;"> </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-box" ui-sref="main.sitesurveyreport">
+                            <span class="info-box-icon bg-white"></span>
+                            <div class="infobox-content col-md-12">
+                                <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
+                                    <img src="images/u158.png" class="img-circle" style="width:40px;">
+                                    <br>
+                                    <small> Download</small>
+                                </div>
+                                <div style="margin-left:-15px;">
+                                    <div class="col-md-3">
+                                        <span class="info-box-number">Sender</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">Task</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">Submitted</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <span class="info-box-number">Smith, Ben</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">AV-Installation</span>
+                                        <span class="info-box-text" style="padding-top: 5px;">27 June, 2016</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <small style="color:#a06904;"> </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div uib-collapse="!isColl">
+                            <div class="info-box" ui-sref="main.sitesurveyreport">
+                                <span class="info-box-icon bg-white"></span>
+                                <div class="infobox-content col-md-12">
+                                    <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
+                                        <img src="images/u158.png" class="img-circle" style="width:40px;">
+                                        <br>
+                                        <small> Download</small>
+                                    </div>
+                                    <div style="margin-left:-15px;">
+                                        <div class="col-md-3">
+                                            <span class="info-box-number">Sender</span>
+                                            <span class="info-box-text" style="padding-top: 5px;">Task</span>
+                                            <span class="info-box-text" style="padding-top: 5px;">Submitted</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <span class="info-box-number">Smith, Ben</span>
+                                            <span class="info-box-text" style="padding-top: 5px;">AV-Installation</span>
+                                            <span class="info-box-text" style="padding-top: 5px;">27 June, 2016</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <small style="color:#a06904;"> NEW</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-box" ui-sref="main.supportreport">
+                                <span class="info-box-icon bg-white"></span>
+                                <div class="infobox-content col-md-12">
+                                    <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
+                                        <img src="images/u158.png" class="img-circle" style="width:40px;">
+                                        <br>
+                                        <small> Download</small>
+                                    </div>
+                                    <div style="margin-left:-15px;">
+                                        <div class="col-md-3">
+                                            <span class="info-box-number">Sender</span>
+                                            <span class="info-box-text" style="padding-top: 5px;">Task</span>
+                                            <span class="info-box-text" style="padding-top: 5px;">Submitted</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <span class="info-box-number">Smith, Ben</span>
+                                            <span class="info-box-text" style="padding-top: 5px;">AV-Installation</span>
+                                            <span class="info-box-text" style="padding-top: 5px;">27 June, 2016</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <small style="color:#a06904;"> </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-box" ui-sref="main.sitesurveyreport">
+                                <span class="info-box-icon bg-white"></span>
+                                <div class="infobox-content col-md-12">
+                                    <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
+                                        <img src="images/u158.png" class="img-circle" style="width:40px;">
+                                        <br>
+                                        <small> Download</small>
+                                    </div>
+                                    <div style="margin-left:-15px;">
+                                        <div class="col-md-3">
+                                            <span class="info-box-number">Sender</span>
+                                            <span class="info-box-text" style="padding-top: 5px;">Task</span>
+                                            <span class="info-box-text" style="padding-top: 5px;">Submitted</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <span class="info-box-number">Smith, Ben</span>
+                                            <span class="info-box-text" style="padding-top: 5px;">AV-Installation</span>
+                                            <span class="info-box-text" style="padding-top: 5px;">27 June, 2016</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <small style="color:#a06904;"> </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div align="center">
+                       <div class="contener" ng-click="isColl = !isColl; toggle2 = !toggle2" style="width:100%;">
+                            <div class="txt_button">Show {{toggleText2}}</div>
+                            <div class="circle">&nbsp;</div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        <!-- END RECENT REPORTS -->
+        <!-- right col -->
+    </div>
+    <!-- /.row (main row) -->
+</section>

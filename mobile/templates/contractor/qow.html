@@ -1,5 +1,5 @@
-<ion-view view-title="Quote of Work" name="vendor-info">
-<ion-nav-buttons side="left">
+<ion-view view-title="Quote of Work" name="vendor-info" hide-back-button="true">
+    <ion-nav-buttons side="left">
         <button class="button button-icon ion-ios-arrow-left" ng-click="myGoBack()"></button>
     </ion-nav-buttons>
     <ion-content class="padding">
@@ -14,26 +14,26 @@
             <div class="col col-33">
                 <div class="list list-inset" style="margin-top: -15px;">
                     <label class="item item-input" style="padding: 5px;">
-                        <input type="text" placeholder="# of hours"  style="padding: 5px;">
+                        <input type="text" placeholder="# of hours" ng-model="data.numhours" ng-change="calculateRate(data.numhours)" style="padding: 5px;">
                     </label>
                 </div>
             </div>
             <div class="col">$ 45</div>
-            <div class="col">$ 45</div>
+            <div class="col">$ {{data.totalrate}}</div>
         </div>
         <div class="row" style="margin-top:5px;text-align: center;">
             <div class="col col-25" style="text-align:left;">Travel Fee</div>
             <div class="col col-33">
                 <div class="list list-inset" style="margin-top: -15px;">
                     <label class="item item-input" style="padding: 5px;">
-                        <input type="text" placeholder="Description" n style="padding: 5px;">
+                        <input type="text" placeholder="Description" ng-model="data.travel_description" style="padding: 5px;">
                     </label>
                 </div>
             </div>
             <div class="col col-20">
                 <div class="list list-inset" style="margin-top: -15px;">
                     <label class="item item-input" style="padding: 5px;">
-                        <input type="text" placeholder="$"  style="padding: 5px;">
+                        <input type="text" placeholder="$" ng-model="data.travel_fee" ng-change="calculateTotal()" style="padding: 5px;">
                     </label>
                 </div>
             </div>
@@ -45,14 +45,14 @@
             <div class="col col-33">
                 <div class="list list-inset" style="margin-top: -15px;">
                     <label class="item item-input" style="padding: 5px;">
-                        <input type="text" placeholder="Description"  style="padding: 5px;">
+                        <input type="text" placeholder="Description" ng-model="data.parking_description" style="padding: 5px;">
                     </label>
                 </div>
             </div>
             <div class="col col-20">
                 <div class="list list-inset" style="margin-top: -15px;">
                     <label class="item item-input" style="padding: 5px;">
-                        <input type="text" placeholder="$"  style="padding: 5px;">
+                        <input type="text" placeholder="$" ng-model="data.parking_fee" ng-change="calculateTotal()" style="padding: 5px;">
                     </label>
                 </div>
             </div>
@@ -63,20 +63,20 @@
             <div class="col col-33">
                 <div class="list list-inset" style="margin-top: -15px;">
                     <label class="item item-input" style="padding: 5px;">
-                        <input type="text" placeholder="Description"  style="padding: 5px;">
+                        <input type="text" placeholder="Description" ng-model="data.material_description" style="padding: 5px;">
                     </label>
                 </div>
             </div>
             <div class="col col-20">
                 <div class="list list-inset" style="margin-top: -15px;">
                     <label class="item item-input" style="padding: 5px;">
-                        <input type="text" placeholder="$"  style="padding: 5px;">
+                        <input type="text" placeholder="$" ng-model="data.material_fee" ng-change="calculateTotal()" style="padding: 5px;">
                     </label>
                 </div>
             </div>
             <div class="col"></div>
         </div>
-        <div class="row" ng-repeat="contact in contacts" style="margin-top:5px;text-align: center;" ng-if="contacts.length > 0">
+        <div class="row" ng-repeat="contact in data.descriptions" style="margin-top:5px;text-align: center;" ng-if="data.descriptions.length > 0">
             <div class="col col-25" style="text-align:left;">{{contact.name}}</div>
             <div class="col col-33">
                 <div class="list list-inset" style="margin-top: -15px;">
@@ -108,12 +108,10 @@
         <div class="row" style="font-size: 18px;font-weight: 600;">
             <div class="col col-50" style="text-align:center;">Total</div>
             <div class="col col-50">
-                <div style="float: right;margin-right:10%;">$ 45
-                    <div></div>
-                </div>
+                <div style="float: right;margin-right:10%;">$ {{data.totalqoute}}</div>
             </div>
         </div>
-        <button class="button add-button" ng-click="" style="margin-top: 40px;margin-right: 10px;background-color:#0f6ab5;">preview</button>
+        <button class="button add-button" ng-click="previewQoute(data)" style="margin-top: 40px;margin-right: 10px;background-color:#0f6ab5;">PREVIEW</button>
         <br>
         <br>
         <br>
@@ -121,10 +119,10 @@
         <div style="padding-left:10px;padding-right:10px;">
             <hr>
         </div>
-        <div class="list form" style="padding: 10px;margin-top:-80px;">
-            <button class="button button-block button-positive" style="margin-top:80px;" ng-click="quotsub($event)">
+        <div class="list form" style="padding: 10px;padding-top:-80px;">
+            <button class="button button-block button-positive" ng-click="quotsub(data)">
                 Submit Quote
             </button>
-        </div><br>
+        </div>
     </ion-content>
 </ion-view>

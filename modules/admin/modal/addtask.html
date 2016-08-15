@@ -1,28 +1,69 @@
-<div class="modal-header" style="margin-top: 65px;">
+<div class="modal-header" style="margin-top: 55px;">
     <h3 class="modal-title"> Create Task</h3>
 </div>
 <div class="modal-body">
     <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Task Title</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Title">
-            </div>
-            <div class="form-group">
-                <label>Task Type</label>
-                <select class="form-control">
-                    <option selected>Installation</option>
-                    <option>Installation 2</option>
-                    <option>Installation 3</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <textarea class="form-control" rows="3" placeholder="Details"></textarea>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Task Name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Task Name">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Start Date</label>
+                        <label for="exampleInputEmail1">Task Type</label>
+                        <select class="form-control">
+                            <option selected>Installation</option>
+                            <option>Installation 2</option>
+                            <option>Installation 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Discription</label>
+                <text-angular ng-model="details.article" required /></text-angular>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Store Name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Store Name">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Location</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Location">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Deadline</label>
                         <div class="input-group">
                             <input type="text" class="form-control " ng-model="newdates" data-date-format="yyyy-MM-dd" data-date-type="number" data-max-date="{{newdate}}" data-autoclose="1" name="date2" bs-datepicker placeholder="Date">
                             <div class="input-group-addon">
@@ -32,33 +73,19 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <label style="margin-top: 15px;"></label>
-                    <kk-timepicker settings="settings" ng-model="time"></kk-timepicker>
-                    <!-- /.input group -->
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Due Date</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control " ng-model="newdates" data-date-format="yyyy-MM-dd" data-date-type="number" data-max-date="{{newdate}}" data-autoclose="1" name="date2" bs-datepicker placeholder="Date">
-                            <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-xs-6" style=" margin-top: 5px;">
+                    <kk-timepicker settings="settings" ng-model="time"></kk-timepicker>
                 </div>
                 <div class="col-lg-6">
-                    <label style="margin-top: 15px;"></label>
-                    <kk-timepicker settings="settings" ng-model="time"></kk-timepicker>
-                    <!-- /.input group -->
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Estimated Completion</label>
+                        <label for="exampleInputEmail1" style="margin-top: 15px;">Estimated Completion</label>
                         <select class="form-control">
                             <option selected>1 Day</option>
                             <option>2 Days</option>
@@ -67,109 +94,181 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <label style="margin-top: 15px;"></label>
-                    <select class="form-control">
-                        <option selected>1 Hour</option>
-                        <option>2 Hours</option>
-                        <option>3 Hours</option>
-                    </select>
+                    <div class="form-group">
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label>Priority Level</label>
-                <select class="form-control">
-                    <option selected>High</option>
-                    <option>Moderate</option>
-                    <option>Low</option>
-                </select>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>Priority Level</label>
+                        <select class="form-control">
+                            <option selected>High</option>
+                            <option>Moderate</option>
+                            <option>Low</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                    </div>
+                </div>
             </div>
-        </div>
-        <!-- second row -->
-        <div class="col-md-6">
-            <div class="form-group">
-                <label>Store</label>
-                <select class="form-control">
-                    <option selected>Telstra</option>
-                    <option>7-Eleven</option>
-                    <option>KSY</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Store Address</label>
-                <select class="form-control">
-                    <option selected>Telstra</option>
-                    <option>7-Eleven</option>
-                    <option>KSY</option>
-                </select>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>Case Number</label>
+                        <input type="text" class="form-control" placeholder="i.e 016254">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-xs-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Requested By</label>
                         <input type="text" class="form-control" placeholder="First Name">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group" style="margin-top:5px;">
-                        <label for="exampleInputEmail1"></label>
+                        <br>
                         <input type="text" class="form-control" placeholder="Last Name">
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Contact Number">
-                    </div>
-                </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email Address">
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Company">
             </div>
             <div class="row">
                 <div class="col-xs-6">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Site Contact Person</label>
+                        <label for="exampleInputEmail1">Site Contact</label>
                         <input type="text" class="form-control" placeholder="First Name">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group" style="margin-top:5px;">
-                        <label for="exampleInputEmail1"></label>
+                        <br>
                         <input type="text" class="form-control" placeholder="Last Name">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
+                        <br>
                         <input type="text" class="form-control" placeholder="Contact Number">
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email Address">
+                    <div class="form-group" style="margin-top:5px;">
                     </div>
                 </div>
             </div>
             <br>
-            <div class="form-group" style="margin-top:-4px;">
-                <label for="exampleInputEmail1">Attach Documents</label>
-                <input type="file" class="form-control" placeholder="Company" style="border-style: dashed;
-    border-width: 2px;
-    padding-top: 4px;
-    padding-left: 2px;">
+            <form>
+                <div class="col-md-12 box-body cardborder" style="padding-left: 10px;margin-top: -20px;border-style: dashed;">
+                    <div class="form-group ">
+                        <label for="imageUpload1" class="btn btn-warning btn-block btn-outlined" style="width: 150px"><i class="fa fa-folder-open"></i> Attach PSD</label>
+                        <input type="file" method="POST" id="imageUpload1" nv-file-select="" uploader="uploader" class="form-control" accept="image/*" style="display: none">
+                        <div style="font-style:italic;">(Attach PSD file if applicable)</div>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="95%"></th>
+                                <th width="5%"></th>
+                            </tr>
+                        </thead>
+                        <tbody style="background-color: #d6d6d6;">
+                            <tr ng-repeat="item in uploader.queue" class="uploadtable">
+                                <td style="padding: 5px;"><strong>{{ item.file.name }}</strong></td>
+                                <td nowrap>
+                                    <button class="btn-danger btn-xm close3"><span class="fa fa-times-circle" ng-click="item.remove()"></span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+            <div class="col-lg-12" style="margin-top: 20px;border-bottom-style: solid;border-width: 1px;border-color: #a9a9a9;">
             </div>
+            <div class="row" style="margin-top:120px;">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label style="margin-top: 10px;">Assign to Contractor/s</label>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search Contractor...">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                    </div>
+                </div>
+            </div>
+            <form class="form-horizontal col-md-7 ">
+                <div class="box-body ">
+                    <div style="padding:15px;">
+                        <div class="input-group col-sm-12">
+                            <label class="control control--checkbox">Lorem Impatsu
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">Lorem Impatsu
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">Lorem Impatsu
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">Lorem Impatsu
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">Lorem Impatsu
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+                            <a ng-click="toggle(); isCollapsed = !isCollapsed" ng-model="con.list" style="float:right;text-decoration:underline;">
+                                <div ng-hide="myVar">View Full List</div>
+                            </a>
+                        </div>
+                        <div class="input-group col-sm-12" uib-collapse="!isCollapsed">
+                            <div>
+                                <label class="control control--checkbox">Lorem Impatsu
+                                    <input type="checkbox" />
+                                    <div class="control__indicator"></div>
+                                </label>
+                                <label class="control control--checkbox">Lorem Impatsu
+                                    <input type="checkbox" />
+                                    <div class="control__indicator"></div>
+                                </label>
+                                <label class="control control--checkbox">Lorem Impatsu
+                                    <input type="checkbox" />
+                                    <div class="control__indicator"></div>
+                                </label>
+                                <label class="control control--checkbox">Lorem Impatsu
+                                    <input type="checkbox" />
+                                    <div class="control__indicator"></div>
+                                </label>
+                                <label class="control control--checkbox">Lorem Impatsu
+                                    <input type="checkbox" />
+                                    <div class="control__indicator"></div>
+                                </label>
+                            </div>
+                            <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" style=" margin-right: -100px;"></ul>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 <div class="modal-footer">
-    <a ng-click="clickToCancel()" class="btn btn-raised btn-default" style="float:left;margin-left:15px;">Cancel</a>
-    <button class="btn btn-raised btn-info pull-right" type="button" ng-click="cancel()" style="width: 23%;margin-right:15px;">Save and Request Quotes</button>
-    <button class="btn btn-raised btn-info pull-right" type="button" ng-click="ok()" style="margin-right: 15px;">Save</button>
+  <!--   <a ng-click="cancel()" class="btnes btn-raised btn-default" style="float:left;margin-left:15px;width:100px;">Cancel</a> -->
+   <!--  <button class="btnes btn-raised btn-info pull-right" type="button" ng-click="ok()" style="margin-right: 15px;padding-bottom: 10px;">Create</button> -->
+   <div align="left">
+        <div class="contenergrey" ng-click="cancel()" style="width:20%;">
+            <div class="txt_button">Cancel</div>
+            <div class="circle">&nbsp;</div>
+        </div>
+    </div>
+    <div align="right">
+        <div class="contener" ng-click="ok()" style="width:20%;margin-top: -45px;">
+            <div class="txt_button">Create</div>
+            <div class="circle">&nbsp;</div>
+        </div>
+    </div>
 </div>

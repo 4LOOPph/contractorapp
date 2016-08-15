@@ -2,15 +2,9 @@
     <ion-content>
         <div class="list">
             <div class="dropprofile">
-                <img src="img/no-avatar.jpg" class="img-circle center dropaccout" alt="User Image">
-                <div ng-if="user.usertype=='con'">
-                    <div>Vendor Vendor</div>
-                    <small>Member since July. 2016</small>
-                </div>
-                <div ng-if="user.usertype=='proc'">
-                    <div>Lorem Impatsu</div>
-                    <small>PM since July. 2016</small>
-                </div>
+                <img src="./img/no-avatar.jpg" class="img-circle center dropaccout" alt="User Image">
+                <div>{{currentUser.fname}} {{currentUser.lname}}</div>
+                <small>Member since <span am-time-ago="currentUser.datecreated"></span></small>
             </div>
             <div ng-click="$parent.showUserProfile($event)" ng-if="user.usertype=='con'" class="item" style="text-align:center;">
                 Profile

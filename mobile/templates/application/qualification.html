@@ -5,23 +5,8 @@
     <ion-content class="padding">
         <h4 class="new-label padding-top">QUALIFICATION CHECKLIST</h4>
         <div class="list padding-right padding-left">
-            <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.one">
-                <small>Hardware Installations</small>
-            </ion-checkbox>
-            <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.two">
-                <small>AV-Installations</small>
-            </ion-checkbox>
-            <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.three">
-                <small>Preventive Maintenance</small>
-            </ion-checkbox>
-            <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.four">
-                <small>Digital Media and Digital Points of Purchase Rollouts</small>
-            </ion-checkbox>
-            <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.five">
-                <small>Basic Networking Experience</small>
-            </ion-checkbox>
-            <ion-checkbox class="checkbox-square checkboxList" ng-model="filter.size">
-                <small>Testing and Servicing Equipment</small>
+            <ion-checkbox class="checkbox-square checkboxList" ng-repeat="row in qualifications" ng-model="row.checked" ng-changed="checkItem(row)">
+                <small>{{row.name}}</small>
             </ion-checkbox>
             <div ng-repeat="group in groups">
                 <div class="item-stable" ng-click="toggleGroup(group)">
@@ -29,7 +14,7 @@
                         <small>Others</small>
                     </ion-checkbox>
                 </div>
-                <div class="aitem " ng-repeat="other in othersList" style="position: relative;">
+                <div class="aitem " ng-repeat="other in data.othersList" style="position: relative;">
                     {{other.task}}
                     <button class="button-small icon ion-close-round boo" ng-click="removeOther($index)"></button>
                 </div>
@@ -67,32 +52,32 @@
                     </ion-item>
                 </div>
             </div>
-            <button class="button button-block button-energized icon-left ion-camera" ng-click="scanCertificateCamera()">
+            <!-- <button class="button button-block button-energized icon-left ion-camera" ng-click="scanCertificateCamera()">
                 Scan Certificate
-            </button>
+            </button> -->
         </div>
         <label class="new-label">REFERENCE</label>
         <div class="form">
             <div class="list list-inset">
                 <label class="item item-input item-icon-left">
                     <span class="i-con ion-ios-person-outline"></span>
-                    <input type="text" placeholder="Last Name">
+                    <input type="text" ng-model="data.refLname" placeholder="Last Name">
                 </label>
                 <label class="item item-input item-icon-left">
                     <span class="i-con"></span>
-                    <input type="text" placeholder="First Name">
+                    <input type="text" ng-model="data.refFname" placeholder="First Name">
                 </label>
             </div>
             <div class="list list-inset">
                 <label class="item item-input item-icon-left">
                     <span class="i-con ion-ios-telephone-outline"></span>
-                    <input type="number" ng-model="data.phone" clean="true">
+                    <input type="text" ng-model="data.refPhone" mask="+99 9 9999 9999">
                 </label>
             </div>
             <div class="list list-inset">
                 <label class="item item-input bordbot item-icon-left">
                     <span class="i-con ion-ios-email-outline"></span>
-                    <input type="email" placeholder="Email Address">
+                    <input type="email" placeholder="Email Address" ng-model="data.refEmail">
                 </label>
             </div>
         </div>

@@ -4,12 +4,12 @@
     </ion-nav-buttons>
     <ion-content class="padding">
         <div class="animated fadeInDown" style="background-color: rgba(4, 45, 38, 0.76);margin: -15px;margin-bottom: 5px;padding: 20px;padding-bottom: 15px;font-weight: 600;color: #fff;">
-            <div class="newlabel" style="font-style:italic;">Lorem Impatsu </div>
+            <div class="newlabel" style="font-style:italic;">{{data.contractor.fname}} {{data.contractor.lname}}</div>
         </div>
         <div style="padding:10px;">
-            <small><a>+639 999 9999</a><a style="float:right;" ng-click="gotToProfile(user)">View Profile</a></small>
+            <small><a>{{data.contractor.phone}}</a><a style="float:right;" ng-click="gotToProfile(data.contractor)">View Profile</a></small>
             <br>
-            <small>Copmany</small>
+            <small>{{data.contractor.company}}</small>
             <hr>
         </div>
         <h4 style="text-align:center;font-style:italic;">Quote of Work</h4>
@@ -26,13 +26,13 @@
                 <small>Total Rate</small>
             </div>
             <div class="col col-50">
-                <small>: 6 hours</small>
+                <small>: {{data.numhours}} hours</small>
                 <br>
                 <small>: $ 00.00</small>
                 <br>
                 <small>: $ 00.00</small>
                 <br>
-                <small>: $ 00.00</small></div>
+                <small>: $ {{data.totalrate | number:2}}</small></div>
         </div>
         <div class="new-label">Miscellaneous</div>
         <div class="lineside"></div>
@@ -77,7 +77,7 @@
         <div style="padding-left:10px;padding-right:10px;">
             <hr>
         </div>
-        <h4 style="text-align:center;font-style:italic;color:green;">Quote of Work Total: $ 00.00</h4>
+        <h4 style="text-align:center;font-style:italic;color:green;">Quote of Work Total: $ {{data.totalqoute | number: 2}}</h4>
         <div class="row" class="paddding-top">
             <!-- <div class="col col-50">
                 <button ng-click="" class="button button-block button-stable">

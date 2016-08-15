@@ -3,7 +3,7 @@
         <button class="button button-icon ion-ios-gear-outline" ng-click="showPopover($event)"></button>
     </ion-nav-buttons>
     <ion-content>
-        <ion-refresher on-refresh="doTaskRefresh()" spinner="spiral"></ion-refresher>
+        <ion-refresher on-refresh="$parent.doAllTaskRefresh()" spinner="spiral"></ion-refresher>
         <ion-list show-delete="false" show-reorder="false" can-swipe="true">
             <div class="item item-divider" style="font-size: 13px;" ng-hide="progress.length === 0">
                 IN PROGRESS
@@ -12,16 +12,16 @@
                 <div class="cardrightside">
                     <div class="ion-arrow-left-c" style="margin-top: 40px;color: #c3c3c3;"></div>
                 </div>
-                <div class="card-sidepad" style="background-color: #c10606;" ng-if="list.Status === 'High'"></div>
-                <div class="card-sidepad" ng-if="list.Status === 'Medium'"></div>
-                <div class="card-sidepad" style="background-color: #ece505;" ng-if="list.Status === 'Low'"></div>
+                <div class="card-sidepad" style="background-color: #c10606;" ng-if="list.priority === 'High'"></div>
+                <div class="card-sidepad" ng-if="list.priority === 'Medium'"></div>
+                <div class="card-sidepad" style="background-color: #ece505;" ng-if="list.priority === 'Low'"></div>
                 <div class="cardin">
-                    <div class="card-lbl">{{list.Title}}</div>
-                    <p class="card-lblp">({{list.Description}})</p>
-                    <p class="card-lblp" style="margin-top: 0px;"><small><i style="color:#0f6ab5;" class="ion-alert-circled"></i> {{list.Status}}</small></p>
+                    <div class="card-lbl">{{list.taskname}}</div>
+                    <p class="card-lblp">({{list.description}})</p>
+                    <p class="card-lblp" style="margin-top: 0px;"><small><i style="color:#0f6ab5;" class="ion-alert-circled"></i> {{list.priority}}</small></p>
                     <div class="row" style="margin-top:-10px;">
                         <div class="col">
-                            <p><small><i style="color:#0f6ab5;" class="ion-android-calendar"></i> {{date | date:'longDate'}}</small></p>
+                            <p><small><i style="color:#0f6ab5;" class="ion-android-calendar"></i> {{list.deadline | date:'longDate'}}</small></p>
                         </div>
                         <div class="col">
                             <p><small ng-if="list.Check == 'in'"><i style="color:#27980b;" class="ion-checkmark-round"></i> Checked-In</small></p>
@@ -47,21 +47,21 @@
             <br>
             <div class="item item-divider" style="font-size: 13px;">
                 PENDING
-                <a ng-click="showAllPendingTask()" style="float: right;font-size: 13px;">VIEW ALL</a>
+                <a ng-click="$parent.openpendingModal()" style="float: right;font-size: 13px;">VIEW ALL</a>
             </div>
             <ion-item style="height: 90px;" ng-repeat="list in $parent.pendingData | limitTo:3" class="animated fadeInLeft" ng-click="deTails('pending',list)">
                 <div class="cardrightside">
                     <div class="ion-arrow-left-c" style="margin-top: 33px;color: #c3c3c3;"></div>
                 </div>
-                <div class="card-sidepad" style="background-color: #c10606;" ng-if="list.Status === 'High'"></div>
-                <div class="card-sidepad" ng-if="list.Status === 'Medium'"></div>
-                <div class="card-sidepad" style="background-color: #ece505;" ng-if="list.Status === 'Low'"></div>
+                <div class="card-sidepad" style="background-color: #c10606;" ng-if="list.priority === 'High'"></div>
+                <div class="card-sidepad" ng-if="list.priority === 'Medium'"></div>
+                <div class="card-sidepad" style="background-color: #ece505;" ng-if="list.priority === 'Low'"></div>
                 <div class="cardin">
-                    <div class="card-lbl">{{list.Title}}</div>
-                    <p class="card-lblp">({{list.Description}})</p>
+                    <div class="card-lbl">{{list.taskname}}</div>
+                    <p class="card-lblp">({{list.description}})</p>
                     <div class="row" style="margin-top:-5px;">
                         <div class="col">
-                            <p><small><i style="color:#0f6ab5;" class="ion-alert-circled"></i> {{list.Status}}</small></p>
+                            <p><small><i style="color:#0f6ab5;" class="ion-alert-circled"></i> {{list.priority}}</small></p>
                         </div>
                     </div>
                 </div>
@@ -75,28 +75,28 @@
             <br>
             <div class="item item-divider" style="font-size: 13px;">
                 NEW TASK
-                <a ng-click="showAllNewTask()" style="float: right;font-size: 13px;">VIEW ALL</a>
+                <a ng-click="$parent.opennewtaskModal()" style="float: right;font-size: 13px;">VIEW ALL</a>
             </div>
             <ion-item style="height: 90px;" ng-repeat="list in $parent.newTaskData | limitTo:3" class="animated fadeInLeft" ng-click="deTails('new',list)">
                 <div class="cardrightside">
                     <div class="ion-arrow-left-c" style="margin-top: 33px;color: #c3c3c3;"></div>
                 </div>
-                <div class="card-sidepad" style="background-color: #c10606;" ng-if="list.Status === 'High'"></div>
-                <div class="card-sidepad" ng-if="list.Status === 'Medium'"></div>
-                <div class="card-sidepad" style="background-color: #ece505;" ng-if="list.Status === 'Low'"></div>
+                <div class="card-sidepad" style="background-color: #c10606;" ng-if="list.priority === 'High'"></div>
+                <div class="card-sidepad" ng-if="list.priority === 'Medium'"></div>
+                <div class="card-sidepad" style="background-color: #ece505;" ng-if="list.priority === 'Low'"></div>
                 <div class="cardin">
-                    <div class="card-lbl">{{list.Title}}</div>
-                    <p class="card-lblp">({{list.Description}})</p>
+                    <div class="card-lbl">{{list.taskname}}</div>
+                    <p class="card-lblp">({{list.description}})</p>
                     <div class="row" style="margin-top:-5px;">
                         <div class="col">
-                            <p><small><i style="color:#0f6ab5;" class="ion-alert-circled"></i> {{list.Status}}</small></p>
+                            <p><small><i style="color:#0f6ab5;" class="ion-alert-circled"></i> {{list.priority}}</small></p>
                         </div>
                     </div>
                 </div>
-                <ion-option-button class="button button-energized" ng-click="newTaskqow()" style="padding: 22px;line-height: 1.5;">
+                <ion-option-button class="button button-energized" ng-click="newTaskqow(list)" ng-hide="list.disableQOW" style="padding: 22px;line-height: 1.5;">
                     <small><div><i  class="icon ion-ios-compose"></i></div><div>Submit</div> <div>QOW</div></small>
                 </ion-option-button>
-                <ion-option-button class="button button-stable" ng-click="clickDecline(list)" style="padding: 22px;line-height: 1.5;">
+                <ion-option-button class="button button-stable" ng-click="clickDecline(list)" ng-hide="!list.disableQOW" style="padding: 22px;line-height: 1.5;">
                     <small><div><i  class="icon ion-close-circled"></i></div><div>Decline</div> <div>Task</div></small>
                 </ion-option-button>
                 <ion-option-button class="button button-balanced" ng-click="deTails('new',list)" style="padding: 22px;line-height: 1.5;">

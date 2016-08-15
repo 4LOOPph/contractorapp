@@ -1,9 +1,9 @@
-<header class="vid">
+<div class="head vid">
     <img class="logoo" src="images/eca-logo2 copy.png" width="50" style="margin-top: -12px;width: 50px;"> CONTRACTOR APP
-</header>
-<header class="xvid">
+</div>
+<div class="head xvid">
     <button ui-sref="main" type="button" class="fa fa-chevron-left smbuttontop"></button> Vendor Inforamtion
-</header>
+</div>
 <div class="" style="margin-top: 5px;">
     <div class="">
         <div class="col-md-12" style="background: #fff;">
@@ -11,7 +11,7 @@
                 <div class="col-md-12">
                     <div class=" box-widget widget-user-2">
                         <div class="vid" style="padding-left:30px;">
-                            <form class="form-horizontal col-md-12" style="margin-top:95px; margin-left: -65px;">
+                            <form class="form-horizontal col-md-12" style="margin-top:75px; margin-left: -65px;">
                                 <div class="bread flt">
                                     <a class="active" style="padding-right: 60px;">Vendor Information</a>
                                     <a style="width: 30%;">Payment</a>
@@ -23,12 +23,17 @@
                         <div class="largebox">
                             <form class="vid form-horizontal col-md-3 marginpic" style="float:right;">
                                 <div class="box-body">
-                                    <div class="box1-body box-profile ">
+                                    <div align="center" class="box1-body box-profile ">
                                         <img class="profile-user-img img-responsive img-circle " ng-show="myForm.file.$valid " ngf-thumbnail="picFile " alt="User profile picture ">
                                         <ul class="list-group list-group-unbordered ">
                                         </ul>
                                     </div>
-                                    <button class="btn btn-primary btn-up " type="file " ngf-select ng-model="picFile " name="file " accept="image/* " ngf-max-size="2MB " style="float: right;padding-bottom: 13px; ">Upload</button>
+                                    <div align="center" style="margin-top:20px;margin-bottom:-35px;">
+                                        <div class="contener" type="file " ngf-select ng-model="picFile " name="file " accept="image/* " ngf-max-size="2MB " style="width:40%;">
+                                            <div class="txt_button">Upload</div>
+                                            <div class="circle">&nbsp;</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                             <div class="xvid smallprof">
@@ -39,125 +44,152 @@
                                 </div>
                                 <i class="fa fa-camera buttonsmupload" type="file " ngf-select ng-model="picFile " name="file " accept="image/* " ngf-max-size="2MB "></i>
                             </div>
-                            <form class="form-horizontal col-md-7 ">
-                                <div class="box-body ">
-                                    <div class="form-group ">
-                                        <label for="exampleInputEmail1 ">NAME</label>
+                            <form name="userForm" class="form-horizontal col-md-7" ng-submit="submitForm()" novalidate>
+                                <form class="form-horizontal col-md-7 ">
+                                    <div class="box-body ">
                                         <div class="form-group ">
-                                            <div class="col-sm-6 ">
-                                                <input type="text " class="form-control " id="LName " placeholder="Last Name ">
+                                            <label for="exampleInputEmail1 ">NAME</label>
+                                            <div class="form-group ">
+                                                <div class="col-sm-6 " ng-class="{ 'has-error' : userForm.Lname.$invalid && !userForm.Lname.$pristine }">
+                                                    <input type="text " name="Lname" class="form-control " id="LName " placeholder="Last Name" ng-model="data.lname" required>
+                                                    <p ng-show="userForm.Lname.$invalid && !userForm.Lname.$pristine" class="help-block">Required *</p>
+                                                </div>
+                                                <div class="col-sm-6 " ng-class="{ 'has-error' : userForm.Fname.$invalid && !userForm.Fname.$pristine }">
+                                                    <input type="text " name="Fname" class="form-control " id="FName " placeholder="First Name " ng-model="data.fname" required>
+                                                    <p ng-show="userForm.Fname.$invalid && !userForm.Fname.$pristine" class="help-block">Required *</p>
+                                                </div>
                                             </div>
-                                            <div class="col-sm-6 ">
-                                                <input type="text " class="form-control " id="FName " placeholder="First Name ">
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="exampleInputEmail1 ">COMPANY NAME <small style="font-style:italic; ">(Specify if applicable)</small></label>
+                                            <input type="text " class="form-control " placeholder="Company Name ">
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="exampleInputEmail1 ">ADDRESS</label>
+                                            <div class="form-group ">
+                                                <div class="col-sm-6 ">
+                                                    <input type="text " class="form-control " placeholder="Country ">
+                                                </div>
+                                                <div class="col-sm-6 ">
+                                                    <input type="text " class="form-control " placeholder="State ">
+                                                </div>
+                                            </div>
+                                            <div class="form-group ">
+                                                <div class="col-sm-6 ">
+                                                    <input type="text " class="form-control " placeholder="Cities ">
+                                                </div>
+                                                <div class="col-sm-6 ">
+                                                    <input type="text " class="form-control " placeholder="Post Code " mask="9999" clean="true" ng-model="data.pcode">
+                                                </div>
+                                            </div>
+                                            <input type="text " class="form-control " placeholder="Specific Address ">
+                                            <br>
+                                            <div ng-class="{ 'has-error' : userForm.ABN.$invalid && !userForm.ABN.$pristine }">
+                                                <input type="number" class="form-control " placeholder="e.g 53 004 085 616 " name="ABN" ng-model="data.abn" required>
+                                                <p ng-show="userForm.ABN.$invalid && !userForm.ABN.$pristine" class="help-block">Required*</p>
+                                            </div>
+                                            <br>
+                                            <div ng-class="{ 'has-error' : userForm.contact.$invalid && !userForm.contact.$pristine }">
+                                                <input type="number" class="form-control " name="contact" placeholder="Contact Number " clean="true" ng-model="data.contact" required>
+                                                <p ng-show="userForm.contact.$invalid && !userForm.contact.$pristine" class="help-block">Required*</p>
+                                            </div>
+                                            <br>
+                                            <div ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                                                <input type="email" class="form-control " name="email" placeholder="Email Address" clean="true" ng-model="data.email" required>
+                                                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Required valid email*</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group ">
-                                        <label for="exampleInputEmail1 ">COMPANY NAME <small style="font-style:italic; ">(Specify if applicable)</small></label>
-                                        <input type="text " class="form-control " placeholder="Company Name ">
+                                    <div class="box-body ">
+                                        <div class="form-group ">
+                                            <label for="exampleInputEmail1 ">SECONDARY CONTACT PERSON</label>
+                                            <div class="form-group ">
+                                                <div class="col-sm-6 ">
+                                                    <input type="text " class="form-control " id="LName " placeholder="Last Name ">
+                                                </div>
+                                                <div class="col-sm-6 ">
+                                                    <input type="text " class="form-control " id="FName " placeholder="First Name ">
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <input type="number" class="form-control " name="contact2" placeholder="Contact Number " clean="true" ng-model="data.contact2">
+                                            </div>
+                                            <br>
+                                            <div>
+                                                <input type="email" class="form-control " name="email2" placeholder="Email Address" clean="true" ng-model="data.email2">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-group ">
-                                        <label for="exampleInputEmail1 ">ADDRESS</label>
+                                    <div class="box-body ">
                                         <div class="form-group ">
-                                            <div class="col-sm-6 ">
-                                                <input type="text " class="form-control " placeholder="Country ">
-                                            </div>
-                                            <div class="col-sm-6 ">
-                                                <input type="text " class="form-control " placeholder="State ">
+                                            <label for="exampleInputEmail1 ">AREA OF COVERAGE <small style="font-style:italic; ">(Please Specify your area of coverage)</small></label>
+                                            <input type="email " class="form-control " placeholder="City i.e Sydney CBD " ng-model="firstrate">
+                                            <input type="email " class="form-control " placeholder="City i.e Sydney CBD " ng-model="rate" ng-repeat="item in input " style="margin-top:20px;">
+                                        </div>
+                                    </div>
+                                    <div align="right" style="margin-top:0px;margin-bottom:-35px;">
+                                        <div class="conteneryellow" ng-click="addLocation(input) " style="width:25%;margin-top: -10px;margin-bottom: 0px;">
+                                            <div class="txt_button"><i class="fa fa-plus "></i> Add Area</div>
+                                            <div class="circle">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                    <div class="box-body" style="margin-top: 25px;">
+                                        <div class="form-group ">
+                                            <label class="marg">AVAILABILITY</label>
+                                            <div class="form-group ">
+                                                <div class="col-sm-4 ">
+                                                    <select class="form-control " ng-options="item.id as item.value for item in baseRate " ng-model="item.baserate2 ">
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-4 ">
+                                                    <kk-timepicker settings="settings " ng-model="time "></kk-timepicker>
+                                                </div>
+                                                <div class="col-sm-4 ">
+                                                    <kk-timepicker settings="settings " ng-model="item.time1 "></kk-timepicker>
+                                                </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="box-body " ng-repeat="item in inputs " style="margin-top: -30px;">
                                         <div class="form-group ">
-                                            <div class="col-sm-6 ">
-                                                <input type="text " class="form-control " placeholder="Cities ">
-                                            </div>
-                                            <div class="col-sm-6 ">
-                                                <input type="text " class="form-control " placeholder="Post Code ">
+                                            <div class="form-group ">
+                                                <div class="col-sm-4 ">
+                                                    <select class="form-control " ng-options="item.id as item.value for item in baseRate " ng-model="item.baserate2 ">
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-4 ">
+                                                    <kk-timepicker settings="settings " ng-model="time "></kk-timepicker>
+                                                </div>
+                                                <div class="col-sm-4 ">
+                                                    <kk-timepicker settings="settings " ng-model="item.time1 "></kk-timepicker>
+                                                </div>
                                             </div>
                                         </div>
-                                        <input type="text " class="form-control " placeholder="Specific Address ">
-                                        <br>
-                                        <input type="number " class="form-control " placeholder="e.g 53 004 085 616 " name="ABN ">
-                                        <br>
-                                        <input type="number " class="form-control " placeholder="Contact Number ">
-                                        <br>
-                                        <input type="email " class="form-control " placeholder="Email Address ">
+                                    </div>
+                                    <div align="right" style="margin-top:-25px;margin-bottom:20px;">
+                                        <div class="conteneryellow" ng-click="addSched(rates) " style="width:25%;margin-top: -10px;margin-bottom: 0px;">
+                                            <div class="txt_button"><i class="fa fa-plus "></i> Add Schedule</div>
+                                            <div class="circle">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="col-md-12 marg">
+                                    <div class="box-footer bg-crd ">
+                                        <div align="left" style="margin-top:0px;margin-left:-10px;">
+                                            <div class="contenergrey" ng-click="clickToCancel() " style="width:15%;">
+                                                <div class="txt_button"> Cancel</div>
+                                                <div class="circle">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                        <div align="right" style="margin-top:-45px;margin-bottom:0px;">
+                                            <div class="contener" ui-sref="payment" style="width:15%;margin-top: -10px;margin-bottom: 0px;">
+                                                <div class="txt_button"> Next</div>
+                                                <div class="circle">&nbsp;</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
-                            <form class="form-horizontal col-md-7 ">
-                                <div class="box-body ">
-                                    <div class="form-group ">
-                                        <label for="exampleInputEmail1 ">SECONDARY CONTACT PERSON</label>
-                                        <div class="form-group ">
-                                            <div class="col-sm-6 ">
-                                                <input type="text " class="form-control " id="LName " placeholder="Last Name ">
-                                            </div>
-                                            <div class="col-sm-6 ">
-                                                <input type="text " class="form-control " id="FName " placeholder="First Name ">
-                                            </div>
-                                        </div>
-                                        <input type="number " class="form-control " placeholder="Contact Number ">
-                                        <br>
-                                        <input type="email " class="form-control " placeholder="Email Address ">
-                                    </div>
-                                </div>
-                            </form>
-                            <form class="form-horizontal col-md-7 ">
-                                <div class="box-body ">
-                                    <div class="form-group ">
-                                        <label for="exampleInputEmail1 ">AREA OF COVERAGE <small style="font-style:italic; ">(Please Specify your area of coverage)</small></label>
-                                        <input type="email " class="form-control " placeholder="City i.e Sydney CBD " ng-model="firstrate">
-                                        <input type="email " class="form-control " placeholder="City i.e Sydney CBD " ng-model="rate" ng-repeat="item in input " style="margin-top:20px;">
-                                    </div>
-                                </div>
-                                <a class="btn btn-warning pull-right btn-nr sked " ng-click="addLocation(input) " style="margin-top: -10px;margin-bottom: 0px;">
-                                    <div><i class="fa fa-plus "></i> Add Area</div>
-                                </a>
-                            </form>
-                            <form class="form-horizontal col-md-7 ">
-                                <div class="box-body ">
-                                    <div class="form-group ">
-                                        <label class="marg">AVAILABILITY</label>
-                                        <div class="form-group ">
-                                            <div class="col-sm-4 ">
-                                                <select class="form-control " ng-options="item.id as item.value for item in baseRate " ng-model="item.baserate2 ">
-                                                </select>
-                                            </div>
-                                            <div class="col-sm-4 ">
-                                                <kk-timepicker settings="settings " ng-model="time "></kk-timepicker>
-                                            </div>
-                                            <div class="col-sm-4 ">
-                                                <kk-timepicker settings="settings " ng-model="item.time1 "></kk-timepicker>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box-body " ng-repeat="item in inputs " style="margin-top: -30px;">
-                                    <div class="form-group ">
-                                        <div class="form-group ">
-                                            <div class="col-sm-4 ">
-                                                <select class="form-control " ng-options="item.id as item.value for item in baseRate " ng-model="item.baserate2 ">
-                                                </select>
-                                            </div>
-                                            <div class="col-sm-4 ">
-                                                <kk-timepicker settings="settings " ng-model="time "></kk-timepicker>
-                                            </div>
-                                            <div class="col-sm-4 ">
-                                                <kk-timepicker settings="settings " ng-model="item.time1 "></kk-timepicker>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a class="btn btn-warning pull-right btn-nr sked " ng-click="addSched(rates) " style=" ">
-                                    <div><i class="fa fa-plus "></i> Add Schedule</div>
-                                </a>
-                            </form>
-                            <div class="col-md-12 marg">
-                                <div class="box-footer bg-crd ">
-                                    <a ng-click="clickToCancel() " class="btn btn-raised btn-default " style="margin-left:-10px; ">Cancel</a>
-                                    <div ui-sref="payment " class="btn btn-info pull-right " style="margin-right: -10px; ">Next</div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,16 @@
     <p style="margin-bottom: 30px;">Are you sure you want to cancel application?</p>
 </div>
 <div class="ngdialog-buttons">
-    <button type="button" class="ngdialog-button ngdialog-button-secondary pull-left" ng-click="closeThisDialog('Cancel')">No</button>
-    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm('Save')" ui-sref="main">Yes</button>
+    <div align="left" style="margin-top:0px;margin-left:0px;">
+        <div class="contenergrey" ng-click="closeThisDialog('Cancel')" style="width:25%;">
+            <div class="txt_button"> No</div>
+            <div class="circle">&nbsp;</div>
+        </div>
+    </div>
+    <div align="right" style="margin-top:-45px;margin-bottom:0px;">
+        <div class="contener" ng-click="confirm('Save')" ui-sref="login" style="width:25%;margin-top: -10px;margin-bottom: 0px;">
+            <div class="txt_button"> Yes</div>
+            <div class="circle">&nbsp;</div>
+        </div>
+    </div>
 </div>

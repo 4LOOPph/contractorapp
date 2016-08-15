@@ -1,6 +1,8 @@
 <ion-view view-title="Application Sent" name="Application Sent" ng-init="filter.direct = true;">
     <ion-content class="padding">
         <img src="../mobile/img/send-logobags copy.png" class="sentpic">
+        <div style="padding-left: 58px;"><b>USERNAME:</b> {{data.username}}</div>
+        <div style="padding-left: 58px;"><b>PASSWORD:</b> {{data.password}}</div><br>
         <div style="padding-left: 58px;">Your application has been sent. You will receive an update on your email.</div>
         <!-- <div style="float: right;margin-top: 50px;">proceed to <a ng-click="sent()" style="text-decoration:none;">login <span class="icon ion-ios-arrow-thin-right"></span></a></div> -->
         <div class="row padding-top-25">
@@ -14,7 +16,7 @@
                     Okay
                 </button>
             </div> -->
-            <button ui-sref="login" class="button button-block button-positive">
+            <button ng-click="sent()" class="button button-block button-positive">
                 Back to Login
             </button>
         </div>

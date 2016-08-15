@@ -3,7 +3,7 @@
         <button class="button button-icon ion-ios-gear-outline" ng-click="showPopover($event)"></button>
     </ion-nav-buttons>
     <ion-content>
-        <ion-refresher on-refresh="doDashRefresh()" spinner="spiral"></ion-refresher>
+        <ion-refresher on-refresh="$parent.doAllTaskRefresh()" spinner="spiral"></ion-refresher>
         <ion-list show-delete="false" show-reorder="false" can-swipe="true">
             <div class="item item-divider" style="font-size: 13px;">
                 RECENT TASK
@@ -45,10 +45,10 @@
             </ion-item>
         </ion-list>
         <br>
-        <div class="item item-divider" style="font-size: 13px;" ng-show="selectedTask">
+        <div class="item item-divider" style="font-size: 13px;" ng-if="selectedTask">
             PRIORITY TASK
         </div>
-        <div class="animated fadeInUp anim6" ng-show="selectedTask">
+        <div class="animated fadeInUp anim6" ng-if="selectedTask">
             <div class="card" style="margin-top: 10px;background-color: #efefef;" delegate-handle="taskdetails">
                 <div class="carding" ng-class="{'status-red': selectedTask.Status == 'High','status-green': selectedTask.Status == 'Medium','status-yellow': selectedTask.Status == 'Low'}">
                     <label class="cardlabel">{{selectedTask.Title}}</label>

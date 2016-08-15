@@ -1,9 +1,9 @@
-<header class="vid">
+<div class="head vid">
     <img class="logoo" src="images/eca-logo2 copy.png" width="50" style="margin-top: -12px;width: 50px;"> CONTRACTOR APP
-</header>
-<header class="xvid">
+</div>
+<div class="head xvid">
     <button ui-sref="payment" type="button" class="fa fa-chevron-left smbuttontop" style="float:left;"></button> Qualification
-</header>
+</div>
 <div class="" style="margin-top: 5px;">
     <div class="">
         <div class="col-md-12" style="background: #fff;">
@@ -11,7 +11,7 @@
                 <div class="col-md-12">
                     <div class="box-widget widget-user-2">
                         <div class="vid" style="padding-left:30px;">
-                            <form class="form-horizontal col-md-12" style="margin-top:95px; margin-left: -65px;">
+                            <form class="form-horizontal col-md-12" style="margin-top:75px; margin-left: -65px;">
                                 <div class="bread flt">
                                     <a class="active" style="padding-right: 60px;">Vendor Information</a>
                                     <a class="active" style="width: 30%;">Payment</a>
@@ -81,7 +81,7 @@
                                     <div class="form-group ">
                                         <label for="exampleInputEmail1" style="padding-left:10px;">ATTACH RESUME</label>
                                         <br>
-                                        <label for="imageUpload1" class="btn btn-warning btn-block btn-outlined"><i class="fa fa-folder-open"></i> Upload File</label>
+                                        <label for="imageUpload1" class="btn btn-warning btn-block btn-outlined" style="width: 150px"><i class="fa fa-folder-open"></i> Upload File</label>
                                         <input type="file" method="POST" id="imageUpload1" nv-file-select="" uploader="uploader" class="form-control" accept="image/*" style="display: none">
                                     </div>
                                     <table class="table">
@@ -107,7 +107,7 @@
                                     <div class="form-group ">
                                         <label for="exampleInputEmail1 " style="padding-left:10px;">ATTACH CERTIFICATE</label>
                                         <br>
-                                        <label for="imageUpload2" class="btn btn-warning btn-block btn-outlined"><i class="fa fa-folder-open"></i> Upload Files</label>
+                                        <label for="imageUpload2" class="btn btn-warning btn-block btn-outlined" style="width: 150px"><i class="fa fa-folder-open"></i> Upload Files</label>
                                         <input type="file" method="POST" id="imageUpload2" nv-file-select="" uploader="uploader1" multiple class="form-control" accept="image/*" style="display: none">
                                     </div>
                                     <table class="table">
@@ -146,11 +146,26 @@
                                     </div>
                                 </div>
                             </form>
-                            <div class="col-md-12">
-                                <div class="box-footer bg-crd">
-                                    <a ng-click="clickToCancel()" class="btn btn-raised btn-default" style="margin-left:-10px;">Cancel</a>
-                                    <a ng-click="clickToOpen()" class="btn btn-raised btn-info pull-right" style="margin-right: -10px;">Submit</a>
-                                    <a ui-sref="payment" class="btn btn-raised btn-info pull-right vid" style="margin-right: 20px;">Back</a>
+                            <div class="col-md-12 marg">
+                                <div class="box-footer bg-crd ">
+                                    <div align="left" style="margin-top:0px;margin-left:-10px;">
+                                        <div class="contenergrey" ng-click="clickToCancel() " style="width:15%;">
+                                            <div class="txt_button"> Cancel</div>
+                                            <div class="circle">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                    <div align="right" style="margin-top:-45px;margin-right:20%;">
+                                        <div class="contener" ui-sref="payment" style="width:20%;margin-top: -10px;margin-bottom: 0px;">
+                                            <div class="txt_button"> Back</div>
+                                            <div class="circle">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                    <div align="right" style="margin-top:-45px;margin-bottom:0px;">
+                                        <div class="contener" ng-click="clickToOpen()" style="width:15%;margin-top: -10px;margin-bottom: 0px;">
+                                            <div class="txt_button"> Submit</div>
+                                            <div class="circle">&nbsp;</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -160,4 +175,3 @@
         </div>
     </div>
 </div>
-
