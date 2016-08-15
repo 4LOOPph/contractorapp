@@ -1,18 +1,17 @@
 <ion-modal-view class="margin-top-44">
     <ion-header-bar class="bar bar-header bar-stable">
+        <button class="button button-icon icon ion-ios-checkmark-empty button-primary" ng-click="assignToTask()"></button>
         <h1 class="title">List of Contractors</h1>
         <button class="button button-icon icon ion-ios-close-empty button-primary" ng-click="closeContractorModal()"></button>
     </ion-header-bar>
     <ion-content>
         <ion-refresher on-refresh="doContractorListRefresh()" spinner="spiral"></ion-refresher>
         <ion-list>
-            <ion-item class="text-center" ng-if="contractorData.length < 1">
-                -- No Active Contractors --
-            </ion-item>
-            <ion-item class="item item-thumbnail-left" ng-repeat="list in contractorData">
-                <img src="./img/eca-logo2.png">
-                <h2>Pretty Hate Machine</h2>
-                <p>Nine Inch Nails</p>
-            </ion-item>
+            <ion-checkbox ng-repeat="list in contractorData">
+                <h2>{{list.fname}} {{list.fname}}</h2>
+                <p>{{list.companyname}}</p>
+                <p>{{list.phone}}</p>
+                <p>{{list.email}}</p>
+            </ion-checkbox>
     </ion-content>
 </ion-modal-view>

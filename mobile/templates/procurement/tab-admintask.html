@@ -1,6 +1,6 @@
 <ion-view view-title="Task">
     <ion-nav-buttons side="right">
-        <button class="button button-icon ion-ios-gear-outline" ng-click="showPopover($event)"></button>
+        <button class="button button-icon ion-ios-gear-outline" ng-click="$parent.showPopover($event)"></button>
     </ion-nav-buttons>
     <ion-content class="animated fadeInLeft">
         <ion-refresher on-refresh="$parent.doAllTaskRefresh()" spinner="spiral"></ion-refresher>

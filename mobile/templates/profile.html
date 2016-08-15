@@ -16,7 +16,7 @@
                 <small><a>VENDOR NAME
                </a></small>
                 <br>
-                <label class="new-label" style="margin-left: 0px;">Reid, James Roy</label>
+                <label class="new-label" style="margin-left: 0px;">{{profile.fname}} {{profile.lname}}</label>
                 <br>
                 <br>
                 <small><a>AREA OF COVERAGE</a>
@@ -30,13 +30,13 @@
                 <small><a>CONTACT NUMBER</a>
                </small>
                 <br>
-                <label class="new-label" style="margin-left: 0px;">0411123236</label>
+                <label class="new-label" style="margin-left: 0px;">{{profile.contactnum}}</label>
                 <br>
                 <br>
                 <small><a>EMAIL ADDRESS</a>
                </small>
                 <br>
-                <label class="new-label" style="margin-left: 0px;">james@tecport.com.au</label>
+                <label class="new-label" style="margin-left: 0px;">{{profile.email}}</label>
                 <br>
                 <br>
                 <hr>
@@ -177,7 +177,7 @@
                     <div class=" profilerate">
                         <label class="item item-input bortop bordbot time-lab">
                             <i class="icon ion-social-usd"></i>
-                            <input type="number" ng-model="rate.stanDard" placeholder="00.00" style="padding-right: 0;height: 44px;">
+                            <input type="number" ng-model="profile.ratestandard" placeholder="00.00" style="padding-right: 0;height: 44px;">
                         </label>
                     </div>
                 </div>

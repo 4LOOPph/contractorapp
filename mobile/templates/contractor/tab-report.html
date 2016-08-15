@@ -1,6 +1,6 @@
 <ion-view view-title="Reporting">
     <ion-nav-buttons side="right">
-        <button class="button button-icon ion-ios-gear-outline" ng-click="showPopover($event)"></button>
+        <button class="button button-icon ion-ios-gear-outline" ng-click="$parent.showPopover($event)"></button>
     </ion-nav-buttons>
     <ion-content>
         <ion-refresher on-refresh="doReportingRefresh()" spinner="spiral"></ion-refresher>

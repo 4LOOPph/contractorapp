@@ -18,46 +18,32 @@
             <small><a>VENDOR NAME</a>
             </small>
             <br>
-            <label class="new-label" style="margin-left: 0px;">Impatsu, Loren</label>
+            <label class="new-label" style="margin-left: 0px;">{{profile.fname}} {{profile.lname}}</label>
             <br>
             <br>
             <small><a>POSITION</a>
             </small>
             <br>
-            <label class="new-label" style="margin-left: 0px;">Project Lead</label>
+            <label class="new-label" style="margin-left: 0px;">{{profile.position}}</label>
             <br>
             <br>
             <small><a>LOCATION</a>
             </small>
             <br>
-            <label class="new-label" style="margin-left: 0px;">Sydney, CBD</label>
-            <br>
-            <label class="new-label" style="margin-left: 0px;">Melbourne, CBD</label>
+            <label class="new-label" style="margin-left: 0px;">{{profile.location.address}}, {{profile.location.city}} {{profile.location.state}} {{profile.location.postcode}}</label>
             <br>
             <br>
             <small><a>CONTACT NUMBER</a>
             </small>
             <br>
-            <label class="new-label" style="margin-left: 0px;">0411123236</label>
+            <label class="new-label" style="margin-left: 0px;">{{profile.contactnum}}</label>
             <br>
             <br>
             <small><a>EMAIL ADDRESS</a>
             </small>
             <br>
-            <label class="new-label" style="margin-left: 0px;">loren@impatsu.com.au</label>
+            <label class="new-label" style="margin-left: 0px;">{{profile.email}}</label>
             <br>
         </div>
-        <!--             <div class="row" style="margin-top:20px;">
-                <div class="col col-50">
-                    <button ng-click="clickDecline()" class="button button-block button-stable">
-                        Cancel
-                    </button>
-                </div>
-                <div class="col col-50">
-                    <button class="button button-block button-positive">
-                        Save Changes
-                    </button>
-                </div>
-            </div> -->
     </ion-content>
 </ion-view>

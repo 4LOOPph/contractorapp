@@ -6,10 +6,10 @@
                 <div>{{currentUser.fname}} {{currentUser.lname}}</div>
                 <small>Member since <span am-time-ago="currentUser.datecreated"></span></small>
             </div>
-            <div ng-click="$parent.showUserProfile($event)" ng-if="user.usertype=='con'" class="item" style="text-align:center;">
+            <div ng-click="$parent.showUserProfile($event)" ng-if="currentUser.usertype !='proc'" class="item" style="text-align:center;">
                 Profile
             </div>
-            <div ng-click="$parent.showAdminProfile($event)" ng-if="user.usertype=='proc'" class="item" style="text-align:center;">
+            <div ng-click="$parent.showAdminProfile($event)" ng-if="currentUser.usertype=='proc'" class="item" style="text-align:center;">
                 Profile
             </div>
             <div ng-click="signOut($event)" class="item" style="text-align:center;">
