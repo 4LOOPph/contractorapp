@@ -1,32 +1,20 @@
 <div class="row">
-    <div class="col col-33" style="">
+    <div class="col col-33">
         <div ng-class="{'red' : !toggle}" class="dialoglab">CHECK IN</div>
         <br>
-        <div ng-class="{'red' : !toggle}" class="dialoglab2" style="color: #848484 ;">8:30 AM</div>
+        <div ng-class="{'red' : !toggle}" class="dialoglab2" style="color: #848484;">{{selectedTask.start}}</div>
     </div>
     <div class="col col-33" style=" text-align: center;">
-        <label class="toggle" ng-click="toggle = !toggle" ng-model="toggle">
-            <input type="checkbox">
+        <label class="toggle" ng-click="toggleCheckInOut()">
+            <input type="checkbox" ng-model="toggle">
             <div class="track">
                 <div class="handle"></div>
             </div>
         </label>
     </div>
-    <div class="col col-33" style="">
-        <div ng-class="{'red' : toggle}" class="dialoglab" style="float:left;">CHECK OUT</div>
+    <div class="col col-33">
+        <div ng-class="{'red' : toggle}" class="dialoglab " style="float:left; ">CHECK OUT</div>
         <br>
-        <div ng-class="{'red' : toggle}" class="dialoglab2" style="float:left;color: #848484 ;">5:37 PM</div>
+        <div ng-class="{'red' : toggle}" class="dialoglab2 " style="float:left;color: #848484; ">{{selectedTask.end}}</div>
     </div>
 </div>
-<!-- <div class="row" class="paddding-top">
-    <div class="col col-50">
-        <button  class="button button-block button-stable">
-            No
-        </button>
-    </div>
-    <div class="col col-50">
-        <button class="button button-block button-positive" ui-sref="installationreport">
-            Yes
-        </button>
-    </div>
-</div> -->

@@ -4,7 +4,7 @@
         <button class="button button-icon icon ion-ios-close-empty button-primary" ng-click="closenewtaskModal()"></button>
     </ion-header-bar>
     <ion-content>
-        <ion-refresher on-refresh="doNewTaskRefresh()" spinner="spiral"></ion-refresher>
+        <ion-refresher on-refresh="doAllTaskRefresh()" spinner="spiral"></ion-refresher>
         <ion-list show-delete="false" show-reorder="false" can-swipe="true">
             <ion-item style="height: 90px;" ng-repeat="list in newTaskData track by list._id" class="animated fadeInLeft" ng-click="deTails(list)">
                 <div class="cardrightside">
@@ -28,7 +28,7 @@
                 <ion-option-button class="button button-stable" ng-click="declineTask(list)" ng-hide="!list.disableQOW" style="padding: 22px;line-height: 1.5;">
                     <small><div><i  class="icon ion-close-circled"></i></div><div>Decline</div> <div>Task</div></small>
                 </ion-option-button>
-                <ion-option-button class="button button-balanced" ng-click="showTaskDetails(list)" style="padding: 22px;line-height: 1.5;">
+                <ion-option-button class="button button-balanced" ng-click="showTaskDetails('new',list)" style="padding: 22px;line-height: 1.5;">
                     <small><div><i  class="icon ion-ios-information"></i></div><div>View</div> <div>Details</div></small>
                 </ion-option-button>
             </ion-item>

@@ -45,11 +45,11 @@
                 <small>Total</small>
             </div>
             <div class="col col-50">
-                <small>: $ 00.00</small>
+                <small>: $ {{data.parking_fee | number: 2}}</small>
                 <br>
-                <small>: $ 00.00</small>
+                <small>: $ {{data.travel_fee | number: 2}}</small>
                 <br>
-                <small>: $ 00.00</small>
+                <small>: $ {{data.totalMisc | number: 2}}</small>
             </div>
         </div>
         <div class="new-label">Materials</div>
@@ -65,13 +65,13 @@
                 <small>Total</small>
             </div>
             <div class="col col-50">
-                <small>: $ 00.00</small>
+                <small>: $ {{data.material_fee | number: 2}}</small>
                 <br>
                 <small>: $ 00.00</small>
                 <br>
                 <small>: $ 00.00</small>
                 <br>
-                <small>: $ 00.00</small>
+                <small>: $ {{data.material_fee | number: 2}}</small>
             </div>
         </div>
         <div style="padding-left:10px;padding-right:10px;">

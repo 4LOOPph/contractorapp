@@ -2,7 +2,7 @@
     <img class="logoo" src="images/eca-logo2 copy.png" width="50" style="margin-top: -12px;width: 50px;"> CONTRACTOR APP
 </div>
 <div class="head xvid">
-    <button ui-sref="main" type="button" class="fa fa-chevron-left smbuttontop"></button> Vendor Inforamtion
+    <button ui-sref="login" type="button" class="fa fa-chevron-left smbuttontop"></button> Vendor Inforamtion
 </div>
 <div class="" style="margin-top: 5px;">
     <div class="">
@@ -85,12 +85,12 @@
                                             <input type="text " class="form-control " placeholder="Specific Address ">
                                             <br>
                                             <div ng-class="{ 'has-error' : userForm.ABN.$invalid && !userForm.ABN.$pristine }">
-                                                <input type="number" class="form-control " placeholder="e.g 53 004 085 616 " name="ABN" ng-model="data.abn" required>
+                                                <input type="text" class="form-control " placeholder="ABN (e.g 53 004 085 616) " name="ABN" ng-model="data.abn" valid-number required>
                                                 <p ng-show="userForm.ABN.$invalid && !userForm.ABN.$pristine" class="help-block">Required*</p>
                                             </div>
                                             <br>
                                             <div ng-class="{ 'has-error' : userForm.contact.$invalid && !userForm.contact.$pristine }">
-                                                <input type="number" class="form-control " name="contact" placeholder="Contact Number " clean="true" ng-model="data.contact" required>
+                                                <input type="text" class="form-control " name="contact" placeholder="Contact Number " clean="true" ng-model="data.contact" valid-number required>
                                                 <p ng-show="userForm.contact.$invalid && !userForm.contact.$pristine" class="help-block">Required*</p>
                                             </div>
                                             <br>
@@ -112,7 +112,7 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <input type="number" class="form-control " name="contact2" placeholder="Contact Number " clean="true" ng-model="data.contact2">
+                                                <input type="text" class="form-control " name="contact2" placeholder="Contact Number " clean="true" ng-model="data.contact2" valid-number >
                                             </div>
                                             <br>
                                             <div>

@@ -176,7 +176,7 @@
             <h4 class="new-label padding-top">ASSIGN TO CONTRACTOR/S</h4>
             <div class="list padding-right padding-left">
                 <ion-checkbox class="checkbox-square checkboxList" ng-repeat="item in task.contractors">
-                    <small>REID, JAMES</small>
+                    <small>{{item.lname | uppercase}}, {{item.fname | uppercase}}</small>
                 </ion-checkbox>
             </div>
             <a style="float:right;margin-right:10px;margin-top: -15px;" ng-click="openContractorModal()"><small>CLICK HERE TO VIEW FULL LIST</small></a>

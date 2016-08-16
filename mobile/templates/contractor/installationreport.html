@@ -1,33 +1,32 @@
-<ion-view view-title="Create Report">
+<ion-view view-title="Create Report" hide-back-button="true">
     <ion-nav-buttons side="left">
         <button class="button button-icon ion-ios-arrow-left" ng-click="myGoBack()"></button>
     </ion-nav-buttons>
     <ion-content class="padding">
         <div class="list form" style="padding: 10px;">
-            <!-- <div style="border-top-style: solid;border-width: 1px;border-color: #98caf3;"></div> -->
-            <div><small><a>ASSIGNEE</a><a style="color:red;float:right;">17 July, 2016</a></small></div>
-            <label class="new-label" style="margin-left: 0px;">Lorem Impatsu</label>
+            <div><small><a>ASSIGNEE</a><a style="color:red;float:right;">{{currentDate | amDateFormat:'DD MMM, YYYY'}}</a></small></div>
+            <label class="new-label" style="margin-left: 0px;">{{assignee.fname}} {{assignee.lname}}</label>
             <br>
             <br>
             <div><small><a>TASK NAME</a></small></div>
-            <label class="new-label" style="margin-left: 0px;">Network Cabling</label>
+            <label class="new-label" style="margin-left: 0px;">{{task.taskname}}</label>
             <br>
             <br>
             <div><small><a>DESCRIPTION</a></small></div>
-            <label class="new-label" style="margin-left: 0px;">Lorem Impatsu si dolor amet.</label>
+            <label class="new-label" style="margin-left: 0px;">{{task.description}}</label>
             <hr>
             <div><small><a>STORE NAME & LOCATION</a></small></div>
-            <label class="new-label" style="margin-left: 0px;">Telstra</label>
+            <label class="new-label" style="margin-left: 0px;">{{task.storename}}</label>
             <br>
             <div class="row">
                 <div class="col col-50">
                     <div style="margin-left: -10px;"><small><a>DEADLINE</a></small></div>
-                    <div><small>27 June 2016</small></div>
-                    <div><small style="color:red;">5 pm</small></div>
+                    <div><small>{{task.deadline | amDateFormat:'DD MMM, YYYY'}}</small></div>
+                    <div><small style="color:red;">{{task.end}}</small></div>
                 </div>
                 <div class="col col-50">
                     <div style="margin-left: -10px;"><small><a>ESTIMATE TASK COMPLETION</a></small></div>
-                    <div><small style="color:red;">Hour/s: 5 hours</small></div>
+                    <div><small style="color:red;">Hour/s: {{task.numhours}} hour(s)</small></div>
                 </div>
             </div>
             <hr>

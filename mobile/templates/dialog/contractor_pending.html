@@ -4,7 +4,7 @@
         <button class="button button-icon icon ion-ios-close-empty button-primary" ng-click="closependingModal()"></button>
     </ion-header-bar>
     <ion-content>
-        <ion-refresher on-refresh="doPendingTaskRefresh()" spinner="spiral"></ion-refresher>
+        <ion-refresher on-refresh="doAllTaskRefresh()" spinner="spiral"></ion-refresher>
         <ion-list show-delete="false" show-reorder="false" can-swipe="true">
             <ion-item style="height: 90px;" ng-repeat="list in pendingData" class="animated fadeInLeft" ng-click="showTaskDetails(list)">
                 <div class="cardrightside">
@@ -25,7 +25,7 @@
                 <ion-option-button class="button button-calm" ng-click="startPendingTask(list)" style="padding: 28px;line-height: 1.5;padding-top: 10px;">
                     <small><div><i class="icon ion-ios-stopwatch"></i></div><div>Start</div></small>
                 </ion-option-button>
-                <ion-option-button class="button button-balanced" ng-click="showTaskDetails(list)" style="padding: 22px;line-height: 1.5;">
+                <ion-option-button class="button button-balanced" ng-click="showTaskDetails('pending',list)" style="padding: 22px;line-height: 1.5;">
                     <small><div><i  class="icon ion-ios-information"></i></div><div>View</div> <div>Details</div></small>
                 </ion-option-button>
             </ion-item>

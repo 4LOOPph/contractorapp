@@ -5,60 +5,58 @@
     <ion-content class="padding">
         <div class="list form padding">
             <div><small><a>TASK NAME</a></small></div>
-            <label class="new-label" style="margin-left: 0px;">{{selectedTask.Title}}</label>
+            <label class="new-label" style="margin-left: 0px;">{{task.taskname}}</label>
             <br>
             <br>
             <div><small><a>TASK TYPE</a></small></div>
-            <label class="new-label" style="margin-left: 0px;"></label>
+            <label class="new-label" style="margin-left: 0px;">{{task.tasktype}}</label>
             <br>
             <br>
             <div><small><a>DESCRIPTION</a></small></div>
-            <label class="new-label" style="margin-left: 0px;">{{selectedTask.Description}}</label>
+            <label class="new-label" style="margin-left: 0px;">{{task.description}}</label>
             <hr>
             <div><small><a>STORE NAME</a></small></div>
-            <label class="new-label" style="margin-left: 0px;">{{selectedTask.client}}</label>
+            <label class="new-label" style="margin-left: 0px;">{{task.storename}}</label>
             <br>
             <br>
             <div><small><a>LOCATION</a></small></div>
-            <label class="new-label" style="margin-left: 0px;">{{selectedTask.location}}</label>
+            <label class="new-label" style="margin-left: 0px;">{{task.location}}</label>
             <hr>
             <div><small><a>DEADLINE</a></small></div>
-            <div><small>{{selectedTask.deadline}}</small></div>
-            <div><small style="color:red;">5 pm</small></div>
+            <div><small>{{task.deadline}}</small></div>
+            <div><small style="color:red;">{{task.start}} <span ng-if="task.start">-</span> {{task.end}}</small></div>
             <br>
             <div><small><a>ESTIMATE DAY/TIME OF TASK COMPLETION</a></small></div>
-            <div><small>Day/s: 1 day</small></div>
-            <div><small style="color:red;">Hour/s: 5 hours</small></div>
+            <div><small>Day/s: {{task.numdays}} day</small></div>
+            <div><small style="color:red;">Hour/s: {{task.numhours}} hour(s)</small></div>
             <hr>
             <div><small><a>TASK PRIORITY</a></small></div>
-            <label class="new-label" style="color:red;margin-left: 0px;" ng-if="selectedTask.Status == 'High'">{{selectedTask.Status}}</label>
-            <label class="new-label" style="color:green;margin-left: 0px;" ng-if="selectedTask.Status == 'Medium'">{{selectedTask.Status}}</label>
-            <label class="new-label" style="color:yellow;margin-left: 0px;" ng-if="selectedTask.Status == 'Low'">{{selectedTask.Status}}</label>
+            <label class="new-label" style="color:red;margin-left: 0px;" ng-if="task.priority == 'High'">{{task.priority}}</label>
+            <label class="new-label" style="color:green;margin-left: 0px;" ng-if="task.priority == 'Medium'">{{task.priority}}</label>
+            <label class="new-label" style="color:yellow;margin-left: 0px;" ng-if="task.priority == 'Low'">{{task.priority}}</label>
             <br>
             <br>
             <div><small><a>CASE NUMBER</a></small></div>
-            <label class="new-label" style="margin-left: 0px;">0165849</label>
+            <label class="new-label" style="margin-left: 0px;">{{task.casenumber}}</label>
             <hr>
             <div><small><a>REPORTER</a></small></div>
-            <label class="new-label" style="margin-left: 0px;">James Dean</label>
+            <label class="new-label" style="margin-left: 0px;">{{task.reporter.fname}} {{task.reporter.lname}}</label>
             <br>
-            <label class="new-label" style="margin-left: 0px;"><span class="icon ion-ios-telephone"></span> +163 0215 0235 </label>
+            <label class="new-label" style="margin-left: 0px;"><span class="icon ion-ios-telephone"></span> {{task.reporter.contactnum}}</label>
             <br>
             <br>
             <div><small><a>REQUESTED BY</a></small></div>
-            <label class="new-label" style="margin-left: 0px;">{{selectedTask.client}}</label>
+            <label class="new-label" style="margin-left: 0px;">{{task.requestor}}</label>
             <br>
             <br>
             <div><small><a>SITE/STORE CONTACT</a></small></div>
-            <label class="new-label" style="margin-left: 0px;">{{selectedTask.client}}</label>
+            <label class="new-label" style="margin-left: 0px;">{{task.storefname}} {{task.storelname}}</label>
             <br>
-            <label class="new-label" style="margin-left: 0px;"><span class="icon ion-ios-telephone"></span> +163 0215 0235 </label>
-            <br>
-            <label class="new-label" style="margin-left: 0px;"><span class="icon ion-ios-email"></span> james.dead@7eleven.com</label>
+            <label class="new-label" style="margin-left: 0px;"><span class="icon ion-ios-telephone"></span> {{task.storeconnum}}</label>
             <hr>
             <br>
             <br>
-            <button class="button add-button" ng-click="addArea(rates)">view PSD</button>
+            <button class="button add-button" ng-click="viewPSD(task)">view PSD</button>
             <br>
         </div>
     </ion-content>
