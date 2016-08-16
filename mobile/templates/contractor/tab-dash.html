@@ -13,28 +13,26 @@
                 <div class="cardrightside">
                     <div class="ion-arrow-left-c" style="margin-top: 33px;color: #c3c3c3;"></div>
                 </div>
-                <div class="card-sidepad" style="background-color: #c10606;" ng-if="list.Status === 'High'" ng-click="{active:filter.check == true}"></div>
-                <div class="card-sidepad" ng-if="list.Status === 'Medium'" ng-class="{active:filter.direct == true}"></div>
-                <div class="card-sidepad" style="background-color: #ece505;" ng-if="list.Status === 'Low'" ng-class="{active:filter.check1 == true}"></div>
+                <div class="card-sidepad" style="background-color: #c10606;" ng-if="list.priority === 'High'"></div>
+                <div class="card-sidepad" ng-if="list.priority === 'Medium'"></div>
+                <div class="card-sidepad" style="background-color: #ece505;" ng-if="list.priority === 'Low'"></div>
                 <div class="cardin">
-                    <div class="card-lbl">{{list.Title}}</div>
-                    <p class="card-lblp">({{list.Description}})</p>
-                    <div class="row" style="margin-top:-5px;">
+                    <div class="card-lbl">{{list.taskname}}</div>
+                    <p class="card-lblp">({{list.description}})</p>
+                    <p class="card-lblp" style="margin-top: 0px;"><small><i style="color:#0f6ab5;" class="ion-alert-circled"></i> {{list.priority}}</small></p>
+                    <div class="row" style="margin-top:-10px;">
                         <div class="col">
-                            <p><small><i style="color:#0f6ab5;" class="ion-alert-circled"></i> {{list.Status}}</small></p>
+                            <p><small><i style="color:#0f6ab5;" class="ion-android-calendar"></i> {{list.deadline | date:'longDate'}}</small></p>
                         </div>
                         <div class="col">
-                            <p><small><i style="color:#0f6ab5;" class="ion-android-calendar"></i> {{date | date:'longDate'}}</small></p>
-                        </div>
-                        <div class="col">
-                            <p><small ng-if="list.Check == 'in'"><i style="color:#27980b;" class="ion-checkmark-round"></i> Checked-In</small></p>
-                            <p><small ng-if="list.Check == 'out'"><i style="color:#c10606;" class="ion-close-round"></i> Checked-out</small></p>
+                            <p><small ng-if="list.checkStatus == 'in'"><i style="color:#27980b;" class="ion-checkmark-round"></i> Checked-In</small></p>
+                            <p><small ng-if="list.checkStatus == 'out'"><i style="color:#c10606;" class="ion-close-round"></i> Checked-out</small></p>
                         </div>
                     </div>
                 </div>
                 <ion-option-button class="button button-royal" style="padding: 22px;line-height: 1.5;" ng-click="checkInOut(list)">
-                    <small ng-if="list.Check =='in'"><div><i class="icon ion-ios-upload"></i></div><div>Check</div> <div>Out</div></small>
-                    <small ng-if="list.Check =='out'"><div><i class="icon ion-ios-download"></i></div><div>Check</div> <div>In</div></small>
+                    <small ng-if="list.checkStatus =='in'"><div><i class="icon ion-ios-upload"></i></div><div>Check</div> <div>Out</div></small>
+                    <small ng-if="list.checkStatus =='out'"><div><i class="icon ion-ios-download"></i></div><div>Check</div> <div>In</div></small>
                 </ion-option-button>
                 <ion-option-button class="button button-positive" style="padding: 15px;line-height: 1.5;" ng-click="showCheck(list)">
                     <small><div><i class="icon ion-android-done-all"></i></div><div>Complete</div> <div>task</div></small>
@@ -50,9 +48,9 @@
         </div>
         <div class="animated fadeInUp anim6" ng-if="selectedTask">
             <div class="card" style="margin-top: 10px;background-color: #efefef;" delegate-handle="taskdetails">
-                <div class="carding" ng-class="{'status-red': selectedTask.Status == 'High','status-green': selectedTask.Status == 'Medium','status-yellow': selectedTask.Status == 'Low'}">
-                    <label class="cardlabel">{{selectedTask.Title}}</label>
-                    <p style="color: rgb(115, 115, 115);">{{selectedTask.Description}}</p>
+                <div class="carding" ng-class="{'status-red': selectedTask.priority == 'High','status-green': selectedTask.priority == 'Medium','status-yellow': selectedTask.priority == 'Low'}">
+                    <label class="cardlabel">{{selectedTask.taskname}}</label>
+                    <p style="color: rgb(115, 115, 115);">{{selectedTask.description}}</p>
                     <div>
                         <div class="cl1">Location
                             <div class="cl2">:</div>
@@ -64,15 +62,15 @@
                         </div>
                         <div class="cl1">Client
                             <div class="cl2">:</div>
-                            <div class="cl3">{{selectedTask.client}}</div>
+                            <div class="cl3">{{selectedTask.requestor}}</div>
                         </div>
                         <div class="cl1">Status
                             <div class="cl2">:</div>
-                            <div class="cl3" style="color:#0f6ab5;">{{selectedTask.Task}}</div>
+                            <div class="cl3" style="color:#0f6ab5;">In progress</div>
                         </div>
                         <div class="cl1">Priority
                             <div class="cl2">:</div>
-                            <div class="cl3"><b ng-class="{'h': selectedTask.Status == 'High','m': selectedTask.Status == 'Medium','l': selectedTask.Status == 'Low'}">{{selectedTask.Status}}</b></div>
+                            <div class="cl3"><b ng-class="{'h': selectedTask.priority == 'High','m': selectedTask.priority == 'Medium','l': selectedTask.priority == 'Low'}">{{selectedTask.Status}}</b></div>
                         </div>
                     </div>
                 </div>
