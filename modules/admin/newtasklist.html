@@ -51,13 +51,10 @@
                     <h3 class="box-title">New Task</h3>
                 </div>
                 <div class="overlay" ng-show="loading">
-                    <div class="load-wrapp overlay" style="padding-left: 50%;padding-top: 10%;">
-                        <div class="load-9" style="text-align: center;">
-                            <div class="spinner" style="padding-left: 50%;">
-                                <div class="bubble-1"></div>
-                                <div class="bubble-2"></div>
-                            </div>
-                        </div>
+                    <div class="loader" style="padding-top:20%;">
+                        <svg class="circular" viewBox="25 25 50 50">
+                            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+                        </svg>
                     </div>
                 </div>
                 <div class="box-body">

@@ -14,8 +14,8 @@
                 <div class="card-sidepad" ng-if="list.Status === 'Medium'"></div>
                 <div class="card-sidepad" style="background-color: #ece505;" ng-if="list.Status === 'Low'"></div>
                 <div class="cardin">
-                    <div class="card-lbl">{{list.Title}}</div>
-                    <p class="card-lblp">({{list.Description}})</p>
+                    <div class="card-lbl">{{list.taskname}}</div>
+                    <p class="card-lblp">({{list.description}})</p>
                     <p class="card-lblp" style="margin-top: 0px;"><small><i style="color:#0f6ab5;" class="ion-alert-circled"></i> {{list.Status}}</small></p>
                     <div class="row" style="margin-top:-10px;">
                         <div class="col">

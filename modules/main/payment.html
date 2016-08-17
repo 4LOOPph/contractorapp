@@ -222,19 +222,19 @@
                                 <div class="box-footer bg-crd ">
                                     <div align="left" style="margin-top:0px;margin-left:-10px;">
                                         <div class="contenergrey" ng-click="clickToCancel() " style="width:15%;">
-                                            <div class="txt_button"> Cancel</div>
+                                            <div class="txt_button" angular-ripple> Cancel</div>
                                             <div class="circle">&nbsp;</div>
                                         </div>
                                     </div>
                                     <div align="right" style="margin-top:-45px;margin-right:20%;">
                                         <div class="contener" ui-sref="vendorinfo" style="width:20%;margin-top: -10px;margin-bottom: 0px;">
-                                            <div class="txt_button"> Back</div>
+                                            <div class="txt_button" angular-ripple> Back</div>
                                             <div class="circle">&nbsp;</div>
                                         </div>
                                     </div>
                                     <div align="right" style="margin-top:-45px;margin-bottom:0px;">
                                         <div class="contener" ui-sref="qualification" ng-disabled="checkproceed?false:true" style="width:15%;margin-top: -10px;margin-bottom: 0px;">
-                                            <div class="txt_button"> Next</div>
+                                            <div class="txt_button" angular-ripple> Next</div>
                                             <div class="circle">&nbsp;</div>
                                         </div>
                                     </div>
@@ -269,7 +269,11 @@
                     <br> c.) by signing this form, that the Trade Vendor is aware of its responsibilities under this agreement.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btnes btn-raised btn-default" data-dismiss="modal" style="padding-bottom:13px;width:100px;">Close</button>
+                <div class="contenergrey" style="width:15%;float:right;">
+                    <div class="txt_button" data-dismiss="modal" angular-ripple> Close</div>
+                    <div class="circle">&nbsp;</div>
+                </div>
+               <!--  <button type="button" class=" contener" data-dismiss="modal" style="padding-bottom:13px;width:100px;" angular-ripple>Close</button> -->
             </div>
         </div>
     </div>

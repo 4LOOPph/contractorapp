@@ -48,6 +48,13 @@
                     <i class="fa fa-tasks"></i>
                     <h3 class="box-title">Completed Task</h3>
                 </div>
+                <div class="overlay" ng-show="loading">
+                    <div class="loader" style="padding-top:20%;">
+                        <svg class="circular" viewBox="25 25 50 50">
+                            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+                        </svg>
+                    </div>
+                </div>
                 <div class="box-body">
                     <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;">
                         <div class="info-box" ui-sref="main.completedtask">
@@ -194,20 +201,19 @@
                 </div>
             </div>
         </div>
-       <div class="box-body">
-    <div class="form-group">
-        <div for="inputEmail3" class="col-sm-2 control-label" style="padding-top: 25px;">Items per page:</div>
-        <div class="col-sm-1">
-            <select class="form-control setpage" style="height:30px;">
-                <option selected>5</option>
-                <option>10</option>
-                <option>15</option>
-            </select>
+        <div class="box-body">
+            <div class="form-group">
+                <div for="inputEmail3" class="col-sm-2 control-label" style="padding-top: 25px;">Items per page:</div>
+                <div class="col-sm-1">
+                    <select class="form-control setpage" style="height:30px;">
+                        <option selected>5</option>
+                        <option>10</option>
+                        <option>15</option>
+                    </select>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
-
+        <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
     </div>
     <!-- /.row (main row) -->
 </section>
