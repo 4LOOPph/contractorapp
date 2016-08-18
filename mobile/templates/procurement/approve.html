@@ -28,7 +28,7 @@
             <div class="col col-50">
                 <small>: {{data.numhours}} hours</small>
                 <br>
-                <small>: $ 00.00</small>
+                <small>: $ 45.00</small>
                 <br>
                 <small>: $ 00.00</small>
                 <br>
@@ -42,6 +42,8 @@
                 <br>
                 <small>Travel Fee</small>
                 <br>
+                <small>Materials Fee</small>
+                <br>
                 <small>Total</small>
             </div>
             <div class="col col-50">
@@ -49,29 +51,26 @@
                 <br>
                 <small>: $ {{data.travel_fee | number: 2}}</small>
                 <br>
+                <small>: $ {{data.material_fee | number: 2}}</small>
+                <br>
                 <small>: $ {{data.totalMisc | number: 2}}</small>
             </div>
         </div>
-        <div class="new-label">Materials</div>
+        <div class="new-label">Others</div>
         <div class="lineside"></div>
         <div class="row">
             <div class="col col-50">
-                <small>2 Material A</small>
+                <small ng-repeat="item in data.descriptions">
+                {{item.name}} {{item.description}}
                 <br>
-                <small>3 Material B</small>
-                <br>
-                <small>4 Material C</small>
+                </small>
                 <br>
                 <small>Total</small>
             </div>
             <div class="col col-50">
-                <small>: $ {{data.material_fee | number: 2}}</small>
+                <small ng-repeat="item in data.descriptions">: $ {{item.rate | number: 2}} <br></small>
                 <br>
-                <small>: $ 00.00</small>
-                <br>
-                <small>: $ 00.00</small>
-                <br>
-                <small>: $ {{data.material_fee | number: 2}}</small>
+                <small>: $ {{data.totalothers | number: 2}}</small>
             </div>
         </div>
         <div style="padding-left:10px;padding-right:10px;">

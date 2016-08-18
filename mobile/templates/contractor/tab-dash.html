@@ -37,32 +37,32 @@
                 <ion-option-button class="button button-positive" style="padding: 15px;line-height: 1.5;" ng-click="showCheck(list)">
                     <small><div><i class="icon ion-android-done-all"></i></div><div>Complete</div> <div>task</div></small>
                 </ion-option-button>
-                <ion-option-button class="button button-balanced" ng-click="deTails('pending',list)" style="padding: 22px;line-height: 1.5;">
+                <ion-option-button class="button button-balanced" ng-click="deTails(list)" style="padding: 22px;line-height: 1.5;">
                     <small><div><i  class="icon ion-ios-information"></i></div><div>View</div> <div>Details</div></small>
                 </ion-option-button>
             </ion-item>
         </ion-list>
         <br>
-        <div class="item item-divider" style="font-size: 13px;" ng-if="selectedTask">
+        <div class="item item-divider" style="font-size: 13px;" ng-if="activeTask">
             PRIORITY TASK
         </div>
-        <div class="animated fadeInUp anim6" ng-if="selectedTask">
+        <div class="animated fadeInUp anim6" ng-if="activeTask">
             <div class="card" style="margin-top: 10px;background-color: #efefef;" delegate-handle="taskdetails">
-                <div class="carding" ng-class="{'status-red': selectedTask.priority == 'High','status-green': selectedTask.priority == 'Medium','status-yellow': selectedTask.priority == 'Low'}">
-                    <label class="cardlabel">{{selectedTask.taskname}}</label>
-                    <p style="color: rgb(115, 115, 115);">{{selectedTask.description}}</p>
+                <div class="carding" ng-class="{'status-red': activeTask.priority == 'High','status-green': activeTask.priority == 'Medium','status-yellow': activeTask.priority == 'Low'}">
+                    <label class="cardlabel">{{activeTask.taskname}}</label>
+                    <p style="color: rgb(115, 115, 115);">{{activeTask.description}}</p>
                     <div>
                         <div class="cl1">Location
                             <div class="cl2">:</div>
-                            <div class="cl3">{{selectedTask.location}}</div>
+                            <div class="cl3">{{activeTask.location}}</div>
                         </div>
                         <div class="cl1">Deadline
                             <div class="cl2">:</div>
-                            <div class="cl3">{{selectedTask.deadline}}</div>
+                            <div class="cl3">{{activeTask.deadline}}</div>
                         </div>
                         <div class="cl1">Client
                             <div class="cl2">:</div>
-                            <div class="cl3">{{selectedTask.requestor}}</div>
+                            <div class="cl3">{{activeTask.requestor}}</div>
                         </div>
                         <div class="cl1">Status
                             <div class="cl2">:</div>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="cl1">Priority
                             <div class="cl2">:</div>
-                            <div class="cl3"><b ng-class="{'h': selectedTask.priority == 'High','m': selectedTask.priority == 'Medium','l': selectedTask.priority == 'Low'}">{{selectedTask.Status}}</b></div>
+                            <div class="cl3"><b ng-class="{'h': activeTask.priority == 'High','m': activeTask.priority == 'Medium','l': activeTask.priority == 'Low'}">{{activeTask.Status}}</b></div>
                         </div>
                     </div>
                 </div>
