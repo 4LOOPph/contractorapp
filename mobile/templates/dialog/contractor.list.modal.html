@@ -6,10 +6,9 @@
     <ion-content>
         <ion-refresher on-refresh="doContractorListRefresh()" spinner="spiral"></ion-refresher>
         <ion-list>
-            <ion-checkbox ng-repeat="list in $parent.contractorData" ng-model="list.checked" ng-change="addContractoTask(list)">
+            <ion-checkbox class="checkbox-square checkboxList" ng-repeat="list in $parent.contractorData" ng-model="list.checked" ng-change="addContractoTask(list)">
                 <h2>{{list.fname}} {{list.lname}}</h2>
                 <p>{{list.companyname}}</p>
-                <p>{{list.phone}}</p>
                 <p>{{list.email}}</p>
             </ion-checkbox>
     </ion-content>

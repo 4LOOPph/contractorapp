@@ -175,7 +175,7 @@
             <hr>
             <h4 class="new-label padding-top">ASSIGN TO CONTRACTOR/S</h4>
             <div class="list padding-right padding-left">
-                <ion-checkbox class="checkbox-square checkboxList" ng-repeat="item in task.contractors">
+                <ion-checkbox class="checkbox-square checkboxList" ng-repeat="item in contractors" ng-model="item.checked" ng-change="addContractoTask(item)">
                     <small>{{item.lname | uppercase}}, {{item.fname | uppercase}}</small>
                 </ion-checkbox>
             </div>
