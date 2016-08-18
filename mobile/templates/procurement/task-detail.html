@@ -60,7 +60,7 @@
             <button class="button add-button" ng-click="viewPSD(task)">View PSD</button>
             <br>
         </div>
-        <button ng-click="qowlist(task)" class="button button-block button-energized">
+        <button ng-click="qowlist(task)" class="button button-block button-energized" ng-hide="completeTask">
             View QOW
         </button>
         <button ng-click="closeTask(task)" class="button button-block button-assertive" ng-show="completeTask">

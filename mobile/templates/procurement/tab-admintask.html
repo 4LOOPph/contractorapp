@@ -5,9 +5,9 @@
     <ion-content class="animated fadeInLeft">
         <ion-refresher on-refresh="$parent.doAllTaskRefresh()" spinner="spiral"></ion-refresher>
         <ion-list show-delete="false" can-swipe="true">
-            <div class="item item-divider" style="font-size: 13px;" ng-hide="progress.length === 0">
+            <div class="item item-divider" style="font-size: 13px;">
                 IN PROGRESS
-                <a ng-click="$parent.opentaskinprogressModal()" style="float: right;font-size: 13px;">VIEW ALL</a>
+                <a ng-click="$parent.opentaskinprogressModal()" style="float: right;font-size: 13px;" ng-if="$parent.progressData.length > 0">VIEW ALL</a>
             </div>
             <ion-item ng-repeat="list in $parent.progressData | limitTo: 3" ng-click="deTails(list)">
                 <div class="cardrightside">
@@ -37,7 +37,7 @@
             <br>
             <div class="item item-divider" style="font-size: 13px;">
                 PENDING
-                <a ng-click="$parent.openProcPendingModal()" style="float: right;font-size: 13px;">VIEW ALL</a>
+                <a ng-click="$parent.openProcPendingModal()" style="float: right;font-size: 13px;" ng-if="$parent.pendingData.length > 0">VIEW ALL</a>
             </div>
             <ion-item style="height: 90px;" ng-repeat="list in $parent.pendingData | limitTo: 3" ng-click="deTails(list)">
                 <div class="cardrightside">
@@ -62,7 +62,7 @@
             <br>
             <div class="item item-divider" style="font-size: 13px;">
                 FOR APPROVAL
-                <a ng-click="$parent.opennewtaskModal()" style="float: right;font-size: 13px;">VIEW ALL</a>
+                <a ng-click="$parent.opennewtaskModal()" style="float: right;font-size: 13px;" ng-if="$parent.newTaskData.length > 0">VIEW ALL</a>
             </div>
             <ion-item style="height: 90px;" ng-repeat="list in $parent.newTaskData | limitTo: 3" ng-click="deTails(list)">
                 <div class="cardrightside">
@@ -90,7 +90,7 @@
             <br>
             <div class="item item-divider" style="font-size: 13px;">
                 COMPLETED
-                <a ng-click="$parent.opencompletedModal()" style="float: right;font-size: 13px;">VIEW ALL</a>
+                <a ng-click="$parent.opencompletedModal()" style="float: right;font-size: 13px;" ng-if="$parent.completedData.length > 0">VIEW ALL</a>
             </div>
             <ion-item style="height: 90px;" ng-repeat="list in $parent.completedData | limitTo: 3" ng-click="deTails(list)">
                 <div class="cardrightside">

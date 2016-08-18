@@ -7,9 +7,9 @@
         <ion-list show-delete="false" show-reorder="false" can-swipe="true">
             <div class="item item-divider" style="font-size: 13px;">
                 RECENT TASK
-                <a ng-if="user.usertype=='proc'" ng-click="$parent.opentaskinprogressModal()" style="float: right;font-size: 13px;">VIEW ALL</a>
+                <a ng-if="user.usertype=='proc'" ng-click="$parent.opentaskinprogressModal()" style="float: right;font-size: 13px;" ng-if="$parent.progressData.length > 0">VIEW ALL</a>
             </div>
-            <ion-item style="height: 90px;" class="animated fadeInLeft" ng-click="showActiveTask(list)" ng-repeat="list in $parent.progressData" ng-class="{active: list.id == activeTask.id}">
+            <ion-item style="height: 90px;" class="animated fadeInLeft" ng-click="showActiveTask(list)" ng-repeat="list in $parent.progressData | limitTo:3" ng-class="{active: list.id == activeTask.id}">
                 <div class="cardrightside">
                     <div class="ion-arrow-left-c" style="margin-top: 33px;color: #c3c3c3;"></div>
                 </div>

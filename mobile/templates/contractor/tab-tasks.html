@@ -7,8 +7,9 @@
         <ion-list show-delete="false" show-reorder="false" can-swipe="true">
             <div class="item item-divider" style="font-size: 13px;" ng-hide="progress.length === 0">
                 IN PROGRESS
+                <a ng-click="$parent.openpendingModal()" style="float: right;font-size: 13px;" ng-if="$parent.progressData.length > 0">VIEW ALL</a>
             </div>
-            <ion-item ng-repeat="list in $parent.progressData" class="animated fadeInLeft" ng-click="deTails('progress',list)">
+            <ion-item ng-repeat="list in $parent.progressData | limitTo:3" class="animated fadeInLeft" ng-click="deTails('progress',list)">
                 <div class="cardrightside">
                     <div class="ion-arrow-left-c" style="margin-top: 40px;color: #c3c3c3;"></div>
                 </div>
@@ -47,9 +48,9 @@
             <br>
             <div class="item item-divider" style="font-size: 13px;">
                 PENDING
-                <a ng-click="$parent.openpendingModal()" style="float: right;font-size: 13px;">VIEW ALL</a>
+                <a ng-click="$parent.openpendingModal()" style="float: right;font-size: 13px;" ng-if="$parent.pendingData.length > 0">VIEW ALL</a>
             </div>
-            <ion-item style="height: 90px;" ng-repeat="list in $parent.pendingData track by list._id" class="animated fadeInLeft" ng-click="deTails('pending',list)">
+            <ion-item style="height: 90px;" ng-repeat="list in $parent.pendingData | limitTo:3" class="animated fadeInLeft" ng-click="deTails('pending',list)">
                 <div class="cardrightside">
                     <div class="ion-arrow-left-c" style="margin-top: 33px;color: #c3c3c3;"></div>
                 </div>
@@ -75,9 +76,9 @@
             <br>
             <div class="item item-divider" style="font-size: 13px;">
                 NEW TASK
-                <a ng-click="$parent.opennewtaskModal()" style="float: right;font-size: 13px;">VIEW ALL</a>
+                <a ng-click="$parent.opennewtaskModal()" style="float: right;font-size: 13px;" ng-if="$parent.newTaskData.length > 0">VIEW ALL</a>
             </div>
-            <ion-item style="height: 90px;" ng-repeat="list in $parent.newTaskData track by list._id" class="animated fadeInLeft" ng-click="deTails('new',list)">
+            <ion-item style="height: 90px;" ng-repeat="list in $parent.newTaskData | limitTo:3" class="animated fadeInLeft" ng-click="deTails('new',list)">
                 <div class="cardrightside">
                     <div class="ion-arrow-left-c" style="margin-top: 33px;color: #c3c3c3;"></div>
                 </div>
@@ -106,9 +107,9 @@
             <br>
             <div class="item item-divider" style="font-size: 13px;">
                 COMPLETED
-                <a ng-click="$parent.opencompleted_ContactorModal()" style="float: right;font-size: 13px;">VIEW ALL</a>
+                <a ng-click="$parent.opencompleted_ContactorModal()" style="float: right;font-size: 13px;" ng-if="$parent.completedData.length > 0">VIEW ALL</a>
             </div>
-            <ion-item style="height: 90px;" ng-repeat="list in $parent.completedData" class="animated fadeInLeft" ng-click="deTails('completed',list)">
+            <ion-item style="height: 90px;" ng-repeat="list in $parent.completedData | limitTo:3" class="animated fadeInLeft" ng-click="deTails('completed',list)">
                 <div class="cardrightside">
                     <div class="ion-arrow-left-c" style="margin-top: 33px;color: #c3c3c3;"></div>
                 </div>

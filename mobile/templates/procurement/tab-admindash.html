@@ -7,7 +7,7 @@
         <ion-list show-delete="false" can-swipe="true">
             <div class="item item-divider" style="font-size: 13px;">
                 RECENT TASK
-                <a ng-click="$parent.opentaskinprogressModal()" style="float: right;font-size: 13px;">VIEW ALL</a>
+                <a ng-click="$parent.opentaskinprogressModal()" style="float: right;font-size: 13px;" ng-if="$parent.progressData.length > 0">VIEW ALL</a>
             </div>
             <ion-item style="height: 100px;" class="animated fadeInLeft" ng-repeat="list in $parent.progressData | limitTo: 3" ng-click="showActiveTask(list)" ng-class="{active: list.id == selectedTask.id}">
                 <div class="cardrightside">
