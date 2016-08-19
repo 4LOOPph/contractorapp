@@ -3,14 +3,14 @@
         <button class="button button-icon ion-ios-gear-outline" ng-click="$parent.showPopover($event)"></button>
     </ion-nav-buttons>
     <ion-content class="padding form animated fadeInLeft">
-        <form name="taskForm" novalidate="" on-valid-submit="createTask(taskForm)">
+        <form name="infoForm" novalidate="" on-valid-submit="createTask(infoForm)">
             <div class="list padding-top">
                 <label class="new-label">TASK NAME</label>
             </div>
             <div class="list list-inset" style="margin-top: -15px;">
                 <label class="item item-input item-icon-left item-icon-right validated">
                     <span class="i-con ion-ios-compose-outline"></span>
-                    <input type="text" placeholder="Task Name" ng-model="task.taskname" required>
+                    <input type="text" name="taskname" placeholder="Task Name" ng-model="task.taskname" required>
                     <i class="icon ion-alert-circled error"></i>
                 </label>
             </div>
@@ -41,7 +41,7 @@
             <div class="list list-inset" style="margin-top: -15px;">
                 <label class="item item-input item-icon-left item-icon-right validated">
                     <span class="i-con ion-ios-home-outline"></span>
-                    <input type="text" placeholder="Store Name" ng-model="task.storename" required>
+                    <input type="text" name="storename" placeholder="Store Name" ng-model="task.storename" required>
                     <i class="icon ion-alert-circled error"></i>
                 </label>
             </div>
@@ -51,7 +51,7 @@
             <div class="list list-inset" style="margin-top: -15px;">
                 <label class="item item-input item-icon-left item-icon-right validated">
                     <span class="i-con ion-ios-location-outline"></span>
-                    <input type="text" placeholder="Location" ng-model="task.location" required>
+                    <input type="text" name="location" placeholder="Location" ng-model="task.location" required>
                     <i class="icon ion-alert-circled error"></i>
                 </label>
             </div>
@@ -59,22 +59,27 @@
                 <label class="new-label">DEADLINE</label>
             </div>
             <div class="list list-inset" style="margin-top: -15px;">
-                <label class="item item-input item-icon-left">
+                <label class="item item-input item-icon-left item-icon-right validated">
                     <span class="i-con ion-ios-calendar-outline"></span>
-                    <input type="text" placeholder="Specify Date" ng-click="openDatePicker()" ng-readonly="true" ng-model="task.deadline" required>
+                    <input type="text" name="deadline" placeholder="Specify Date" ng-click="openDatePicker()" ng-readonly="true" ng-model="task.deadline" required>
+                    <i class="icon ion-alert-circled error"></i>
                 </label>
-            </div>
-            <div class="row">
-                <div class="col col-50">
-                    <label class="item item-input item-icon-left">
-                        <input type="text" placeholder="Start Time" ng-click="openTime()" ng-readonly="true" ng-model="task.start" required>
+                     <label class="item item-input item-icon-left item-icon-right validated">
                         <span class="i-con ion-clock"></span>
+                        <input type="text" name="start" placeholder="Start Time" ng-click="openTime()" ng-readonly="true" ng-model="task.start" required>
+                        <i class="icon ion-alert-circled error"></i>
                     </label>
                 </div>
                 <div class="col col-50">
-                    <label class="item item-input item-icon-left">
-                        <input type="text" placeholder="End Time" ng-click="openTime2()" ng-readonly="true" ng-model="task.end" required>
+                    <label class="item item-input item-icon-left item-icon-right validated">
+           </div>
+            <div class="row">
+                <div class="col col-50">
                         <span class="i-con ion-clock"></span>
+                        <input type="text" name="end
+
+                         " placeholder="End Time" ng-click="openTime2()" ng-readonly="true" ng-model="task.end" required>
+                        <i class="icon ion-alert-circled error"></i>
                     </label>
                 </div>
             </div>
