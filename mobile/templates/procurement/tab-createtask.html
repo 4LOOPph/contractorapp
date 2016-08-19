@@ -142,7 +142,7 @@
             <div class="list list-inset" style="margin-top: -15px;">
                 <label class="item item-input item-icon-left item-icon-right validated">
                     <span class="i-con ion-ios-calendar-outline"></span>
-                    <input type="text" placeholder="Specify Date" ng-click="openDatePicker(ipObj1)" name="specifydate" ng-model="task.data_requested" required>
+                    <input type="text" placeholder="Specify Date" ng-click="openDateRequestedPicker()" ng-readonly="true" ng-model="task.date_requested" required>
                     <i class="icon ion-alert-circled error"></i>
                 </label>
             </div>
