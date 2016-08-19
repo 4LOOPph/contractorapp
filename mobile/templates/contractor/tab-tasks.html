@@ -64,6 +64,9 @@
                         <div class="col">
                             <p><small><i style="color:#0f6ab5;" class="ion-alert-circled"></i> {{list.priority}}</small></p>
                         </div>
+                        <div class="col">
+                            <p><small><i style="color:#0f6ab5;" class="ion-android-calendar"></i> {{list.deadline | date:'longDate'}}</small></p>
+                        </div>
                     </div>
                 </div>
                 <ion-option-button class="button button-calm" ng-click="startTask(list)" style="padding: 28px;line-height: 1.5;padding-top: 10px;">
@@ -91,6 +94,9 @@
                     <div class="row" style="margin-top:-5px;">
                         <div class="col">
                             <p><small><i style="color:#0f6ab5;" class="ion-alert-circled"></i> {{list.priority}}</small></p>
+                        </div>
+                        <div class="col">
+                            <p><small><i style="color:#0f6ab5;" class="ion-android-calendar"></i> {{list.deadline | date:'longDate'}}</small></p>
                         </div>
                     </div>
                 </div>
