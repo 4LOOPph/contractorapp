@@ -6,46 +6,47 @@
         <li><a href="#"> Dashboard</a></li>
         <li ui-sref="main.admintask"> Tasks</li>
         <li> Tasks</li>
+        <div style="margin-top: -40px;margin-right: -15px;">
+            <div class="col-xs-2" style="float:right;">
+                <div class=" groupi">
+                    <span class="highlight"></span>
+                    <input type="text" class="form-control imported import" placeholder="Search...">
+                    <span class="bar"></span>
+                    <!--  <span class="input-group-addon"><i class="fa fa-search"></i></span> -->
+                </div>
+            </div>
+            <div class="col-xs-2" style="float:right;">
+                <div class="form-group groupi">
+                    <span class="highlight"></span>
+                    <select class="imported import">
+                        <option value=" " hidden>Task Type:</option>
+                        <option value="1">Installation</option>
+                        <option value="2">AV-Installation</option>
+                    </select>
+                    <span class="bar"></span>
+                </div>
+            </div>
+            <div class="col-xs-2" style="float:right;">
+                <div class="form-group groupi">
+                    <span class="highlight"></span>
+                    <select class="imported import">
+                        <option value=" " hidden>Priority:</option>
+                        <option value="1">All</option>
+                        <option value="2">High</option>
+                        <option value="3">Moderate</option>
+                        <option value="4">Low</option>
+                    </select>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
     </ol>
 </div>
 <section class="content">
     <div class="row">
         <div class="col-md-12">
-            <div class="box-body">
-                <div class="row">
-                    <div class="col-xs-2" style="float:right;">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                        </div>
-                    </div>
-                    <div class="col-xs-2" style="float:right;">
-                        <div class="form-group">
-                            <select class="form-control">
-                                <option value=" " hidden>Task Type:</option>
-                                <option value="1">Installation</option>
-                                <option value="2">AV-Installation</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-2" style="float:right;">
-                        <div class="form-group">
-                            <select class="form-control">
-                                <option value=" " hidden>Priority:</option>
-                                <option value="1">All</option>
-                                <option value="2">High</option>
-                                <option value="3">Moderate</option>
-                                <option value="4">Low</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12">
             <div class="box box-info boxcolorrrr">
                 <div class="box-header with-border">
-                    <i class="fa fa-tasks"></i>
                     <h3 class="box-title">Completed Task</h3>
                 </div>
                 <div class="overlay" ng-show="loading">
