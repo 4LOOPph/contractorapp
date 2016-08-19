@@ -64,7 +64,10 @@
                     <input type="text" name="deadline" placeholder="Specify Date" ng-click="openDatePicker()" ng-readonly="true" ng-model="task.deadline" required>
                     <i class="icon ion-alert-circled error"></i>
                 </label>
-                     <label class="item item-input item-icon-left item-icon-right validated">
+            </div>
+            <div class="row">
+                <div class="col col-50">
+                    <label class="item item-input item-icon-left item-icon-right validated">
                         <span class="i-con ion-clock"></span>
                         <input type="text" name="start" placeholder="Start Time" ng-click="openTime()" ng-readonly="true" ng-model="task.start" required>
                         <i class="icon ion-alert-circled error"></i>
@@ -72,13 +75,8 @@
                 </div>
                 <div class="col col-50">
                     <label class="item item-input item-icon-left item-icon-right validated">
-           </div>
-            <div class="row">
-                <div class="col col-50">
                         <span class="i-con ion-clock"></span>
-                        <input type="text" name="end
-
-                         " placeholder="End Time" ng-click="openTime2()" ng-readonly="true" ng-model="task.end" required>
+                        <input type="text" name="end" placeholder="End Time" ng-click="openTime2()" ng-readonly="true" ng-model="task.end" required>
                         <i class="icon ion-alert-circled error"></i>
                     </label>
                 </div>
