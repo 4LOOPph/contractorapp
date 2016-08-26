@@ -1,0 +1,75 @@
+<div class="content-header">
+    <h4>
+         Quote List
+          </h4>
+    <ol class="breadcrumb">
+        <li><a ui-sref="main.admindash"> Dashboard</a></li>
+        <li ui-sref="main.admintask">Tasks</li>
+        <li> Quote List</li>
+    </ol>
+</div>
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box-body">
+            </div>
+        </div>
+        <div class="col-md-12" id="1" name="newtask">
+            <div class="box box-info boxcolorrrr">
+                <div class="box-header with-border">
+                    <h3 class="box-title" style="text-transform:inherit;">Tap the quote box to show full details
+                   </h3>
+                </div>
+                <div class="box-body">
+                    <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;">
+                        <div class="qowinfo-box" ng-repeat="list in task.quotes">
+                            <div class="row" id="background">
+                                <div class="col-sm-5" style="padding-right: 0px;"><img src="images/no-avatar.jpg" style="width: 115px;padding: 5px;margin-left:-15px;"></div>
+                                <div class="col-sm-5" style="padding-top: 10px;padding-left: 0px;line-height: 1.7;margin-left:-40px;">
+                                    <label>{{list.contractor.fname}}
+                                        <br>{{list.contractor.lname}}</label>
+                                    <div>{{list.contractor.phone}}</div>
+                                    <div>{{list.contractor.companyname}}</div>
+                                    <!--   <div>View Profile</div> -->
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: -105px;line-height: 1.7;">
+                                <div class="col-sm-2" style="float: right;margin-top: -5px;margin-right: -1.5%;line-height: 1;">                                                            
+                                    <button class="contener" ng-click="showConfirm(list)" ng-hide="list.approved">Approve</button>                                    
+                                </div>
+                                <div ng-click="openListMod(list)">
+                                    <div class="col-sm-3" style="float: right;">
+                                        <div>{{list.numhours}} Hrs</div>
+                                        <div>$ {{list.totalrate}}</div>
+                                        <div>$ {{list.totalothers}}</div>
+                                        <label>$ {{list.totalqoute}}</label>
+                                    </div>
+                                    <div class="col-sm-3" style="float:right;text-align: right;">
+                                        <div>Completion (Hours) :</div>
+                                        <div>Total Rate :</div>
+                                        <div>Other :</div>
+                                        <label>QOW Total :</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="form-group">
+                <div for="inputEmail3" class="col-sm-2 control-label" style="padding-top: 25px;">Items per page:</div>
+                <div class="col-sm-1">
+                    <select class="form-control setpage" style="height:30px;">
+                        <option selected>5</option>
+                        <option>10</option>
+                        <option>15</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+    </div>
+    <!-- /.row (main row) -->
+</section>

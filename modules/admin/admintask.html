@@ -3,16 +3,14 @@
          Tasks
           </h4>
     <ol class="breadcrumb">
-        <li><a href="#"> Dashboard</a></li>
+        <li><a ui-sref="main.admindash"> Dashboard</a></li>
         <li> Tasks</li>
-        <div style="margin-top: -40px;margin-right: -15px;">
+        <div class="vid" style="margin-top: -40px;margin-right: -15px;">
             <div class="col-xs-2" style="float:right;">
                 <div class=" groupi">
-                 <span class="highlight"></span>
+                    <span class="highlight"></span>
                     <input type="text" class="form-control imported import" placeholder="Search...">
-
-                     <span class="bar"></span>
-                   <!--  <span class="input-group-addon"><i class="fa fa-search"></i></span> -->
+                    <span class="bar"></span>
                 </div>
             </div>
             <div class="col-xs-2" style="float:right;">
@@ -28,7 +26,7 @@
             </div>
             <div class="col-xs-2" style="float:right;">
                 <div class="form-group groupi">
-                <span class="highlight"></span>
+                    <span class="highlight"></span>
                     <select class="imported import">
                         <option value=" " hidden>Priority:</option>
                         <option value="1">All</option>
@@ -57,45 +55,24 @@
                 </div>
                 <div class="box-body">
                     <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;">
-                        <div class="info-box" ui-sref="main.forapprovaltask">
-                            <span class="info-box-icon bg-red"></span>
+                        <div class="info-box" ng-click="deTails(list)" ng-repeat="list in newTaskData | limitTo: 3">
+                            <span class="info-box-icon bg-red" ng-if="list.priority === 'High'"></span>
+                            <span class="info-box-icon bg-green" ng-if="list.priority === 'Medium'"></span>
+                            <span class="info-box-icon bg-yel" ng-if="list.priority === 'Low'"></span>
                             <div class="infobox-content col-md-12">
                                 <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
                                     <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
                                     <br>
                                     <small> Unassigned</small>
                                 </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
+                                <span class="info-box-number">{{list.taskname}}</span>
+                                <span class="info-box-text" style="padding-top: 5px;">({{list.location}})</span>
                                 <div style="padding-top: 5px;margin-left:-15px;">
                                     <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> High Priority</small>
+                                        <small><i class="fa fa-warning"></i>{{list.priority}}</small>
                                     </div>
                                     <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-close " style="color:red;"></i> Unassigned</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-box" ui-sref="main.forapprovaltask">
-                            <span class="info-box-icon bg-green"></span>
-                            <div class="infobox-content col-md-12">
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small> Unassigned</small>
-                                </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
-                                <div style="padding-top: 5px;margin-left:-15px;">
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> Medium Priority</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
+                                        <small><i class="fa fa-calendar"></i>{{list.deadline | date:'longDate'}}</small>
                                     </div>
                                     <div class="col-md-2">
                                         <small><i class="fa fa-close " style="color:red;"></i> Unassigned</small>
@@ -114,45 +91,24 @@
                 </div>
                 <div class="box-body">
                     <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-red"></span>
+                        <div class="info-box" ng-repeat="list in progressData track by list._id | limitTo: 3" ng-click="deTails(list)">
+                            <span class="info-box-icon bg-red" ng-if="list.priority === 'High'"></span>
+                            <span class="info-box-icon bg-green" ng-if="list.priority === 'Medium'"></span>
+                            <span class="info-box-icon bg-yel" ng-if="list.priority === 'Low'"></span>
                             <div class="infobox-content col-md-12">
                                 <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
                                     <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
                                     <br>
                                     <small>Smith, Robert</small>
                                 </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
+                                <span class="info-box-number">{{list.taskname}}</span>
+                                <span class="info-box-text" style="padding-top: 5px;">({{list.location}})</span>
                                 <div style="padding-top: 5px;margin-left:-15px;">
                                     <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> High Priority</small>
+                                        <small><i class="fa fa-warning"></i>{{list.priority}}</small>
                                     </div>
                                     <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-check" style="color:green;"></i> In Progress</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-box">
-                            <span class="info-box-icon bg-green"></span>
-                            <div class="infobox-content col-md-12">
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small>Reid, Anthony</small>
-                                </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
-                                <div style="padding-top: 5px;margin-left:-15px;">
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> Medium Priority</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
+                                        <small><i class="fa fa-calendar"></i>{{list.deadline | date:'longDate'}}</small>
                                     </div>
                                     <div class="col-md-2">
                                         <small><i class="fa fa-check" style="color:green;"></i> In Progress</small>
@@ -171,45 +127,24 @@
                 </div>
                 <div class="box-body">
                     <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-red"></span>
+                        <div class="info-box" ng-repeat="list in pendingData track by list._id | limitTo: 3" ng-click="deTails(list)">
+                            <span class="info-box-icon bg-red" ng-if="list.priority === 'High'"></span>
+                            <span class="info-box-icon bg-green" ng-if="list.priority === 'Medium'"></span>
+                            <span class="info-box-icon bg-yel" ng-if="list.priority === 'Low'"></span>
                             <div class="infobox-content col-md-12">
                                 <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
                                     <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
                                     <br>
                                     <small>Smith, Robert</small>
                                 </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
+                                <span class="info-box-number">{{list.taskname}}</span>
+                                <span class="info-box-text" style="padding-top: 5px;">({{list.location}})</span>
                                 <div style="padding-top: 5px;margin-left:-15px;">
                                     <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> High Priority</small>
+                                        <small><i class="fa fa-warning"></i>{{list.priority}}</small>
                                     </div>
                                     <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa " style="color:green;"></i> Not Started</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-box">
-                            <span class="info-box-icon bg-green"></span>
-                            <div class="infobox-content col-md-12">
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small>Reid, Anthony</small>
-                                </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
-                                <div style="padding-top: 5px;margin-left:-15px;">
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> Medium Priority</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
+                                        <small><i class="fa fa-calendar"></i>{{list.deadline | date:'longDate'}}</small>
                                     </div>
                                     <div class="col-md-2">
                                         <small><i class="fa " style="color:green;"></i> Not Started</small>
@@ -228,58 +163,34 @@
                 </div>
                 <div class="box-body">
                     <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;">
-                        <div class="info-box" ui-sref="main.completedtask">
-                            <span class="info-box-icon bg-red"></span>
+                        <div class="info-box" ng-repeat="list in completedData | limitTo: 3" ng-click="deTails(list)">
+                            <span class="info-box-icon bg-red" ng-if="list.priority === 'High'"></span>
+                            <span class="info-box-icon bg-green" ng-if="list.priority === 'Medium'"></span>
+                            <span class="info-box-icon bg-yel" ng-if="list.priority === 'Low'"></span>
                             <div class="infobox-content col-md-12">
                                 <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
                                     <img src="images/download (1).png" class="img-circle" alt="User Image" style="width:40px;">
                                     <br>
                                     <small>Close Task</small>
                                 </div>
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small>Smith, Robert</small>
-                                </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
-                                <div style="padding-top: 5px;margin-left:-15px;">
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> High Priority</small>
+                                <div ui-sref="main.completedtask">
+                                    <div class="col-md-2 pull-right vid" style="text-align:center;margin-top:10px;">
+                                        <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
+                                        <br>
+                                        <small>Smith, Robert</small>
                                     </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-check" style="color:green;"></i> Completed</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-box" ui-sref="main.completedtask">
-                            <span class="info-box-icon bg-green"></span>
-                            <div class="infobox-content col-md-12">
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/download (1).png" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small>Close Task</small>
-                                </div>
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small>Reid, Anthony</small>
-                                </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
-                                <div style="padding-top: 5px;margin-left:-15px;">
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> Medium Priority</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-check" style="color:green;"></i> Completed</small>
+                                    <span class="info-box-number">{{list.taskname}}</span>
+                                    <span class="info-box-text" style="padding-top: 5px;">({{list.location}})</span>
+                                    <div style="padding-top: 5px;margin-left:-15px;">
+                                        <div class="col-md-2">
+                                            <small><i class="fa fa-warning"></i>{{list.priority}}</small>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <small><i class="fa fa-calendar"></i>{{list.deadline | date:'longDate'}}</small>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <small><i class="fa fa-check" style="color:green;"></i> Completed</small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -302,5 +213,6 @@
         </div>
         <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul> -->
     </div>
+    <div class=”backToTop”></div>
     <!-- /.row (main row) -->
 </section>

@@ -1,30 +1,34 @@
-<div class="" style="margin-top: -40px;">
-    <div class="">
-        <div class="login-logo top-h">
-            <img class="logoo" src="images/eca-logo2.png" width="50">
-            <h2 class="log-head-font">CONTRACTOR APP</h2>
-            <div class="log-sub-font">Always take the lead!</div>
-            <p class="log-p">Apply as one of our certified contractor</p>
-        </div>
-        <div class="col-md-12" style="padding-right:45px;">
-            <div class="vid">
-                <div class="col-md-7">
-                    <iframe width="94%" height="325px" src="//www.youtube.com/embed/atI4JKFQYoU" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5 container" style="background-color: #fff;">
+<div ng-hide="loading">
+    <div class="loader" style="padding-top:40%;">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+
+</div>
+<div ng-show="loading">
+    <div class="margtop">
+        <div class="col-md-12 padright">
+            <div class="rowlog">
+                <div class="col-md-4 container" style="background-color: #fff;box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.11), 2px 5px 10px 0 rgba(0, 0, 0, 0.06);position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);">
+                    <div class="login-logo top-h">
+                        <img class="logoo imgrotate" src="images/eca-logo-gear.png" width="50" style="position: relative;z-index: 1; left: 55px;">
+                        <img class="logoo" src="images/eca-logo2-stripe.png" width="50" style="position: relative;z-index: 2;left: -55px;">
+                        <h2 class="log-head-font">CONTRACTOR APP</h2>
+                        <div class="log-sub-font">Always take the lead!</div>
+                        <p class="log-p">Apply as one of our certified contractor</p>
+                    </div>
                     <div class=" box-widget widget-user-2" style="padding-left: 10px;padding-right: 10px;">
                         <div class="" style="padding-top: 40px;">
-                            <form ng-submit="login()" style="padding-left: 0px;padding-right: 0px;">
+                            <form name="loginForm" ng-submit="login()" style="padding-left: 0px;padding-right: 0px;">
                                 <div class="groupi">
-                                    <input class="import" type="text" required>
+                                    <input ng-model="data.username" class="import" type="text" required>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label class="lablab aw">Username</label>
                                 </div>
                                 <div class="groupi">
-                                    <input class="import" type="password" required>
+                                    <input ng-model="data.password" class="import" type="password" required>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label class="lablab aw">Password</label>
@@ -33,29 +37,32 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div align="center">
-                                            <div class="contener" ui-sref="main.admindash">
-                                                <div class="paper-button txt_button" angular-ripple>Login</div>
-                                                <div class="circle">&nbsp;</div>
-                                            </div>
+                                            <button ui-sref="main.admindash" type="submit" class="contener button expand" style="line-height:40px" angular-ripple>Login
+                                                <!-- <div ng-hide="loadingscreen">
+                                                    <div class="loader">
+                                                        <svg class="circular" viewBox="25 25 50 50">
+                                                            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+                                                        </svg>
+                                                    </div>
+                                                </div> -->
+                                            </button>
+                                            <!-- <button type="submit" class="contener" style="line-height:40px" angular-ripple>Login</button> -->
                                         </div>
                                     </div>
                                 </div>
-                                <div class="smallapply">
-                                    <div ui-sref="vendorinfo" style="margin-top: 6px;">Apply as Contractor</div>
-                                </div>
                             </form>
+                            <!-- <div class="smallapply">
+                                <div ui-sref="vendorinfo" style="margin-top: 6px;">Apply as Contractor</div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="largeapply" style=" padding-top: 25px;">
                         <div align="center">
-                        <div ui-sref="vendorinfo" class="contractorapply" angular-ripple>Apply as Contractor</div>
-                           <!--  <div class="contener" ui-sref="vendorinfo" style="width:100%;">
-                                <div class="txt_button">Apply as Contractor</div>
-                                <div class="circle">&nbsp;</div>
-                            </div> -->
+                            <div ui-sref="vendorinfo" class="contractorapply" angular-ripple>Apply as Contractor</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>

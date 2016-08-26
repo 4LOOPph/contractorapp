@@ -1,17 +1,26 @@
-<div class="wrapper">
-    <header class="main-header">
-    </header>
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar" ng-include="'./modules/templates/sidebar.html'">
-    </aside>
-
-    <div class="content-wrapper">
-        <div ui-view="main-view"></div>
+<div ng-hide="loadingscreen">
+    <div class="loader" style="padding-top:40%;">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
     </div>
-<!--     <footer class="main-footer">
+</div>
+<div ng-show="loadingscreen">
+    <div class="wrapper">
+        <header class="main-header">
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar" ng-include="'./modules/templates/sidebar.html'">
+        </aside>
+        <div class="content-wrapper">
+            <div ui-view="main-view"></div>
+        </div>
+        <!--     <footer class="main-footer">
         <div class="pull-right hidden-xs">
             <b>Version</b> 2.0
         </div>
         <strong>Copyright &copy; 2016<a href="http://engagis.com"> Engagis Pty Ltd </a>.</strong> All rights reserved.
     </footer> -->
+    </div>
 </div>
+

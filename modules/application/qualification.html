@@ -1,0 +1,177 @@
+<div class="head vid">
+    <img class="logoo" src="images/eca-logo2 copy.png" width="50" style="margin-top: -12px;width: 50px;"> CONTRACTOR APP
+</div>
+<div class="head xvid">
+    <button ui-sref="payment" type="button" class="fa fa-chevron-left smbuttontop" style="float:left;"></button> Qualification
+</div>
+<div class="" style="margin-top: 5px;">
+    <div class="">
+        <div class="col-md-12" style="background: #fff;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box-widget widget-user-2">
+                        <div class="vid" style="padding-left:30px;">
+                            <form class="form-horizontal col-md-12" style="margin-top:75px; margin-left: -65px;">
+                                <div class="bread flt">
+                                    <a class="active" style="padding-right: 60px;">Vendor Information</a>
+                                    <a class="active" style="width: 30%;">Payment</a>
+                                    <a class="active" style="padding-right: 60px;">Qualification</a>
+                                    <a style="width:5%;"></a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="largebox">
+                            <form class="form-horizontal col-md-7 ">
+                                <div class="box-body ">
+                                    <div class="form-group ">
+                                        <label for="exampleInputEmail1 ">QUALIFICATION CHECKLIST</label>
+                                        <div class=" cardborder" style="padding:15px;">
+                                            <div class="input-group col-sm-12">
+                                                <label class="control control--checkbox">Hardware Installations
+                                                    <input type="checkbox" />
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <label class="control control--checkbox">AVInstallations
+                                                    <input type="checkbox" />
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <label class="control control--checkbox">Preventive Maintenance
+                                                    <input type="checkbox" />
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <label class="control control--checkbox">Digital Media and Digital Points of Purchase Rollouts
+                                                    <input type="checkbox" />
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <label class="control control--checkbox">Basic Networking Experience
+                                                    <input type="checkbox" />
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <label class="control control--checkbox">Testing and Servicing Equipment
+                                                    <input type="checkbox" />
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <label class="control control--checkbox">Others
+                                                    <input type="checkbox" ng-click="isCollapsed = !isCollapsed" />
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                                <div class="" id="todo">
+                                                    <div ng-repeat="other in othersList" style="padding-left: 27px;padding-bottom: 25px;">
+                                                        <label style="color:#525252;margin-left:5px;">{{other.task}}</label>
+                                                        <button class="btn-danger btn-xm close2" aria-hidden='true'><span class="fa fa-times-circle" ng-click="removeOther($index)"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div uib-collapse="!isCollapsed">
+                                                    <div style="margin-top: 0px;">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Add other Qualification" ng-model="others.task" name="task">
+                                                            <span class="input-group-addon btn-warning" ng-click="addOthers(others)" style="background-color: #f39c12;color:#fff;"><i class="fa fa-plus"> ADD</i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="form-horizontal col-md-7 ">
+                                <div class="box-body cardborder" style="border-style: dashed;">
+                                    <div class="form-group ">
+                                        <label for="exampleInputEmail1" style="padding-left:10px;">ATTACH RESUME</label>
+                                        <br>
+                                        <label for="imageUpload1" class="btn btn-warning btn-block btn-outlined" style="width: 150px"><i class="fa fa-folder-open" angular-ripple></i> Upload File</label>
+                                        <input type="file" method="POST" id="imageUpload1" nv-file-select="" uploader="uploader" class="form-control" accept="image/*" style="display: none">
+                                    </div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th width="95%"></th>
+                                                <th width="5%"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="background-color: #d6d6d6;">
+                                            <tr ng-repeat="item in uploader.queue" class="uploadtable">
+                                                <td style="padding: 5px;"><strong>{{ item.file.name }}</strong></td>
+                                                <td nowrap>
+                                                    <button class="btn-danger btn-xm close3"><span class="fa fa-times-circle" ng-click="item.remove()"></span></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </form>
+                            <form class="form-horizontal col-md-7" style="margin-top:20px;">
+                                <div class="box-body cardborder" style="border-style: dashed;">
+                                    <div class="form-group ">
+                                        <label for="exampleInputEmail1 " style="padding-left:10px;">ATTACH CERTIFICATE</label>
+                                        <br>
+                                        <label for="imageUpload2" class="btn btn-warning btn-block btn-outlined" style="width: 150px"><i class="fa fa-folder-open" angular-ripple></i> Upload Files</label>
+                                        <input type="file" method="POST" id="imageUpload2" nv-file-select="" uploader="uploader1" multiple class="form-control" accept="image/*" style="display: none">
+                                    </div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th width="95%"></th>
+                                                <th width="5%"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="background-color: #d6d6d6;">
+                                            <tr ng-repeat="item in uploader1.queue" class="uploadtable">
+                                                <td style="padding: 5px;"><strong>{{ item.file.name }}</strong></td>
+                                                <td nowrap>
+                                                    <button class="btn-danger btn-xm close3"><span class="fa fa-times-circle" ng-click="item.remove()"></span></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </form>
+                            <form class="form-horizontal col-md-7 ">
+                                <div class="box-body ">
+                                    <div class="form-group ">
+                                        <label for="exampleInputEmail1 ">REFERENCE</label>
+                                        <div class="form-group ">
+                                            <div class="col-sm-6 ">
+                                                <input type="text " class="form-control " id="LName " placeholder="Last Name ">
+                                            </div>
+                                            <div class="col-sm-6 ">
+                                                <input type="text " class="form-control " id="FName " placeholder="First Name ">
+                                            </div>
+                                        </div>
+                                        <input type="number " class="form-control " placeholder="Contact Number ">
+                                        <br>
+                                        <input type="email " class="form-control " placeholder="Email Address ">
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="col-md-12 marg">
+                                <div class="box-footer bg-crd ">
+                                    <div align="left" style="margin-top:0px;margin-left:-10px;">
+                                        <div class="contenergrey" ng-click="clickToCancel() " style="width:15%;">
+                                            <div class="txt_button" angular-ripple> Cancel</div>
+                                            <div class="circle">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                    <div align="right" style="margin-top:-45px;margin-right:20%;">
+                                        <div class="contener" ui-sref="payment" style="width:20%;margin-top: -10px;margin-bottom: 0px;">
+                                            <div class="txt_button" angular-ripple> Back</div>
+                                            <div class="circle">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                    <div align="right" style="margin-top:-45px;margin-bottom:0px;">
+                                        <div class="contener" ng-click="clickToOpen()" style="width:15%;margin-top: -10px;margin-bottom: 0px;">
+                                            <div class="txt_button" angular-ripple> Submit</div>
+                                            <div class="circle">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

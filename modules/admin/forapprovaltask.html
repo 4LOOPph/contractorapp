@@ -3,7 +3,7 @@
          Tasks
           </h4>
     <ol class="breadcrumb">
-        <li><a href="#"> Dashboard</a></li>
+        <li><a ui-sref="main.admindash"> Dashboard</a></li>
         <li ui-sref="main.admintask"> Tasks</li>
         <li> Tasks Details</li>
     </ol>
@@ -15,10 +15,12 @@
                 <div class="col-xs-2" style="float:right;">
                     <div class="form-group">
                         <div align="right">
-                            <div class="conteneryellow" ng-click="openListMod()" style="margin-bottom: -14px;">
-                                <div class="txt_button">View QOW</div>
-                                <div class="circle">&nbsp;</div>
+                            <div class="conteneryellow" ng-click="qowlist(task)" style="margin-bottom: -14px;width:93%;margin-right: 10px;">
+                                <div class="paper-button txt_button" style="color:white;" angular-ripple>View QOW</div>
                             </div>
+                            <!--  <div class="conteneryellow" ng-click="openListMod()" style="margin-bottom: -14px;width:93%;margin-right: 10px;">
+                                <div class="paper-button txt_button" style="color:white;" angular-ripple>View QOW</div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -43,15 +45,15 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group" style="line-height: 1.8;">
-                                        <small>AV-Installation</small>
+                                        <small>{{task.taskname}}</small>
                                         <br>
-                                        <small>Installation</small>
+                                        <small>{{task.tasktype}}</small>
                                         <br>
-                                        <small>High</small>
+                                        <small>{{task.priority}}</small>
                                         <br>
-                                        <small>547867456</small>
+                                        <small>{{task.casenumber}}</small>
                                         <br>
-                                        <small>AV</small>
+                                        <small>{{task.projectname}}</small>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +65,7 @@
                     <div class="timeline-item">
                         <h3 class="timeline-header no-border"><a href="#">Task Description</a></h3>
                         <div class="timeline-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.
+                            {{task.description}}
                         </div>
                     </div>
                 </li>
@@ -82,7 +84,7 @@
                                     <a href="images/pdfurl-guide.pdf" download angular-ripple>
                                         <div class=""><span class="fa fa-download" style="font-size:30px;color:#000;" name="Download"></span></div>
                                     </a>
-                                   <!--  <small style="font-size: 10px;"> Download PDF</small> -->
+                                    <!--  <small style="font-size: 10px;"> Download PDF</small> -->
                                 </div>
                             </div>
                         </div>
@@ -107,17 +109,14 @@
                                 <div class="col-xs-4">
                                     <div class="form-group" style="line-height: 1.8;">
                                         <div>Assignee:</div>
-                                        <div>Reporter:</div>
-                                        <div>Company:</div>
+                                        <div>Reporter:</div>                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group" style="line-height: 1.8;">
-                                        <small>Lorem Impatsu</small>
+                                        <small>{{task.contractors[0].fname}} {{task.contractors[0].lname}}</small>
                                         <br>
-                                        <small>Lorem Impatsu</small>
-                                        <br>
-                                        <small>7-Eleven</small>
+                                        <small>{{task.reporter.fname}} {{task.reporter.lname}}</small>
                                     </div>
                                 </div>
                             </div>
@@ -138,9 +137,9 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group" style="line-height: 1.8;">
-                                        <small>7-Eleven</small>
+                                        <small>{{task.storename}}</small>
                                         <br>
-                                        <small>Australia</small>
+                                        <small>{{task.location}}</small>
                                     </div>
                                 </div>
                             </div>
@@ -162,11 +161,11 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group" style="line-height: 1.8;">
-                                        <small>June 27, 2016</small>
+                                        <small>{{task.deadline}}</small>
                                         <br>
-                                        <small>3 Hours</small>
+                                        <small>{{task.numdays}}</small>
                                         <br>
-                                        <small>3 Hours</small>
+                                        <small>{{task.numhours}}</small>
                                     </div>
                                 </div>
                             </div>

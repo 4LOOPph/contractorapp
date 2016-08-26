@@ -3,10 +3,10 @@
          Tasks
           </h4>
     <ol class="breadcrumb">
-        <li><a href="#"> Dashboard</a></li>
+        <li><a ui-sref="main.admindash"> Dashboard</a></li>
         <li ui-sref="main.admintask"> Tasks</li>
         <li> Pending Task</li>
-        <div style="margin-top: -40px;margin-right: -15px;">
+        <div class="vid" style="margin-top: -40px;margin-right: -15px;">
             <div class="col-xs-2" style="float:right;">
                 <div class=" groupi">
                     <span class="highlight"></span>
@@ -49,123 +49,38 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Pending Task</h3>
                 </div>
-                <div class="overlay" ng-show="loading">
-                    <div class="loader" style="padding-top:20%;">
+                <div class="overlay" ng-show="loading" style="top: 40px;">
+                    <!-- <div class="loader" style="padding-top:20%;">
                         <svg class="circular" viewBox="25 25 50 50">
                             <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
                         </svg>
+                    </div> -->
+                    <div class="load-bar">
+                        <div class="lbar"></div>
+                        <div class="lbar"></div>
+                        <div class="lbar"></div>
                     </div>
                 </div>
                 <div class="box-body">
                     <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-red"></span>
+                        <div class="info-box" ng-click="deTails(list)" ng-repeat="list in pendingData track by list._id">
+                            <span class="info-box-icon bg-red" ng-if="list.priority === 'High'"></span>
+                            <span class="info-box-icon bg-green" ng-if="list.priority === 'Medium'"></span>
+                            <span class="info-box-icon bg-yel" ng-if="list.priority === 'Low'"></span>
                             <div class="infobox-content col-md-12">
                                 <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
                                     <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
                                     <br>
                                     <small>Smith, Robert</small>
                                 </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
+                                <span class="info-box-number">{{list.taskname}}</span>
+                                <span class="info-box-text" style="padding-top: 5px;">({{list.location}})</span>
                                 <div style="padding-top: 5px;margin-left:-15px;">
                                     <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> High Priority</small>
+                                        <small><i class="fa fa-warning"></i>{{list.priority}}</small>
                                     </div>
                                     <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa " style="color:green;"></i> Not Started</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-box">
-                            <span class="info-box-icon bg-red"></span>
-                            <div class="infobox-content col-md-12">
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small>Smith, Robert</small>
-                                </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
-                                <div style="padding-top: 5px;margin-left:-15px;">
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> High Priority</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa " style="color:green;"></i> Not Started</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-box">
-                            <span class="info-box-icon bg-red"></span>
-                            <div class="infobox-content col-md-12">
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small>Smith, Robert</small>
-                                </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
-                                <div style="padding-top: 5px;margin-left:-15px;">
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> High Priority</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa " style="color:green;"></i> Not Started</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-box">
-                            <span class="info-box-icon bg-red"></span>
-                            <div class="infobox-content col-md-12">
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small>Smith, Robert</small>
-                                </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
-                                <div style="padding-top: 5px;margin-left:-15px;">
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> High Priority</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa " style="color:green;"></i> Not Started</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-box">
-                            <span class="info-box-icon bg-green"></span>
-                            <div class="infobox-content col-md-12">
-                                <div class="col-md-2 pull-right" style="text-align:center;margin-top:10px;">
-                                    <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
-                                    <br>
-                                    <small>Reid, Anthony</small>
-                                </div>
-                                <span class="info-box-number">AV-Installation</span>
-                                <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
-                                <div style="padding-top: 5px;margin-left:-15px;">
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-warning"></i> Medium Priority</small>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <small><i class="fa fa-calendar"></i> 27 June 2016</small>
+                                        <small><i class="fa fa-calendar"></i>{{list.deadline | date:'longDate'}}</small>
                                     </div>
                                     <div class="col-md-2">
                                         <small><i class="fa " style="color:green;"></i> Not Started</small>

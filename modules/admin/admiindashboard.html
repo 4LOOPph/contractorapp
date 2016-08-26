@@ -5,7 +5,6 @@
           </h4>
         <ol class="breadcrumb">
             <li><a href="#"> Dashboard</a></li>
-            <li></li>
         </ol>
     </div>
     <section class="content">
@@ -17,19 +16,21 @@
                     </div>
                     <div class="box-body">
                         <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;padding-bottom: 15px;">
-                            <div class="info-box haber" ui-sref="main.taskdetails">
-                                <span class="info-box-icon bg-red"></span>
+                            <div class="info-box haber" ui-sref="main.taskinprogresslist" ng-repeat="list in progressData track by list._id | limitTo: 3">
+                                <span class="info-box-icon bg-red" ng-if="list.priority === 'High'"></span>
+                                <span class="info-box-icon bg-green" ng-if="list.priority === 'Medium'"></span>
+                                <span class="info-box-icon bg-yel" ng-if="list.priority === 'Low'"></span>
                                 <div class="infobox-content col-md-12">
                                     <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
                                         <img src="images/no-avatar.jpg" class="img-circle" alt="User Image" style="width:40px;">
                                         <br>
                                         <small> Smith, James</small>
                                     </div>
-                                    <span class="info-box-number">AV-Installation</span>
-                                    <span class="info-box-text" style="padding-top: 5px;">(Telstra, Melbourne)</span>
+                                    <span class="info-box-number">{{list.taskname}}</span>
+                                    <span class="info-box-text" style="padding-top: 5px;">({{list.location}})</span>
                                     <div style="padding-top: 5px;margin-left:-15px;">
                                         <div class="col-md-3">
-                                            <small><i class="fa fa-warning"></i> High Priority</small>
+                                            <small><i class="fa fa-warning"></i>{{list.priority}}</small>
                                         </div>
                                         <div class="col-md-3">
                                             <small><i class="fa fa-calendar"></i> 27 June 2016</small>
@@ -40,7 +41,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="info-box" ui-sref="main.taskdetails">
+                            <div class="info-box" ui-sref="main.taskdetails" angular-ripple>
                                 <span class="info-box-icon bg-green"></span>
                                 <div class="infobox-content col-md-12">
                                     <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
@@ -63,7 +64,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="info-box" ui-sref="main.taskdetails">
+                            <div class="info-box" ui-sref="main.taskdetails" angular-ripple>
                                 <span class="info-box-icon bg-yel"></span>
                                 <div class="infobox-content col-md-12">
                                     <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
@@ -86,7 +87,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="info-box" ui-sref="main.taskdetails">
+                            <div class="info-box" ui-sref="main.taskdetails" angular-ripple>
                                 <span class="info-box-icon bg-yel"></span>
                                 <div class="infobox-content col-md-12">
                                     <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
@@ -101,7 +102,7 @@
                                             <small><i class="fa fa-warning"></i> Low Priority</small>
                                         </div>
                                         <div class="col-md-3">
-                                            <small><i class="fa fa-calendar"></i> 27 June 2016</small>
+                                            <small><i class="fa fa-calendar"></i>{{list.deadline | date:'longDate'}}</small>
                                         </div>
                                         <div class="col-md-3">
                                             <small><i class="fa fa-check" style="color:green;"></i> In Progress</small>
@@ -110,7 +111,7 @@
                                 </div>
                             </div>
                             <div uib-collapse="!isCollapsed">
-                                <div class="info-box" ui-sref="main.taskdetails">
+                                <div class="info-box" ui-sref="main.taskdetails" angular-ripple>
                                     <span class="info-box-icon bg-green"></span>
                                     <div class="infobox-content col-md-12">
                                         <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
@@ -133,7 +134,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="info-box" ui-sref="main.taskdetails">
+                                <div class="info-box" ui-sref="main.taskdetails" angular-ripple>
                                     <span class="info-box-icon bg-yel"></span>
                                     <div class="infobox-content col-md-12">
                                         <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
@@ -156,7 +157,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="info-box" ui-sref="main.taskdetails">
+                                <div class="info-box" ui-sref="main.taskdetails" angular-ripple>
                                     <span class="info-box-icon bg-yel"></span>
                                     <div class="infobox-content col-md-12">
                                         <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
@@ -196,7 +197,7 @@
                     </div>
                     <div class="box-body">
                         <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;padding-bottom: 15px;">
-                            <div class="info-box" >
+                            <div class="info-box" ng-repeat="list in progressData" angular-ripple>
                                 <span class="info-box-icon bg-white"></span>
                                 <div class="infobox-content col-md-12">
                                     <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
@@ -204,24 +205,24 @@
                                         <br>
                                         <small> Download</small>
                                     </div>
-                                    <div style="margin-left:-15px;" ui-sref="main.supportreport">
-                                        <div class="col-md-3">
+                                    <div style="margin-left:-15px;display: -webkit-box;" ui-sref="main.supportreport">
+                                        <div class="col-md-4">
                                             <span class="info-box-number">Sender</span>
                                             <span class="info-box-text" style="padding-top: 5px;">Task</span>
                                             <span class="info-box-text" style="padding-top: 5px;">Submitted</span>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-5">
                                             <span class="info-box-number">Smith, Ben</span>
                                             <span class="info-box-text" style="padding-top: 5px;">AV-Installation</span>
                                             <span class="info-box-text" style="padding-top: 5px;">27 June, 2016</span>
                                         </div>
                                         <div class="col-md-2">
-                                            <small style="color:#a06904;"> NEW</small>
+                                            <small class="newrep" style="color:#a06904;"> NEW</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="info-box" >
+                            <div class="info-box" angular-ripple>
                                 <span class="info-box-icon bg-white"></span>
                                 <div class="infobox-content col-md-12">
                                     <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
@@ -229,24 +230,24 @@
                                         <br>
                                         <small> Download</small>
                                     </div>
-                                    <div style="margin-left:-15px;" ui-sref="main.sitesurveyreport">
-                                        <div class="col-md-3">
+                                    <div style="margin-left:-15px;display: -webkit-box;" ui-sref="main.sitesurveyreport">
+                                        <div class="col-md-4">
                                             <span class="info-box-number">Sender</span>
                                             <span class="info-box-text" style="padding-top: 5px;">Task</span>
                                             <span class="info-box-text" style="padding-top: 5px;">Submitted</span>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-5">
                                             <span class="info-box-number">Smith, Ben</span>
                                             <span class="info-box-text" style="padding-top: 5px;">AV-Installation</span>
                                             <span class="info-box-text" style="padding-top: 5px;">27 June, 2016</span>
                                         </div>
                                         <div class="col-md-2">
-                                            <small style="color:#a06904;"> NEW</small>
+                                            <small class="newrep" style="color:#a06904;"> NEW</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="info-box" >
+                            <div class="info-box" angular-ripple>
                                 <span class="info-box-icon bg-white"></span>
                                 <div class="infobox-content col-md-12">
                                     <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
@@ -254,24 +255,24 @@
                                         <br>
                                         <small> Download</small>
                                     </div>
-                                    <div style="margin-left:-15px;" ui-sref="main.supportreport">
-                                        <div class="col-md-3">
+                                    <div style="margin-left:-15px;display: -webkit-box;" ui-sref="main.supportreport">
+                                        <div class="col-md-4">
                                             <span class="info-box-number">Sender</span>
                                             <span class="info-box-text" style="padding-top: 5px;">Task</span>
                                             <span class="info-box-text" style="padding-top: 5px;">Submitted</span>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-5">
                                             <span class="info-box-number">Smith, Ben</span>
                                             <span class="info-box-text" style="padding-top: 5px;">AV-Installation</span>
                                             <span class="info-box-text" style="padding-top: 5px;">27 June, 2016</span>
                                         </div>
                                         <div class="col-md-2">
-                                            <small style="color:#a06904;"> </small>
+                                            <small class="newrep" style="color:#a06904;"> </small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="info-box" >
+                            <div class="info-box" angular-ripple>
                                 <span class="info-box-icon bg-white"></span>
                                 <div class="infobox-content col-md-12">
                                     <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
@@ -279,25 +280,25 @@
                                         <br>
                                         <small> Download</small>
                                     </div>
-                                    <div style="margin-left:-15px;" ui-sref="main.sitesurveyreport">
-                                        <div class="col-md-3">
+                                    <div style="margin-left:-15px;display: -webkit-box;" ui-sref="main.sitesurveyreport">
+                                        <div class="col-md-4">
                                             <span class="info-box-number">Sender</span>
                                             <span class="info-box-text" style="padding-top: 5px;">Task</span>
                                             <span class="info-box-text" style="padding-top: 5px;">Submitted</span>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-5">
                                             <span class="info-box-number">Smith, Ben</span>
                                             <span class="info-box-text" style="padding-top: 5px;">AV-Installation</span>
                                             <span class="info-box-text" style="padding-top: 5px;">27 June, 2016</span>
                                         </div>
                                         <div class="col-md-2">
-                                            <small style="color:#a06904;"> </small>
+                                            <small class="newrep" style="color:#a06904;"> </small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div uib-collapse="!isColl">
-                                <div class="info-box" >
+                                <div class="info-box" angular-ripple>
                                     <span class="info-box-icon bg-white"></span>
                                     <div class="infobox-content col-md-12">
                                         <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
@@ -305,24 +306,24 @@
                                             <br>
                                             <small> Download</small>
                                         </div>
-                                        <div style="margin-left:-15px;" ui-sref="main.sitesurveyreport">
-                                            <div class="col-md-3">
+                                        <div style="margin-left:-15px;display: -webkit-box;" ui-sref="main.sitesurveyreport">
+                                            <div class="col-md-4">
                                                 <span class="info-box-number">Sender</span>
                                                 <span class="info-box-text" style="padding-top: 5px;">Task</span>
                                                 <span class="info-box-text" style="padding-top: 5px;">Submitted</span>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-5">
                                                 <span class="info-box-number">Smith, Ben</span>
                                                 <span class="info-box-text" style="padding-top: 5px;">AV-Installation</span>
                                                 <span class="info-box-text" style="padding-top: 5px;">27 June, 2016</span>
                                             </div>
                                             <div class="col-md-2">
-                                                <small style="color:#a06904;"> </small>
+                                                <small class="newrep" style="color:#a06904;"> </small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="info-box" >
+                                <div class="info-box" angular-ripple>
                                     <span class="info-box-icon bg-white"></span>
                                     <div class="infobox-content col-md-12">
                                         <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
@@ -330,24 +331,24 @@
                                             <br>
                                             <small> Download</small>
                                         </div>
-                                        <div style="margin-left:-15px;" ui-sref="main.supportreport">
-                                            <div class="col-md-3">
+                                        <div style="margin-left:-15px;display: -webkit-box;" ui-sref="main.supportreport">
+                                            <div class="col-md-4">
                                                 <span class="info-box-number">Sender</span>
                                                 <span class="info-box-text" style="padding-top: 5px;">Task</span>
                                                 <span class="info-box-text" style="padding-top: 5px;">Submitted</span>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-5">
                                                 <span class="info-box-number">Smith, Ben</span>
                                                 <span class="info-box-text" style="padding-top: 5px;">AV-Installation</span>
                                                 <span class="info-box-text" style="padding-top: 5px;">27 June, 2016</span>
                                             </div>
                                             <div class="col-md-2">
-                                                <small style="color:#a06904;"> </small>
+                                                <small class="newrep" style="color:#a06904;"> </small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="info-box" >
+                                <div class="info-box" angular-ripple>
                                     <span class="info-box-icon bg-white"></span>
                                     <div class="infobox-content col-md-12">
                                         <div class="col-md-3 pull-right" style="text-align:center;margin-top:10px;">
@@ -355,19 +356,19 @@
                                             <br>
                                             <small> Download</small>
                                         </div>
-                                        <div style="margin-left:-15px;" ui-sref="main.sitesurveyreport">
-                                            <div class="col-md-3">
+                                        <div style="margin-left:-15px;display: -webkit-box;" ui-sref="main.sitesurveyreport">
+                                            <div class="col-md-4">
                                                 <span class="info-box-number">Sender</span>
                                                 <span class="info-box-text" style="padding-top: 5px;">Task</span>
                                                 <span class="info-box-text" style="padding-top: 5px;">Submitted</span>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-5">
                                                 <span class="info-box-number">Smith, Ben</span>
                                                 <span class="info-box-text" style="padding-top: 5px;">AV-Installation</span>
                                                 <span class="info-box-text" style="padding-top: 5px;">27 June, 2016</span>
                                             </div>
                                             <div class="col-md-2">
-                                                <small style="color:#a06904;"> </small>
+                                                <small class="newrep" style="color:#a06904;"> </small>
                                             </div>
                                         </div>
                                     </div>

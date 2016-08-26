@@ -1,224 +1,228 @@
 <div class="modal-header" style="margin-top: 55px;">
     <h3 class="modal-title"> Create Task</h3>
 </div>
-<div class="modal-body">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Task Name</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Task Name">
+<form name="taskinfoForm" ng-submit="createTask(taskinfoForm)" novalidate>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group" ng-class="{ 'has-error' : taskinfoForm.taskname.$invalid && taskinfoForm.$submitted }">
+                            <label for="exampleInputEmail1">Task Name</label>
+                            <input type="text" name="taskname" class="form-control" id="exampleInputEmail1" ng-model="task.taskname" placeholder="Task Name" required>
+                            <p ng-show="taskinfoForm.taskname.$invalid && taskinfoForm.$submitted" class="help-block">Required *</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Task Type</label>
-                        <select class="form-control">
-                            <option selected>Installation</option>
-                            <option>Installation 2</option>
-                            <option>Installation 3</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Discription</label>
-                <text-angular ng-model="details.article" required /></text-angular>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Store Name</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Store Name">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Location</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Location">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Deadline</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control " ng-model="newdates" data-date-format="yyyy-MM-dd" data-date-type="number" data-max-date="{{newdate}}" data-autoclose="1" name="date2" bs-datepicker placeholder="Date">
-                            <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
-                            </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6" style=" margin-top: 5px;">
-                    <kk-timepicker settings="settings" ng-model="time"></kk-timepicker>
-                </div>
-                <div class="col-lg-6">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1" style="margin-top: 15px;">Estimated Completion</label>
-                        <select class="form-control">
-                            <option selected>1 Day</option>
-                            <option>2 Days</option>
-                            <option>3 Days</option>
-                        </select>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Task Type</label>
+                            <select class="form-control" ng-options="types.value as types.name for types in taskTypes" ng-model="task.tasktype">
+                                <option value="" disabled selected hidden>Task Types...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
+                <div class="form-group">
+                    <label>Discription</label>
+                    <text-angular ng-model="task.description" required /></text-angular>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6" ng-class="{ 'has-error' : taskinfoForm.storename.$invalid && taskinfoForm.$submitted }">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Store Name</label>
+                            <input type="text" name="storename" class="form-control" ng-model="task.storename" id="exampleInputEmail1" placeholder="Store Name" required>
+                            <p ng-show="taskinfoForm.storename.$invalid && taskinfoForm.$submitted" class="help-block">Required *</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label>Priority Level</label>
-                        <select class="form-control">
-                            <option selected>High</option>
-                            <option>Moderate</option>
-                            <option>Low</option>
-                        </select>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group" ng-class="{ 'has-error' : taskinfoForm.location.$invalid && taskinfoForm.$submitted }">
+                            <label for="exampleInputEmail1">Location</label>
+                            <input type="text" name="location" class="form-control" ng-model="task.location" id="exampleInputEmail1" placeholder="Location" required>
+                            <p ng-show="taskinfoForm.location.$invalid && taskinfoForm.$submitted" class="help-block">Please specify location *</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Deadline</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control " ng-model="task.deadline" data-date-format="yyyy-MM-dd" data-date-type="number" data-max-date="{{newdate}}" data-autoclose="1" name="date2" bs-datepicker placeholder="Date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label>Case Number</label>
-                        <input type="text" class="form-control" placeholder="i.e 016254">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Requested By</label>
-                        <input type="text" class="form-control" placeholder="First Name">
+                <div class="row">
+                    <div class="col-xs-6" style=" margin-top: 5px;">
+                        <label for="exampleInputEmail1">Start time</label>
+                        <kk-timepicker settings="settings" ng-model="task.start"></kk-timepicker>
                         <br>
-                        <input type="text" class="form-control" placeholder="Last Name">
+                        <label for="exampleInputEmail1">End time</label>
+                        <kk-timepicker settings="settings" ng-model="task.end"></kk-timepicker>
+                    </div>
+                    <div class="col-lg-6">
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group" ng-class="{ 'has-error' : taskinfoForm.requestor.$invalid && taskinfoForm.$submitted }">
+                            <label for="exampleInputEmail1" style="margin-top: 15px;">ESTIMATE DAY/TIME OF TASK COMPLETION</label>
+                            <input type="text" class="form-control" ng-model="task.numdays" placeholder="# of days">
+                            <br>
+                            <input type="text" class="form-control" ng-model="task.numhours" placeholder="# of hours">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group" ng-class="{ 'has-error' : taskinfoForm.priority.$invalid && taskinfoForm.$submitted }">
+                            <label>Priority Level</label>
+                            <select class="form-control" name="priority" ng-options="prio.value as prio.name for prio in priorities" ng-model="task.priority">
+                                <option value="" disabled selected hidden>Priorities...</option>
+                            </select>
+                            <p ng-show="taskinfoForm.priority.$invalid && taskinfoForm.$submitted" class="help-block">Required *</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group" ng-class="{ 'has-error' : taskinfoForm.project.$invalid && taskinfoForm.$submitted }">
+                            <label>Project Name</label>
+                            <input type="text" name="project" class="form-control" ng-model="task.projectname" placeholder="i.e 016254" required>
+                            <p ng-show="taskinfoForm.project.$invalid && taskinfoForm.$submitted" class="help-block">Required *</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group" ng-class="{ 'has-error' : taskinfoForm.casenum.$invalid && taskinfoForm.$submitted }">
+                            <label>Case Number</label>
+                            <input type="text" name="casenum" class="form-control" ng-model="task.casenumber" placeholder="i.e 016254" required>
+                            <p ng-show="taskinfoForm.casenum.$invalid && taskinfoForm.$submitted" class="help-block">Required *</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group" ng-class="{ 'has-error' : taskinfoForm.requestor.$invalid && taskinfoForm.$submitted }">
+                            <label for="exampleInputEmail1">Requested By</label>
+                            <input type="text" name="requestor" class="form-control" ng-model="task.requestor" placeholder="Name of Requestor" required>
+                            <p ng-show="taskinfoForm.requestor.$invalid && taskinfoForm.$submitted" class="help-block">Required *</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Date Requested</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control " ng-model="task.date_requested" data-date-format="yyyy-MM-dd" data-date-type="number" data-max-date="{{newdate}}" data-autoclose="1" name="date2" bs-datepicker placeholder="Specify Date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group" ng-class="{ 'has-error' : taskinfoForm.scfname.$invalid && taskinfoForm.$submitted }">
+                            <label for="exampleInputEmail1">Site Contact</label>
+                            <input type="text" name="scfname" class="form-control" placeholder="First Name">
+                            <p ng-show="taskinfoForm.scfname.$invalid && taskinfoForm.$submitted" class="help-block">Required *</p>
+                            <br>
+                            <input type="text" name="sclastame" class="form-control" placeholder="Last Name">
+                            <p ng-show="taskinfoForm.sclastame.$invalid && taskinfoForm.$submitted" class="help-block">Required *</p>
+                            <br>
+                            <input type="text" name="sccontact" class="form-control" placeholder="Contact Number">
+                            <p ng-show="taskinfoForm.sccontact.$invalid && taskinfoForm.$submitted" class="help-block">Required *</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group" style="margin-top:5px;">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div class="col-md-12 box-body cardborder" style="padding-left: 0px;margin-top: -20px;border-style: dashed;">
+                        <div class="form-group ">
+                            <label for="imageUpload1" class="btn btn-warning btn-block btn-outlined" style="width: 150px"><i class="fa fa-folder-open"></i> Attach PSD</label>
+                            <input type="file" method="POST" id="imageUpload1" nv-file-select="" uploader="uploader" class="form-control" accept="image/*" style="display: none">
+                            <div style="font-style:italic;">(Attach PSD file if applicable)</div>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th width="95%"></th>
+                                    <th width="5%"></th>
+                                </tr>
+                            </thead>
+                            <tbody style="background-color: #d6d6d6;">
+                                <tr ng-repeat="item in uploader.queue" class="uploadtable">
+                                    <td><strong>{{ item.file.name }}</strong></td>
+                                    <td nowrap>
+                                        <button class="btn-danger btn-xm close3"><span class="fa fa-times-circle" ng-click="item.remove()"></span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Site Contact</label>
-                        <input type="text" class="form-control" placeholder="First Name">
-                        <br>
-                        <input type="text" class="form-control" placeholder="Last Name">
-                        <br>
-                        <input type="text" class="form-control" placeholder="Contact Number">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group" style="margin-top:5px;">
-                    </div>
-                </div>
-            </div>
-            <br>
-            <form>
-                <div class="col-md-12 box-body cardborder" style="padding-left: 10px;margin-top: -20px;border-style: dashed;">
-                    <div class="form-group ">
-                        <label for="imageUpload1" class="btn btn-warning btn-block btn-outlined" style="width: 150px"><i class="fa fa-folder-open"></i> Attach PSD</label>
-                        <input type="file" method="POST" id="imageUpload1" nv-file-select="" uploader="uploader" class="form-control" accept="image/*" style="display: none">
-                        <div style="font-style:italic;">(Attach PSD file if applicable)</div>
-                    </div>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th width="95%"></th>
-                                <th width="5%"></th>
-                            </tr>
-                        </thead>
-                        <tbody style="background-color: #d6d6d6;">
-                            <tr ng-repeat="item in uploader.queue" class="uploadtable">
-                                <td style="padding: 5px;"><strong>{{ item.file.name }}</strong></td>
-                                <td nowrap>
-                                    <button class="btn-danger btn-xm close3"><span class="fa fa-times-circle" ng-click="item.remove()"></span></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </form>
-            <div class="col-lg-12" style="margin-top: 20px;border-bottom-style: solid;border-width: 1px;border-color: #a9a9a9;">
-            </div>
-            <div class="row" style="margin-top:120px;">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label style="margin-top: 10px;">Assign to Contractor/s</label>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search Contractor...">
-                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                    </div>
-                </div>
-            </div>
-            <form class="form-horizontal col-md-7 ">
+            <div class="form-horizontal col-md-7 ">
                 <div class="box-body ">
                     <div style="padding:15px;">
                         <div class="input-group col-sm-12">
-                            <label class="control control--checkbox">Lorem Impatsu
-                                <input type="checkbox" />
-                                <div class="control__indicator"></div>
-                            </label>
-                            <label class="control control--checkbox">Lorem Impatsu
-                                <input type="checkbox" />
-                                <div class="control__indicator"></div>
-                            </label>
-                            <label class="control control--checkbox">Lorem Impatsu
-                                <input type="checkbox" />
-                                <div class="control__indicator"></div>
-                            </label>
-                            <label class="control control--checkbox">Lorem Impatsu
-                                <input type="checkbox" />
-                                <div class="control__indicator"></div>
-                            </label>
-                            <label class="control control--checkbox">Lorem Impatsu
-                                <input type="checkbox" />
+                            <label class="control control--checkbox" ng-repeat="item in contractors track by item._id">
+                                <input ng-model="item.checked" type="checkbox" ng-change="addContractoTask(item)">{{item.lname | uppercase}}, {{item.fname | uppercase}}
                                 <div class="control__indicator"></div>
                             </label>
                             <a ng-click="toggle(); isCollapsed = !isCollapsed" ng-model="con.list" style="float:right;text-decoration:underline;">
@@ -227,48 +231,34 @@
                         </div>
                         <div class="input-group col-sm-12" uib-collapse="!isCollapsed">
                             <div>
-                                <label class="control control--checkbox">Lorem Impatsu
-                                    <input type="checkbox" />
-                                    <div class="control__indicator"></div>
-                                </label>
-                                <label class="control control--checkbox">Lorem Impatsu
-                                    <input type="checkbox" />
-                                    <div class="control__indicator"></div>
-                                </label>
-                                <label class="control control--checkbox">Lorem Impatsu
-                                    <input type="checkbox" />
-                                    <div class="control__indicator"></div>
-                                </label>
-                                <label class="control control--checkbox">Lorem Impatsu
-                                    <input type="checkbox" />
-                                    <div class="control__indicator"></div>
-                                </label>
-                                <label class="control control--checkbox">Lorem Impatsu
-                                    <input type="checkbox" />
+                                <label class="control control--checkbox" ng-repeat="item in contractor track by item._id">
+                                    <input ng-model="item.checked" type="checkbox" ng-change="addContractoTask(item)">{{item.lname | uppercase}}, {{item.fname | uppercase}}
                                     <div class="control__indicator"></div>
                                 </label>
                             </div>
-                            <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" style=" margin-right: -100px;"></ul>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
-</div>
-<div class="modal-footer">
-  <!--   <a ng-click="cancel()" class="btnes btn-raised btn-default" style="float:left;margin-left:15px;width:100px;">Cancel</a> -->
-   <!--  <button class="btnes btn-raised btn-info pull-right" type="button" ng-click="ok()" style="margin-right: 15px;padding-bottom: 10px;">Create</button> -->
-   <div align="left">
-        <div class="contenergrey" ng-click="cancel()" style="width:20%;">
-            <div class="txt_button" angular-ripple>Cancel</div>
-            <div class="circle">&nbsp;</div>
+    <div class="modal-footer">
+        <!--   <a ng-click="cancel()" class="btnes btn-raised btn-default" style="float:left;margin-left:15px;width:100px;">Cancel</a> -->
+        <!--  <button class="btnes btn-raised btn-info pull-right" type="button" ng-click="ok()" style="margin-right: 15px;padding-bottom: 10px;">Create</button> -->
+        <div align="left">
+            <div class="contenergrey" ng-click="cancel()" style="width:20%;">
+                <div class="txt_button" angular-ripple>Cancel</div>
+                <div class="circle">&nbsp;</div>
+            </div>
+        </div>
+        <div align="right" style="margin-top: -45px;">
+            <div>
+            <button type="submit" class="contener" style="width:20%; line-height: 0px;"> Create</button>
+            </div>
+            <!-- <div class="contener" ng-click="ok()" style="width:20%;margin-top: -45px;">
+                <div class="txt_button" angular-ripple>Create</div>
+                <div class="circle">&nbsp;</div>
+            </div> -->
         </div>
     </div>
-    <div align="right">
-        <div class="contener" ng-click="ok()" style="width:20%;margin-top: -45px;">
-            <div class="txt_button" angular-ripple>Create</div>
-            <div class="circle">&nbsp;</div>
-        </div>
-    </div>
-</div>
+</form>
