@@ -10,7 +10,99 @@
         <header class="main-header">
         </header>
         <!-- Left side column. contains the logo and sidebar -->
-        <aside class="main-sidebar" ng-include="'./modules/templates/sidebar.html'">
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="images/no-avatar.jpg" class="img-circle" alt="User Image">
+                    </div>
+                </div>
+                <ul class="sidebar-menu" style="margin-top: -20px;">
+                    <li>
+                        <a style="padding-bottom: 0px;height: 0px !important;border-left: 0px solid #232b2f !important;" ng-click="iconics = !iconics">
+                            <div class="sidehead" style="background: rgba(0, 0, 0, .37);margin-top: -30px;padding: 5px;color: #fff;padding-left: 17px;/* margin-bottom: -20px; */margin-left: -30px;">Risse, Katrin
+                                <span class="pull-right-container">
+                        <i class="pull-right" style="padding-right: 10px;padding-top: 5px;font-size: 12px;"  ng-class="{'icon fa  fa-caret-down': !iconics, 'fa fa-caret-up': iconics}"></i>
+                        </span>
+                            </div>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a ui-sref="main.userprofile" style="color: #929292;font-size: 14px;padding: 9px 5px 9px 32px;">
+                                    <img src="images/icons/ic_person_white_24px.svg" style="padding-right: 7px;">
+                                    <span>View Profile</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" style="color: #929292;font-size: 14px;padding: 9px 5px 9px 32px;">
+                                    <img src="images/icons/ic_input_white_24px.svg" style="padding-right: 7px;">
+                                    <span>Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav sidebar-menu">
+                    <li ng-init="active">
+                        <a ui-sref="main.admindash"  style="border-left: 0px solid #232b2f !important;margin-right: 1px !important;padding: 20px 0px 20px 30px;display: block;color: #ababab !important;height: 63px;">
+                            <img src="images/icons/ic_dashboard_white_24px.svg" style="padding-right: 7px;">
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a ng-click="icons = !icons"  style="border-left: 0px solid #232b2f !important;margin-right: 1px !important;padding: 20px 0px 20px 30px;display: block;color: #ababab !important;height: 63px;">
+                            <img src="images/icons/ic_subject_white_24px.svg" style="padding-right: 7px;">
+                            <span>Tasks</span>
+                            <span class="pull-right-container">
+              <i class="pull-right" style="padding-right: 10px;padding-top: 5px;font-size: 9px;"  ng-class="{'icon fa  fa-plus': !icons, 'fa fa-minus': icons}"></i>
+            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li ng-click="scrollTo('1')">
+                                <a ui-sref="main.admintask">
+                                    <i class="fa" style="padding-right: 28px;"></i>
+                                    <span>New Task</span>
+                                </a>
+                            </li>
+                            <li ng-click="scrollTo('2')">
+                                <a ui-sref="main.admintask">
+                                    <i class="fa" style="padding-right: 28px;"></i>
+                                    <span>Task in Progress</span>
+                                </a>
+                            </li>
+                            <li ng-click="scrollTo('3')">
+                                <a ui-sref="main.admintask">
+                                    <i class="fa" style="padding-right: 28px;"></i>
+                                    <span>Pending Task</span>
+                                </a>
+                            </li>
+                            <li ng-click="scrollTo('4')">
+                                <a ui-sref="main.admintask">
+                                    <i class="fa" style="padding-right: 28px;"></i>
+                                    <span>Completed Task</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a ui-sref="main.adminreports"  style="border-left: 0px solid #232b2f !important;margin-right: 1px !important;padding: 20px 0px 20px 30px;display: block;color: #ababab !important;height: 63px;">
+                            <img src="images/icons/ic_insert_drive_file_white_24px.svg" style="padding-right: 7px;">
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <br>
+                    <!-- <li class="header"></li> -->
+                    <!-- <button ng-click="openMod('lg')" class=" btn-raised btn-info" style="width:100%">Create Task</button> -->
+                    <div align="center">
+                        <div class="conteneryellow" ng-click="openMod('lg')" style="width:90%;box-shadow: 0px 2px 6px rgba(99, 99, 99, 0.02);">
+                            <div class="txt_button" angular-ripple>Create Task</div>
+                        </div>
+                    </div>
+                    <!-- <div ng-click="openMod('lg')">
+                <div class="down-arrow"><a>Create Task</a></div>
+            </div> -->
+                </ul>
+            </section>
         </aside>
         <div class="content-wrapper">
             <div ui-view="main-view"></div>
@@ -23,4 +115,3 @@
     </footer> -->
     </div>
 </div>
-
