@@ -124,11 +124,13 @@
                                         <label for="exampleInputEmail1 " style="margin-bottom: 0px;">AREA OF COVERAGE <small style="font-style:italic; ">(Please Specify your area of coverage)</small>
                                         </label>
                                     </div>
-                                    <div class="form-group item" ng-repeat="item in data.coverageArr">
-                                        <input type="text " class="form-control " placeholder="City i.e Sydney CBD " ng-model="item.area">
+                                    <div class="form-group item" ng-repeat="item in data.coverageArr" ng-class="{ 'has-error' : userForm.coverage1.$invalid && userForm.$submitted }">
+                                        <input type="text " name="coverage1" class="form-control " placeholder="City i.e Sydney CBD " ng-model="item.area">
+                                         <p ng-show="userForm.coverage1.$invalid && userForm.$submitted" class="help-block">Required*</p>
                                     </div>
-                                    <div class="form-group ">
-                                        <input type="text " name="coverage" class="form-control " placeholder="City i.e Sydney CBD " ng-model="area.coverage" required>                                   
+                                    <div class="form-group " ng-class="{ 'has-error' : userForm.coverage.$invalid && userForm.$submitted }">
+                                        <input type="text " name="coverage" class="form-control " placeholder="City i.e Sydney CBD " ng-model="area.coverage" required>   
+                                        <p ng-show="userForm.coverage.$invalid && userForm.$submitted" class="help-block">Required*</p>                                
                                     </div>
                                     <div align="right" style="margin-top:0px;margin-bottom:-35px;margin-right: -15px;">
                                         <button class="btn btn-warning" ng-click="addLocation(area.coverage) " style="width:25%;margin-top: -10px;margin-bottom: 0px;" ng-disabled="!area.coverage" angular-ripple>Add Location</button>
