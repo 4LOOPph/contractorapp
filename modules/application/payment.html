@@ -24,7 +24,7 @@
                             <form class="form-horizontal col-md-7 " style="padding-left: 30px;">
                                 <div class="box-body ">
                                     <div class="form-group ">
-                                        <label for="exampleInputEmail1 ">RATE</label>
+                                        <label for="exampleInputEmail1 ">RATE *</label>
                                         <label class="control control--radio">Standard Rate
                                             <br><small style="font-style:italic; ">(Please specify your rate)</small>
                                             <input type="radio" name="radio" id="optionsRadios" checked="checked" ng-click="filter.direct = true; filter.check= false; disabled = false " ng-model="enable" />
@@ -95,11 +95,11 @@
                                     <div class="form-group ">
                                         <label for="exampleInputEmail1 ">PAYMENT METHOD</label>
                                         <label class="control control--radio">Direct Deposit
-                                            <input type="radio" name="radio" id="optionsRadios2" checked="checked" ng-click="hideCard1(); isCollapsed=!isCollapsed; cheque.specify = unchecked;" ng-model="enable" />
+                                            <input type="radio" name="radio" id="optionsRadios2" checked="checked" ng-click="hideCard1(); cheque.specify = unchecked; billAdd=false" ng-model="enable" />
                                             <div class="control__indicator"></div>
                                         </label>
                                         <label class="control control--radio" style="margin-left: 200px;margin-top: -44px;">Cheque
-                                            <input type="radio" name="radio" id="optionsRadios2" checked="checked" ng-click="hideCard()" />
+                                            <input type="radio" name="radio" id="optionsRadios2" checked="checked" ng-click="hideCard();" />
                                             <div class="control__indicator"></div>
                                         </label>
                                     </div>
@@ -111,10 +111,10 @@
                                         <div class="">
                                             <div style="padding:5px;">
                                                 <div class="account-det">All requests for payment to bank accounts must be signed by the vendor or accompanied by documentary evidence of bank account details from the vendor(e.g. Email, Fax, Invoice)</div>
-                                                <label class="new-label" style="margin-top: 10px;">BANK ACCOUNT</label>
+                                                <label class="new-label" style="margin-top: 10px;">BANK ACCOUNT *</label>
                                             </div>
                                             <div class="" style="margin-top:10px;">
-                                                <div class="col-sm-6">                                                   
+                                                <div class="col-sm-6">
                                                     <div angucomplete-alt id="ex7" placeholder="Search bank" maxlength="50" pause="100" selected-object="selectedCountry" local-data="banks" search-fields="name" title-field="name" minlength="1" input-class="form-control form-control-small" match-class="highlight"></div>
                                                 </div>
                                                 <div class="col-sm-6">
@@ -139,43 +139,33 @@
                                             </div>
                                             <br>
                                             <label class="control control--checkbox"> <a>Tick here to specify your prefered billing address.</a>
-                                                <input type="checkbox" ng-click="isCollapsed = !isCollapsed" ng-model="cheque.specify" style="margin-top: 0px;margin-bottom: 15px;" />
+                                                <input type="checkbox" ng-click="billAdd = !billAdd" ng-model="cheque.specify" style="margin-top: 0px;margin-bottom: 15px;" />
                                                 <div class="control__indicator"></div>
                                             </label>
                                         </div>
-                                        <div uib-collapse="!isCollapsed" ng-model="addedcheque">
+                                        <div ng-show="billAdd" ng-model="addedcheque">
                                             <div style="padding-left:15px;padding-right:15px;">
                                                 <p>cheque will be forwarded to the new address you provided.</p>
                                                 <div class="form-group">
-                                                    <div class="col-sm-6">
-                                                        <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                                        <select class="form-control">
-                                                            <option>City1</option>
-                                                            <option>City2</option>
-                                                            <option>City3</option>
+                                                    <div class="col-sm-6 ">
+                                                        <select class="form-control " name="country" ng-model="data.country" ng-options="week.code as week.name for week in countries" ng-change="getCountryState(data.country)" style="background-color: transparent;">
+                                                            <option value="" disabled selected hidden>Country...</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-sm-6">
+                                                    <div class="col-sm-6" style="margin-top: -7px;">
                                                         <label for="inputEmail3" class="col-sm-2 control-label"></label>
                                                         <input type="text" class="form-control" id="inputEmail3" placeholder="Post Code" ng-model="poscode2" valid-number>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <div class="col-sm-6">
-                                                        <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                                        <select class="form-control">
-                                                            <option>State1</option>
-                                                            <option>State2</option>
-                                                            <option>State3</option>
+                                                    <div class="col-sm-6 ">
+                                                        <select ng-model="data.state" class="form-control" name="state" ng-options="week.code as week.name for week in states" ng-change="getCityState(data.state)">
+                                                            <option value="" disabled selected hidden>State...</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-sm-6">
-                                                        <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                                                        <select class="form-control">
-                                                            <option>Country1</option>
-                                                            <option>Country2</option>
-                                                            <option>Country3</option>
-                                                        </select>
+                                                    <div class="col-sm-6 ">
+                                                        <div angucomplete-alt id="ex1" placeholder="Search city" maxlength="50" pause="100" selected-object="selectedCountry" local-data="citiesCopy" search-fields="name" title-field="name" minlength="1" input-class="form-control form-control-small" match-class="highlight" input-name="city">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -212,7 +202,7 @@
                                     <div class="form-group " style="margin-top: 20px;">
                                         <label class="control control--checkbox"><a data-toggle="modal" data-target="#myModal">
                                         View Terms and Conditions</a>
-                                            <input type="checkbox" ng-model="checkproceed" />
+                                            <input type="checkbox" ng-model="terms.Con" />
                                             <div class="control__indicator"></div>
                                         </label>
                                     </div>
@@ -233,7 +223,7 @@
                                         </div>
                                     </div>
                                     <div align="right" style="margin-top:-45px;margin-bottom:0px;">
-                                        <button ng-click="vendorRate()" ng-disabled="!checkproceed" class="contener" style="width:15%; line-height: 42px;margin-bottom: 0px;"> Next</button>
+                                        <button ng-click="vendorRate()" ng-disabled="terms.Con?false:true" class="contener" style="width:15%; line-height: 42px;margin-bottom: 0px;"> Next</button>
                                         <!-- <div class="contener" ui-sref="qualification" ng-disabled="checkproceed?false:true" style="width:15%;margin-top: -10px;margin-bottom: 0px;">
                                             <div class="txt_button" angular-ripple> Next</div>
                                             <div class="circle">&nbsp;</div>
@@ -274,7 +264,7 @@
                     <div class="txt_button" data-dismiss="modal" angular-ripple> Close</div>
                     <div class="circle">&nbsp;</div>
                 </div>
-               <!--  <button type="button" class=" contener" data-dismiss="modal" style="padding-bottom:13px;width:100px;" angular-ripple>Close</button> -->
+                <!--  <button type="button" class=" contener" data-dismiss="modal" style="padding-bottom:13px;width:100px;" angular-ripple>Close</button> -->
             </div>
         </div>
     </div>

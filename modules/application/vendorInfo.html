@@ -47,15 +47,15 @@
                             <form name="userForm" class="form-horizontal" ng-submit="vendorinfo()" novalidate>
                                 <div class="box-body col-sm-7" style="padding-left:30px">
                                     <div class="form-group ">
-                                        <label for="exampleInputEmail1 ">NAME</label>
+                                        <label for="exampleInputEmail1 ">NAME *</label>
                                         <div class="form-group ">
                                             <div class="col-sm-6 " ng-class="{ 'has-error' : userForm.Lname.$invalid &&userForm.$submitted }">
                                                 <input type="text " name="Lname" class="form-control " id="LName " placeholder="Last Name" ng-model="data.lname" required>
-                                                <p ng-show="userForm.Lname.$invalid && userForm.$submitted" class="help-block">Required *</p>
+                                                <p ng-show="userForm.Lname.$invalid && userForm.$submitted" class="help-block">This field are required.</p>
                                             </div>
                                             <div class="col-sm-6 " ng-class="{ 'has-error' : userForm.Fname.$invalid && userForm.$submitted }">
                                                 <input type="text " name="Fname" class="form-control " id="FName " placeholder="First Name " ng-model="data.fname" required>
-                                                <p ng-show="userForm.Fname.$invalid && userForm.$submitted" class="help-block">Required *</p>
+                                                <p ng-show="userForm.Fname.$invalid && userForm.$submitted" class="help-block">This field are required.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -64,42 +64,46 @@
                                         <input type="text " ng-model="data.companyname" class="form-control " placeholder="Company Name ">
                                     </div>
                                     <div class="form-group ">
-                                        <label for="exampleInputEmail1 ">ADDRESS</label>
+                                        <label for="exampleInputEmail1 ">ADDRESS *</label>
                                         <div class="form-group ">
-                                            <div class="col-sm-6 ">
-                                                <select class="form-control " ng-model="data.country" ng-options="week.code as week.name for week in countries" ng-change="getCountryState(data.country)" style="background-color: transparent;">
+                                            <div class="col-sm-6 " ng-class="{ 'has-error' : userForm.country.$invalid &&userForm.$submitted }">
+                                                <select class="form-control " name="country" ng-model="data.country" ng-options="week.code as week.name for week in countries" ng-change="getCountryState(data.country)" style="background-color: transparent;" required>
                                                     <option value="" disabled selected hidden>Country...</option>
                                                 </select>
+                                                <p ng-show="userForm.country.$invalid && userForm.$submitted" class="help-block">This field are required.</p>
                                             </div>
-                                            <div class="col-sm-6 ">
-                                                <select ng-model="data.state" class="form-control" ng-options="week.code as week.name for week in states" ng-change="getCityState(data.state)">
+                                            <div class="col-sm-6 " ng-class="{ 'has-error' : userForm.state.$invalid &&userForm.$submitted }">
+                                                <select ng-model="data.state" class="form-control" name="state" ng-options="week.code as week.name for week in states" ng-change="getCityState(data.state)" required>
                                                     <option value="" disabled selected hidden>State...</option>
                                                 </select>
+                                                <p ng-show="userForm.state.$invalid && userForm.$submitted" class="help-block">This field are required.</p>
                                             </div>
                                         </div>
                                         <div class="form-group ">
-                                            <div class="col-sm-6 ">
-                                                <div angucomplete-alt id="ex1" placeholder="Search city" maxlength="50" pause="100" selected-object="selectedCountry" local-data="citiesCopy" search-fields="name" title-field="name" minlength="1" input-class="form-control form-control-small" match-class="highlight"></div>
+                                            <div class="col-sm-6 " ng-class="{ 'has-error' : userForm.city.$invalid &&userForm.$submitted }">
+                                                <div angucomplete-alt id="ex1" placeholder="Search city" maxlength="50" pause="100" selected-object="selectedCountry" local-data="citiesCopy" search-fields="name" title-field="name" minlength="1" input-class="form-control form-control-small" match-class="highlight" field-required="true" input-name="city">
+                                                </div>
+                                                <p ng-show="userForm.city.$invalid && userForm.$submitted" class="help-block">This field are required.</p>
                                             </div>
                                             <div class="col-sm-6 ">
-                                                <input type="text " class="form-control " placeholder="Post Code " mask="9999" clean="true" ng-model="data.postcode">
+                                                <input type="text " class="form-control " placeholder="Post Code " maxlength="4" mask="9999" clean="true" ng-model="data.postcode" style="letter-spacing: 2px;">
                                             </div>
                                         </div>
                                         <input type="text " ng-model="data.address" class="form-control " placeholder="Specific Address ">
                                         <br>
                                         <div ng-class="{ 'has-error' : userForm.ABN.$invalid && userForm.$submitted }">
-                                            <input type="text" class="form-control " placeholder="ABN (e.g 53 004 085 616) " name="ABN" ng-model="data.abn" valid-number required>
-                                            <p ng-show="userForm.ABN.$invalid && userForm.$submitted" class="help-block">Required*</p>
+                                            <input type="text" class="form-control " placeholder="ABN (e.g 53 004 085 616) " maxlength="11" name="ABN" ng-model="data.abn" valid-number required style="letter-spacing: 2px;">
+                                            <p ng-show="userForm.ABN.$invalid && userForm.$submitted" class="help-block">This field are required.</p>
                                         </div>
                                         <br>
                                         <div ng-class="{ 'has-error' : userForm.contact.$invalid && userForm.$submitted }">
-                                            <input type="text" class="form-control " name="contact" placeholder="Contact Number " clean="true" ng-model="data.contact" valid-number required>
-                                            <p ng-show="userForm.contact.$invalid && userForm.$submitted" class="help-block">Required*</p>
+                                            <input type="text" class="form-control " name="contact" placeholder="Contact Number " clean="true" ng-model="data.contact" valid-number required style="letter-spacing: 2px;">
+                                            <p ng-show="userForm.contact.$invalid && userForm.$submitted" class="help-block">This field are required.</p>
                                         </div>
                                         <br>
                                         <div ng-class="{ 'has-error' : userForm.email.$invalid && userForm.$submitted }">
                                             <input type="email" class="form-control " name="email" placeholder="Email Address" clean="true" ng-model="data.email" required>
-                                            <p ng-show="userForm.email.$invalid && userForm.$submitted" class="help-block">Required valid email*</p>
+                                            <p ng-show="userForm.email.$invalid && userForm.$submitted" class="help-block">This field are required.</p>
                                         </div>
                                     </div>
                                     <div class="form-group ">
@@ -121,23 +125,23 @@
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <label for="exampleInputEmail1 " style="margin-bottom: 0px;">AREA OF COVERAGE <small style="font-style:italic; ">(Please Specify your area of coverage)</small>
+                                        <label for="exampleInputEmail1 " style="margin-bottom: 0px;">AREA OF COVERAGE <small style="font-style:italic; ">(Please Specify your area of coverage)</small> *
                                         </label>
                                     </div>
                                     <div class="form-group item" ng-repeat="item in data.coverageArr" ng-class="{ 'has-error' : userForm.coverage1.$invalid && userForm.$submitted }">
                                         <input type="text " name="coverage1" class="form-control " placeholder="City i.e Sydney CBD " ng-model="item.area">
-                                         <p ng-show="userForm.coverage1.$invalid && userForm.$submitted" class="help-block">Required*</p>
+                                        <p ng-show="userForm.coverage1.$invalid && userForm.$submitted" class="help-block">This field are required.</p>
                                     </div>
                                     <div class="form-group " ng-class="{ 'has-error' : userForm.coverage.$invalid && userForm.$submitted }">
-                                        <input type="text " name="coverage" class="form-control " placeholder="City i.e Sydney CBD " ng-model="area.coverage" required>   
-                                        <p ng-show="userForm.coverage.$invalid && userForm.$submitted" class="help-block">Required*</p>                                
+                                        <input type="text " name="coverage" class="form-control " placeholder="City i.e Sydney CBD " ng-model="area.coverage" required>
+                                        <p ng-show="userForm.coverage.$invalid && userForm.$submitted" class="help-block">This field are required.</p>
                                     </div>
                                     <div align="right" style="margin-top:0px;margin-bottom:-35px;margin-right: -15px;">
                                         <button class="btn btn-warning" ng-click="addLocation(area.coverage) " style="width:25%;margin-top: -10px;margin-bottom: 0px;" ng-disabled="!area.coverage" angular-ripple>Add Location</button>
                                     </div>
                                 </div>
                                 <div class="box-body col-sm-7" style="margin-top: 25px;padding-left:30px">
-                                    <label class="marg" style="margin-left: -15px;">AVAILABILITY</label>
+                                    <label class="marg" style="margin-left: -15px;">AVAILABILITY *</label>
                                     <div class="box-body ">
                                         <div class="form-group " ng-repeat="item in data.availabilityArr" style="margin-bottom: 0px;">
                                             <div class="form-group ">
@@ -149,16 +153,17 @@
                                                     <kk-timepicker settings="settings " ng-model="item.start"></kk-timepicker>
                                                 </div>
                                                 <div class="col-sm-4 ">
-                                                    <kk-timepicker settings="settings " ng-model="item.end "></kk-timepicker>
+                                                    <kk-timepicker settings="settings2 " ng-model="item.end "></kk-timepicker>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <div class="form-group ">
-                                            <div class="col-sm-4 ">
-                                                <select class="form-control " ng-options="item.id as item.value for item in baseRate " ng-model="avail.availability " required>
-                                                </select>                                                
+                                            <div class="col-sm-4 " ng-class="{ 'has-error' : userForm.availdate.$invalid && userForm.$submitted }">
+                                                <select class="form-control " name="availdate" ng-options="item.id as item.value for item in baseRate " ng-model="avail.availability " required>
+                                                </select>
+                                                <p ng-show="userForm.availdate.$invalid && userForm.$submitted" class="help-block">This field are required.</p>
                                             </div>
                                             <div class="col-sm-4 ">
                                                 <kk-timepicker settings="settings " ng-model="avail.start "></kk-timepicker>
@@ -178,7 +183,7 @@
                                             <div class="contenergrey" ng-click="clickToCancel() " style="width:15%;">
                                                 <div class="txt_button" angular-ripple> Cancel</div>
                                             </div>
-                                        </div>                                        
+                                        </div>
                                         <div align="right" style="margin-top:-45px;margin-bottom:0px;">
                                             <button type="submit" class="contener" style="width:15%; line-height: 42px;margin-bottom: 0px;" angular-ripple> Next</button>
                                             <!-- <div class="contener" ng-click="formValid()" style="width:15%;margin-top: -10px;margin-bottom: 0px;">
